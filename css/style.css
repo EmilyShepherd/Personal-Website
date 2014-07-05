@@ -4,6 +4,7 @@ html, body
     padding: 0;
     background: #EEE;
     font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
 
 *
@@ -12,7 +13,17 @@ html, body
     box-sizing: border-box;
 }
 
-header
+h1, h2, h3, h4, h5, h6
+{
+    font-weight: normal;
+}
+
+p + p
+{
+    margin-top: 20px;
+}
+
+header.page
 {
     margin-top: 35px !important;
     background: white;
@@ -32,10 +43,43 @@ header
     vertical-align: top;
     background: white;
     color: black;
-    border-radius: 5px;
-   /* box-shadow: 0px 1px 1px; */
-    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px;
     width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.box header
+{
+    height: 200px;
+    padding-top: 198px;
+    background-position: center;
+    border-bottom: 2px solid purple;
+    margin-bottom: 40px;
+}
+
+.box header#name_change
+{
+    background-image: url('/name.jpg');
+}
+
+.box h1
+{
+    font-size: 24px;
+    color: black;
+}
+
+.box .content, .box h1
+{
+    padding: 10px;
+}
+
+.box h2
+{
+    margin-top: 20px;
+    /*border-bottom: 3px solid #DEA5A4;*/
+    font-size: 18px;
 }
 
 .side_bar
@@ -80,12 +124,12 @@ header
 .title .box.heading
 {
     height: 190px;
+    font-size: 16px;
 }
 
 .title h1
 {
     font-size: 84px;
-    font-weight: normal;
 }
 
 .title p
