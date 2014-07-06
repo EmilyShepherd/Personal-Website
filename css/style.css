@@ -4,7 +4,7 @@ html, body
     padding: 0;
     background: #EEE;
     font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 *
@@ -32,8 +32,101 @@ header.page
 
 .page_width
 {
-    width: 900px;
+    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+}
+
+.bar
+{
+    background: url("http://me.sweeb.net/images/menu.jpg");
+    height: 36px;
+    border-bottom: 5px solid purple;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    box-shadow: 0px 0px 5px;
+}
+
+.side
+{
+    width: 22%;
+    display: inline-block;
+    text-align: center;
+}
+
+.img_icon
+{
+    border-radius: 50%;
+    border: 5px solid purple;
+}
+
+.img_icon.large
+{
+    width: 200px;
+    box-shadow: 0px 0px 5px;
+    position: absolute;
+    margin-left: -100px;
+    top: 5px;
+}
+
+.title
+{
+    width: calc(75% + 20px);
+    padding: 10px;
+    display: inline-block;
+    font-family: monospace;
+}
+
+.title .box.heading
+{
+    height: 190px;
+    font-size: 16px;
+}
+
+.title h1
+{
+    font-size: 74px;
+}
+
+.title p
+{
+    font-size: 23px;
+    margin: 0;
+    margin-left: 5px;
+}
+
+ul.subtle
+{
+    list-style: none;
+    padding-left: 5px;
+    -webkit-transform: scale(1, 1.2);
+}
+
+ul.subtle li
+{
+    display: inline;
+    margin-right: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+ul.subtle li:before
+{
+    content: '>';
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+.social
+{
+    margin-top: 20px;
+}
+
+.social a
+{
+    display: inline-block;
+    margin-right: 30px;
 }
 
 .box
@@ -48,6 +141,7 @@ header.page
     width: 100%;
     margin-top: 20px;
     overflow: hidden;
+    white-space: normal;
 }
 
 .box header
@@ -70,88 +164,45 @@ header.page
     color: black;
 }
 
-.box .content, .box h1
+.box .content, .box h1, .box h2
 {
     padding: 10px;
 }
 
 .box h2
 {
-    margin-top: 20px;
-    /*border-bottom: 3px solid #DEA5A4;*/
     font-size: 18px;
+    border-bottom: 2px solid purple;
+}
+
+.box_holder
+{
+    width: calc(50% - 2px);
+    display: inline-block;
+}
+
+.box_holder:nth-of-type(odd)
+{
+    padding-right: 10px;
+}
+
+.box_holder:nth-of-type(even)
+{
+    padding-left: 10px;
+}
+
+main
+{
+    display: inline-block;
+    width: 75%;
+    margin-right: 20px;
+    white-space: nowrap;
 }
 
 .side_bar
 {
-    width: 240px;
-    height: 341px;
-}
-
-.bar
-{
-    background: url("http://me.sweeb.net/images/menu.jpg");
-    height: 36px;
-    border-bottom: 5px solid purple;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    box-shadow: 0px 0px 5px;
-}
-
-.img_icon
-{
-    border-radius: 50%;
-    border: 5px solid purple;
-}
-
-.img_icon.large
-{
-    width: 230px;
-    position: absolute;
-    top: 50px;
-    margin-left: 5px;
-    box-shadow: 0px 0px 5px;
-}
-
-.title
-{
-    margin-left: 250px;
-    width: 640px;
+    width: 22%;
     padding: 10px;
+    padding-top: 50px;
 }
 
-.title .box.heading
-{
-    height: 190px;
-    font-size: 16px;
-}
-
-.title h1
-{
-    font-size: 84px;
-}
-
-.title p
-{
-    font-size: 23px;
-    margin: 0;
-    margin-left: 5px;
-}
-
-ul.subtle
-{
-    list-style: none;
-    padding-left: 5px;
-}
-
-.social
-{
-    margin-top: 20px;
-}
-
-.social a
-{
-    display: inline-block;
-    margin-right: 30px;
-}
