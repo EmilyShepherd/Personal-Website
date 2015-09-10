@@ -1,4 +1,0 @@
-[submodule "spaark"]
-	path = spaark
-	url = git@github.com:stupidshep/spaark.git
-	branch = master
