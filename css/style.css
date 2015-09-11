@@ -13,6 +13,21 @@ html, body, main
     font-size: 20px;
 }
 
+@keyframes dropfade
+{
+    from
+    {
+        opacity: 0;
+        top: 100px;
+    }
+    
+    to
+    {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
 section
 {
     padding: 30px;
@@ -25,19 +40,35 @@ nav
     background: #0D47A1;
     position: fixed;
     box-shadow: black 0 -11px 21px 9px;
-    text-align: right;
+    text-align: left;
+    z-index: 3;
 }
 
-nav a, nav a:hover
+nav a
 {
+    visibility: hidden;
     display: inline-block;
     color: white;
     font-weight: bold;
     font-size: 25px;
-    height: 100%;
-    width: 140px;
     text-decoration: none;
     text-align: center;
+    padding: 0 30px;
+    height: 100%;
+}
+
+nav a span
+{
+    display: block;
+    margin-top: 30px;
+    position: relative;
+    bottom: 0px;
+    transition: bottom ease 0.3s;
+}
+
+nav a:hover span, nav a.active span
+{
+     bottom: 15px;
 }
 
 h1
@@ -65,26 +96,59 @@ p
 
 #name_section
 {
-    background: #42A5F5;
+    background: url('/images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
     color: white;
     padding-top: 120px;
     box-sizing: border-box;
 }
 
-#name_section img
+#name_section .inner
+{
+    animation: dropfade 1s;
+    position: relative;
+}
+
+#name_section .inner header
+{
+    z-index: 1;
+}
+
+#me
 {
     border-radius: 50%;
     width: 280px;
+    box-shadow: black 0 0px 21px 0px;
+}
+
+#meHolder
+{
+    height: 280px;
 }
 
 #name_section h1
 {
     font-size: 123px;
 }
+
+#intro_section
+{
+    box-shadow: black 0 0px 21px 0px;
+    position: relative;
+    z-index: 2;
+}
+
 #experience_section
 {
-    background: #BBDEFB;
+    background: url('/images/bg2.png');
+    background-position: top center;
+}
+
+#experience_section h1
+{
+    color: white;
 }
 
 #experience_section section
@@ -96,6 +160,7 @@ p
     margin: 20px;
     padding: 10px;
     text-align: left;
+    box-shadow: black 0 0px 21px 0px;
 }
 
 #experience_section section header span
@@ -124,4 +189,11 @@ p
 #experience_section section footer div
 {
     margin: 10px 0;
+}
+
+#education_section section#courses div
+{
+    display: inline-block;
+    width: 500px;
+    text-align: justify;
 }

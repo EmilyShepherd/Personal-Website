@@ -5,42 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
+    
+    <script src="/js/effects.js"></script>
   </head>
   <body>
-    <nav>
-      <!--a href="#home">Home</a>
-      <a href="#whoAmI">Who Am I?</a-->
+    <nav id="top">
+      <a href="#hi" id="hi_href"><span>Hi</span></a>
+      <a href="#intro" id="intro_href"><span>Intro</span></a>
+      <a href="#education" id="education_href"><span>Education</span></a>
     </nav>
-
+    
     <main>
       <section id="name_section">
-        <img src="/images/me.jpg" alt="Emily Shepherd" />
-        <header>
-          <h1>Hi, I'm Emily.</h1>
-          <p>Web Developer | Computer Science Undergraduate</p>
-        </header>
-        
+        <div class="inner">
+          <div id="meHolder">
+            <img src="/images/me.jpg" alt="Emily Shepherd" id="me" />
+          </div>
+          <header>
+            <h1>Hi, I'm Emily.</h1>
+            <p>Web Developer | Computer Science Undergraduate</p>
+          </header>
+        </div>
       </section>
       
       <section id="intro_section">
-        <h1>Intro to me</h1>
+        <h1>Let me Introduce Myself</h1>
         <p>
           I am an eager Computer Science undergraduate, currently in my fourth
-          year on a master's course University of Southampton, on track for
-          achieving first class honours. This degree has introduced me to a
+          year on a master's course at the University of Southampton, on track for
+          first class honours. This degree has introduced me to a
           plethora of concepts and subject areas, such as Graphics, Compiler
           Engineering, Database Design, Operating Systems, Memory Allocation and
           Garbage Collection, to name but a few.
         </p>
         
         <p>
-          Outside of the course, I work as a freelance web developer and have
+          Outside of the course I work as a freelance web developer and have
           built and managed sites for a variety of charities and profit-driven
           organisations, such as Spa Staff.com.
         </p>
         
         <p>
-          
+          When I'm not coding, I like to exercise by hill walking, a
+          passion I have loved since completing the Duke of Edinburgh Award. I have also been
+          heavily involved in the Students' Union, acting as a course representative,
+          running the Nightline Listening Service and fighting for trans* rights.
         </p>
       </section>
       
@@ -68,7 +77,7 @@
           </p>
           
           <p>
-            As their web developer, I was responsible for implementing a redesign, from
+            As web developer, I was responsible for implementing a redesign, from
             their
             <a href="http://web.archive.org/web/20110703235306/http://www.spastaff.com/" target="_blank">old look</a>
             to the version which is live today. The site is now responsive, and
@@ -95,7 +104,7 @@
             </div>
             <div>
               <h3>APIs:</h3>
-              <p>AWS PHP API, PayPal, Barclays EDQ</p>
+              <p>AWS PHP API, PayPal, Barclays Epdq</p>
             </div>
           </footer>
         </section>
@@ -106,19 +115,19 @@
           </div>
           <header>
             <h2>Sweeb</h2>
-            <span class="position">Owner Web Developer</span>
+            <span class="position">Owner, Web Developer</span>
             <span class="dates">2005 - Present</span>
           </header>
           
           <p>
             I have been deeply interested in web development for a long time,
             and quickly realised that I could earn money from my passion. I act
-            as a freelance web developer under the pseudo-company: <b>SWEEB</b>.
+            as a freelance web developer under the brand name: <b>SWEEB</b>.
           </p>
           
           <p>
             Many of my clients were small charities and individuals without
-            any technical knowledge. This has got me well versed in translating
+            any technical knowledge. This has taught me to be well versed in translating
             a user's functional requirements into a technical plan, and
             communicating with clients without resorting to confusing jargon.
           </p>
@@ -161,12 +170,42 @@
           Science, on track for first class honours.
         </p>
         
-        <h2>Current Marks and Grades:</h2>
-        
-        Third Year Project - 81%
-        Year 1 Grade - First
-        Year 2 Grade - First
-        Year 3 Grade - First
+        <section id="courses">
+          <h2>Full List of Courses</h2>
+
+          <div>Introduction to Formal Methods (COMP1001)</div>
+          <div>Advanced Programming (COMP1003)</div>
+          <div>Programming Principles (COMP1004)</div>
+          <div>System Administration: Tools &amp; Techniques (COMP1005)</div>
+          <div>Computer Architecture (COMP1006)</div>
+          <div>Discrete Mathematics for Computer Science (COMP1007)</div>
+          <div>Software Engineering (COMP1008)</div>
+          <div>Data Structures &amp; Algorithms (COMP1009)</div>
+          <div>Introduction to Digital Electronics (ELEC1013)</div>
+          <div>Personal &amp; Professional Development (INFO1010)</div>
+          <div>Engineering Mathematics for Computer Science (MATH1014)</div>
+          <div>Computational Systems (COMP2002)</div>
+          <div>Database Systems (COMP2004)</div>
+          <div>Distributed Computing (COMP2005)</div>
+          <div>Human-Computer Interaction (COMP2006)</div>
+          <div>Software Analysis &amp; Design (COMP2007)</div>
+          <div>Communications &amp; Networks (COMP2008)</div>
+          <div>Operating Systems (COMP2009)</div>
+          <div>Compiler Engineering (COMP2010)</div>
+          <div>Theory of Computing (COMP2011)</div>
+          <div>Software Engineering Project Work (COMP2012)</div>
+          <div>Artificial Intelligence (COMP2039)</div>
+          <div>Professional &amp; Legal Issues (INFO2009)</div>
+          <div>Scripting Languages (COMP3001)</div>
+          <div>Principles of Computer Graphics (COMP3004)</div>
+          <div>Intelligence Algorithms (COMP3032)</div>
+          <div>Cyber Security (COMP3201)</div>
+          <div>Cloud Application Development (COMP3207)</div>
+          <div>Advanced Databases (COMP3211)</div>
+          <div>Principles and Practice of Computer Graphics (COMP3214)</div>
+          <div>Engineering Management and Law (MANG3067)</div>
+        </section>
+
       </section>
       
       
