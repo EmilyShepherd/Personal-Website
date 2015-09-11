@@ -7,10 +7,23 @@ window.onload = (function()
     var static        = (h - 1500) / 2;
     var name_inner    = document.getElementsByClassName('inner')[0];
     var me            = document.getElementById('me');
+    var intro_section      = document.getElementById('intro_section');
     var intro_href    = document.getElementById('intro_href');
     var experience_section = document.getElementById('experience_section');
+    var experience_href    = document.getElementById('experience_href');
     me.style.zIndex   = 4;
     name_section.style.backgroundAttachment = '';
+    
+    experience_href.onclick =
+    intro_href.onclick      =
+    (function(e)
+    {
+        e.preventDefault();
+        
+        var id = this.href.split('#')[1];
+        
+        scrollTo(document.getElementById(id).parentElement.offsetTop - 150);
+    });
 
     var onscroll = window.onscroll = (function()
     {
@@ -26,13 +39,21 @@ window.onload = (function()
             name_inner.style.top = (s * 0.5) + 'px';
         }
         
-        if (s > 500 && s < 800)
+        if (s > experience_section.offsetTop - 200)
         {
-            intro_href.className = 'active';
+            intro_href.className      = '';
+            experience_href.className = 'active';
+            
+        }
+        else if (s > intro_section.offsetTop - 200)
+        {
+            intro_href.className      = 'active';
+            experience_href.className = '';
         }
         else
         {
-            intro_href.className = '';
+            intro_href.className      = '';
+            experience_href.className = '';
         }
         
         if (s < 500)
@@ -57,4 +78,44 @@ window.onload = (function()
         
         onscroll();
     });
+    
+    function scrollTo(y, duration)
+    {
+        if (!duration) duration = 1;
+        var start     = window.scrollY;
+        var diff      = y - start;
+        var startTime = Date.now();
+        duration      *= 1000;
+        
+        console.log(start);console.log(diff);console.log(startTime);
+        
+        function doScroll()
+        {
+            var time     = (Date.now() - startTime) / duration;
+            var easeTime = (Math.cos(time * Math.PI - Math.PI) + 1) / 2;
+            
+            window.scrollTo(0, start + easeTime * diff);
+            
+            if (time < 1)
+                window.requestAnimationFrame(doScroll);
+        }
+        
+        doScroll();
+    }
+    
+    window.console.niceLog = (function(msg, size)
+    {
+        if (!size) size = 40;
+        
+        console.log
+        (
+            '%c ' + msg + ' ',
+              'color: white;'
+            + 'font-size: ' + size + 'px;'
+            + 'background: #2b64b3;'
+            + 'font-family: "Comic Sans MS", cursive, sans-serif;'
+        );
+    });
+    
+    console.niceLog('Hi(re me), I\'m Emily.');
 });
