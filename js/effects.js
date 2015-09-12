@@ -11,19 +11,37 @@ window.onload = (function()
     var intro_href    = document.getElementById('intro_href');
     var experience_section = document.getElementById('experience_section');
     var experience_href    = document.getElementById('experience_href');
+    var soton_bg  = document.getElementById('soton');
+    var leys_bg  = document.getElementById('theleys');
+    var links              = document.getElementsByTagName('a');
     me.style.zIndex   = 4;
     name_section.style.backgroundAttachment = '';
     
-    experience_href.onclick =
-    intro_href.onclick      =
-    (function(e)
+    for (var i = 0; i < links.length; i++)
+    {
+        if (links[i].href.split('#').length === 2)
+        {
+            links[i].onclick = doClick;
+        }
+    }
+    
+    function doClick(e)
     {
         e.preventDefault();
         
         var id = this.href.split('#')[1];
+        var el = document.getElementById(id);
+        var offset = 0;
         
-        scrollTo(document.getElementById(id).parentElement.offsetTop - 150);
-    });
+        do
+        {
+            offset += el.offsetTop;
+            el      = el.offsetParent;
+        }
+        while (el);
+        
+        scrollTo(offset - 180);
+    }
 
     var onscroll = window.onscroll = (function()
     {
@@ -32,6 +50,8 @@ window.onload = (function()
         me.style.position = 'fixed';
         
         experience_section.style.backgroundPositionY = (500 + s * 0.6) + 'px';
+        soton_bg.style.backgroundPositionY = (s * 0.9) + 'px';
+        leys_bg.style.backgroundPositionY = (s * 0.9) + 'px';
         
         if (s < 600)
         {
