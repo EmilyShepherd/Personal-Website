@@ -4,18 +4,21 @@ window.onload = (function()
     var name_section  = document.getElementById('name_section');
     var h             = name_section.offsetHeight;
     var w             = name_section.offsetWidth;
+    var meTop;
     var static        = (h - 1500) / 2;
     var name_inner    = document.getElementsByClassName('inner')[0];
     var me            = document.getElementById('me');
+    var me_holder     = document.getElementById('meHolder');
     var intro_section      = document.getElementById('intro_section');
     var experience_section = document.getElementById('experience_section');
     var soton_bg  = document.getElementById('soton');
     var leys_bg  = document.getElementById('theleys');
     var links              = document.getElementsByTagName('a');
-    var nav = document.getElementsByTagName('nav')[0];
-    var volunteering_section = document.getElementById('volunteering_section');
+    var nav = document.getElementById('linkHolder');
+    var nl_bg = document.getElementById('nl_bg');
     var nl_logo              = document.getElementById('nl_logo');
     var curve    = {xs: [], ys: [], ks: []};
+    var linkOverlap = 0;
     me.style.zIndex   = 4;
     name_section.style.backgroundAttachment = '';
     
@@ -59,34 +62,42 @@ window.onload = (function()
 
     var onscroll = window.onscroll = (function()
     {
+        if (window.matchMedia('(max-width: 780px)').matches) return;
+        
         var s = window.scrollY;
         
-        nav.style.backgroundPositionX = CSPL.evalSpline(s, curve.xs, curve.ys, curve.ks) + 'px';
+        var linkOffset = 0;
+        var lStep      = linkOverlap / (document.body.offsetHeight - h);
+        linkOffset     = lStep * s;
+        nav.style.right = linkOffset + 'px';
+        
+        nav.parentElement.style.backgroundPositionX = CSPL.evalSpline(s, curve.xs, curve.ys, curve.ks) - linkOffset + 'px';
         
         me.style.position = 'fixed';
         
         experience_section.style.backgroundPositionY = (500 + s * 0.6) + 'px';
         soton_bg.style.backgroundPositionY = (s * 0.9) + 'px';
         leys_bg.style.backgroundPositionY = (s * 0.9) + 'px';
-        volunteering_section.style.backgroundPositionY = (s * 0.8) + 'px';
+        nl_bg.style.backgroundPositionY = (s * 0.8) + 'px';
         nl_logo.style.bottom = Math.max(-100, (s - volunteering_section.offsetTop) * 0.2) + 'px';
         
-        if (s < 600)
+        if (s < experience_section.offsetTop - 200)
         {
             name_section.style.backgroundPositionY = (static + s * 0.8) + 'px';
             name_inner.style.top = (s * 0.5) + 'px';
         }
         
-        if (s < 500)
+        if (s < intro_section.offsetTop - 200)
         {
-            var newWidth   = 280 - (180 * (s / 500));
-            me.style.top   = (120 - s * 0.115) + 'px';
+            var step       = (63 - meTop) / (intro_section.offsetTop - 200);
+            var newWidth   = 280 - (180 * (s / (intro_section.offsetTop - 200)));
+            me.style.top   = meTop + (s * step) + 'px';
             me.style.width = newWidth + 'px';
             me.style.left  = ((w - newWidth) / 2) + 'px';
         }
         else
         {
-            me.style.top   = '62.5px';
+            me.style.top   = '63px';
             me.style.width = '100px';
             me.style.left  = ((w - 100) / 2) + 'px';
         }
@@ -96,8 +107,10 @@ window.onload = (function()
     {
         h = name_section.offsetHeight;
         w = name_section.offsetWidth;
+        meTop = ((document.getElementById('name_section').offsetHeight - document.getElementsByClassName('inner')[0].offsetHeight - 150) / 2) + 120;
         
         var links = nav.children;
+        var linkWidth = 0;
         curve     = {xs: [], ys: [], ks: []};
         
         for (var i = 0; i < links.length; i++)
@@ -114,6 +127,7 @@ window.onload = (function()
             
             var y = 0;
             el    = links[i];
+            linkWidth += el.offsetWidth;
             
             do
             {
@@ -127,6 +141,8 @@ window.onload = (function()
         }
         
         window.CSPL.getNaturalKs(curve.xs, curve.ys, curve.ks);
+        
+        linkOverlap = Math.max(0, linkWidth - w + 40);
         
         onscroll();
     });

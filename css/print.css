@@ -30,6 +30,7 @@ h1:not(#intro)
     page-break-after: avoid;
     page-break-inside: avoid;
     clear: both;
+    margin-bottom: 20px;
 }
 
 h2
@@ -93,18 +94,16 @@ section section footer div
     float: right;
 }
 
-#me
+#meHolder
 {
     border-radius: 50%;
     width: 200px;
     float: left;
 }
 
-#meHolder
+#me
 {
-    height: 200px;
-    float: left;
-    width: 200px;
+    display: none;
 }
 
 #name_section
@@ -121,6 +120,7 @@ section section footer div
 #name_section h1
 {
     clear: none !important;
+    page-break-before: avoid !important;
 }
 
 #intro

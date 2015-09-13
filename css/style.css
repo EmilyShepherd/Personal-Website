@@ -39,11 +39,19 @@ nav
     background: #0D47A1;
     background-image: url('/images/chevron.png');
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position-x: left;
+    background-position-y: -15px;
     position: fixed;
     box-shadow: black 0 -11px 21px 9px;
     text-align: left;
     z-index: 3;
+    overflow: hidden;
+}
+
+#linkHolder
+{
+    position: relative;
+    width: 200%;
 }
 
 nav a
@@ -79,14 +87,14 @@ nav a span
     transition: bottom ease 0.3s;
 }
 
+#menu, label[for="menu"]
+{
+    display: none;
+}
+
 nav a:hover span
 {
      bottom: 15px;
-}
-
-nav a.active
-{
-    
 }
 
 h1
@@ -121,12 +129,15 @@ p
     color: white;
     padding-top: 120px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
 }
 
 #name_section .inner
 {
     animation: dropfade 1s;
     position: relative;
+    align-self: center;
 }
 
 #name_section .inner header
@@ -134,7 +145,7 @@ p
     z-index: 1;
 }
 
-#me
+#me, #meHolder
 {
     border-radius: 50%;
     width: 280px;
@@ -143,7 +154,7 @@ p
 
 #meHolder
 {
-    height: 280px;
+    visibility: hidden;
 }
 
 #name_section h1
@@ -227,7 +238,7 @@ section section footer div
     margin: 10px 0;
 }
 
-#education_section
+#education_section, #volunteering_section
 {
     padding: 0;
 }
@@ -261,9 +272,10 @@ section section footer div
     flex-shrink: 0;
 }
 
-#volunteering_section
+#nl_bg
 {
     background: url('/images/nl_bg.png');
+    padding: 30px;
 }
 
 #nightline
