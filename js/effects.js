@@ -8,12 +8,14 @@ window.onload = (function()
     var name_inner    = document.getElementsByClassName('inner')[0];
     var me            = document.getElementById('me');
     var intro_section      = document.getElementById('intro_section');
-    var intro_href    = document.getElementById('intro_href');
     var experience_section = document.getElementById('experience_section');
-    var experience_href    = document.getElementById('experience_href');
     var soton_bg  = document.getElementById('soton');
     var leys_bg  = document.getElementById('theleys');
     var links              = document.getElementsByTagName('a');
+    var nav = document.getElementsByTagName('nav')[0];
+    var volunteering_section = document.getElementById('volunteering_section');
+    var nl_logo              = document.getElementById('nl_logo');
+    var curve    = {xs: [], ys: [], ks: []};
     me.style.zIndex   = 4;
     name_section.style.backgroundAttachment = '';
     
@@ -42,38 +44,37 @@ window.onload = (function()
         
         scrollTo(offset - 180);
     }
+    
+    window.onbeforeprint = (function()
+    {
+        nl_logo.src = '/images/nl_print_logo.png';
+        me.style.position = '';
+    });
+    
+    window.onafterprint = (function()
+    {
+        nl_logo.src = '/images/nightline.png';
+        onscroll();
+    });
 
     var onscroll = window.onscroll = (function()
     {
         var s = window.scrollY;
+        
+        nav.style.backgroundPositionX = CSPL.evalSpline(s, curve.xs, curve.ys, curve.ks) + 'px';
         
         me.style.position = 'fixed';
         
         experience_section.style.backgroundPositionY = (500 + s * 0.6) + 'px';
         soton_bg.style.backgroundPositionY = (s * 0.9) + 'px';
         leys_bg.style.backgroundPositionY = (s * 0.9) + 'px';
+        volunteering_section.style.backgroundPositionY = (s * 0.8) + 'px';
+        nl_logo.style.bottom = Math.max(-100, (s - volunteering_section.offsetTop) * 0.2) + 'px';
         
         if (s < 600)
         {
             name_section.style.backgroundPositionY = (static + s * 0.8) + 'px';
             name_inner.style.top = (s * 0.5) + 'px';
-        }
-        
-        if (s > experience_section.offsetTop - 200)
-        {
-            intro_href.className      = '';
-            experience_href.className = 'active';
-            
-        }
-        else if (s > intro_section.offsetTop - 200)
-        {
-            intro_href.className      = 'active';
-            experience_href.className = '';
-        }
-        else
-        {
-            intro_href.className      = '';
-            experience_href.className = '';
         }
         
         if (s < 500)
@@ -95,6 +96,37 @@ window.onload = (function()
     {
         h = name_section.offsetHeight;
         w = name_section.offsetWidth;
+        
+        var links = nav.children;
+        curve     = {xs: [], ys: [], ks: []};
+        
+        for (var i = 0; i < links.length; i++)
+        {
+            var el = document.getElementById(links[i].href.split('#')[1]);
+            var x  = -130;
+        
+            do
+            {
+                x += el.offsetTop;
+                el = el.offsetParent;
+            }
+            while (el);
+            
+            var y = 0;
+            el    = links[i];
+            
+            do
+            {
+                y += el.offsetLeft;
+                el = el.offsetParent;
+            }
+            while (el);
+            
+            curve.xs.push(x);
+            curve.ys.push(y);
+        }
+        
+        window.CSPL.getNaturalKs(curve.xs, curve.ys, curve.ks);
         
         onscroll();
     });
@@ -138,4 +170,5 @@ window.onload = (function()
     });
     
     console.niceLog('Hi(re me), I\'m Emily.');
+    window.onresize();
 });
