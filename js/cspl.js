@@ -1,4 +1,8 @@
-
+/**
+ * Cubic Spline Interpolator
+ * 
+ * Credit: http://blog.ivank.net/interpolation-with-cubic-splines.html
+ */
 function CSPL(){};
 
 CSPL._gaussJ = {};

@@ -11,12 +11,15 @@ window.onload = (function()
     var me_holder     = document.getElementById('meHolder');
     var intro_section      = document.getElementById('intro_section');
     var experience_section = document.getElementById('experience_section');
+    var volunteering_section = document.getElementById('volunteering_section');
     var soton_bg  = document.getElementById('soton');
     var leys_bg  = document.getElementById('theleys');
     var links              = document.getElementsByTagName('a');
     var nav = document.getElementById('linkHolder');
     var nl_bg = document.getElementById('nl_bg');
+    var susu_bg = document.getElementById('susu_bg');
     var nl_logo              = document.getElementById('nl_logo');
+    var susu_footer = document.getElementById('susu_footer');
     var curve    = {xs: [], ys: [], ks: []};
     var linkOverlap = 0;
     me.style.zIndex   = 4;
@@ -79,12 +82,24 @@ window.onload = (function()
         soton_bg.style.backgroundPositionY = (s * 0.9) + 'px';
         leys_bg.style.backgroundPositionY = (s * 0.9) + 'px';
         nl_bg.style.backgroundPositionY = (s * 0.8) + 'px';
+        susu_bg.style.backgroundPositionY = (s * 0.8) + 'px';
         nl_logo.style.bottom = Math.max(-100, (s - volunteering_section.offsetTop) * 0.2) + 'px';
         
         if (s < experience_section.offsetTop - 200)
         {
             name_section.style.backgroundPositionY = (static + s * 0.8) + 'px';
             name_inner.style.top = (s * 0.5) + 'px';
+        }
+        
+        if (s + h > susu_bg.offsetTop + susu_bg.offsetHeight)
+        {
+            susu_footer.style.position = '';
+            susu_footer.style.bottom   = '';
+        }
+        else
+        {
+            susu_footer.style.position = 'fixed';
+            susu_footer.style.bottom   = Math.min(0, s + h - susu_bg.offsetTop - 30) + 'px';
         }
         
         if (s < intro_section.offsetTop - 200)
@@ -140,6 +155,9 @@ window.onload = (function()
             curve.ys.push(y);
         }
         
+        curve.ys.push(linkWidth);
+        curve.xs.push(document.body.offsetHeight - h);
+        
         window.CSPL.getNaturalKs(curve.xs, curve.ys, curve.ks);
         
         linkOverlap = Math.max(0, linkWidth - w + 40);
@@ -154,9 +172,7 @@ window.onload = (function()
         var diff      = y - start;
         var startTime = Date.now();
         duration      *= 1000;
-        
-        console.log(start);console.log(diff);console.log(startTime);
-        
+                
         function doScroll()
         {
             var time     = (Date.now() - startTime) / duration;

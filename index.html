@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <!--
-Coded With Love
+/**********************************************************************
+ *                                                                    *
+ *                                            .---.                   *
+ *          __.....__      __  __   ___   .--.|   |                   *
+ *      .-''         '.   |  |/  `.'   `. |__||   |.-.          .-    *
+ *     /     .-''"'-.  `. |   .-.  .-.   '.--.|   | \ \        / /    *
+ *    /     /________\   \|  |  |  |  |  ||  ||   |  \ \      / /     *
+ *    |                  ||  |  |  |  |  ||  ||   |   \ \    / /      *
+ *    \    .-------------'|  |  |  |  |  ||  ||   |    \ \  / /       *
+ *     \    '-.____...---.|  |  |  |  |  ||  ||   |     \ `  /        *
+ *      `.             .' |__|  |__|  |__||__||   |      \  /         *
+ *        `''-...... -'                       '---'      / /          *
+ *                                                   |`-' /           *
+ *                                                    '..'            *
+ **********************************************************************/
 -->
 <html>
   <head>
-    <title>Emily Shepherd</title>
+    <title>Emily L. Shepherd</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="/css/style.css" media="screen and (min-width: 781px)" />
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 780px)" />
     <link rel="stylesheet" href="/css/print.css" media="print" />
     
+    <!-- Open Graph and Meta Data -->
     <meta name="description" content="Computer Scientist" />
     <meta property="og:description" content="Computer Scientist" />
     <meta property="og:title" content="Hi, I'm Emily." />
@@ -18,14 +35,14 @@ Coded With Love
     <meta property="og:url" content="http://emilyshepherd.me/" />
     
     <link rel="author" href="https://plus.google.com/111629088428160104525/">
-    
-    <script src="/js/cspl.js"></script>
-    <script src="/js/effects.js"></script>
   </head>
   <body>
     <nav id="top">
+      <!-- Menu Button (for mobiles) -->
       <label for="menu">&nbsp;</label>
       <input type="checkbox" id="menu" />
+      
+      <!-- Links -->
       <div id="linkHolder">
         <a href="#hi" id="hi_href"><span>Hi</span></a>
         <a href="#intro" id="intro_href"><span>Intro</span></a>
@@ -37,7 +54,10 @@ Coded With Love
       </div>
     </nav>
     
+    <!-- Content -->
     <main id="hi">
+      
+      <!-- Hi, I'm Emily. -->
       <section id="name_section">
         <div class="inner">
           <img src="/images/me.jpg" alt="Emily Shepherd" id="meHolder" />
@@ -48,6 +68,8 @@ Coded With Love
           </header>
         </div>
       </section>
+      
+      <!-- ///////////////////////////////////////////////////////// -->
       
       <section id="intro_section" class="band">
         <h1 id="intro">Let me Introduce Myself</h1>
@@ -73,6 +95,8 @@ Coded With Love
           running the Nightline Listening Service and fighting for trans* rights.
         </p>
       </section>
+      
+      <!-- ///////////////////////////////////////////////////////// -->
       
       <section id="experience_section">
         <h1 id="experience">Experience &amp; Portfolio</h1>
@@ -182,6 +206,8 @@ Coded With Love
         </section>
       </section>
       
+      <!-- ///////////////////////////////////////////////////////// -->
+      
       <section id="skills_section" class="band">
         <h1 id="skills">Skills</h1>
         
@@ -259,6 +285,8 @@ Coded With Love
         </div>
       </section>
       
+      <!-- ///////////////////////////////////////////////////////// -->
+      
       <section id="honors_section" class="band">
         <h1 id="awards">Honours and Awards</h1>
         
@@ -266,8 +294,8 @@ Coded With Love
           <section>
             <h2>Netcraft Prize</h2>
             <p>
-              For being in the 10 students of the year 3 cohort at the
-              University of Southampton.
+              For being in the top ten ranking students of the year 3
+              cohort at the University of Southampton.
             </p>
           </section>
 
@@ -311,6 +339,8 @@ Coded With Love
           </section>
         </div>
       </section>
+      
+      <!-- ///////////////////////////////////////////////////////// -->
       
       <section id="volunteering_section">
         <div id="nl_bg">
@@ -362,23 +392,62 @@ Coded With Love
         
         <div id="susu_bg">
           <section>
-            <h2 id="susu">Faculty Officer</h2>
+            <h2 id="susu">Students' Union and Representation</h2>
+            
+            <p>
+              I became involved in student affairs very soon after
+              settling in at university. At first, unofficially, by
+              emailing lecturers as a student on behalf of my cohort to
+              provide feedback and pass on requests. I quickly realised
+              I was doing the job of a course rep, so ran at the end of
+              my second year, and won by a landslide.
+            </p>
+            
+            <p>
+              I was not a course rep long before I was promoted via
+              whole campus election to the position of Faculty Officer,
+              the highest student-held position in the representation
+              system. This made me the head of student representation
+              for my faculty, the Faculty of Physical Sciences and
+              Engineering, covering the departments of Physics,
+              Web Science, Optoelectronics and Electronics and Computer
+              Science.
+            </p>
+            
+            <p>
+              Within the University, this position saw me attend meetings
+              of senior lecturers and professors, to provide a student
+              point of view on strategic decision within the faculty.
+              Within the Union, Faculty Officers hold a seat on Union
+              Council, the highest student decision-making body.
+            </p>
           </section>
+          
+          <div id="susu_footer"></div>
         </div>
+      </section>
+      
+      <!-- ///////////////////////////////////////////////////////// -->
+      
+      <section id="casual_section">
+        <h1 id="casual">Casual Em</h1>
         
+        <p></p>
       </section>
-      
-      <section>
-        <h1>Casual Em</h1>
-      </section>
-      
     </main>
     
     <footer>
+      <!-- Funny joke in 3, 2, 1... -->
       Page Transmitted via
       <a href="https://tools.ietf.org/html/rfc1149">IPoAC</a>
     </footer>
     
+    <!-- Start loading scripts -->
+    <!-- At the end so the page can load first -->
+    <script src="/js/cspl.js"></script>
+    <script src="/js/effects.js"></script>
+    
+    <!-- Analytics -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -387,7 +456,22 @@ Coded With Love
 
       ga('create', 'UA-22782962-2', 'auto');
       ga('send', 'pageview');
-
+    </script>
+    
+    <!-- Google Markup -->
+    <script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Person",
+        "name" : "Emily Shepherd",
+        "url" : "http://emilyshepherd.me",
+        "sameAs" : [
+          "https://plus.google.com/111629088428160104525/",
+          "https://www.facebook.com/EmilyLangdonShepherd",
+          "https://uk.linkedin.com/pub/emily-shepherd/49/21a/57a",
+          "https://twitter.com/EmilyLShepherd"
+        ]
+      }
     </script>
   </body>
 </html>

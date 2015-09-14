@@ -291,6 +291,26 @@ section section footer div
     margin-bottom: 100px;
 }
 
+#susu_bg
+{
+    background: url('/images/susu_bg.png');
+    padding-bottom: 100px;
+}
+
+#susu_footer
+{
+    height: 103px;
+    background: url('/images/susu_footer.png') repeat-x bottom;
+    position: absolute;
+    width: 100%;
+}
+
+#casual_section
+{
+    background: url('/images/russia.jpg') center;
+    background-size: cover;
+}
+
 .sweeb
 {
     font-weight: bold;
