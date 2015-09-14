@@ -3,6 +3,13 @@ window.Em = window.Em || { };
 
 (function(e)
 {
+    var _loaded = false;
+    
+    window.addEventListener('load', (function()
+    {
+        _loaded = true;
+    }));
+    
     e.Parallax = (function(config)
     {
         config         = config           || { };
@@ -77,7 +84,17 @@ window.Em = window.Em || { };
         
         window.addEventListener('scroll', (function()
         {
-            _this.doParallax();
+            if (_loaded)
+            {
+                _this.doParallax();
+            }
+            else
+            {
+                window.addEventListener('load', (function()
+                {
+                    _this.doParallax();
+                }));
+            }
         }));
         
         return this;

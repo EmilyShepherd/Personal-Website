@@ -1,13 +1,16 @@
 
 @import url(https://fonts.googleapis.com/css?family=Karla);
 
-html, body, main
+@media (max-width: 780px)
 {
-    width: 100%;
-    text-align: center;
-    font-family: Karla, sans-serif;
-    margin: 0;
-    font-size: 16px;
+    html, body, main
+    {
+        width: 100%;
+        text-align: center;
+        font-family: Karla, sans-serif;
+        margin: 0;
+        font-size: 16px;
+    }
 }
 
 nav

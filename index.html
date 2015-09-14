@@ -2,16 +2,16 @@
 <!--
 /**********************************************************************
  *                                                                    *
- *                                            .---.                   *
- *          __.....__      __  __   ___   .--.|   |                   *
+ *                                             ___                    *
+ *          __.....__      __  __   ___    __ |   |                   *
  *      .-''         '.   |  |/  `.'   `. |__||   |.-.          .-    *
- *     /     .-''"'-.  `. |   .-.  .-.   '.--.|   | \ \        / /    *
+ *     /     .-''"'-.  `. |   .-.  .-.   | __ |   | \ \        / /    *
  *    /     /________\   \|  |  |  |  |  ||  ||   |  \ \      / /     *
  *    |                  ||  |  |  |  |  ||  ||   |   \ \    / /      *
- *    \    .-------------'|  |  |  |  |  ||  ||   |    \ \  / /       *
- *     \    '-.____...---.|  |  |  |  |  ||  ||   |     \ `  /        *
- *      `.             .' |__|  |__|  |__||__||   |      \  /         *
- *        `''-...... -'                       '---'      / /          *
+ *    \    ._____________'|  |  |  |  |  ||  ||   |    \ \  / /       *
+ *     \    '-.____...;;;.|  |  |  |  |  ||  ||   |     \ `  /        *
+ *      `.             .' |__|  |__|  |__||__||___|      \  /         *
+ *        `''-...... -'                                  / /          *
  *                                                   |`-' /           *
  *                                                    '..'            *
  **********************************************************************/
@@ -61,8 +61,8 @@
       <!-- Hi, I'm Emily. -->
       <section id="name_section" class="parallax" data-parallax-scale="0.8">
         <div class="inner parallax" data-parallax-style="top" data-parallax-scale="0.4">
-          <img src="/images/me.jpg" alt="Emily Shepherd" id="meHolder" />
           <img src="/images/me.jpg" alt="Emily Shepherd" id="me" />
+          <img src="/images/me.jpg" alt="Emily Shepherd" id="meHolder" />
           <header>
             <h1>Hi, I'm Emily.</h1>
             <p>Web Developer | Computer Science Undergraduate</p>
@@ -484,7 +484,8 @@
     <script src="/js/parallax.js"></script>
     
     <script>
-      (new Em.Parallax()).registerListener();
+      if (window.matchMedia('(min-width: 781px)').matches)
+          (new Em.Parallax()).registerListener();
     </script>
     
     <!-- Analytics -->

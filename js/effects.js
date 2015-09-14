@@ -9,9 +9,6 @@
     var curve        = {xs: [], ys: [], ks: []};
     var lStep        = 0;
     
-    me.style.zIndex   = 4;
-    name_section.style.backgroundAttachment = '';
-    
     for (var i = 0; i < links.length; i++)
     {
         var split = links[i].href.split('#');
@@ -64,6 +61,8 @@
         }
         
         // Me Icon
+        
+        if (s === 0) return;
         
         me.style.position = 'fixed';
         

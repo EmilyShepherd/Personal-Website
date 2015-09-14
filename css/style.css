@@ -152,6 +152,12 @@ p
     box-shadow: black 0 0px 21px 0px;
 }
 
+#me
+{
+    z-index: 4;
+    position: absolute;
+}
+
 #meHolder
 {
     visibility: hidden;
