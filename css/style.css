@@ -390,6 +390,11 @@ body > footer
     background-position: -97px -498px;
 }
 
+#github span
+{
+    background-position: -762px -498px;
+}
+
 footer small a, footer small a:visited
 {
     color: white;
