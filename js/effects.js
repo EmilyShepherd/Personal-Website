@@ -78,11 +78,6 @@ window.onload = (function()
         
         me.style.position = 'fixed';
         
-        experience_section.style.backgroundPositionY = (500 + s * 0.6) + 'px';
-        soton_bg.style.backgroundPositionY = (s * 0.9) + 'px';
-        leys_bg.style.backgroundPositionY = (s * 0.9) + 'px';
-        nl_bg.style.backgroundPositionY = (s * 0.8) + 'px';
-        susu_bg.style.backgroundPositionY = (s * 0.8) + 'px';
         nl_logo.style.bottom = Math.max(-100, (s - volunteering_section.offsetTop) * 0.2) + 'px';
         
         if (s < experience_section.offsetTop - 200)

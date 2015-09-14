@@ -98,7 +98,7 @@
       
       <!-- ///////////////////////////////////////////////////////// -->
       
-      <section id="experience_section">
+      <section id="experience_section" class="parallax" data-parallax-scale="0.6">
         <h1 id="experience">Experience &amp; Portfolio</h1>
         
         <section id="spastaff">
@@ -218,7 +218,7 @@
       </section>
       
       <section id="education_section">
-        <div id="soton">
+        <div id="soton" class="parallax" data-parallax-scale="0.9">
           <h1 id="education">Education</h1>
           <section id="courses">
             <header>
@@ -265,7 +265,7 @@
             <div>Engineering Management and Law (MANG3067)</div>
           </section>
         </div>
-        <div id="theleys">
+        <div id="theleys" class="parallax" data-parallax-scale="0.9">
           <section>
             <header>
               <h2>The Leys</h2>
@@ -343,7 +343,7 @@
       <!-- ///////////////////////////////////////////////////////// -->
       
       <section id="volunteering_section">
-        <div id="nl_bg">
+        <div id="nl_bg" class="parallax" data-parallax-scale="0.8">
           <h1 id="volunteering">Volunteering</h1>
 
           <section id="nightline">
@@ -390,7 +390,7 @@
           </section>
         </div>
         
-        <div id="susu_bg">
+        <div id="susu_bg" class="parallax" data-parallax-scale="0.8">
           <section>
             <h2 id="susu">Students' Union and Representation</h2>
             
@@ -429,7 +429,7 @@
       
       <!-- ///////////////////////////////////////////////////////// -->
       
-      <section id="casual_section">
+      <section id="casual_section" class="parallax" data-parallax-scale="0.7">
         <h1 id="casual">Casual Em</h1>
         
         <p></p>
@@ -446,6 +446,11 @@
     <!-- At the end so the page can load first -->
     <script src="/js/cspl.js"></script>
     <script src="/js/effects.js"></script>
+    <script src="/js/parallax.js"></script>
+    
+    <script>
+      (new Em.Parallax()).registerListener();
+    </script>
     
     <!-- Analytics -->
     <script>
