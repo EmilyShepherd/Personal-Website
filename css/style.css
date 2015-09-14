@@ -238,7 +238,7 @@ section section footer div
     margin: 10px 0;
 }
 
-#education_section, #volunteering_section
+#education_section, #volunteering_section, #casual_section
 {
     padding: 0;
 }
@@ -295,6 +295,7 @@ section section footer div
 {
     background: url('/images/susu_bg.png');
     padding-bottom: 103px;
+    border-bottom: 5px solid #ed0677;
 }
 
 #susu_footer
@@ -305,13 +306,90 @@ section section footer div
     width: 100%;
 }
 
-#casual_section
+#walking
+{
+    background: url('/images/snowdonia.jpg') center;
+    background-size: cover;
+    padding: 20px;
+}
+
+#russia
 {
     background: url('/images/russia.jpg') center;
     background-size: cover;
+    padding: 20px;
 }
 
 .sweeb
 {
     font-weight: bold;
+}
+
+body > footer
+{
+    box-shadow: black 0 0px 21px 0px;
+    background: linear-gradient(#6fa5dd, #0D47A1);
+    color: white;
+    padding: 20px;
+}
+
+#social_media a
+{
+    display: inline-block;
+    width: 80px;
+    color: white;
+    text-decoration: none;
+    margin: 25px 18px;
+}
+
+#social_media a span
+{
+    background-image: url('/images/social_media.png');
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: black 4px 4px 20px 0px;
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#googleplus span
+{
+    background-position: -762px -354px;
+}
+
+#instagram span
+{
+    background-position: -984px -354px;
+}
+
+#twitter span
+{
+    background-position: -984px -498px;
+}
+
+#fb span
+{
+    background-position: -984px -211px;
+}
+
+#email span
+{
+    background-position: -319px -211px;
+}
+
+#linkedIn span
+{
+    background-position: -97px -498px;
+}
+
+footer small a, footer small a:visited
+{
+    color: white;
+}
+
+footer small a:hover
+{
+    text-decoration: none;
 }
