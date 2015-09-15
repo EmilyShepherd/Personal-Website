@@ -47,7 +47,7 @@ window.Em = window.Em || { };
                 var bg      = cStyle.backgroundImage;
                 var size    = cStyle.backgroundSize;
                 var img     = new Image();
-
+                
                 if (bg.substr(0, 3) === 'url')
                 {
                     img.src = bg.replace(/url\((['"])?(.*?)\1\)/gi, '$2');
@@ -145,7 +145,7 @@ window.Em = window.Em || { };
         if (wDiff < 0 || hDiff < 0)
         {
             // Width Difference is most, scale it up
-            if (wDiff > hDiff)
+            if (wDiff < hDiff)
             {
                 setWidth(img, el.offsetWidth);
             }
