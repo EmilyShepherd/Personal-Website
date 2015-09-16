@@ -118,12 +118,12 @@ section h1
     font-size: 35px;
 }
 
-section
+section:not(#volunteering_section), #susu_bg
 {
     padding: 20px;
 }
 
-section:not(.band) section
+section:not(.band) section:not(#nightline)
 {
     border: 4px solid #90CAF9;
     background: white;
@@ -148,7 +148,7 @@ section:not(.band) section
     color: black;
 }
 
-section.band section
+section.band section:not(#nightline)
 {
     border: 4px solid #90CAF9;
     box-shadow: none;
@@ -227,9 +227,36 @@ main > section:not(.band):not(#name_section)
     align-self: center;
 }
 
+#nl_bg
+{
+    background: url('/images/nl_bg.png') fixed;
+    padding: 30px;
+}
+
+#nightline
+{
+    color: white;
+}
+
 #nl_logo
 {
     width: 100%;
+}
+
+#susu_bg
+{
+    background: url('/images/susu_bg.png') fixed;
+    padding-bottom: 103px;
+    border-bottom: 5px solid #ed0677;
+}
+
+#susu_footer
+{
+    height: 103px;
+    background: url('/images/susu_footer.png') repeat-x bottom;
+    position: absolute;
+    width: 100%;
+    left: 0px;
 }
 
 .sweeb
