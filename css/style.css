@@ -326,6 +326,15 @@ section section footer div
     margin: 10px 0;
 }
 
+.skillHolder span
+{
+    display: inline-block;
+    height: 190px;
+    width: 162px;
+    margin: 20px;
+    font-weight: bold;
+}
+
 #education_section, #volunteering_section, #casual_section
 {
     padding: 0;
