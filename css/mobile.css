@@ -22,10 +22,15 @@ nav
     top: 0px;
     box-shadow: black 0 -11px 21px 9px;
     text-align: left;
-    z-index: 3;
+    z-index: 4;
 }
 
-nav a
+#linkHolder
+{
+    display: none;
+}
+
+#menuBar a
 {
     display: block;
     color: white;
@@ -33,7 +38,7 @@ nav a
     font-size: 18px;
     text-decoration: none;
     text-align: center;
-    padding: 20px;    
+    padding: 10px;    
 }
 
 label[for="menu"]
@@ -45,6 +50,7 @@ label[for="menu"]
     height: 70px;
     width: 70px;
     background: url('/images/menu.png') no-repeat center;
+    z-index: 6;
 }
 
 #menu
@@ -52,12 +58,12 @@ label[for="menu"]
     display: none;
 }
 
-#menu:checked ~ #linkHolder
+#menu:checked ~ #menuBar
 {
     left: 0px;
 }
 
-#linkHolder
+#menuBar
 {
     width: 200px;
     position: fixed;
@@ -67,7 +73,37 @@ label[for="menu"]
     transition: left ease 0.3s;
     box-shadow: black -11px 16px 21px 9px;
     background: #95c9f3;
-    z-index: 1;
+    z-index: 3;
+    padding-top: 20px;
+    overflow-y: scroll;
+}
+
+#menu:checked ~ .coverAll
+{
+    display: block;
+}
+
+.coverAll
+{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: black;
+    top: 0px;
+    left: 0px;
+    display: none;
+    opacity: 0.3;
+    z-index: 3;
+}
+
+#sectionTitle
+{
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 7;
+    color: white;
+    font-size: 30px;
 }
 
 .band h1
@@ -96,6 +132,7 @@ section:not(.band) section
     box-shadow: black 0 0px 21px 0px;
     box-sizing: border-box;
     margin: 10px 0;
+    width: 100%;
 }
 
 .band

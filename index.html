@@ -48,10 +48,6 @@
   </head>
   <body>
     <nav id="top">
-      <!-- Menu Button (for mobiles) -->
-      <label for="menu">&nbsp;</label>
-      <input type="checkbox" id="menu" />
-      
       <!-- Links -->
       <div id="linkHolder">
         <a href="#hi" id="hi_href"><span>Hi</span></a>
@@ -64,6 +60,25 @@
         <a href="#casual"><span>Casual Em</span></a>
       </div>
     </nav>
+    
+    <!-- Menu Button (for mobiles) -->
+    <label for="menu">&nbsp;</label>
+    <input type="checkbox" id="menu" />
+    <div class="coverAll" onclick="document.getElementById('menu').checked=false;"></div>
+    
+    <span id="sectionTitle">Emily Shepherd</span>
+
+    <!-- Links -->
+    <div id="menuBar">
+      <a href="#hi" id="hi_href"><span>Hi</span></a>
+      <a href="#intro" id="intro_href"><span>Intro</span></a>
+      <a href="#experience" id="experience_href"><span>Experience & Portfolio</span></a>
+      <a href="#skills" id="skills_href"><span>Skills</span></a>
+      <a href="#education"><span>Education</span></a>
+      <a href="#awards"><span>Awards</span></a>
+      <a href="#volunteering"><span>Volunteering</span></a>
+      <a href="#casual"><span>Casual Em</span></a>
+    </div>
     
     <!-- Content -->
     <main id="hi">

@@ -21,6 +21,8 @@
                 
                 var el = document.getElementById(this.href.split('#')[1]);
                 
+                document.getElementById('menu').checked = false;
+                
                 scrollTo(el.winOffsetY - 180);
             });
         }
@@ -28,9 +30,7 @@
 
     window.onscroll = (function()
     {
-        if (window.matchMedia('(max-width: 780px)').matches) return;
-        
-        var s = window.scrollY;
+        var s = (window.matchMedia('(max-width: 780px)').matches) ? 0 : window.scrollY;
         
         // LINKS
         var lOffset     = lStep * s;
@@ -124,10 +124,23 @@
         
         window.CSPL.getNaturalKs(curve.xs, curve.ys, curve.ks);
         
+        for (var i in curve.ks)
+        {
+            curve.ks[i] = Math.max(0, curve.ks[i]);
+        }
+        
+        window._curve = curve;
+        
         var over = Math.max(0, linkW - w + 40);
+        
+        if (window.matchMedia('(max-width: 1115px)').matches)
+        {
+            over += 100;
+        }
+        
         lStep    = over / (document.body.offsetHeight - window.innerHeight);
         
-        window.onscroll();
+        window.scrollBy(0, 1);
     });
     
     function scrollTo(y, duration)

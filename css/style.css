@@ -97,6 +97,79 @@ nav a:hover span
      bottom: 15px;
 }
 
+@media (max-width: 1115px)
+{
+    nav
+    {
+        padding-right: 90px;
+    }
+    
+    #menuBar a
+    {
+        display: block;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px;    
+    }
+
+    label[for="menu"]
+    {
+        display: block;
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        height: 90px;
+        width: 90px;
+        background: url('/images/menu.png') #0D47A1 no-repeat center;
+        z-index: 5;
+    }
+
+    #menu
+    {
+        display: none;
+    }
+
+    #menu:checked ~ #menuBar
+    {
+        left: 0px;
+    }
+
+    #menuBar
+    {
+        width: 200px;
+        position: fixed;
+        top: 90px;
+        bottom: 0px;
+        left: -220px;
+        transition: left ease 0.3s;
+        box-shadow: black -11px 16px 21px 9px;
+        background: #95c9f3;
+        z-index: 3;
+        padding-top: 20px;
+    }
+
+    #menu:checked ~ .coverAll
+    {
+        display: block;
+    }
+
+    .coverAll
+    {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        background: black;
+        top: 0px;
+        left: 0px;
+        display: none;
+        opacity: 0.3;
+        z-index: 3;
+    }
+}
+
 h1
 {
     font-size: 60px;
