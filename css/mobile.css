@@ -33,12 +33,21 @@ nav
 #menuBar a
 {
     display: block;
-    color: white;
+    color: #0D47A1;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
     text-align: center;
-    padding: 10px;    
+    padding: 15px;
+}
+
+#menuBar a:not(:last-of-type):after
+{
+    display: block;
+    position: absolute;
+    content: "▾";
+    width: 100%;
+    left: 0px;
 }
 
 label[for="menu"]
@@ -65,11 +74,11 @@ label[for="menu"]
 
 #menuBar
 {
-    width: 200px;
+    width: 70%;
     position: fixed;
     top: 90px;
     bottom: 0px;
-    left: -220px;
+    left: -75%;
     transition: left ease 0.3s;
     box-shadow: black -11px 16px 21px 9px;
     background: #95c9f3;
@@ -99,11 +108,11 @@ label[for="menu"]
 #sectionTitle
 {
     position: fixed;
-    top: 25px;
-    left: 25px;
+    top: 32px;
+    left: 30px;
     z-index: 7;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .band h1
