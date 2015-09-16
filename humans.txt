@@ -1,0 +1,5 @@
+
+/* SITE */
+    Developer: Emily Langdon Shepherd
+    Email: emily@emilyshepherd.me
+    Site: http://emilyshepherd.me/
