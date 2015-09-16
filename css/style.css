@@ -395,6 +395,11 @@ body > footer
     background-position: -762px -498px;
 }
 
+#gravatar span
+{
+    background-position: -319px -354px;
+}
+
 footer small a, footer small a:visited
 {
     color: white;
