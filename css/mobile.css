@@ -236,6 +236,20 @@ main > section:not(.band):not(#name_section)
     align-self: center;
 }
 
+.skillHolder span
+{
+    display: inline-block;
+    height: 150px;
+    width: 120px;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.skillHolder span img
+{
+    width: 120px;
+}
+
 #nl_bg
 {
     background: url('/images/nl_bg.png') fixed;
