@@ -30,7 +30,24 @@
 
     window.onscroll = (function()
     {
-        var s = (window.matchMedia('(max-width: 780px)').matches) ? 0 : window.scrollY;
+        var s = window.scrollY;
+        
+        if (window.matchMedia('(max-width: 780px)').matches)
+        {
+            var h1s = document.getElementsByTagName('h1');
+            var last = null;
+            
+            for (var i = 0; i < h1s.length; i++)
+            {
+                if (h1s[i].winOffsetY - 200 > s)
+                {
+                    document.getElementById('sectionTitle').innerText = last.innerText;
+                    return;
+                }
+                
+                last = h1s[i];
+            }
+        }
         
         // LINKS
         var lOffset     = lStep * s;
