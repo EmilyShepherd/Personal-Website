@@ -32,7 +32,7 @@
     {
         var s = window.scrollY;
         
-        if (window.matchMedia('(max-width: 780px)').matches)
+        if (w < 780)
         {
             var h1s = document.getElementsByTagName('h1');
             var last = null;
@@ -41,12 +41,15 @@
             {
                 if (h1s[i].winOffsetY - 200 > s)
                 {
-                    document.getElementById('sectionTitle').innerText = last.innerText;
-                    return;
+                    if (last)
+                        document.getElementById('sectionTitle').innerText = last.innerText;
+                    break;
                 }
                 
                 last = h1s[i];
             }
+            
+            s = 0;
         }
         
         // LINKS

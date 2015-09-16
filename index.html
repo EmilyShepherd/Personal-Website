@@ -511,8 +511,7 @@
     <script src="/js/parallax.js"></script>
     
     <script>
-      if (window.matchMedia('(min-width: 781px)').matches)
-          (new Em.Parallax()).registerListener();
+      (new Em.Parallax({"wCutOff" : 780 })).registerListener();
     </script>
     
     <!-- Analytics -->

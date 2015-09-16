@@ -16,12 +16,18 @@ window.Em = window.Em || { };
         this.className = config.className || 'parallax';
         this.scale     = config.scale     || 0.8;
         this.style     = config.style     || 'backgroundPositionY';
+        this.wCutOff   = config.wCutOff   || 0;
     });
     
     e.Parallax.prototype.doParallax = (function(s)
     {
         s       = s || window.scrollY;
         var els = document.getElementsByClassName(this.className);
+        
+        if (document.body.offsetWidth < this.wCutOff)
+        {
+            s = 0;
+        }
         
         for (var i = 0; i < els.length; i++)
         {
