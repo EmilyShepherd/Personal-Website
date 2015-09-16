@@ -115,6 +115,7 @@ section h1
 {
     color: white;
     margin-top: 0;
+    font-size: 35px;
 }
 
 section
@@ -212,12 +213,12 @@ main > section:not(.band):not(#name_section)
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    background: radial-gradient(circle closest-side, #95c9f3, #0d47a1);
+    background: url('/images/bg.png') center fixed;
 }
 
 #name_section h1
 {
-    font-size: 25px;
+    font-size: 35px;
 }
 
 #name_section .inner
@@ -229,4 +230,88 @@ main > section:not(.band):not(#name_section)
 #nl_logo
 {
     width: 100%;
+}
+
+.sweeb
+{
+    font-weight: bold;
+}
+
+body > footer
+{
+    box-shadow: black 0 0px 21px 0px;
+    background: linear-gradient(#6fa5dd, #0D47A1);
+    color: white;
+    padding: 20px;
+}
+
+#social_media a
+{
+    display: inline-block;
+    width: 80px;
+    color: white;
+    text-decoration: none;
+    margin: 25px 18px;
+}
+
+#social_media a span
+{
+    background-image: url('/images/social_media.png');
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: black 4px 4px 20px 0px;
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#googleplus span
+{
+    background-position: -762px -354px;
+}
+
+#instagram span
+{
+    background-position: -984px -354px;
+}
+
+#twitter span
+{
+    background-position: -984px -498px;
+}
+
+#fb span
+{
+    background-position: -984px -211px;
+}
+
+#email span
+{
+    background-position: -319px -211px;
+}
+
+#linkedIn span
+{
+    background-position: -97px -498px;
+}
+
+#github span
+{
+    background-position: -762px -498px;
+}
+
+#gravatar span
+{
+    background-position: -319px -354px;
+}
+
+footer small a, footer small a:visited
+{
+    color: white;
+}
+
+footer small a:hover
+{
+    text-decoration: none;
 }
