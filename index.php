@@ -1,25 +1,10 @@
+<?php
+ob_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>Emily L. Shepherd</title>
-    <!--
-    /**********************************************************************
-     *                                                                    *
-     *                                             ___                    *
-     *          __.....__      __  __   ___    __ |   |                   *
-     *      .-''         '.   |  |/  `.'   `. |__||   |.-.          .-    *
-     *     /     .-''"'-.  `. |   .-.  .-.   | __ |   | \ \        / /    *
-     *    /     /________\   \|  |  |  |  |  ||  ||   |  \ \      / /     *
-     *    |                  ||  |  |  |  |  ||  ||   |   \ \    / /      *
-     *    \    ._____________'|  |  |  |  |  ||  ||   |    \ \  / /       *
-     *     \    '-.____...;;;.|  |  |  |  |  ||  ||   |     \ `  /        *
-     *      `.             .' |__|  |__|  |__||__||___|      \  /         *
-     *        `''-...... -'                                  / /          *
-     *                                                   |`-' /           *
-     *                                                    '..'            *
-     **********************************************************************/
-    -->
     
     <!-- Styling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
@@ -662,3 +647,33 @@
     </script>
   </body>
 </html>
+<?php
+$content = ob_get_contents();
+ob_end_clean();
+
+$content = preg_replace('/<!--(.*?)-->/', '', $content);
+$content = preg_replace('/[\r\n]/', ' ', $content);
+$content = preg_replace('/ +/', ' ', $content);
+$content = preg_replace('/(!?<=\:) (?=\<[^a])|(?<=[^a]\>) | (?=\/>)/', '', $content);
+$content = preg_replace('/(?<=\<\/a>) (?=\<)|(?<=\>) (?=\<a\>)/', '', $content);
+
+$etag = md5($content);
+
+if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && $_SERVER['HTTP_IF_NONE_MATCH'] === $etag)
+{
+    header('HTTP/1.1 304 Not Modified');
+    exit;
+}
+
+header('ETag: ' . $etag);
+
+if (strpos($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') !== false)
+{
+    header('Content-Encoding: gzip');
+    $content = gzencode($content);
+}
+
+header('Content-Length: ' . strlen($content));
+
+echo $content;
+flush();
