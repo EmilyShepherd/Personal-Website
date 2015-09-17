@@ -366,9 +366,10 @@ window.Em = window.Em || { };
 
                 var start  = (els[i].offsetHeight - img.height) / 2,
                     midP   = vPos + els[i].offsetHeight / 2,
-                    offset = (s + window.innerHeight / 2 - midP) * scale;
+                    offset = (s + window.innerHeight / 2 - midP) * scale,
+                    x      = (document.body.offsetWidth - img.width) / 2;
 
-                els[i].style[style] = start + offset + 'px';
+                els[i].style.backgroundPosition = x + 'px ' + (start + offset) + 'px';
             }
         }
     });
