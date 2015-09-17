@@ -1,5 +1,10 @@
 <?php
-ob_start(); ?>
+ob_start();
+
+$css = glob('*.css'); $css = $css[0];
+$js  = glob('*.js');  $js  = $js[0];
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +14,7 @@ ob_start(); ?>
     <!-- Styling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/<?=$css?>" />
     
     <meta name="description" content="Hi, I'm Emily. I am a 4th Computer Science student at the University of Southampton, on track for first class honours." />
     <meta name="keywords" content="Web Developer, Computer, HTML, CSS, PHP, Python, JavaScript, JS, Apache, HTTP" />
@@ -613,7 +618,7 @@ ob_start(); ?>
     
     <!-- Start loading scripts -->
     <!-- At the end so the page can load first -->
-    <script src="/js.js"></script>
+    <script src="/<?=$js?>"></script>
     
     <script>
       (new Em.Parallax({"wCutOff" : 780 })).registerListener();
