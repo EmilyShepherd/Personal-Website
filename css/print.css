@@ -1,151 +1,149 @@
 
 
-@import url(https://fonts.googleapis.com/css?family=Karla);
-
 html, body, main
 {
     font-family: Karla, sans-serif;
     font-size: 20px;
 }
 
-nav
+nav, #me, #intro, #menu, #menuBar, #sectionTitle, main ~ footer
 {
     display: none;
 }
 
-section section
-{
-    page-break-inside: avoid;
-}
+/** TEXT **/
+    h1
+    {
+        font-size: 60px;
+        margin: 0px;
+    }
 
-h1
-{
-    font-size: 60px;
-    margin: 0px;
-}
+    h1:not(#intro)
+    {
+        page-break-before: always;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        clear: both;
+        margin-bottom: 20px;
+    }
 
-h1:not(#intro)
-{
-    page-break-before: always;
-    page-break-after: avoid;
-    page-break-inside: avoid;
-    clear: both;
-    margin-bottom: 20px;
-}
+    h2
+    {
+        font-size: 30px;
+        margin: 0px;
+    }
 
-h2
-{
-    font-size: 30px;
-    margin: 0px;
-}
+    header p
+    {
+        margin-top: 20px;
+        font-size: 30px;
+    }
 
-header p
-{
-    margin-top: 20px;
-    font-size: 30px;
-}
+    p
+    {
+        font-size: 20px;
+    }
 
-p
-{
-    font-size: 20px;
-}
+    a[href^="#"], a[href*=":"]
+    {
+        color: black;
+        text-decoration: none;
+    }
 
-a[href^="#"], a[href*=":"]
-{
-    color: black;
-    text-decoration: none;
-}
+    a[href*=":"]
+    {
+        font-style: italic;
+    }
 
-a[href*=":"]
-{
-    font-style: italic;
-}
+    a[href*=":"]:after
+    {
+        content: " [" attr(href) "]";
+        font-style: normal;
+    }
 
-a[href*=":"]:after
-{
-    content: " [" attr(href) "]";
-    font-style: normal;
-}
+    .position:after
+    {
+        content: " | "
+    }
+    
+    .sweeb
+    {
+        font-weight: bold;
+    }
 
-section section header span
-{
-    font-size: 18px;
-    color: #0D47A1;
-}
+/** SECTIONS **/
+    section section
+    {
+        page-break-inside: avoid;
+    }
 
-.position:after
-{
-    content: " | "
-}
+    section section header span
+    {
+        font-size: 18px;
+        color: #0D47A1;
+    }
 
-section section footer h3, section section footer p
-{
-    display: inline;
-    font-size: 20px;
-}
+    section section footer h3, section section footer p
+    {
+        display: inline;
+        font-size: 20px;
+    }
 
-section section footer div
-{
-    margin: 10px 0;
-}
+    section section footer div
+    {
+        margin: 10px 0;
+    }
 
-.pic_area img
-{
-    float: right;
-}
+    .pic_area img
+    {
+        float: right;
+    }
 
-#meHolder
-{
-    border-radius: 50%;
-    width: 200px;
-    float: left;
-}
+/** NAME SECTION **/
+    #meHolder
+    {
+        border-radius: 50%;
+        width: 200px;
+        float: left;
+    }
 
-#me
-{
-    display: none;
-}
+    #name_section
+    {
+        text-align: center;
+    }
 
-#name_section
-{
-    text-align: center;
-}
+    #name_section header
+    {
+        position: relative;
+        top: 30px;
+    }
 
-#name_section header
-{
-    position: relative;
-    top: 30px;
-}
+    #name_section h1
+    {
+        clear: none !important;
+        page-break-before: avoid !important;
+    }
 
-#name_section h1
-{
-    clear: none !important;
-    page-break-before: avoid !important;
-}
+/** INTRO SECTION **/
+    #intro_section
+    {
+        clear: both;
+        margin-top: 120px;
+    }
 
-#intro
-{
-    display: none;
-}
+/** SKILLS SECTION **/
+    .skillHolder span
+    {
+        display: inline-block;
+        height: 190px;
+        width: 162px;
+        margin: 20px;
+        font-weight: bold;
+    }
 
-#intro_section
-{
-    clear: both;
-    margin-top: 120px;
-}
-
-#nl_logo
-{
-    width: 200px;
-    float: right;
-}
-
-main ~ footer
-{
-    display: none;
-}
-
-.sweeb
-{
-    font-weight: bold;
-}
+/** VOLUNTEERING **/
+    #nl_logo
+    {
+        width: 200px;
+        float: right;
+    }

@@ -1,5 +1,4 @@
 
-@import url(https://fonts.googleapis.com/css?family=Karla);
 
 @media (max-width: 780px)
 {
@@ -236,19 +235,159 @@ main > section:not(.band):not(#name_section)
     align-self: center;
 }
 
-.skillHolder span
-{
-    display: inline-block;
-    height: 150px;
-    width: 120px;
-    margin: 20px;
-    font-weight: bold;
-}
 
-.skillHolder span img
-{
-    width: 120px;
-}
+/** SKILLS SECTION **/
+    .skillHolder div
+    {
+        display: inline-block;
+        height: 190px;
+        width: 162px;
+        margin: 20px;
+        font-weight: bold;
+    }
+
+    .skillHolder div span
+    {
+        display: block;
+        height: 162px;
+        width: 162px;
+        background: url('/images/sprites.png') no-repeat;
+    }
+    
+    #aws span
+    {
+        background-position: -324px -162px;
+    }
+    
+    #apache span
+    {
+        background-position: -486px -162px;
+    }
+    
+    #bash span
+    {
+        background-position: -648px -162px;
+    }
+    
+    #braspag span
+    {
+        background-position: -810px -162px;
+    }
+    
+    #c span
+    {
+        background-position: 0px -324px;
+    }
+    
+    #cpp span
+    {
+        background-position: -162px -324px;
+    }
+    
+    #css span
+    {
+        background-position: -324px -324px;
+    }
+    
+    #epqd span
+    {
+        background-position: -486px -324px;
+    }
+    
+    #gcp span
+    {
+        background-position: -648px -324px;
+    }
+    
+    #git span
+    {
+        background-position: -810px -324px;
+    }
+    
+    #html span
+    {
+        background-position: 0px -486px;
+    }
+    
+    #java span
+    {
+        background-position: -162px -486px;
+    }
+    
+    #js span
+    {
+        background-position: -324px -486px;
+    }
+    
+    #linux span
+    {
+        background-position: -486px -486px;
+    }
+    
+    #mysql span
+    {
+        background-position: -648px -486px;
+    }
+    
+    #oauth span
+    {
+        background-position: -810px -486px;
+    }
+    
+    #paypal span
+    {
+        background-position: 0px -648px;
+    }
+    
+    #perl span
+    {
+        background-position: -162px -648px;
+    }
+    
+    #ps span
+    {
+        background-position: -324px -648px;
+    }
+    
+    #php span
+    {
+        background-position: -486px -648px;
+    }
+    
+    #putty span
+    {
+        background-position: -648px -648px;
+    }
+    
+    #python span
+    {
+        background-position: -810px -648px;
+    }
+    
+    #sagepay span
+    {
+        background-position: 0px -810px;
+    }
+    
+    #scheme span
+    {
+        background-position: -162px -810px;
+    }
+    
+    #sql span
+    {
+        background-position: -324px -810px;
+    }
+    
+    #winscp span
+    {
+        background-position: -486px -810px;
+    }
+    
+    #xampp span
+    {
+        background-position: -648px -810px;
+    }
 
 #nl_bg
 {
@@ -287,81 +426,77 @@ main > section:not(.band):not(#name_section)
     font-weight: bold;
 }
 
-body > footer
-{
-    box-shadow: black 0 0px 21px 0px;
-    background: linear-gradient(#6fa5dd, #0D47A1);
-    color: white;
-    padding: 20px;
-}
+/** FOOTER **/
+    body > footer
+    {
+        box-shadow: black 0 0px 21px 0px;
+        background: linear-gradient(#6fa5dd, #0D47A1);
+        color: white;
+        padding: 20px;
+    }
 
-#social_media a
-{
-    display: inline-block;
-    width: 80px;
-    color: white;
-    text-decoration: none;
-    margin: 25px 18px;
-}
+    #social_media a
+    {
+        display: inline-block;
+        width: 80px;
+        color: white;
+        text-decoration: none;
+        margin: 25px 18px;
+    }
 
-#social_media a span
-{
-    background-image: url('/images/social_media.png');
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    box-shadow: black 4px 4px 20px 0px;
-    width: 80px;
-    height: 80px;
-    display: block;
-    margin-bottom: 10px;
-}
+    #social_media a span
+    {
+        background-image: url('/images/sprites.png');
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        box-shadow: black 4px 4px 20px 0px;
+        width: 80px;
+        height: 80px;
+        display: block;
+        margin-bottom: 10px;
+    }
 
-#googleplus span
-{
-    background-position: -762px -354px;
-}
+    #googleplus span
+    {
+        background-position: -324px 0px;
+    }
 
-#instagram span
-{
-    background-position: -984px -354px;
-}
+    #instagram span
+    {
+        background-position: -648px 0px;
+    }
 
-#twitter span
-{
-    background-position: -984px -498px;
-}
+    #twitter span
+    {
+        background-position: -162px 0px;
+    }
 
-#fb span
-{
-    background-position: -984px -211px;
-}
+    #fb span
+    {
+        background-position: 0px 0px;
+    }
 
-#email span
-{
-    background-position: -319px -211px;
-}
+    #email span
+    {
+        background-position: 0px -162px;
+    }
 
-#linkedIn span
-{
-    background-position: -97px -498px;
-}
+    #linkedIn span
+    {
+        background-position: -810px 0px;
+    }
 
-#github span
-{
-    background-position: -762px -498px;
-}
+    #github span
+    {
+        background-position: -162px 0px;
+    }
 
-#gravatar span
-{
-    background-position: -319px -354px;
-}
+    #gravatar span
+    {
+        background-position: -486px 0px;
+    }
 
-footer small a, footer small a:visited
-{
-    color: white;
-}
-
-footer small a:hover
-{
-    text-decoration: none;
-}
+    footer small a, footer small a:visited
+    {
+        color: white;
+    }
