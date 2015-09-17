@@ -659,8 +659,13 @@ ob_end_clean();
 $content = preg_replace('/<!--(.*?)-->/', '', $content);
 $content = preg_replace('/[\r\n]/', ' ', $content);
 $content = preg_replace('/ +/', ' ', $content);
-$content = preg_replace('/(!?<=\:) (?=\<[^a])|(?<=[^a]\>) | (?=\/>)/', '', $content);
-$content = preg_replace('/(?<=\<\/a>) (?=\<)|(?<=\>) (?=\<a\>)/', '', $content);
+$content = preg_replace('/((?<=[^:]) (?=<[^a]))|((?<=[^a]>) )|( (?=\/>))/', '', $content);
+$content = preg_replace('/(?<=<\/a>) (?=<)|(?<=>) (?=<a\/>)/', '', $content);
+$content = preg_replace_callback('/<script.*?>.*?<\/script>/',
+    (function($matches)
+    {
+        return preg_replace('/(?<=[:,{}\(\)\[\]]) | (?=[:,{}\(\)\[\]])/', '', $matches[0]);
+    }), $content);
 
 $etag = md5($content);
 
