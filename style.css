@@ -1,0 +1,815 @@
+/**
+ *
+ */
+
+@keyframes dropfade
+{
+    from
+    {
+        opacity: 0;
+        top: 100px;
+    }
+
+    to
+    {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+/** TEXT **/
+    @media print, (min-width: 781px)
+    {
+        html
+        {
+            font-family: Karla, sans-serif;
+            font-size: 20px;
+        }
+        
+        h1
+        {
+            font-size: 60px;
+            margin: 0px;
+        }
+
+        h2
+        {
+            font-size: 30px;
+            margin: 0px;
+        }
+
+        header p
+        {
+            margin-top: 20px;
+            font-size: 30px;
+        }
+    }
+    
+    .sweeb
+    {
+        font-weight: bold;
+    }
+    
+    .position:after
+    {
+        content: " | "
+    }
+
+@media screen
+{
+    html, body, main
+    {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    /** SECTIONS **/
+        section h1
+        {
+            color: white;
+        }
+
+        .band
+        {
+            box-shadow: black 0 0px 21px 0px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .band h1
+        {
+            color: black;
+        }
+
+        /* Std subsection */
+        section:not(.band) section:not(#nightline)
+        {
+            border: 4px solid #90CAF9;
+            background: white;
+            display: inline-block;
+            width: 650px;
+            margin: 20px;
+            padding: 10px;
+            text-align: left;
+            box-shadow: black 0 0px 21px 0px;
+            box-sizing: border-box;
+        }
+
+        section section header span
+        {
+            font-size: 18px;
+            color: #0D47A1;
+        }
+
+        .pic_area
+        {
+            text-align: center;
+            height: 75px;
+        }
+
+        section section footer h3, section section footer p
+        {
+            display: inline;
+            font-size: 20px;
+        }
+
+        section section footer div
+        {
+            margin: 10px 0;
+        }
+
+        /* Band subsection */
+        section.band section
+        {
+            border: 4px solid #90CAF9;
+            width: 300px;
+            display: inline-block;
+            background: #0D47A1;
+            text-align: center;
+            color: white;
+            margin: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Multiple Bg sections */
+        #education_section, #volunteering_section, #casual_section
+        {
+            padding: 0 !important;
+        }
+
+    /** NAV BAR **/
+        nav
+        {
+            width: 100%;
+            height: 90px;
+            background: #0D47A1;
+            position: fixed;
+            box-shadow: black 0 -11px 21px 9px;
+            text-align: left;
+            z-index: 4;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 781px)
+        {
+            nav
+            {
+                background-image: url('/images/chevron.png');
+                background-repeat: no-repeat;
+                background-position-x: left;
+                background-position-y: -15px;
+            }
+            
+            #linkHolder
+            {
+                position: relative;
+                width: 200%;
+            }
+            
+            nav a
+            {
+                display: inline-block;
+                color: white;
+                font-weight: bold;
+                font-size: 22px;
+                text-decoration: none;
+                text-align: center;
+                padding: 0 20px;
+                height: 100%;
+                position: relative;
+            }
+
+            nav a:not(:last-of-type):after
+            {
+                display: block;
+                position: absolute;
+                top: 0px;
+                right: -10px;
+                content: ">";
+                height: 100%;
+                padding-top: 30px;
+            }
+
+            nav a span
+            {
+                display: block;
+                margin-top: 30px;
+                position: relative;
+                bottom: 0px;
+                transition: bottom ease 0.3s;
+            }
+
+            nav a:hover span
+            {
+                 bottom: 15px;
+            }
+        }
+
+    /** SIDE BAR **/
+        #menu, label[for="menu"]
+        {
+            display: none;
+        }
+
+        @media (max-width: 1115px)
+        {
+            #menuBar a
+            {
+                display: block;
+                color: #0D47A1;
+                font-weight: bold;
+                font-size: 18px;
+                text-decoration: none;
+                text-align: center;
+                padding: 10px;    
+            }
+
+            #menuBar a:not(:last-of-type):after
+            {
+                display: block;
+                position: absolute;
+                content: "▾";
+                width: 100%;
+                left: 0px;
+            }
+
+            label[for="menu"]
+            {
+                display: block;
+                position: fixed;
+                right: 0px;
+                top: 0px;
+                height: 90px;
+                width: 90px;
+                background: url('/images/menu.png') #0D47A1 no-repeat center;
+                z-index: 5;
+            }
+
+            #menu
+            {
+                display: none;
+            }
+
+            #menu:checked ~ #menuBar
+            {
+                left: 0px;
+            }
+
+            #menuBar
+            {
+                width: 300px;
+                position: fixed;
+                top: 90px;
+                bottom: 0px;
+                left: -320px;
+                transition: left ease 0.3s;
+                box-shadow: black -11px 16px 21px 9px;
+                background: #95c9f3;
+                z-index: 3;
+                padding-top: 20px;
+            }
+
+            #menu:checked ~ .coverAll
+            {
+                display: block;
+            }
+
+            .coverAll
+            {
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                background: black;
+                top: 0px;
+                left: 0px;
+                display: none;
+                opacity: 0.3;
+                z-index: 2;
+            }
+        }
+
+    /** NAME SECTION **/
+        #name_section
+        {
+            background: url('/images/bg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            padding-top: 120px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+
+        #name_section .inner
+        {
+            animation: dropfade 1s;
+            position: relative;
+            align-self: center;
+        }
+
+        #name_section .inner header
+        {
+            z-index: 1;
+        }
+
+        #me, #meHolder
+        {
+            border-radius: 50%;
+            width: 280px;
+            box-shadow: black 0 0px 21px 0px;
+        }
+
+    /** SKILLS SECTION **/
+        .skillHolder div
+        {
+            display: inline-block;
+            height: 190px;
+            width: 162px;
+            margin: 20px;
+            font-weight: bold;
+        }
+
+        .skillHolder div span
+        {
+            display: block;
+            height: 162px;
+            width: 162px;
+            background: url('/images/sprites.png') no-repeat;
+        }
+
+        #aws span
+        {
+            background-position: -324px -162px;
+        }
+
+        #apache span
+        {
+            background-position: -486px -162px;
+        }
+
+        #bash span
+        {
+            background-position: -648px -162px;
+        }
+
+        #braspag span
+        {
+            background-position: -810px -162px;
+        }
+
+        #c span
+        {
+            background-position: 0px -324px;
+        }
+
+        #cpp span
+        {
+            background-position: -162px -324px;
+        }
+
+        #css span
+        {
+            background-position: -324px -324px;
+        }
+
+        #epqd span
+        {
+            background-position: -486px -324px;
+        }
+
+        #gcp span
+        {
+            background-position: -648px -324px;
+        }
+
+        #git span
+        {
+            background-position: -810px -324px;
+        }
+
+        #html span
+        {
+            background-position: 0px -486px;
+        }
+
+        #java span
+        {
+            background-position: -162px -486px;
+        }
+
+        #js span
+        {
+            background-position: -324px -486px;
+        }
+
+        #linux span
+        {
+            background-position: -486px -486px;
+        }
+
+        #mysql span
+        {
+            background-position: -648px -486px;
+        }
+
+        #oauth span
+        {
+            background-position: -810px -486px;
+        }
+
+        #paypal span
+        {
+            background-position: 0px -648px;
+        }
+
+        #perl span
+        {
+            background-position: -162px -648px;
+        }
+
+        #ps span
+        {
+            background-position: -324px -648px;
+        }
+
+        #php span
+        {
+            background-position: -486px -648px;
+        }
+
+        #putty span
+        {
+            background-position: -648px -648px;
+        }
+
+        #python span
+        {
+            background-position: -810px -648px;
+        }
+
+        #sagepay span
+        {
+            background-position: 0px -810px;
+        }
+
+        #scheme span
+        {
+            background-position: -162px -810px;
+        }
+
+        #sql span
+        {
+            background-position: -324px -810px;
+        }
+
+        #winscp span
+        {
+            background-position: -486px -810px;
+        }
+
+        #xampp span
+        {
+            background-position: -648px -810px;
+        }
+
+    /** AWARDS SECTION **/
+        .items
+        {
+            display: flex;
+            flex-flow: row wrap;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .items section
+        {
+            flex-shrink: 0;
+        }
+
+    /** VOLUNTEERING SECTION **/
+        #nl_bg
+        {
+            background: url('/images/nl_bg.png');
+            padding: 30px;
+        }
+
+        #nightline
+        {
+            color: white;
+        }
+
+        #nl_logo
+        {
+            float: right;
+            width: 400px;
+            position: relative;
+            margin-bottom: 100px;
+        }
+
+        #susu_bg
+        {
+            background: url('/images/susu_bg.png');
+            padding-bottom: 103px;
+            border-bottom: 5px solid #ed0677;
+        }
+
+        #susu_footer
+        {
+            height: 103px;
+            background: url('/images/susu_footer.png') repeat-x bottom;
+            position: absolute;
+            width: 100%;
+        }
+
+    /** FOOTER **/
+        body > footer
+        {
+            box-shadow: black 0 0px 21px 0px;
+            background: linear-gradient(#6fa5dd, #0D47A1);
+            color: white;
+            padding: 20px;
+        }
+
+        #social_media a
+        {
+            display: inline-block;
+            width: 80px;
+            color: white;
+            text-decoration: none;
+            margin: 25px 18px;
+        }
+
+        #social_media a span
+        {
+            background-image: url('/images/sprites.png');
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            box-shadow: black 4px 4px 20px 0px;
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #googleplus span
+        {
+            background-position: -324px 0px;
+        }
+
+        #instagram span
+        {
+            background-position: -648px 0px;
+        }
+
+        #twitter span
+        {
+            background-position: -162px 0px;
+        }
+
+        #fb span
+        {
+            background-position: 0px 0px;
+        }
+
+        #email span
+        {
+            background-position: 0px -162px;
+        }
+
+        #linkedIn span
+        {
+            background-position: -810px 0px;
+        }
+
+        #github span
+        {
+            background-position: -162px 0px;
+        }
+
+        #gravatar span
+        {
+            background-position: -486px 0px;
+        }
+
+        footer small a, footer small a:visited
+        {
+            color: white;
+        }
+
+        footer small a:hover
+        {
+            text-decoration: none;
+        }
+        
+    /** BIG SITE ONLY STYLES **/
+        @media (min-width: 781px)
+        {
+            section
+            {
+                padding: 30px;
+            }
+        
+            /** ME **/
+                #me
+                {
+                    z-index: 4;
+                    position: absolute;
+                }
+
+                #meHolder
+                {
+                    visibility: hidden;
+                }
+
+                #name_section h1
+                {
+                    font-size: 123px;
+                }
+
+            /** EXPERIENCE SECTION **/
+                #experience_section
+                {
+                    background: url('/images/bg2.png');
+                    background-position: top center;
+                }
+            
+            /** EDUCATION SECTION **/
+                #soton
+                {
+                    background: url('/images/edu_bg.jpg');
+                    background-position: top center;
+                    background-size: cover;
+                    padding: 30px;
+                }
+
+                #theleys
+                {
+                    background: url('/images/leys_bg.png');
+                    background-position: top center;
+                    background-size: cover;
+                    padding: 30px;
+                }
+                
+            /** CASUAL SECTION **/
+                #walking
+                {
+                    background: url('/images/snowdonia.jpg') center;
+                    background-size: cover;
+                    padding: 20px;
+                }
+
+                #russia
+                {
+                    background: url('/images/russia.jpg') center;
+                    background-size: cover;
+                    padding: 20px;
+                }
+        }
+    
+    /** MOBILE TWEAKS **/
+        @media (max-width: 780px)
+        {
+            html
+            {
+                font-family: Karla, sans-serif;
+                font-size: 16px;
+            }
+            
+            h1
+            {
+                margin: 0;
+            }
+        
+            /** SECTIONS **/
+                section section
+                {
+                    width: 100% !important;
+                    margin: 10px 0 !important;
+                }
+
+                main > section:not(.band):not(#name_section)
+                {
+                    background: radial-gradient(circle farthest-corner, #95c9f3, #0d47a1) center;
+                }
+                
+                #sectionTitle
+                {
+                    position: fixed;
+                    top: 32px;
+                    left: 30px;
+                    z-index: 7;
+                    color: white;
+                    font-size: 20px;
+                }
+                
+                #nightline, #nl_bg
+                {
+                    box-sizing: border-box;
+                    padding: 10px !important;
+                }
+                
+                section:not(#volunteering_section), #susu_bg
+                {
+                    padding: 20px !important;
+                }
+            
+            /** MENU **/
+                #menuBar
+                {
+                    width: 75%;
+                    left: -80%;
+                }
+                
+                #linkHolder
+                {
+                    display: none;
+                }
+            
+            /** ME **/
+                #me
+                {
+                    display: none;
+                }
+        }
+}
+
+/** PRINT STYLES **/
+    @media print
+    {
+        /** HIDDEN ITEMS **/
+            nav, #me, #intro, #menu, #menuBar, #sectionTitle, main ~ footer
+            {
+                display: none;
+            }
+            
+            h1
+            {
+                page-break-before: always;
+                page-break-after: avoid !important;
+            }
+            
+            section
+            {
+                page-break-inside: avoid;
+            }
+            
+        /** NAME SECTION **/
+            #meHolder
+            {
+                border-radius: 50%;
+                width: 200px;
+                float: left;
+            }
+
+            #name_section
+            {
+                text-align: center;
+            }
+
+            #name_section header
+            {
+                position: relative;
+                top: 30px;
+            }
+
+            #name_section h1
+            {
+                clear: none !important;
+                page-break-before: avoid !important;
+            }
+
+        /** INTRO SECTION **/
+            #intro_section
+            {
+                clear: both;
+                margin-top: 120px;
+            }
+        
+        /** LINKS **/
+            a[href^="#"], a[href*=":"]
+            {
+                color: black;
+                text-decoration: none;
+            }
+
+            a[href*=":"]
+            {
+                font-style: italic;
+            }
+
+            a[href*=":"]:after
+            {
+                content: " [" attr(href) "]";
+                font-style: normal;
+            }
+            
+        /** SECTIONS **/
+            .pic_area img
+            {
+                float: right;
+            }
+    }
