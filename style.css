@@ -292,7 +292,7 @@
     /** NAME SECTION **/
         #name_section
         {
-            background: radial-gradient(circle farthest-corner, #95c9f3, #0d47a1) center;
+            background: radial-gradient(circle farthest-corner, #95c9f3, #0d47a1) center fixed;
             height: 100vh;
             color: white;
             padding-top: 120px;
@@ -707,8 +707,24 @@
             /** EXPERIENCE SECTION **/
                 #experience_section
                 {
-                    background: url('/images/bg2.png');
-                    background-position: top center;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                #exp_bg
+                {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: linear-gradient(to top right, #0D47A1, #95c9f3);
+                    z-index: -1;
+                    overflow: hidden;
+                    color: #95c9f3;
+                    font-family: "Courier New", monospace;
+                    text-align: left;
+                    text-shadow: 0 0 3px white;
                 }
             
             /** EDUCATION SECTION **/
@@ -757,6 +773,11 @@
             {
                 margin: 0;
             }
+            
+            #linkHolder, #me, .bg, #exp_bg
+            {
+                display: none;
+            }
         
             /** SECTIONS **/
                 section section
@@ -797,22 +818,6 @@
                     width: 75%;
                     left: -80%;
                 }
-                
-                #linkHolder
-                {
-                    display: none;
-                }
-            
-            /** ME **/
-                #me
-                {
-                    display: none;
-                }
-                
-                .bg
-                {
-                    display: none;
-                }
         }
 }
 
@@ -820,10 +825,10 @@
     @media print
     {
         /** HIDDEN ITEMS **/
-            nav, #me, #intro, #menu, #menuBar, #sectionTitle, main ~ footer, .bg
-            {
-                display: none;
-            }
+        nav, #me, #intro, #menu, #menuBar, #sectionTitle, main ~ footer, .bg, #exp_bg
+        {
+            display: none;
+        }
             
             h1
             {

@@ -197,6 +197,7 @@ CSPL.evalSpline = function(x, xs, ys, ks)
         w          = name_section.offsetWidth;
         me.top     = (name_section.offsetHeight - innerH - 150) / 2 + 120;
         
+        
         var links  = nav.children,
             linkW  = 0;
         curve      = {xs: [], ys: [], ks: []};
@@ -248,6 +249,20 @@ CSPL.evalSpline = function(x, xs, ys, ks)
         }
         
         lStep    = over / (document.body.offsetHeight - window.innerHeight);
+        
+        if (w > 780)
+        {
+            document.getElementById('exp_bg').innerText =
+                '<!DOCTYPE html>'           +
+                '<html>'                    +
+                  '<head>'                  +
+                    document.head.innerHTML +
+                  '</head>'                 +
+                  '<body>'                  +
+                    document.body.innerHTML +
+                  '</body>'                 +
+                '</html>';
+        }
         
         window.scrollBy(0, 1);
     });
@@ -351,7 +366,22 @@ window.Em = window.Em || { };
             
             if (style !== 'backgroundPositionY' && style !== 'backgroundPositionX')
             {
-                els[i].style[style] = els[i].parallaxOffset + s * scale + 'px';
+                var offset;
+                var staple = this.elData(els[i], 'staple');
+                
+                if (staple)
+                {
+                    var pEl = document.getElementById(staple);
+                    var start  = (pEl.offsetHeight - els[i].offsetHeight) / 2,
+                        midP   = pEl.winOffsetY + pEl.offsetHeight / 2,
+                        offset = (s + window.innerHeight / 2 - midP) * scale;
+                }
+                else
+                {
+                    offset = s * scale;
+                }
+                    
+                els[i].style[style] = els[i].parallaxOffset + offset + 'px';
             }
             else
             {

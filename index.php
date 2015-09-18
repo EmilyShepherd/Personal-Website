@@ -173,7 +173,8 @@ $js  = glob('*.js');  $js  = $js[0];
       
       <!-- ///////////////////////////////////////////////////////// -->
       
-      <section id="experience_section" class="parallax" data-parallax-scale="0.6">
+      <section id="experience_section">
+        <div id="exp_bg" class="parallax2" data-parallax-scale="0.8" data-parallax-staple="experience_section"></div>
         <h1 id="experience">Experience &amp; Portfolio</h1>
         
         <section id="spastaff">
