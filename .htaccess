@@ -1,7 +1,0 @@
-
-ExpiresActive On
-ExpiresDefault "access plus 10 minutes"
-ExpiresByType text/css "access plus 10 years"
-ExpiresByType application/x-javascript "access plus 10 years"
-ExpiresByType image/png "access plus 10 years"
-ExpiresByType image/jpeg "access plus 10 years"
