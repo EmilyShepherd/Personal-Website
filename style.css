@@ -292,15 +292,14 @@
     /** NAME SECTION **/
         #name_section
         {
-            background: url('/images/bg.png');
-            background-repeat: no-repeat;
-            background-position: center;
+            background: radial-gradient(circle farthest-corner, #95c9f3, #0d47a1) center;
             height: 100vh;
             color: white;
             padding-top: 120px;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
+            overflow: hidden;
         }
 
         #name_section .inner
@@ -612,6 +611,11 @@
             {
                 padding: 30px;
             }
+            
+            #menuBar, #sectionTitle
+            {
+                display: none;
+            }
         
             /** ME **/
                 #me
@@ -628,6 +632,76 @@
                 #name_section h1
                 {
                     font-size: 123px;
+                }
+                
+                .inner header
+                {
+                    position: relative;
+                }
+            
+            /** Hi, I'm Emily. **/
+                .bg
+                {
+                    position: absolute;
+                    font-family: "Courier New", monospace;
+                    text-align: left;
+                    font-size: 18px;
+                    width: 500px;
+                }
+
+                #php_text
+                {
+                    top: 30px;
+                    left: -110px;
+                    width: 300px;
+                }
+
+                #java_text
+                {
+                    top: 150px;
+                    left: -250px;
+                }
+
+                #smtp_text
+                {
+                    top: 330px;
+                    left: -290px;
+                }
+
+                #c_text
+                {
+                    top: -130px;
+                    left: -30px;
+                }
+
+                #dom_text
+                {
+                    top: -100px;
+                    left: 370px;
+                }
+
+                #cpp_text
+                {
+                    top: 0px;
+                    left: 550px;
+                }
+
+                #css_text
+                {
+                    top: 190px;
+                    left: 510px;
+                }
+
+                #js_text
+                {
+                    top: 300px;
+                    left: 630px;
+                }
+
+                #xml_text
+                {
+                    top: 530px;
+                    left: 130px;
                 }
 
             /** EXPERIENCE SECTION **/
@@ -734,6 +808,11 @@
                 {
                     display: none;
                 }
+                
+                .bg
+                {
+                    display: none;
+                }
         }
 }
 
@@ -741,7 +820,7 @@
     @media print
     {
         /** HIDDEN ITEMS **/
-            nav, #me, #intro, #menu, #menuBar, #sectionTitle, main ~ footer
+            nav, #me, #intro, #menu, #menuBar, #sectionTitle, main ~ footer, .bg
             {
                 display: none;
             }
@@ -788,6 +867,13 @@
                 clear: both;
                 margin-top: 120px;
             }
+            
+        /** NL **/
+        #nl_logo
+        {
+            -webkit-print-color-adjust: exact;
+            background: url('/images/nl_bg.png');
+        }
         
         /** LINKS **/
             a[href^="#"], a[href*=":"]

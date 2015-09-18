@@ -75,11 +75,69 @@ $js  = glob('*.js');  $js  = $js[0];
     <main id="hi">
       
       <!-- Hi, I'm Emily. -->
-      <section id="name_section" class="parallax" data-parallax-scale="0.8">
-        <div class="inner parallax" data-parallax-style="top" data-parallax-scale="0.4">
+      <section id="name_section" class="" data-parallax-scale="0.8">
+        <div class="inner">
           <img src="/images/me.jpg" alt="Emily Shepherd" id="me" />
           <img src="/images/me.jpg" alt="Emily Shepherd" id="meHolder" />
-          <header>
+          <div class="bg parallax2" id="php_text" data-parallax-scale="0.8">
+            &lt;?php <br />
+            <br />
+            echo "Hi, I'm Emily.";
+          </div>
+          <div class="bg parallax2" id="java_text" data-parallax-scale="0.6">
+            public class Main                                             <br />
+            {                                                             <br />                                              
+            &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;{                                     <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hi, I'm Emily."); <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;}                                     <br />
+            }
+          </div>
+          <div class="bg parallax2" id="smtp_text" data-parallax-scale="0.4">
+            220 smtp.emilyshepherd.me                                     <br />
+            EHLO Hi, I'm Emily.                                           <br />                                              
+            250 smtp.emilyshepherd.me
+          </div>
+          <div class="bg parallax2" id="c_text" data-parallax-scale="0.9">
+            #include &lt;stdio.h&gt;                                      <br />
+                                                                          <br />                                              
+            void main()                                                   <br />
+            {                                                             <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;printf("Hi, I'm Emily.\n");           <br />
+            }
+          </div>
+          <div class="bg parallax2" id="js_text" data-parallax-scale="0.2">
+            document.write("Hi, I'm Emily.");
+          </div>
+          <div class="bg parallax2" id="cpp_text" data-parallax-scale="0.7">
+            #include &lt;iostream.h&gt;                                   <br />
+                                                                          <br />                                              
+            void main()                                                   <br />
+            {                                                             <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;cout << "Hi, I'm Emily." << endl      <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return 0;                             <br />
+            }
+          </div>
+          <div class="bg parallax2" id="css_text" data-parallax-scale="0.4">
+            h1:before                                                     <br />
+            {                                                             <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;content: "Hi, I'm Emily.";            <br />
+            }
+          </div>
+          <div class="bg parallax2" id="dom_text" data-parallax-scale="0.8">
+            var el = document.createElement('h1');                        <br />
+            el.innerText = 'Hi, I\'m Emily.';                             <br />
+            document.appendChild(el);
+          </div>
+          <div class="bg parallax2" id="xml_text" data-parallax-scale="-0.2">
+            &lt;?xml version="1.0" standalone="yes" ?&gt;                 <br />
+            &lt;!DOCTYPE greeting [                                       <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;!ELEMENT greeting (#PCDATA)&gt;   <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;!ATTLIST greeting lang CDATA #REQUIRED&gt;<br />
+            ]&gt;                                                         <br />
+            &lt;greeting lang="en"&gt;Hi, I'm Emily.&lt;/greeting&gt;
+          </div>
+          <header class="parallax2" data-parallax-scale="0.5">
             <h1>Hi, I'm Emily.</h1>
             <p>Web Developer | Computer Science Undergraduate</p>
           </header>
@@ -622,6 +680,7 @@ $js  = glob('*.js');  $js  = $js[0];
     
     <script>
       (new Em.Parallax({"wCutOff" : 780 })).registerListener();
+      (new Em.Parallax({"wCutOff" : 780, "className" : "parallax2", "style" : "top" })).registerListener();
     </script>
     
     <!-- Analytics -->

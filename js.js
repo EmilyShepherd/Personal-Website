@@ -311,6 +311,18 @@ window.Em = window.Em || { };
         this.scale     = config.scale     || 0.8;
         this.style     = config.style     || 'backgroundPositionY';
         this.wCutOff   = config.wCutOff   || 0;
+        
+        var els = document.getElementsByClassName(this.className);
+        
+        for (var i = 0; i < els.length; i++)
+        {
+            if (this.elData(els[i], 'style') === 'top')
+            {
+                var offset = parseInt(window.getComputedStyle(els[i]).top);
+                
+                els[i].parallaxOffset = offset ? offset : 0;
+            }
+        }
     });
     
     e.Parallax.prototype.doParallax = (function(s)
@@ -339,7 +351,7 @@ window.Em = window.Em || { };
             
             if (style !== 'backgroundPositionY' && style !== 'backgroundPositionX')
             {
-                els[i].style[style] = s * scale + 'px';
+                els[i].style[style] = els[i].parallaxOffset + s * scale + 'px';
             }
             else
             {
