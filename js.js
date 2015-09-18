@@ -146,8 +146,8 @@ CSPL.evalSpline = function(x, xs, ys, ks)
         nav.style.right = lOffset + 'px';
         
         // Section Chevron
-        nav.parentElement.style.backgroundPositionX =
-            CSPL.evalSpline(s, curve.xs, curve.ys, curve.ks) - lOffset + 'px';
+        nav.parentElement.style.backgroundPosition =
+            CSPL.evalSpline(s, curve.xs, curve.ys, curve.ks) - lOffset + 'px -15px';
         
         // Nightline Logo
         var vSection    = document.getElementById('volunteering_section'),

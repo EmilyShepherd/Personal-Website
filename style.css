@@ -158,8 +158,7 @@
             {
                 background-image: url('/images/chevron.png');
                 background-repeat: no-repeat;
-                background-position-x: left;
-                background-position-y: -15px;
+                background-position: 0px -15px;
             }
             
             #linkHolder
