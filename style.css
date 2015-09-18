@@ -156,9 +156,9 @@
         {
             nav
             {
-                background-image: url('/images/chevron.png');
+                background-image: url('/images/sprites.png');
+                background-position: 0px -1066px;
                 background-repeat: no-repeat;
-                background-position: 0px -15px;
             }
             
             #linkHolder
@@ -512,14 +512,15 @@
         #susu_bg
         {
             background: url('/images/susu_bg.png');
-            padding-bottom: 103px;
+            padding-bottom: 94px;
             border-bottom: 5px solid #ed0677;
         }
 
         #susu_footer
         {
-            height: 103px;
-            background: url('/images/susu_footer.png') repeat-x bottom;
+            height: 94px;
+            background: url('/images/sprites.png') repeat-x bottom;
+            background-position: 0px -972px;
             position: absolute;
             width: 100%;
         }
