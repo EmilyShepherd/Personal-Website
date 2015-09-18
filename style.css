@@ -827,7 +827,6 @@
             
             h1
             {
-                page-break-before: always;
                 page-break-after: avoid !important;
             }
             
