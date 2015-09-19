@@ -605,7 +605,7 @@
                 padding: 30px;
             }
             
-            #menuBar, #sectionTitle
+            #sectionTitle
             {
                 display: none;
             }
