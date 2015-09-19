@@ -101,7 +101,7 @@ $js  = glob('*.js');  $js  = $js[0];
           <div class="bg parallax2" id="c_text" data-parallax-scale="0.9">
             #include &lt;stdio.h&gt;                                      <br />
                                                                           <br />                                              
-            void main()                                                   <br />
+            int main()                                                    <br />
             {                                                             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;printf("Hi, I'm Emily.\n");           <br />
             }
@@ -112,9 +112,9 @@ $js  = glob('*.js');  $js  = $js[0];
           <div class="bg parallax2" id="cpp_text" data-parallax-scale="0.7">
             #include &lt;iostream.h&gt;                                   <br />
                                                                           <br />                                              
-            void main()                                                   <br />
+            int main()                                                    <br />
             {                                                             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;cout << "Hi, I'm Emily." << endl      <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Hi, I'm Emily." &lt;&lt; endl<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return 0;                             <br />
             }
           </div>
