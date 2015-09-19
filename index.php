@@ -77,8 +77,8 @@ $js  = glob('*.js');  $js  = $js[0];
       <!-- Hi, I'm Emily. -->
       <section id="name_section" class="" data-parallax-scale="0.8">
         <div class="inner">
-          <img src="/images/me.jpg" alt="Emily Shepherd" id="me" />
-          <img src="/images/me.jpg" alt="Emily Shepherd" id="meHolder" />
+          <img src="/images/me.png" alt="Emily Shepherd" id="me" />
+          <img src="/images/me.png" alt="Emily Shepherd" id="meHolder" />
           <div class="bg parallax2" id="php_text" data-parallax-scale="0.8">
             &lt;?php <br />
             <br />

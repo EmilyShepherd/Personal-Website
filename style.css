@@ -242,7 +242,8 @@
                 top: 0px;
                 height: 90px;
                 width: 90px;
-                background: url('/images/menu.png') #0D47A1 no-repeat center;
+                background: url('/images/sprites.png') #0D47A1 no-repeat;
+                background-position: -810px -810px;
                 z-index: 5;
             }
 
@@ -500,14 +501,6 @@
             color: white;
         }
 
-        #nl_logo
-        {
-            float: right;
-            width: 400px;
-            position: relative;
-            margin-bottom: 100px;
-        }
-
         #susu_bg
         {
             background: url('/images/susu_bg.png');
@@ -743,6 +736,15 @@
                     background-size: cover;
                     padding: 30px;
                 }
+            
+            /** VOLUNTEERING **/
+                #nl_logo
+                {
+                    float: right;
+                    width: 400px;
+                    position: relative;
+                    margin-bottom: 100px;
+                }
                 
             /** CASUAL SECTION **/
                 #walking
@@ -805,6 +807,11 @@
                 {
                     box-sizing: border-box;
                     padding: 10px !important;
+                }
+                
+                #nl_logo
+                {
+                    height: 75px;
                 }
                 
                 section:not(#volunteering_section), #susu_bg
@@ -875,6 +882,8 @@
         /** NL **/
         #nl_logo
         {
+            height: 75px;
+            float: right;
             -webkit-print-color-adjust: exact;
             background: url('/images/nl_bg.png');
         }
