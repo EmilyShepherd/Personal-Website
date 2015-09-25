@@ -96,7 +96,41 @@ CSPL.evalSpline = function(x, xs, ys, ks)
         links        = document.getElementsByTagName('a'),
         nav          = document.getElementById('linkHolder'),
         curve        = {xs: [], ys: [], ks: []},
-        lStep        = 0;
+        lStep        = 0,
+        pgp          = document.getElementById('pgp');
+    
+    pgp.addEventListener('click', (function(e)
+    {
+        e.preventDefault();
+        
+        var xmlhttp = window.XMLHttpRequest
+            ? new XMLHttpRequest()
+            : new ActiveXObject("Microsoft.XMLHTTP");
+        
+        xmlhttp.onreadystatechange = (function()
+        {
+            console.log(xmlhttp);
+            
+            if (xmlhttp.readyState === 4)
+            {
+                document.getElementById('pgp_text').value = xmlhttp.responseText;
+                document.getElementById('pgp_popup').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        xmlhttp.open('GET', window.ascLocation, true);
+        xmlhttp.send();
+    }));
+    
+    window.copy = (function()
+    {
+        document.getElementById('pgp_text').select();
+        if (document.execCommand('copy'))
+        {
+            document.getElementById('copy_conf').style.animationName = 'w';
+            document.getElementById('copy_conf').style.animationName = 'fadeInOut';
+        }
+    })
     
     for (var i = 0; i < links.length; i++)
     {

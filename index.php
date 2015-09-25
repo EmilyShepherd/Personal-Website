@@ -3,6 +3,7 @@ ob_start();
 
 $css = glob('*.css'); $css = $css[0];
 $js  = glob('*.js');  $js  = $js[0];
+$asc = glob('*.asc'); $asc = $asc[0];
 
 ?>
 <!DOCTYPE html>
@@ -664,6 +665,7 @@ $js  = glob('*.js');  $js  = $js[0];
         <a target="_blank" id="github" href="https://github.com/EmilyShepherd"><span></span>Git Hub</a>
         <a target="_blank" id="gravatar" href="https://en.gravatar.com/stupidshep"><span></span>Gravatar</a>
         <a target="_blank" id="email" href="mailto:emily@emilyshepherd.me"><span></span>Email</a>
+        <a target="_blank" id="pgp" href="<?=$asc?>"><span></span>PGP Key</a>
       </div>
             
       <small>
@@ -674,6 +676,29 @@ $js  = glob('*.js');  $js  = $js[0];
         with <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> license.
       </small>
     </footer>
+    
+    <div id="pgp_popup">
+      <h1>PGP Public Key</h1>
+      
+      <br />
+      
+      <span class="label">Fingerprint</span>
+      4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D
+      
+      <br /><br />
+      
+      <span class="label">Key</span><br />
+      <a href="/<?=$asc?>" target="_blank">Download Raw .asc file</a> |
+      <a href="javascript:copy();">Copy to Clipboard</a>
+      <span id="copy_conf">Copied</span>
+      <div>
+        <textarea id="pgp_text"></textarea>
+      </div>
+    </div>
+    
+    <script>
+      window.ascLocation = '/<?=$asc?>';
+    </script>
     
     <!-- Start loading scripts -->
     <!-- At the end so the page can load first -->
