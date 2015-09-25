@@ -26,10 +26,10 @@ $asc = glob('*.asc'); $asc = $asc[0];
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     
     <!-- Facebook Open Graph -->
-    <meta property="og:description" content="22. UK. Computer Scientist, Web Developer and fourth year undergraduate at the University of Southampton. Contact me at emily@emilyshepherd.me" />
+    <meta property="og:description" content="22. UK. Computer Scientist, Web Developer and fourth year undergraduate at the University of Southampton. Contact me at emily@emilyshepherd.me. PGP: 4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D" />
     <meta property="og:title" content="Hi, I'm Emily L. Shepherd." />
     <meta property="og:image" content="http://emilyshepherd.me/images/fb_bg.png" />
-    <meta property="og:url" content="http://emilyshepherd.me/" />
+    <meta property="og:url" content="https://emilyshepherd.me/" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
