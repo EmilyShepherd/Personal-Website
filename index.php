@@ -55,7 +55,7 @@ $asc = 'emily-2.asc';
     
     <!-- Menu Button (for mobiles) -->
     <label for="menu">&nbsp;</label>
-    <input type="checkbox" id="menu" />
+    <input type="checkbox" id="menu" onclick="closePopup()" />
     <div class="coverAll" onclick="document.getElementById('menu').checked=false;"></div>
     
     <span id="sectionTitle">Emily Shepherd</span>
@@ -678,6 +678,7 @@ $asc = 'emily-2.asc';
     </footer>
     
     <div id="pgp_popup">
+      <a href="javascript:closePopup();" id="pgp_close">X</a>
       <h1>PGP Public Key</h1>
       
       <br />

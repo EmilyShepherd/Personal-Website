@@ -101,6 +101,8 @@ CSPL.evalSpline = function(x, xs, ys, ks)
     
     pgp.addEventListener('click', (function(e)
     {
+        if (w < 780) return true;
+        
         e.preventDefault();
         
         var xmlhttp = window.XMLHttpRequest
@@ -130,7 +132,13 @@ CSPL.evalSpline = function(x, xs, ys, ks)
             document.getElementById('copy_conf').style.animationName = 'w';
             document.getElementById('copy_conf').style.animationName = 'fadeInOut';
         }
-    })
+    });
+    
+    window.closePopup = (function()
+    {
+        document.getElementById('pgp_popup').style.display = '';
+        document.body.style.overflow = '';
+    });
     
     for (var i = 0; i < links.length; i++)
     {
@@ -216,6 +224,7 @@ CSPL.evalSpline = function(x, xs, ys, ks)
             me.style.top   = me.top + (s * step) + 'px';
             me.style.width = newWidth + 'px';
             me.style.left  = ((w - newWidth) / 2) + 'px';
+            window.closePopup();
         }
         else
         {

@@ -794,8 +794,10 @@
                     right: 60px;
                     bottom: 60px;
                     background: linear-gradient(to bottom, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
+                    box-shadow: black 0 0px 21px 0px;
                     border: 4px ridge #c8d7dc;
                     border-radius: 20px;
+                    z-index: 3;
                 }
                 
                 #pgp_popup .label
@@ -831,6 +833,23 @@
                     height: 100%;
                     width: 490px;
                     overflow-y: scroll;
+                }
+                
+                #pgp_close
+                {
+                    position: absolute;
+                    top: -20px;
+                    right: -20px;
+                    background: linear-gradient(to bottom, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
+                    border: 2px inset #c8d7dc;
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 56px;
+                    display: block;
+                    text-decoration: none;
+                    color: red;
+                    font-size: 40px;
+                    padding-top: 4px;
                 }
         }
     
