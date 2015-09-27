@@ -588,15 +588,15 @@ $asc = 'emily-2.asc';
         
         <div id="susu_bg" class="parallax" data-parallax-scale="0.8">
           <section>
-            <h2 id="susu">Students' Union and Representation</h2>
+            <h2 id="susu">Student Representation</h2>
             
             <p>
               I became involved in student affairs very soon after
-              settling in at university. At first, unofficially, by
-              emailing lecturers as a student on behalf of my cohort to
-              provide feedback and pass on requests. I quickly realised
-              I was doing the job of a course rep, so ran at the end of
-              my second year, and won by a landslide.
+              settling in at university. Unofficially at first -
+              emailing lecturers to provide feedback and pass on requests on
+              behalf of my cohort. I quickly realised
+              I was doing the job of a "course representative", so ran at the
+              end of my second year, and won by a landslide.
             </p>
             
             <p>
@@ -614,9 +614,22 @@ $asc = 'emily-2.asc';
               Within the University, this position saw me attend meetings
               of senior lecturers and professors, to provide a student
               point of view on strategic decision within the faculty.
-              Within the Union, Faculty Officers hold a seat on Union
-              Council, the highest student decision-making body.
             </p>
+          </section>
+          
+          <section>
+            <h2>Students' Union</h2>
+            <p>
+              My role in representation introduced me to our Students' Union,
+              <a href="http://www.susu.org/" target="_blank">SUSU</a>. After my
+              time as Faculty Officer, I ran to be a Union Councillor, giving me
+              a seat on the Union's highest decision making body. At these
+              meetings, we oversaw the union's finances, discussed and voted on
+              student-focused policies and decided stances for the entire union
+              on issues such as the Lecturers' Marking Boycott.
+            </p>
+            
+            <p></p>
           </section>
           
           <div id="susu_footer"></div>
