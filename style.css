@@ -609,6 +609,11 @@
         {
             background-position: 0px -1296px;
         }
+        
+        #keybase span
+        {
+            background-position: -162px -1296px;
+        }
 
         footer small a, footer small a:visited
         {
