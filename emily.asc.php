@@ -25,8 +25,8 @@ header('Content-Length: ' . strlen($content));
 $date = new DateTime();
 $date->add(new DateInterval('P10Y'));
 
-header('Content-Type: application/pgp');
-header('Content-Disposition: attachment; filename="Emily-Shepherd.asc"');
+header('Content-Type: text/plain');
+header('Content-Disposition: inline; filename="Emily-Shepherd.asc"');
 header('Etag: ' . $etag);
 header('Expires: ' . $date->format('D, j M Y H:i:s e'));
 header('Cache-Control: max-age=315360000');
