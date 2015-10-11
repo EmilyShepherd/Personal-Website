@@ -678,6 +678,7 @@ $asc = 'emily-3.asc';
         <a target="_blank" id="github" href="https://github.com/EmilyShepherd"><span></span>Git Hub</a>
         <a target="_blank" id="gravatar" href="https://en.gravatar.com/stupidshep"><span></span>Gravatar</a>
         <a target="_blank" id="keybase" href="https://keybase.io/emilyshepherd"><span></span>Keybase</a>
+        <a target="_blank" id="ecs" href="http://www.ecs.soton.ac.uk/people/ams2g11"><span></span>ECS</a>
         <a target="_blank" id="email" href="mailto:emily@emilyshepherd.me"><span></span>Email</a>
         <a target="_blank" id="pgp" href="<?=$asc?>"><span></span>PGP Key</a>
       </div>

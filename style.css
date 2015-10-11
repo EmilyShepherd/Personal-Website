@@ -516,7 +516,7 @@
 
         #susu_bg
         {
-            background: url('/images/susu_bg.png');
+            background: url('/images/susu_bg.png') #e9eaed;
             padding-bottom: 94px;
             border-bottom: 5px solid #ed0677;
         }
@@ -567,52 +567,68 @@
 
         #googleplus span
         {
+            background-color: #c53012;
             background-position: -324px 0px;
         }
 
         #instagram span
         {
+            background-color: #3d6c92;
             background-position: -648px 0px;
         }
 
         #twitter span
         {
+            background-color: #2aa9df;
             background-position: -162px -162px;
         }
 
         #fb span
         {
+            background-color: #3a5897;
             background-position: 0px 0px;
         }
 
         #email span
         {
+            background-color: #3ea9f5;
             background-position: 0px -162px;
         }
 
         #linkedIn span
         {
+            background-color: #0073a4;
             background-position: -810px 0px;
         }
 
         #github span
         {
+            background-color: #333;
             background-position: -162px 0px;
         }
 
         #gravatar span
         {
+            background-color: #0a76b7;
             background-position: -486px 0px;
         }
         
         #pgp span
         {
+            background-color: #e9eaed;
             background-position: 0px -1296px;
         }
         
         #keybase span
         {
+            background-color: #ff611c;
             background-position: -162px -1296px;
+        }
+        
+        #ecs span
+        {
+            background-color: #005c84;
+            background-position: -324px -1296px;
         }
 
         footer small a, footer small a:visited
