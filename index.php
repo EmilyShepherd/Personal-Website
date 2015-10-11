@@ -255,6 +255,51 @@ $asc = 'emily-3.asc';
           </p>
           
         </section>
+
+        <section id="legit">
+          <div class="pic_area">
+            <img src="/images/legit.png" alt="Legit" />
+          </div>
+          <header>
+            <h2>Legit</h2>
+            <span class="position">Third Year Project</span>
+            <span class="dates">2014 - 2015</span>
+          </header>
+
+          <p>
+            Legit is a distributed code review tool, built on top of Git - it uses the concept
+            of pull requests, but stores and tracks these, along with the comments and votes on
+            these requests, in the repository itself.
+          </p>
+
+          <p>
+            This was a project completed for the third year of my time at the
+            <a href="#uni">University of
+            Southampton</a> - it was worth three eights of the year and I achieved a mark of 81%, a
+            high first class grade.
+          </p>
+
+          <h3>Report Abstract</h3>
+          <p>
+            This paper examines the version control software currently available, and gives a
+            detailed analysis of the technical considerations needed when developing an extension to
+            Git, the most popular of these tools. The report discusses various code peer approval tools,
+            and notes that these all rely on centralised servers or workflows. It introduces the concepts
+            of quantifiable reputation and automated user privilege administration, techniques which are
+            utilised within community sites such as Ebay, Stack Exchange and Wikipedia. With this research,
+            the paper proposes a specification for a decentralised peer approval tool, termed Legit, and
+            explains the design decisions that this involved. Finally, a review of the project management
+            and testing is given, and the specification is evaluated by contrasting it to modern day
+            corporate and open source coding environments. The paper finishes with some suggestions for
+            future work and research, and concludes that, by structuring communication and standardising
+            common tasks, a decentralised peer approval workflow is potentially able to drastically reduce
+            the administrative overhead required in many software engineering projects and may encourage
+            teams to bond more effectively.
+          </p>
+          <p>
+            <a target="_blank" href="http://shep.sweeb.net/Legit_Report.pdf">Read The Full Report &gt;</a>
+          </p>
+        </section>
         
         <section id="musicjobs">
           <div class="pic_area">
