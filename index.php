@@ -178,154 +178,155 @@ $asc = 'emily-3.asc';
         <div id="exp_bg" class="parallax2" data-parallax-scale="0.8" data-parallax-staple="experience_section"></div>
         <h1 id="experience">Experience &amp; Portfolio</h1>
         
-        <section id="spastaff">
-          <div class="pic_area">
-            <img src="/images/spastaff.png" alt="Spa Staff.com Ltd" />
-          </div>
-          <header>
-            <h2>Spa Staff</h2>
-            <span class="position">Web Developer and Web Mistress</span>
-            <span class="dates">2011 - Present</span>
-          </header>
-          
-          <p>
-            I took over the management of
-            <a href="https://www.spastaff.com/" target="_blank">Spa Staff.com</a>
-            from a professional web
-            construction company in 2011, while I was still in Sixth Form. Since
-            then, I have been solely in charge of the technical administration
-            and development of the site. The site is hosted on an EC2 instance
-            in Amazon's Elastic Cloud.
-          </p>
-          
-          <p>
-            As web developer, I was responsible for implementing a redesign, from
-            their
-            <a href="http://web.archive.org/web/20110703235306/http://www.spastaff.com/" target="_blank">old look</a>
-            to the version which is live today. The site is now responsive, and
-            flicks into a "stretchy" design on small screens.
-          </p>
-          
-          <p>
-            In 2014, Spa Staff contracted a second freelance developer to
-            perform petty bug fixes and improvements while I worked on a major
-            site redesign. I was put in charge of training this developer in the
-            technologies the site uses and assigning / overseeing jobs. This
-            was my first experience of acting in a managerial role in a
-            commercial group.
-          </p>
-          
-          <footer>
-            <div>
-              <h3>Languages</h3>
-              <p>PHP, HTML5, CSS, JavaScript, SQL</p>
+        <div class="items">
+          <section id="spastaff">
+            <div class="pic_area">
+              <img src="/images/spastaff.png" alt="Spa Staff.com Ltd" />
             </div>
-            <div>
-              <h3>Skills</h3>
-              <p>AWS Management, Client Management, Developer Training &amp; Management </p>
+            <header>
+              <h2>Spa Staff</h2>
+              <span class="position">Web Developer and Web Mistress</span>
+              <span class="dates">2011 - Present</span>
+            </header>
+            
+            <p>
+              I took over the management of
+              <a href="https://www.spastaff.com/" target="_blank">Spa Staff.com</a>
+              from a professional web
+              construction company in 2011, while I was still in Sixth Form. Since
+              then, I have been solely in charge of the technical administration
+              and development of the site. The site is hosted on an EC2 instance
+              in Amazon's Elastic Cloud.
+            </p>
+            
+            <p>
+              As web developer, I was responsible for implementing a redesign, from
+              their
+              <a href="http://web.archive.org/web/20110703235306/http://www.spastaff.com/" target="_blank">old look</a>
+              to the version which is live today. The site is now responsive, and
+              flicks into a "stretchy" design on small screens.
+            </p>
+            
+            <p>
+              In 2014, Spa Staff contracted a second freelance developer to
+              perform petty bug fixes and improvements while I worked on a major
+              site redesign. I was put in charge of training this developer in the
+              technologies the site uses and assigning / overseeing jobs. This
+              was my first experience of acting in a managerial role in a
+              commercial group.
+            </p>
+            
+            <footer>
+              <div>
+                <h3>Languages</h3>
+                <p>PHP, HTML5, CSS, JavaScript, SQL</p>
+              </div>
+              <div>
+                <h3>Skills</h3>
+                <p>AWS Management, Client Management, Developer Training &amp; Management </p>
+              </div>
+              <div>
+                <h3>APIs</h3>
+                <p>AWS PHP API, PayPal, Barclays Epdq</p>
+              </div>
+            </footer>
+          </section>
+
+          <section id="legit">
+            <div class="pic_area">
+              <img src="/images/legit.png" alt="Legit" />
             </div>
-            <div>
-              <h3>APIs</h3>
-              <p>AWS PHP API, PayPal, Barclays Epdq</p>
+            <header>
+              <h2>Legit</h2>
+              <span class="position">Third Year Project</span>
+              <span class="dates">2014 - 2015</span>
+            </header>
+
+            <p>
+              Legit is a distributed code review tool, built on top of Git - it uses the concept
+              of pull requests, but stores and tracks these, along with the comments and votes on
+              these requests, in the repository itself.
+            </p>
+
+            <p>
+              This was a project completed for the third year of my time at the
+              <a href="#uni">University of
+              Southampton</a> - it was worth three eights of the year and I achieved a mark of 81%, a
+              high first class grade.
+            </p>
+
+            <h3>Report Abstract</h3>
+            <p>
+              This paper examines the version control software currently available, and gives a
+              detailed analysis of the technical considerations needed when developing an extension to
+              Git, the most popular of these tools. The report discusses various code peer approval tools,
+              and notes that these all rely on centralised servers or workflows. It introduces the concepts
+              of quantifiable reputation and automated user privilege administration, techniques which are
+              utilised within community sites such as Ebay, Stack Exchange and Wikipedia. With this research,
+              the paper proposes a specification for a decentralised peer approval tool, termed Legit, and
+              explains the design decisions that this involved. Finally, a review of the project management
+              and testing is given, and the specification is evaluated by contrasting it to modern day
+              corporate and open source coding environments. The paper finishes with some suggestions for
+              future work and research, and concludes that, by structuring communication and standardising
+              common tasks, a decentralised peer approval workflow is potentially able to drastically reduce
+              the administrative overhead required in many software engineering projects and may encourage
+              teams to bond more effectively.
+            </p>
+            <p>
+              <a target="_blank" href="http://shep.sweeb.net/Legit_Report.pdf">Read The Full Report &gt;</a>
+            </p>
+          </section>
+
+          <section id="sweeb">
+            <div class="pic_area">
+              <img src="/images/sweeb.png" alt="SWEEB" />
             </div>
-          </footer>
-        </section>
-        
-        <section id="sweeb">
-          <div class="pic_area">
-            <img src="/images/sweeb.png" alt="SWEEB" />
-          </div>
-          <header>
-            <h2>Sweeb</h2>
-            <span class="position">Owner, Web Developer</span>
-            <span class="dates">2005 - Present</span>
-          </header>
+            <header>
+              <h2>Sweeb</h2>
+              <span class="position">Owner, Web Developer</span>
+              <span class="dates">2005 - Present</span>
+            </header>
+            
+            <p>
+              I have been deeply interested in web development for a long time,
+              and quickly realised that I could earn money from my passion. I act
+              as a freelance web developer under the brand name: <span class="sweeb">SWEEB</span>.
+            </p>
+            
+            <p>
+              Many of my clients were small charities and individuals without
+              any technical knowledge. This has taught me to be well versed in translating
+              a user's functional requirements into a technical plan, and
+              communicating with clients without resorting to confusing jargon.
+            </p>
+          </section>
           
-          <p>
-            I have been deeply interested in web development for a long time,
-            and quickly realised that I could earn money from my passion. I act
-            as a freelance web developer under the brand name: <span class="sweeb">SWEEB</span>.
-          </p>
-          
-          <p>
-            Many of my clients were small charities and individuals without
-            any technical knowledge. This has taught me to be well versed in translating
-            a user's functional requirements into a technical plan, and
-            communicating with clients without resorting to confusing jargon.
-          </p>
-          
-        </section>
+          <section id="musicjobs">
+            <div class="pic_area">
+              <img src="/images/music_jobs.png" alt="Music Jobs Ltd" />
+            </div>
+            <header>
+              <h2>Music Jobs</h2>
+              <span class="position">Web Developer</span>
+              <span class="dates">August 2010, July 2011</span>
+            </header>
+            <p>
+              In the summer of 2010, I became an intern at their London office. My
+              main task was reskinning their web site to look good on iPhones.
+            </p>
+            
+            <p>
+              In 2011 I was invited to their LA office, to continue as a Web
+              Developer. I was tasked with rebuilding their payment systems.
+            </p>
 
-        <section id="legit">
-          <div class="pic_area">
-            <img src="/images/legit.png" alt="Legit" />
-          </div>
-          <header>
-            <h2>Legit</h2>
-            <span class="position">Third Year Project</span>
-            <span class="dates">2014 - 2015</span>
-          </header>
-
-          <p>
-            Legit is a distributed code review tool, built on top of Git - it uses the concept
-            of pull requests, but stores and tracks these, along with the comments and votes on
-            these requests, in the repository itself.
-          </p>
-
-          <p>
-            This was a project completed for the third year of my time at the
-            <a href="#uni">University of
-            Southampton</a> - it was worth three eights of the year and I achieved a mark of 81%, a
-            high first class grade.
-          </p>
-
-          <h3>Report Abstract</h3>
-          <p>
-            This paper examines the version control software currently available, and gives a
-            detailed analysis of the technical considerations needed when developing an extension to
-            Git, the most popular of these tools. The report discusses various code peer approval tools,
-            and notes that these all rely on centralised servers or workflows. It introduces the concepts
-            of quantifiable reputation and automated user privilege administration, techniques which are
-            utilised within community sites such as Ebay, Stack Exchange and Wikipedia. With this research,
-            the paper proposes a specification for a decentralised peer approval tool, termed Legit, and
-            explains the design decisions that this involved. Finally, a review of the project management
-            and testing is given, and the specification is evaluated by contrasting it to modern day
-            corporate and open source coding environments. The paper finishes with some suggestions for
-            future work and research, and concludes that, by structuring communication and standardising
-            common tasks, a decentralised peer approval workflow is potentially able to drastically reduce
-            the administrative overhead required in many software engineering projects and may encourage
-            teams to bond more effectively.
-          </p>
-          <p>
-            <a target="_blank" href="http://shep.sweeb.net/Legit_Report.pdf">Read The Full Report &gt;</a>
-          </p>
-        </section>
-        
-        <section id="musicjobs">
-          <div class="pic_area">
-            <img src="/images/music_jobs.png" alt="Music Jobs Ltd" />
-          </div>
-          <header>
-            <h2>Music Jobs</h2>
-            <span class="position">Web Developer</span>
-            <span class="dates">August 2010, July 2011</span>
-          </header>
-          <p>
-            In the summer of 2010, I became an intern at their London office. My
-            main task was reskinning their web site to look good on iPhones.
-          </p>
-          
-          <p>
-            In 2011 I was invited to their LA office, to continue as a Web
-            Developer. I was tasked with rebuilding their payment systems.
-          </p>
-
-          <p>
-            It was during my time at Music Jobs that I got my first taste of
-            building mobile web apps, and running a site off Amazon Web
-            Services' Elastic Cloud.
-          </p>
-        </section>
+            <p>
+              It was during my time at Music Jobs that I got my first taste of
+              building mobile web apps, and running a site off Amazon Web
+              Services' Elastic Cloud.
+            </p>
+          </section>
+        </div>
       </section>
       
       <!-- ///////////////////////////////////////////////////////// -->
