@@ -217,15 +217,15 @@ $asc = 'emily-3.asc';
           
           <footer>
             <div>
-              <h3>Languages:</h3>
+              <h3>Languages</h3>
               <p>PHP, HTML5, CSS, JavaScript, SQL</p>
             </div>
             <div>
-              <h3>Skills:</h3>
+              <h3>Skills</h3>
               <p>AWS Management, Client Management, Developer Training &amp; Management </p>
             </div>
             <div>
-              <h3>APIs:</h3>
+              <h3>APIs</h3>
               <p>AWS PHP API, PayPal, Barclays Epdq</p>
             </div>
           </footer>

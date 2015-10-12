@@ -127,6 +127,11 @@
             font-size: 20px;
         }
 
+        section section footer h3:after
+        {
+            content: ": "
+        }
+
         section section footer div
         {
             margin: 10px 0;
