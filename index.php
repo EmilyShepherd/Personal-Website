@@ -506,22 +506,57 @@ $asc = 'emily-3.asc';
             <div>Engineering Management and Law (MANG3067)</div>
           </section>
         </div>
+
         <div id="theleys" class="parallax" data-parallax-scale="0.9">
           <section>
             <header>
               <h2>The Leys</h2>
               <span>Secondary School &amp; Sixth Form</span>
-              
-              <h3>A Levels</h3>
-              Maths: A*, Further Maths: A*, Physics: A*, Chemistry: A
-              
-              <h3>GCSEs</h3>
-              A*s in Maths, Biology, Physics, Chemistry, Divinity, Latin, English Literature<br />
-              As in French, German, English Language, History
-              
-              <h3>FSMQ</h3>
-              A in Additional Maths
             </header>
+
+            <p>
+              The Leys is a secondary school in Cambridge, which I attended from Year 7 all the way
+              up to sixth form. From Year 10 upwards, I participated in the Duke of Edinburugh's
+              Award Scheme, completing all levels: Bronze, Silver and Gold, which I was awarded with
+              at St James's Palace by Prince Philip himself. I was also an active
+              member of the backstage theatre crew, becoming one of the youngest Deputy Stage
+              Managers in Year 11 and the head of Theatre Crew in my final year.
+            </p>
+
+            <p>
+              In Sixth Form, I joined the editorial team for The Fortnightly, the school's termly
+              student-written magazine, as a content compiler - I became Senior Compiler in Upper
+              Sixth. I also became the Chair of the Russell Group, a small executive of students
+              who arranged academic talks by a variety of speakers, include Simon Baron Cohen.
+            </p>
+
+            <p>
+              The Leys also had a section of the Combined Cadet Force - I joined the Naval section
+              of this in Year 10. In Lower Sixth, I was promoted to Petty Officer, a rank which had
+              until that point had only ever been given to Upper Sixth Formers.
+            </p>
+
+            <p>
+              In Upper Sixth, I was appointed deputy head of my house, School House, a position which
+              put me in charge of managing rotas for duties in house, calling the register, and 
+              oversight of many aspects of pastoral care for the younger years.
+            </p>
+              
+            <footer>
+              <div>
+                <h3>A Levels</h3>
+                <p>Maths: A*, Further Maths: A*, Physics: A*, Chemistry: A</p>
+              </div>
+              <div>
+                <h3>GCSEs</h3>
+                <p>A*s in Maths, Biology, Physics, Chemistry, Divinity, Latin, English Literature<br />
+                As in French, German, English Language, History</p>
+              </div>
+              <div>
+                <h3>FSMQ</h3>
+                <p>A in Additional Maths</p>
+              </div>
+            </footer>
           </section>
         </div>
       </section>
