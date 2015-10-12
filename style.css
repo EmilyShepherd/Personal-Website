@@ -556,6 +556,7 @@
             color: white;
             text-decoration: none;
             margin: 25px 18px;
+            vertical-align: text-top;
         }
 
         #social_media a span
@@ -634,6 +635,12 @@
         {
             background-color: #005c84;
             background-position: -324px -1296px;
+        }
+
+        #stack span
+        {
+            background-color: #EAEAEA;
+            background-position: -486px -1296px;
         }
 
         footer small a, footer small a:visited
