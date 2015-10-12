@@ -674,7 +674,14 @@ $asc = 'emily-3.asc';
               on issues such as the Lecturers' Marking Boycott.
             </p>
             
-            <p></p>
+            <p>
+              Whilst in SUSU, I took a keen interest in its democratic procedures
+              and policies - I sat on the Policy Review Committee, a small group
+              entrusted to review every single policy in the union, and recommend
+              changes, recategorisations and removals to Union Council. One of my
+              proudist achievements was fighting for an amendment to the union's
+              gender quota system, to make it trans* inclusive.
+            </p>
           </section>
           
           <div id="susu_footer"></div>
