@@ -208,7 +208,7 @@ CSPL.evalSpline = function(x, xs, ys, ks)
         else
         {
             susu_footer.style.position = 'fixed';
-            susu_footer.style.bottom   = Math.min(0, s + window.innerHeight - susu_bg.offsetTop - 30) + 'px';
+            susu_footer.style.bottom   = Math.min(0, s + window.innerHeight - susu_bg.offsetTop) + 'px';
         }
         
         // Me Icon
