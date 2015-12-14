@@ -251,7 +251,7 @@ $asc = 'emily-3.asc';
             <p>
               This was a project completed for the third year of my time at the
               <a href="#uni">University of
-              Southampton</a> - it was worth three eights of the year and I achieved a mark of 81%, a
+              Southampton</a> - it was worth three eighths of the year and I achieved a mark of 81%, a
               high first class grade.
             </p>
 
@@ -629,7 +629,7 @@ $asc = 'emily-3.asc';
             <h2>Nightline</h2>
 
             <p>
-              Southampton Nightline is a confidencial telephone listening service,
+              Southampton Nightline is a confidential telephone listening service,
               run entirely by student volunteers availiable to anyone at
               the University of Southampton free of charge.
             </p>
@@ -647,7 +647,7 @@ $asc = 'emily-3.asc';
               After only a year at Nightline, I became its head
               (the Nightline Officer) by entire-campus election. This put
               me in charge of all of Nightline's day to day operations,
-              such as ensuring the rota was filled, charing the Nightline
+              such as ensuring the rota was filled, chairing the Nightline
               Committee, acting as a point of contact and support for
               our volunteers, and its longer term plans and strategies,
               such as managing the budget and refreshing our constitution
@@ -694,7 +694,7 @@ $asc = 'emily-3.asc';
             <p>
               Within the University, this position saw me attend meetings
               of senior lecturers and professors, to provide a student
-              point of view on strategic decision within the faculty.
+              point of view on strategic decisions within the faculty.
             </p>
           </section>
           
@@ -715,7 +715,7 @@ $asc = 'emily-3.asc';
               and policies - I sat on the Policy Review Committee, a small group
               entrusted to review every single policy in the union, and recommend
               changes, recategorisations and removals to Union Council. One of my
-              proudist achievements was fighting for an amendment to the union's
+              proudest achievements was fighting for an amendment to the union's
               gender quota system, to make it trans* inclusive.
             </p>
           </section>
@@ -746,8 +746,7 @@ $asc = 'emily-3.asc';
             <p>
               Since then, I have carried on with walking in my own time,
               going on repeated family holidays to places such as
-              Snowdonia and the Lake District, and I have joined the
-              walking society at my university.
+              Snowdonia and the Lake District.
             </p>
           </section>
         </div>
