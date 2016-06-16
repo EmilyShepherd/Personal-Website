@@ -17,7 +17,7 @@ $asc = 'emily-3.asc';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla" />
     <link rel="stylesheet" href="/<?=$css?>" />
     
-    <meta name="description" content="Hi, I'm Emily. I am a 4th Computer Science student at the University of Southampton, on track for first class honours." />
+    <meta name="description" content="Hi, I'm Emily. I am a 4th Computer Science student at the University of Southampton, with first class honours." />
     <meta name="keywords" content="Web Developer, Computer, HTML, CSS, PHP, Python, JavaScript, JS, Apache, HTTP" />
     <meta name="author" content="Emily Shepherd" />
     <link rel="author" href="https://plus.google.com/111629088428160104525/">
@@ -150,7 +150,7 @@ $asc = 'emily-3.asc';
       <section id="intro_section" class="band">
         <h1 id="intro">Let me Introduce Myself</h1>
         <p>
-          I am a 4<sup>th</sup> year <a href="#uni">Computer Science student</a> at the University of Southampton, on track for
+          I am a <a href="#uni">Computer Science graduate</a> from the University of Southampton, with
           first class honours. The degree has introduced me to a
           plethora of concepts and subject areas, including: Low Level Graphics, Compiler
           Engineering, Database Design, Operating Systems and Memory Allocation, to name but a few.
