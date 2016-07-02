@@ -189,11 +189,6 @@ CSPL.evalSpline = function(x, xs, ys, ks)
         nav.parentElement.style.backgroundPosition =
             CSPL.evalSpline(s, curve.xs, curve.ys, curve.ks) - lOffset + 'px -1066px';
         
-        // Nightline Logo
-        var vSection    = document.getElementById('volunteering_section'),
-            nl          = document.getElementById('nl_logo');
-        nl.style.bottom = Math.max(-100, (s - vSection.offsetTop) * 0.2) + 'px';
-        
         // SUSU Footer
         var susu_footer = document.getElementById('susu_footer'),
             susu_bg     = document.getElementById('susu_bg');
