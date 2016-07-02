@@ -109,11 +109,6 @@
             box-sizing: border-box;
         }
 
-        #education_section .items section
-        {
-            width: 450px !important;
-        }
-
         section section header span
         {
             font-size: 18px;
@@ -788,6 +783,11 @@
                     background-position: top center;
                     background-size: cover;
                     padding: 30px;
+                }
+
+                #education_section .items section
+                {
+                    width: 450px !important;
                 }
 
                 #theleys
