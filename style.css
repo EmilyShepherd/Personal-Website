@@ -663,7 +663,8 @@
 
             main > section:not(.band)
             {
-                padding: 0px;
+                padding-left: 0px;
+                padding-right: 0px;
             }
             
             #sectionTitle
@@ -815,6 +816,7 @@
                 {
                     background: url('/images/snowdonia.jpg') center;
                     background-size: cover;
+                    padding: 20px;
                 }
 
                 #russia
