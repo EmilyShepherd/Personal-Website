@@ -620,26 +620,6 @@ $asc = 'emily-3.asc';
               </p>
             </section>
           </div>
-
-            <div>System Administration: Tools &amp; Techniques (COMP1005)</div>
-            <div>Computer Architecture (COMP1006)</div>
-            <div>Software Engineering (COMP1008)</div>
-            <div>Personal &amp; Professional Development (INFO1010)</div>
-            <div>Distributed Computing (COMP2005)</div>
-            <div>Human-Computer Interaction (COMP2006)</div>
-            <div>Software Analysis &amp; Design (COMP2007)</div>
-            <div>Communications &amp; Networks (COMP2008)</div>
-            <div>Software Engineering Project Work (COMP2012)</div>
-            <div>Artificial Intelligence (COMP2039)</div>
-            <div>Professional &amp; Legal Issues (INFO2009)</div>
-            <div>Scripting Languages (COMP3001)</div>
-            <div>Principles of Computer Graphics (COMP3004)</div>
-            <div>Intelligence Algorithms (COMP3032)</div>
-            <div>Cyber Security (COMP3201)</div>
-            <div>Cloud Application Development (COMP3207)</div>
-            <div>Advanced Databases (COMP3211)</div>
-            <div>Principles and Practice of Computer Graphics (COMP3214)</div>
-            <div>Engineering Management and Law (MANG3067)</div>
         </div>
 
         <div id="theleys" class="parallax" data-parallax-scale="0.9">
