@@ -11,12 +11,12 @@ $asc = 'emily-3.asc';
   <head>
     <meta charset="UTF-8">
     <title>Emily L. Shepherd</title>
-    
+
     <!-- Styling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla" />
     <link rel="stylesheet" href="/<?=$css?>" />
-    
+
     <meta name="description" content="Hi, I'm Emily. I am a 4th Computer Science student at the University of Southampton, with first class honours." />
     <meta name="keywords" content="Web Developer, Computer, HTML, CSS, PHP, Python, JavaScript, JS, Apache, HTTP" />
     <meta name="author" content="Emily Shepherd" />
@@ -24,13 +24,13 @@ $asc = 'emily-3.asc';
     <link rel="sitemap" href="/sitemap.xml" />
     <link rel="author" href="/humans.txt" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    
+
     <!-- Facebook Open Graph -->
     <meta property="og:description" content="22. UK. Computer Scientist, Web Developer and first class Computer Science graduate from the University of Southampton. Contact me at emily@emilyshepherd.me. PGP: 4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D" />
     <meta property="og:title" content="Hi, I'm Emily L. Shepherd." />
     <meta property="og:image" content="http://emilyshepherd.me/images/fb_bg.png" />
     <meta property="og:url" content="https://emilyshepherd.me/" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@EmilyLShepherd" />
@@ -52,12 +52,12 @@ $asc = 'emily-3.asc';
         <a href="#casual"><span>Casual Em</span></a>
       </div>
     </nav>
-    
+
     <!-- Menu Button (for mobiles) -->
     <label for="menu">&nbsp;</label>
     <input type="checkbox" id="menu" onclick="closePopup()" />
     <div class="coverAll" onclick="document.getElementById('menu').checked=false;"></div>
-    
+
     <span id="sectionTitle">Emily Shepherd</span>
 
     <!-- Links -->
@@ -71,10 +71,10 @@ $asc = 'emily-3.asc';
       <a href="#volunteering"><span>Volunteering</span></a>
       <a href="#casual"><span>Casual Em</span></a>
     </div>
-    
+
     <!-- Content -->
     <main id="hi">
-      
+
       <!-- Hi, I'm Emily. -->
       <section id="name_section" class="" data-parallax-scale="0.8">
         <div class="inner">
@@ -144,9 +144,9 @@ $asc = 'emily-3.asc';
           </header>
         </div>
       </section>
-      
+
       <!-- ///////////////////////////////////////////////////////// -->
-      
+
       <section id="intro_section" class="band">
         <h1 id="intro">Let me Introduce Myself</h1>
         <p>
@@ -155,7 +155,7 @@ $asc = 'emily-3.asc';
           plethora of concepts and subject areas, including: Low Level Graphics, Compiler
           Engineering, Database Design, Operating Systems and Memory Allocation, to name but a few.
         </p>
-        
+
         <p>
           Outside of the course I work as a <a href="#sweeb">freelance web developer</a> and have
           built and managed sites for a variety of non-profit groups, such as theatre groups,
@@ -171,13 +171,13 @@ $asc = 'emily-3.asc';
           running the Nightline Listening Service and fighting for trans* rights.
         </p>
       </section>
-      
+
       <!-- ///////////////////////////////////////////////////////// -->
-      
+
       <section id="experience_section">
         <div id="exp_bg" class="parallax2" data-parallax-scale="0.8" data-parallax-staple="experience_section"></div>
         <h1 id="experience">Experience &amp; Portfolio</h1>
-        
+
         <div class="items">
           <section id="spastaff">
             <div class="pic_area">
@@ -188,7 +188,7 @@ $asc = 'emily-3.asc';
               <span class="position">Web Developer and Web Mistress</span>
               <span class="dates">2011 - Present</span>
             </header>
-            
+
             <p>
               I took over the management of
               <a href="https://www.spastaff.com/" target="_blank">Spa Staff.com</a>
@@ -198,7 +198,7 @@ $asc = 'emily-3.asc';
               and development of the site. The site is hosted on an EC2 instance
               in Amazon's Elastic Cloud.
             </p>
-            
+
             <p>
               As web developer, I was responsible for implementing a redesign, from
               their
@@ -206,7 +206,7 @@ $asc = 'emily-3.asc';
               to the version which is live today. The site is now responsive, and
               flicks into a "stretchy" design on small screens.
             </p>
-            
+
             <p>
               In 2014, Spa Staff contracted a second freelance developer to
               perform petty bug fixes and improvements while I worked on a major
@@ -215,7 +215,7 @@ $asc = 'emily-3.asc';
               was my first experience of acting in a managerial role in a
               commercial group.
             </p>
-            
+
             <footer>
               <div>
                 <h3>Languages</h3>
@@ -286,13 +286,13 @@ $asc = 'emily-3.asc';
               <span class="position">Owner, Web Developer</span>
               <span class="dates">2005 - Present</span>
             </header>
-            
+
             <p>
               I have been deeply interested in web development for a long time,
               and quickly realised that I could earn money from my passion. I act
               as a freelance web developer under the brand name: <span class="sweeb">SWEEB</span>.
             </p>
-            
+
             <p>
               Many of my clients were small charities and individuals without
               any technical knowledge. This has taught me to be well versed in translating
@@ -300,7 +300,7 @@ $asc = 'emily-3.asc';
               communicating with clients without resorting to confusing jargon.
             </p>
           </section>
-          
+
           <section id="musicjobs">
             <div class="pic_area">
               <img src="/images/music_jobs.png" alt="Music Jobs Ltd" />
@@ -314,7 +314,7 @@ $asc = 'emily-3.asc';
               In the summer of 2010, I became an intern at their London office. My
               main task was reskinning their web site to look good on iPhones.
             </p>
-            
+
             <p>
               In 2011 I was invited to their LA office, to continue as a Web
               Developer. I was tasked with rebuilding their payment systems.
@@ -328,12 +328,12 @@ $asc = 'emily-3.asc';
           </section>
         </div>
       </section>
-      
+
       <!-- ///////////////////////////////////////////////////////// -->
-      
+
       <section id="skills_section" class="band">
         <h1 id="skills">Skills</h1>
-        
+
         <h2>Languages</h2>
         <div class="skillHolder">
           <div id="c">
@@ -385,7 +385,7 @@ $asc = 'emily-3.asc';
             Scheme
           </div>
         </div>
-        
+
         <h2>Systems</h2>
         <div class="skillHolder">
           <div id="gcp">
@@ -409,7 +409,7 @@ $asc = 'emily-3.asc';
             MySQL
           </div>
         </div>
-        
+
         <h2>Software</h2>
         <div class="skillHolder">
           <div id="ps">
@@ -433,7 +433,7 @@ $asc = 'emily-3.asc';
             WinSCP
           </div>
         </div>
-        
+
         <h2>APIs</h2>
         <div class="skillHolder">
           <div id="oauth">
@@ -458,7 +458,7 @@ $asc = 'emily-3.asc';
           </div>
         </div>
       </section>
-      
+
       <section id="education_section">
         <div id="soton" class="parallax" data-parallax-scale="0.9">
           <h1 id="education">Education</h1>
@@ -656,7 +656,7 @@ $asc = 'emily-3.asc';
               put me in charge of managing rotas for duties in house, calling the register, and 
               oversight of many aspects of pastoral care for the younger years.
             </p>
-              
+
             <footer>
               <div>
                 <h3>A Levels</h3>
@@ -675,12 +675,12 @@ $asc = 'emily-3.asc';
           </section>
         </div>
       </section>
-      
+
       <!-- ///////////////////////////////////////////////////////// -->
-      
+
       <section id="honors_section" class="band">
         <h1 id="awards">Honours and Awards</h1>
-        
+
         <div class="items">
           <section>
             <h2>Netcraft Prize</h2>
@@ -705,7 +705,7 @@ $asc = 'emily-3.asc';
               University of Southampton.
             </p>
           </section>
-          
+
           <section>
             <h2>University Scholarship Offer</h2>
             <p>
@@ -720,7 +720,7 @@ $asc = 'emily-3.asc';
               Completed up to a Gold Level.
             </p>
           </section>
-          
+
           <section>
             <h2>Barnabus Award</h2>
             <p>
@@ -738,9 +738,9 @@ $asc = 'emily-3.asc';
           </section>
         </div>
       </section>
-      
+
       <!-- ///////////////////////////////////////////////////////// -->
-      
+
       <section id="volunteering_section">
         <div id="nl_bg" class="parallax" data-parallax-scale="0.8">
           <h1 id="volunteering">Volunteering</h1>
@@ -788,7 +788,7 @@ $asc = 'emily-3.asc';
             </p>
           </section>
         </div>
-        
+
         <div id="susu_bg" class="parallax" data-parallax-scale="0.8">
           <div class="items">
             <section>
@@ -820,7 +820,7 @@ $asc = 'emily-3.asc';
                 point of view on strategic decisions within the faculty.
               </p>
             </section>
-            
+
             <section>
               <h2>Students' Union</h2>
               <p>
@@ -847,9 +847,9 @@ $asc = 'emily-3.asc';
           <div id="susu_footer"></div>
         </div>
       </section>
-      
+
       <!-- ///////////////////////////////////////////////////////// -->
-      
+
       <section id="casual_section">
         <div id="walking" class="parallax" data-parallax-scale="0.7">
           <h1 id="casual">Casual Em</h1>
@@ -878,10 +878,10 @@ $asc = 'emily-3.asc';
         </div>
       </section>
     </main>
-    
+
     <footer>
       <h1>Let's Stay In Touch...</h1>
-      
+
       <div id="social_media">
         <a target="_blank" id="googleplus" href="https://plus.google.com/111629088428160104525/"><span></span>Google</a>
         <a target="_blank" id="fb" href="https://www.facebook.com/EmilyLangdonShepherd"><span></span>Facebook</a>
@@ -896,7 +896,7 @@ $asc = 'emily-3.asc';
         <a target="_blank" id="email" href="mailto:emily@emilyshepherd.me"><span></span>Email</a>
         <a target="_blank" id="pgp" href="<?=$asc?>"><span></span>PGP Key</a>
       </div>
-            
+
       <small>
         <!-- Funny joke in 3, 2, 1... -->
         Page Transmitted via
@@ -905,18 +905,18 @@ $asc = 'emily-3.asc';
         with <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> license.
       </small>
     </footer>
-    
+
     <div id="pgp_popup">
       <a href="javascript:closePopup();" id="pgp_close">X</a>
       <h1>PGP Public Key</h1>
-      
+
       <br />
-      
+
       <span class="label">Fingerprint</span>
       4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D
-      
+
       <br /><br />
-      
+
       <span class="label">Key</span><br />
       <a href="/<?=$asc?>" target="_blank">Download Raw .asc file</a> |
       <a href="javascript:copy();">Copy to Clipboard</a>
@@ -925,20 +925,20 @@ $asc = 'emily-3.asc';
         <textarea id="pgp_text"></textarea>
       </div>
     </div>
-    
+
     <script>
       window.ascLocation = '/<?=$asc?>';
     </script>
-    
+
     <!-- Start loading scripts -->
     <!-- At the end so the page can load first -->
     <script src="/<?=$js?>"></script>
-    
+
     <script>
       (new Em.Parallax({"wCutOff" : 780 })).registerListener();
       (new Em.Parallax({"wCutOff" : 780, "className" : "parallax2", "style" : "top" })).registerListener();
     </script>
-    
+
     <!-- Analytics -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -949,7 +949,7 @@ $asc = 'emily-3.asc';
       ga('create', 'UA-22782962-2', 'auto');
       ga('send', 'pageview');
     </script>
-    
+
     <!-- Google Markup -->
     <script type="application/ld+json">
       {
