@@ -295,6 +295,9 @@ CSPL.evalSpline = function(x, xs, ys, ks)
         
         if (w > 780)
         {
+            var intro = document.getElementById('intro_section'),
+                exp   = document.getElementById('experience_section');
+
             document.getElementById('exp_bg').innerText =
                 '<!DOCTYPE html>'           +
                 '<html>'                    +
@@ -302,7 +305,8 @@ CSPL.evalSpline = function(x, xs, ys, ks)
                     document.head.innerHTML +
                   '</head>'                 +
                   '<body>'                  +
-                    document.body.innerHTML +
+                    intro.innerHTML         +
+                    exp.innerHTML           +
                   '</body>'                 +
                 '</html>';
         }
