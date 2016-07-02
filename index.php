@@ -469,31 +469,166 @@ $asc = 'emily-3.asc';
             </header>
 
             <p>
-              I am currently in my fourth year of an integrated Master of
-              Engineering degree at the University of Southampton, reading Computer
-              Science, on track for first class honours.
+              I have just completed my final year of my four year integrated
+              Master of Engineering in Computer Science at the University
+              of Southampton, with First Class Honours.
             </p>
 
-            <div>Introduction to Formal Methods (COMP1001)</div>
-            <div>Advanced Programming (COMP1003)</div>
-            <div>Programming Principles (COMP1004)</div>
+            <p>
+              The following is a small selection of the modules I studied:
+            </p>
+          </section>
+
+          <div class="items">
+            <section>
+              <header>
+                <h2>Introduction to Formal Methods</h2>
+                <span>92%</span>
+              </header>
+
+              <p>
+                This module gave an introduction to formal analysis of
+                program logic, including ways to prove that a system is
+                sound, using Event-B.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Advanced Programming, Programming Principles</h2>
+                <span>86%, 94%</span>
+              </header>
+
+              <p>
+                These two modules covered Java from the ground, all the
+                way up to more complex opperations, such as writing basic
+                graphical user interfaces and immplementing simple physics
+                environments.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Engineering and Discrete Maths for Comp Sci</h2>
+                <span>84% and 86%</span>
+              </header>
+
+              <p>
+                Engineering Mathematics for Computer Science covered all
+                the maths required for the course, including trigonometry
+                and matrix arithmetic.
+              </p>
+
+              <p>
+                Discrete Mathematics for Computer Science went in depth
+                into various formal notations and complex logical proofs.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Data Structures &amp; Algorithms</h2>
+                <span>94%</span>
+              </header>
+
+              <p>
+                This module taught me a range of
+                data structures, such as HashMaps, Linked Lists, Circular
+                Arrays, etc. It focused on teaching us how to implement
+                these ourselves as well as how to assess their pros and
+                cons, to choose the best option for any given task.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Introduction to Digital Electronics</h2>
+                <span>86%</span>
+              </header>
+
+              <p>
+                This gave a glimpse into the physical side of computing,
+                having me build digital circuits on breadboards.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Computational Systems</h2>
+                <span>96%</span>
+              </header>
+
+              <p>
+                This course explored common programming paradigms:
+                Object Orientated, Proceedural and Functional. The
+                coursework focused on Functional Programming, requiring
+                us to write programs in Scheme.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Database Systems</h2>
+                <span>79%</span>
+              </header>
+
+              <p>
+                An introduction to creating, querying and updating
+                database systems using MySQL and PHP.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Theory of Computing</h2>
+                <span>80%</span>
+              </header>
+
+              <p>
+                This module focuses on the thought processes and logical 
+                reasoning that lead to the creation of the first
+                computers, as well as the basis for regular expressions
+                and grammatical parsers.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Compiler Engineering</h2>
+                <span>81%</span>
+              </header>
+
+              <p>
+                This module saw us working with the basics of developing
+                language parsers, with the over aim to build a cross
+                compiler from a small language called LittleNic into a
+                working Java program.
+              </p>
+            </section>
+
+            <section>
+              <header>
+                <h2>Operating Systems</h2>
+                <span>80%</span>
+              </header>
+
+              <p>
+                A module looking at the low level workings of the
+                Operating System, with a focus on memory management.
+                The coursework had us reimplementing malloc, finding a
+                balance between space efficiency and speed.
+              </p>
+            </section>
+          </div>
+
             <div>System Administration: Tools &amp; Techniques (COMP1005)</div>
             <div>Computer Architecture (COMP1006)</div>
-            <div>Discrete Mathematics for Computer Science (COMP1007)</div>
             <div>Software Engineering (COMP1008)</div>
-            <div>Data Structures &amp; Algorithms (COMP1009)</div>
-            <div>Introduction to Digital Electronics (ELEC1013)</div>
             <div>Personal &amp; Professional Development (INFO1010)</div>
-            <div>Engineering Mathematics for Computer Science (MATH1014)</div>
-            <div>Computational Systems (COMP2002)</div>
-            <div>Database Systems (COMP2004)</div>
             <div>Distributed Computing (COMP2005)</div>
             <div>Human-Computer Interaction (COMP2006)</div>
             <div>Software Analysis &amp; Design (COMP2007)</div>
             <div>Communications &amp; Networks (COMP2008)</div>
-            <div>Operating Systems (COMP2009)</div>
-            <div>Compiler Engineering (COMP2010)</div>
-            <div>Theory of Computing (COMP2011)</div>
             <div>Software Engineering Project Work (COMP2012)</div>
             <div>Artificial Intelligence (COMP2039)</div>
             <div>Professional &amp; Legal Issues (INFO2009)</div>
@@ -505,7 +640,6 @@ $asc = 'emily-3.asc';
             <div>Advanced Databases (COMP3211)</div>
             <div>Principles and Practice of Computer Graphics (COMP3214)</div>
             <div>Engineering Management and Law (MANG3067)</div>
-          </section>
         </div>
 
         <div id="theleys" class="parallax" data-parallax-scale="0.9">
@@ -612,6 +746,14 @@ $asc = 'emily-3.asc';
             <p>
               For 'contributing to the building of community in The Leys
               School'. Nominated by fellow students.
+            </p>
+          </section>
+
+          <section>
+            <h2>First Class</h2>
+            <p>
+              Awarded First Class Honours for my integrated masters at
+              the University of Southampton.
             </p>
           </section>
         </div>
