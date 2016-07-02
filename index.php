@@ -26,7 +26,7 @@ $asc = 'emily-3.asc';
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     
     <!-- Facebook Open Graph -->
-    <meta property="og:description" content="22. UK. Computer Scientist, Web Developer and fourth year undergraduate at the University of Southampton. Contact me at emily@emilyshepherd.me. PGP: 4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D" />
+    <meta property="og:description" content="22. UK. Computer Scientist, Web Developer and first class Computer Science graduate from the University of Southampton. Contact me at emily@emilyshepherd.me. PGP: 4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D" />
     <meta property="og:title" content="Hi, I'm Emily L. Shepherd." />
     <meta property="og:image" content="http://emilyshepherd.me/images/fb_bg.png" />
     <meta property="og:url" content="https://emilyshepherd.me/" />
@@ -35,7 +35,7 @@ $asc = 'emily-3.asc';
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@EmilyLShepherd" />
     <meta name="twitter:title" content="Hi, I'm Emily L. Shepherd." />
-    <meta name="twitter:description" content="22. UK. Computer Scientist, Web Developer and fourth year undergraduate at the University of Southampton. Contact me at emily@emilyshepherd.me" />
+    <meta name="twitter:description" content="22. UK. Computer Scientist, Web Developer and first class Computer Science graduate from the University of Southampton. Contact me at emily@emilyshepherd.me" />
     <meta name="twitter:image" content="http://emilyshepherd.me/images/me.jpg" />
   </head>
   <body>
@@ -140,7 +140,7 @@ $asc = 'emily-3.asc';
           </div>
           <header class="parallax2" data-parallax-scale="0.5">
             <h1>Hi, I'm Emily.</h1>
-            <p>Web Developer | Computer Science Undergraduate</p>
+            <p>Web Developer | First Class Computer Science MEng</p>
           </header>
         </div>
       </section>
