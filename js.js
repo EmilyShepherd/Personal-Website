@@ -111,8 +111,6 @@ CSPL.evalSpline = function(x, xs, ys, ks)
         
         xmlhttp.onreadystatechange = (function()
         {
-            console.log(xmlhttp);
-            
             if (xmlhttp.readyState === 4)
             {
                 document.getElementById('pgp_text').value = xmlhttp.responseText;
