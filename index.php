@@ -273,7 +273,7 @@ $asc = 'emily-3.asc';
               teams to bond more effectively.
             </p>
             <p>
-              <a target="_blank" href="http://shep.sweeb.net/Legit_Report.pdf">Read The Full Report &gt;</a>
+              <a target="_blank" href="/files/Legit_Report.pdf">Read The Full Report &gt;</a>
             </p>
           </section>
 
