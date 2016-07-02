@@ -163,7 +163,7 @@ $asc = 'emily-3.asc';
           organisations such as <a href="#spastaff">Spa Staff.com</a>,
           <a href="#musicjobs">UK Music Jobs</a> and Simply D'nA.
         </p>
-        
+
         <p>
           When not coding, I like to exercise by hill walking, a
           passion I have loved since completing the Gold Duke of Edinburgh Award. I have also been
@@ -790,58 +790,60 @@ $asc = 'emily-3.asc';
         </div>
         
         <div id="susu_bg" class="parallax" data-parallax-scale="0.8">
-          <section>
-            <h2 id="susu">Student Representation</h2>
+          <div class="items">
+            <section>
+              <h2 id="susu">Student Representation</h2>
+
+              <p>
+                I became involved in student affairs very soon after
+                settling in at university. Unofficially at first -
+                emailing lecturers to provide feedback and pass on requests on
+                behalf of my cohort. I quickly realised
+                I was doing the job of a "course representative", so ran at the
+                end of my second year, and won by a landslide.
+              </p>
+
+              <p>
+                I was not a course rep long before I was promoted via
+                whole campus election to the position of Faculty Officer,
+                the highest student-held position in the representation
+                system. This made me the head of student representation
+                for my faculty, the Faculty of Physical Sciences and
+                Engineering, covering the departments of Physics,
+                Web Science, Optoelectronics and Electronics and Computer
+                Science.
+              </p>
+
+              <p>
+                Within the University, this position saw me attend meetings
+                of senior lecturers and professors, to provide a student
+                point of view on strategic decisions within the faculty.
+              </p>
+            </section>
             
-            <p>
-              I became involved in student affairs very soon after
-              settling in at university. Unofficially at first -
-              emailing lecturers to provide feedback and pass on requests on
-              behalf of my cohort. I quickly realised
-              I was doing the job of a "course representative", so ran at the
-              end of my second year, and won by a landslide.
-            </p>
-            
-            <p>
-              I was not a course rep long before I was promoted via
-              whole campus election to the position of Faculty Officer,
-              the highest student-held position in the representation
-              system. This made me the head of student representation
-              for my faculty, the Faculty of Physical Sciences and
-              Engineering, covering the departments of Physics,
-              Web Science, Optoelectronics and Electronics and Computer
-              Science.
-            </p>
-            
-            <p>
-              Within the University, this position saw me attend meetings
-              of senior lecturers and professors, to provide a student
-              point of view on strategic decisions within the faculty.
-            </p>
-          </section>
-          
-          <section>
-            <h2>Students' Union</h2>
-            <p>
-              My role in representation introduced me to our Students' Union,
-              <a href="http://www.susu.org/" target="_blank">SUSU</a>. After my
-              time as Faculty Officer, I ran to be a Union Councillor, giving me
-              a seat on the Union's highest decision making body. At these
-              meetings, we oversaw the union's finances, discussed and voted on
-              student-focused policies and decided stances for the entire union
-              on issues such as the Lecturers' Marking Boycott.
-            </p>
-            
-            <p>
-              Whilst in SUSU, I took a keen interest in its democratic procedures
-              and policies - I sat on the Policy Review Committee, a small group
-              entrusted to review every single policy in the union, and recommend
-              changes, recategorisations and removals to Union Council. One of my
-              proudest achievements was fighting for an amendment to the union's
-              gender quota system, to make it trans* inclusive.
-            </p>
-          </section>
-          
+            <section>
+              <h2>Students' Union</h2>
+              <p>
+                My role in representation introduced me to our Students' Union,
+                <a href="http://www.susu.org/" target="_blank">SUSU</a>. After my
+                time as Faculty Officer, I ran to be a Union Councillor, giving me
+                a seat on the Union's highest decision making body. At these
+                meetings, we oversaw the union's finances, discussed and voted on
+                student-focused policies and decided stances for the entire union
+                on issues such as the Lecturers' Marking Boycott.
+              </p>
+
+              <p>
+                Whilst in SUSU, I took a keen interest in its democratic procedures
+                and policies - I sat on the Policy Review Committee, a small group
+                entrusted to review every single policy in the union, and recommend
+                changes, recategorisations and removals to Union Council. One of my
+                proudest achievements was fighting for an amendment to the union's
+                gender quota system, to make it trans* inclusive.
+              </p>
+            </section>
+          </div>
+
           <div id="susu_footer"></div>
         </div>
       </section>
@@ -852,25 +854,27 @@ $asc = 'emily-3.asc';
         <div id="walking" class="parallax" data-parallax-scale="0.7">
           <h1 id="casual">Casual Em</h1>
 
-          <section>
-            <h2>Walking</h2>
-            <p>
-              My preferred exercise is walking - at school I completed
-              the Duke of Edinburugh Award at all three stages (Bronze,
-              Silver and Gold). In fact, I enjoyed DofE so much that I
-              volunteered with my school to help out their year eleven
-              students, who were undertaking their Silver Award. This was
-              an interesting and unique experience, as it gave me an
-              insight into dealing with younger students in a position of
-              legal authority.
-            </p>
+          <div class="items">
+            <section>
+              <h2>Walking</h2>
+              <p>
+                My preferred exercise is walking - at school I completed
+                the Duke of Edinburugh Award at all three stages (Bronze,
+                Silver and Gold). In fact, I enjoyed DofE so much that I
+                volunteered with my school to help out their year eleven
+                students, who were undertaking their Silver Award. This was
+                an interesting and unique experience, as it gave me an
+                insight into dealing with younger students in a position of
+                legal authority.
+              </p>
 
-            <p>
-              Since then, I have carried on with walking in my own time,
-              going on repeated family holidays to places such as
-              Snowdonia and the Lake District.
-            </p>
-          </section>
+              <p>
+                Since then, I have carried on with walking in my own time,
+                going on repeated family holidays to places such as
+                Snowdonia and the Lake District.
+              </p>
+            </section>
+          </div>
         </div>
       </section>
     </main>
