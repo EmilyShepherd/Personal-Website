@@ -363,6 +363,13 @@
             box-shadow: black 0 0px 21px 0px;
         }
 
+    /** INTRO SECTION **/
+        #print_msg
+        {
+            display: none;
+        }
+
+
     /** SKILLS SECTION **/
         .skillHolder div
         {
@@ -1052,6 +1059,14 @@
                 margin-top: 120px;
             }
 
+            #print_msg
+            {
+                position: absolute;
+                bottom: 0px;
+                font-size: 14px;
+                text-align: center;
+            }
+
         /** SKILLS SECTION **/
             #skills_section
             {
@@ -1113,7 +1128,7 @@
                 text-decoration: none;
             }
 
-            main a:not([href^="#"]):not(.button):after
+            main a:not([href^="#"]):not(.button):not(.ignore_link):after
             {
                 content: " [" attr(href) "]";
                 font-style: normal;

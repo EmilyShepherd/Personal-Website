@@ -170,6 +170,11 @@ $asc = 'emily-3.asc';
           heavily involved in the Students' Union, acting as a course representative,
           running the Nightline Listening Service and fighting for transgender rights.
         </p>
+
+        <p id="print_msg">
+          This is a printout of emilyshepherd.me. For my condensed, 2 page CV, please see
+          <a href="https://emilyshepherd.me/Emily_Shepherd_CV.pdf" class="ignore_link">emilyshepherd.me/Emily_Shepherd_CV.pdf</a>.
+        </p>
       </section>
 
       <!-- ///////////////////////////////////////////////////////// -->
