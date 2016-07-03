@@ -196,7 +196,7 @@ $asc = 'emily-3.asc';
 
             <p>
               I took over the management of
-              <a href="https://www.spastaff.com/" target="_blank">Spa Staff.com</a>
+              <a href="https://www.spastaff.com/" target="_blank" class="ignore_link">Spa Staff.com</a>
               from a professional web
               construction company in 2011, while I was still in Sixth Form. Since
               then, I have been solely in charge of the technical administration
