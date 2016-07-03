@@ -68,6 +68,22 @@
         content: " | "
     }
 
+    section section footer h3, section section footer p
+    {
+        display: inline;
+        font-size: 20px;
+    }
+
+    section section footer h3:after
+    {
+        content: ": "
+    }
+
+    section section footer div
+    {
+        margin: 10px 0;
+    }
+
 @media screen
 {
     html, body, main
@@ -119,22 +135,6 @@
         {
             text-align: center;
             height: 75px;
-        }
-
-        section section footer h3, section section footer p
-        {
-            display: inline;
-            font-size: 20px;
-        }
-
-        section section footer h3:after
-        {
-            content: ": "
-        }
-
-        section section footer div
-        {
-            margin: 10px 0;
         }
 
         /* Band subsection */
