@@ -157,7 +157,7 @@
             padding: 0 !important;
         }
 
-        a[href^="/"], a[href^="/"]:visited, a[href^="/"]:active
+        a.button, a.button:visited, a.button:active
         {
             display: inline-block;
             padding: 10px;
@@ -167,15 +167,21 @@
             background: linear-gradient(#6fa5dd, #0D47A1 80%);
             font-weight: bold;
             border: 2px solid #90CAF9;
-            text-transform: capitalize
+            text-transform: capitalize;
+            width: calc(50% - 30px);
         }
 
-        a[href^="/"]:hover
+        a.button:nth-child(even)
+        {
+            margin-left: 10px;
+        }
+
+        a.button:hover
         {
             background: linear-gradient(#0D47A1, #6fa5dd 80%);
         }
 
-        a[href^="/"]:after
+        a.button:after
         {
             content: " >";
         }
@@ -1096,24 +1102,30 @@
                 text-decoration: none;
             }
 
-            main a[href*=":"]
-            {
-                font-style: italic;
-            }
-
-            main a[href*=":"]:after
+            main a:not([href^="#"]):not(.button):after
             {
                 content: " [" attr(href) "]";
                 font-style: normal;
             }
 
-            main a[href^="/"]:after
+            main a.button
             {
-                content: " at https://emilyshepherd.me" attr(href) ".";
+                display: block;
+                margin-top: 10px;
+            }
+
+            main a.button:after
+            {
+                content: " at " attr(href) ".";
                 font-style: normal;
             }
 
-            main a[href^="/"]:before
+            main a.button[href^="/"]:after
+            {
+                content: " at https://emilyshepherd.me" attr(href) ".";
+            }
+
+            main a.button:before
             {
                 content: "You can ";
             }

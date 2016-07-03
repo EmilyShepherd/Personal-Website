@@ -273,7 +273,8 @@ $asc = 'emily-3.asc';
               teams to bond more effectively.
             </p>
             <p>
-              <a target="_blank" href="/files/Legit_Report.pdf">read the full report</a>
+              <a target="_blank" href="/files/Legit_Report.pdf" class="button">read the full report</a>
+              <a target="_blank" href="https://github.com/legit-sqa/legit" class="button">view the code</a>
             </p>
           </section>
 
