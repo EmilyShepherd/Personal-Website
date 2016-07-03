@@ -1011,6 +1011,28 @@
                 clear: both;
                 margin-top: 120px;
             }
+
+        /** SKILLS SECTION **/
+            #skills_section h2
+            {
+                display: none;
+            }
+
+            .skillHolder
+            {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .skillHolder div
+            {
+                display: inline;
+            }
+
+            .skillHolder div:not(:last-of-type):after
+            {
+                content: " · ";
+            }
             
         /** NL **/
         #nl_logo
