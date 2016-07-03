@@ -168,7 +168,7 @@ $asc = 'emily-3.asc';
           When not coding, I like to exercise by hill walking, a
           passion I have loved since completing the Gold Duke of Edinburgh Award. I have also been
           heavily involved in the Students' Union, acting as a course representative,
-          running the Nightline Listening Service and fighting for trans* rights.
+          running the Nightline Listening Service and fighting for transgender rights.
         </p>
       </section>
 
@@ -839,7 +839,7 @@ $asc = 'emily-3.asc';
                 entrusted to review every single policy in the union, and recommend
                 changes, recategorisations and removals to Union Council. One of my
                 proudest achievements was fighting for an amendment to the union's
-                gender quota system, to make it trans* inclusive.
+                gender quota system, to make it transgender inclusive.
               </p>
             </section>
           </div>
