@@ -168,12 +168,6 @@
             font-weight: bold;
             border: 2px solid #90CAF9;
             text-transform: capitalize;
-            width: calc(50% - 30px);
-        }
-
-        a.button:nth-child(even)
-        {
-            margin-left: 10px;
         }
 
         a.button:hover
@@ -700,7 +694,17 @@
             {
                 display: none;
             }
+
+            a.button
+            {
+                width: calc(50% - 30px);
+            }
         
+            a.button:nth-child(even)
+            {
+                margin-left: 10px;
+            }
+
             /** ME **/
                 #me
                 {
@@ -979,6 +983,13 @@
                 section:not(#volunteering_section), #susu_bg
                 {
                     padding: 20px !important;
+                }
+
+                a.button
+                {
+                    margin-top: 10px;
+                    box-sizing: border-box;
+                    width: 100%;
                 }
             
             /** MENU **/
