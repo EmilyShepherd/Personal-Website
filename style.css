@@ -157,6 +157,29 @@
             padding: 0 !important;
         }
 
+        a[href^="/"], a[href^="/"]:visited, a[href^="/"]:active
+        {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(#6fa5dd, #0D47A1 80%);
+            font-weight: bold;
+            border: 2px solid #90CAF9;
+            text-transform: capitalize
+        }
+
+        a[href^="/"]:hover
+        {
+            background: linear-gradient(#0D47A1, #6fa5dd 80%);
+        }
+
+        a[href^="/"]:after
+        {
+            content: " >";
+        }
+
     /** NAV BAR **/
         nav
         {
@@ -544,7 +567,7 @@
             padding: 20px;
         }
         
-        #pgp_popup
+        #pgp_popup, .human_name
         {
             display: none;
         }
@@ -559,7 +582,7 @@
             vertical-align: text-top;
         }
 
-        #social_media a span
+        #social_media a span:not(.human_name)
         {
             background-image: url('/images/sprites.png');
             background-repeat: no-repeat;
@@ -571,73 +594,73 @@
             margin-bottom: 10px;
         }
 
-        #googleplus span
+        #googleplus span:not(.human_name)
         {
             background-color: #c53012;
             background-position: -324px 0px;
         }
 
-        #instagram span
+        #instagram span:not(.human_name)
         {
             background-color: #3d6c92;
             background-position: -648px 0px;
         }
 
-        #twitter span
+        #twitter span:not(.human_name)
         {
             background-color: #2aa9df;
             background-position: -162px -162px;
         }
 
-        #fb span
+        #fb span:not(.human_name)
         {
             background-color: #3a5897;
             background-position: 0px 0px;
         }
 
-        #email span
+        #email span:not(.human_name)
         {
             background-color: #3ea9f5;
             background-position: 0px -162px;
         }
 
-        #linkedIn span
+        #linkedIn span:not(.human_name)
         {
             background-color: #0073a4;
             background-position: -810px 0px;
         }
 
-        #github span
+        #github span:not(.human_name)
         {
             background-color: #333;
             background-position: -162px 0px;
         }
 
-        #gravatar span
+        #gravatar span:not(.human_name)
         {
             background-color: #0a76b7;
             background-position: -486px 0px;
         }
         
-        #pgp span
+        #pgp span:not(.human_name)
         {
             background-color: #e9eaed;
             background-position: 0px -1296px;
         }
         
-        #keybase span
+        #keybase span:not(.human_name)
         {
             background-color: #ff611c;
             background-position: -162px -1296px;
         }
         
-        #ecs span
+        #ecs span:not(.human_name)
         {
             background-color: #005c84;
             background-position: -324px -1296px;
         }
 
-        #stack span
+        #stack span:not(.human_name)
         {
             background-color: #EAEAEA;
             background-position: -486px -1296px;
@@ -965,7 +988,7 @@
     @media print
     {
         /** HIDDEN ITEMS **/
-        nav, #me, #intro, #menu, #menuBar, #sectionTitle, main ~ footer, .bg, #exp_bg, #pgp_popup
+        nav, #me, #intro, #menu, #menuBar, #sectionTitle, .bg, #exp_bg, #pgp_popup, main ~ footer small
         {
             display: none;
         }
@@ -979,7 +1002,7 @@
             {
                 page-break-inside: avoid;
             }
-            
+
         /** NAME SECTION **/
             #meHolder
             {
@@ -1013,14 +1036,19 @@
             }
 
         /** SKILLS SECTION **/
+            #skills_section
+            {
+                margin-top: 20px;
+            }
+
             #skills_section h2
             {
-                display: none;
+                margin-top: 10px;
+                text-align: center;
             }
 
             .skillHolder
             {
-                margin-top: 10px;
                 text-align: center;
             }
 
@@ -1033,7 +1061,7 @@
             {
                 content: " · ";
             }
-            
+
         /** NL **/
         #nl_logo
         {
@@ -1043,6 +1071,24 @@
             background: url('/images/nl_bg.png');
         }
         
+        /** CONTACT ME **/
+            #social_media a
+            {
+                font-weight: bold;
+                display: block;
+            }
+
+            #social_media .human_name:before
+            {
+                content: ": ";
+                font-weight: bold;
+            }
+
+            #social_media .human_name
+            {
+                font-weight: normal;
+            }
+
         /** LINKS **/
             a
             {
@@ -1050,26 +1096,26 @@
                 text-decoration: none;
             }
 
-            a[href*=":"]
+            main a[href*=":"]
             {
                 font-style: italic;
             }
 
-            a[href*=":"]:after
+            main a[href*=":"]:after
             {
                 content: " [" attr(href) "]";
                 font-style: normal;
             }
 
-            a[href^="/"]:after
+            main a[href^="/"]:after
             {
-                content: " at https://emilyshepherd.me" attr(href) ")";
+                content: " at https://emilyshepherd.me" attr(href) ".";
                 font-style: normal;
             }
 
-            a[href^="/"]:before
+            main a[href^="/"]:before
             {
-                content: "(";
+                content: "You can ";
             }
             
         /** SECTIONS **/

@@ -273,7 +273,7 @@ $asc = 'emily-3.asc';
               teams to bond more effectively.
             </p>
             <p>
-              <a target="_blank" href="/files/Legit_Report.pdf">Read The Full Report &gt;</a>
+              <a target="_blank" href="/files/Legit_Report.pdf">read the full report</a>
             </p>
           </section>
 
@@ -883,18 +883,18 @@ $asc = 'emily-3.asc';
       <h1>Let's Stay In Touch...</h1>
 
       <div id="social_media">
-        <a target="_blank" id="googleplus" href="https://plus.google.com/111629088428160104525/"><span></span>Google</a>
-        <a target="_blank" id="fb" href="https://www.facebook.com/EmilyLangdonShepherd"><span></span>Facebook</a>
-        <a target="_blank" id="twitter" href="https://twitter.com/EmilyLShepherd"><span></span>Twitter</a>
-        <a target="_blank" id="linkedIn" href="https://uk.linkedin.com/pub/emily-shepherd/49/21a/57a"><span></span>LinkedIn</a>
-        <a target="_blank" id="instagram" href="https://instagram.com/emilylshepherd/"><span></span>Instagram</a>
-        <a target="_blank" id="github" href="https://github.com/EmilyShepherd"><span></span>Git Hub</a>
-        <a target="_blank" id="gravatar" href="https://en.gravatar.com/stupidshep"><span></span>Gravatar</a>
-        <a target="_blank" id="keybase" href="https://keybase.io/emilyshepherd"><span></span>Keybase</a>
-        <a target="_blank" id="stack" href="https://stackoverflow.com/users/1450080/emily-shepherd?tab=profile"><span></span>Stack Overflow</a>
-        <a target="_blank" id="ecs" href="http://www.ecs.soton.ac.uk/people/ams2g11"><span></span>ECS</a>
-        <a target="_blank" id="email" href="mailto:emily@emilyshepherd.me"><span></span>Email</a>
-        <a target="_blank" id="pgp" href="<?=$asc?>"><span></span>PGP Key</a>
+        <a target="_blank" id="googleplus" href="https://plus.google.com/111629088428160104525/"><span></span>Google<span class="human_name">+EmilyShepherdWebDev</span></a>
+        <a target="_blank" id="fb" href="https://www.facebook.com/EmilyLangdonShepherd"><span></span>Facebook<span class="human_name">@EmilyLangdonShepherd</span></a>
+        <a target="_blank" id="twitter" href="https://twitter.com/EmilyLShepherd"><span></span>Twitter<span class="human_name">@EmilyShepherd</span></a>
+        <a target="_blank" id="linkedIn" href="https://uk.linkedin.com/pub/emily-shepherd/49/21a/57a"><span></span>LinkedIn<span class="human_name">linkedin.com/pub/emily-shepherd/49/21a/57a</span></a>
+        <a target="_blank" id="instagram" href="https://instagram.com/emilylshepherd/"><span></span>Instagram<span class="human_name">emilylshepherd</span></a>
+        <a target="_blank" id="github" href="https://github.com/EmilyShepherd"><span></span>Git Hub<span class="human_name">EmilyShepherd</span></a>
+        <a target="_blank" id="gravatar" href="https://en.gravatar.com/stupidshep"><span></span>Gravatar<span class="human_name">StupidShep</span></a>
+        <a target="_blank" id="keybase" href="https://keybase.io/emilyshepherd"><span></span>Keybase<span class="human_name">emilyshepherd</span></a>
+        <a target="_blank" id="stack" href="https://stackoverflow.com/users/1450080/emily-shepherd?tab=profile"><span></span>Stack Overflow<span class="human_name">stackoverflow.com/users/1450080/emily-shepherd</span></a>
+        <a target="_blank" id="ecs" href="http://www.ecs.soton.ac.uk/people/ams2g11"><span></span>ECS<span class="human_name">http://www.ecs.soton.ac.uk/people/ams2g11</span></a>
+        <a target="_blank" id="email" href="mailto:emily@emilyshepherd.me"><span></span>Email<span class="human_name">emily@emilyshepherd.me</span></a>
+        <a target="_blank" id="pgp" href="<?=$asc?>"><span></span>PGP Key<span class="human_name">4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D - emilyshepherd.me/emily.asc</span></a>
       </div>
 
       <small>
