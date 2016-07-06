@@ -1030,6 +1030,24 @@ $asc = 'emily-3.asc';
                 as Snowdonia and the Lake District.
               </p>
             </section>
+
+            <section>
+              <h2>Running</h2>
+              <p>
+                I remember not being particularly sporty in school, in
+                fact I hated running laps around our school field on
+                rainy afternoons. However, I hadn't been at University
+                long before regular exercise was something I missed
+                immensely.
+              </p>
+
+              <p>
+                It was at this time that I got into running as a way to
+                keep fit, and I immediately fell in love with it. I know
+                try to run around 5 times per week for around half an
+                hour, and I am pushing myself to reach 10k.
+              </p>
+            </section>
           </div>
         </div>
       </section>
