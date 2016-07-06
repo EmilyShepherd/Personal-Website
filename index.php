@@ -38,7 +38,7 @@ $asc = 'emily-3.asc';
     <meta property="og:title" content="Hi, I'm Emily L. Shepherd." />
     <meta property="og:url" content="https://emilyshepherd.me/" />
     <meta property="og:image"
-        content="http://emilyshepherd.me/images/fb_bg.png" />
+        content="https://emilyshepherd.me/images/fb_bg.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
@@ -47,7 +47,7 @@ $asc = 'emily-3.asc';
     <meta name="twitter:description"
         content="22. UK. Computer Scientist, Web Developer and first class Computer Science graduate from the University of Southampton. Contact me at emily@emilyshepherd.me" />
     <meta name="twitter:image"
-        content="http://emilyshepherd.me/images/me.jpg" />
+        content="https://emilyshepherd.me/images/me.jpg" />
   </head>
   <body>
     <nav id="top">
