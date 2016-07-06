@@ -13,30 +13,41 @@ $asc = 'emily-3.asc';
     <title>Emily L. Shepherd</title>
 
     <!-- Styling -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Karla" />
     <link rel="stylesheet" href="/<?=$css?>" />
 
-    <meta name="description" content="Hi, I'm Emily. I am a 4th Computer Science student at the University of Southampton, with first class honours." />
-    <meta name="keywords" content="Web Developer, Computer, HTML, CSS, PHP, Python, JavaScript, JS, Apache, HTTP" />
+    <meta name="description"
+        content="Hi, I'm Emily. I am a 4th Computer Science student at the University of Southampton, with first class honours." />
+    <meta name="keywords"
+        content="Web Developer, Computer, HTML, CSS, PHP, Python, JavaScript, JS, Apache, HTTP" />
     <meta name="author" content="Emily Shepherd" />
-    <link rel="author" href="https://plus.google.com/111629088428160104525/">
+    <link rel="author"
+        href="https://plus.google.com/111629088428160104525/" />
     <link rel="sitemap" href="/sitemap.xml" />
     <link rel="author" href="/humans.txt" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <!-- Facebook Open Graph -->
-    <meta property="og:description" content="22. UK. Computer Scientist, Web Developer and first class Computer Science graduate from the University of Southampton. Contact me at emily@emilyshepherd.me. PGP: 4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D" />
+    <meta
+        property="og:description"
+        content="22. UK. Computer Scientist, Web Developer and first class Computer Science graduate from the University of Southampton. Contact me at emily@emilyshepherd.me. PGP: 4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D"
+    />
     <meta property="og:title" content="Hi, I'm Emily L. Shepherd." />
-    <meta property="og:image" content="http://emilyshepherd.me/images/fb_bg.png" />
     <meta property="og:url" content="https://emilyshepherd.me/" />
+    <meta property="og:image"
+        content="http://emilyshepherd.me/images/fb_bg.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@EmilyLShepherd" />
     <meta name="twitter:title" content="Hi, I'm Emily L. Shepherd." />
-    <meta name="twitter:description" content="22. UK. Computer Scientist, Web Developer and first class Computer Science graduate from the University of Southampton. Contact me at emily@emilyshepherd.me" />
-    <meta name="twitter:image" content="http://emilyshepherd.me/images/me.jpg" />
+    <meta name="twitter:description"
+        content="22. UK. Computer Scientist, Web Developer and first class Computer Science graduate from the University of Southampton. Contact me at emily@emilyshepherd.me" />
+    <meta name="twitter:image"
+        content="http://emilyshepherd.me/images/me.jpg" />
   </head>
   <body>
     <nav id="top">
@@ -80,12 +91,14 @@ $asc = 'emily-3.asc';
         <div class="inner">
           <img src="/images/me.png" alt="Emily Shepherd" id="me" />
           <img src="/images/me.png" alt="Emily Shepherd" id="meHolder" />
-          <div class="bg parallax2" id="php_text" data-parallax-scale="0.8">
+          <div class="bg parallax2" id="php_text"
+              data-parallax-scale="0.8">
             &lt;?php <br />
             <br />
             echo "Hi, I'm Emily.";
           </div>
-          <div class="bg parallax2" id="java_text" data-parallax-scale="0.6">
+          <div class="bg parallax2" id="java_text"
+              data-parallax-scale="0.6">
             public class Main                                             <br />
             {                                                             <br />                                              
             &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)<br />
@@ -94,12 +107,14 @@ $asc = 'emily-3.asc';
             &nbsp;&nbsp;&nbsp;&nbsp;}                                     <br />
             }
           </div>
-          <div class="bg parallax2" id="smtp_text" data-parallax-scale="0.4">
+          <div class="bg parallax2" id="smtp_text"
+              data-parallax-scale="0.4">
             220 smtp.emilyshepherd.me                                     <br />
             EHLO Hi, I'm Emily.                                           <br />                                              
             250 smtp.emilyshepherd.me
           </div>
-          <div class="bg parallax2" id="c_text" data-parallax-scale="0.9">
+          <div class="bg parallax2" id="c_text"
+              data-parallax-scale="0.9">
             #include &lt;stdio.h&gt;                                      <br />
                                                                           <br />                                              
             int main()                                                    <br />
@@ -107,7 +122,8 @@ $asc = 'emily-3.asc';
             &nbsp;&nbsp;&nbsp;&nbsp;printf("Hi, I'm Emily.\n");           <br />
             }
           </div>
-          <div class="bg parallax2" id="js_text" data-parallax-scale="0.2">
+          <div class="bg parallax2" id="js_text"
+              data-parallax-scale="0.2">
             document.write("Hi, I'm Emily.");
           </div>
           <div class="bg parallax2" id="cpp_text" data-parallax-scale="0.7">
@@ -119,18 +135,21 @@ $asc = 'emily-3.asc';
             &nbsp;&nbsp;&nbsp;&nbsp;return 0;                             <br />
             }
           </div>
-          <div class="bg parallax2" id="css_text" data-parallax-scale="0.4">
+          <div class="bg parallax2" id="css_text"
+              data-parallax-scale="0.4">
             h1:before                                                     <br />
             {                                                             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;content: "Hi, I'm Emily.";            <br />
             }
           </div>
-          <div class="bg parallax2" id="dom_text" data-parallax-scale="0.8">
+          <div class="bg parallax2" id="dom_text"
+              data-parallax-scale="0.8">
             var el = document.createElement('h1');                        <br />
             el.innerText = 'Hi, I\'m Emily.';                             <br />
             document.appendChild(el);
           </div>
-          <div class="bg parallax2" id="xml_text" data-parallax-scale="-0.2">
+          <div class="bg parallax2" id="xml_text"
+              data-parallax-scale="-0.2">
             &lt;?xml version="1.0" standalone="yes" ?&gt;                 <br />
             &lt;!DOCTYPE greeting [                                       <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&lt;!ELEMENT greeting (#PCDATA)&gt;   <br />
@@ -150,37 +169,48 @@ $asc = 'emily-3.asc';
       <section id="intro_section" class="band">
         <h1 id="intro">Let me Introduce Myself</h1>
         <p>
-          I am a <a href="#uni">Computer Science graduate</a> from the University of Southampton, with
-          first class honours. The degree has introduced me to a
-          plethora of concepts and subject areas, including: Low Level Graphics, Compiler
-          Engineering, Database Design, Operating Systems and Memory Allocation, to name but a few.
+          I am a <a href="#uni">Computer Science graduate</a> from the
+          University of Southampton, with first class honours. The
+          degree has introduced me to a plethora of concepts and subject
+          areas, including: Low Level Graphics, Compiler Engineering,
+          Database Design, Operating Systems and Memory Allocation, to
+          name but a few.
         </p>
 
         <p>
-          Outside of the course I work as a <a href="#sweeb">freelance web developer</a> and have
-          built and managed sites for a variety of non-profit groups, such as theatre groups,
-          local residents associations and charities, and also commercial
-          organisations such as <a href="#spastaff">Spa Staff.com</a>,
+          Outside of the course I work as a
+          <a href="#sweeb">freelance web developer</a> and have built
+          and managed sites for a variety of non-profit groups, such as
+          theatre groups, local residents associations and charities,
+          and also commercial organisations such as
+          <a href="#spastaff">Spa Staff.com</a>,
           <a href="#musicjobs">UK Music Jobs</a> and Simply D'nA.
         </p>
 
         <p>
-          When not coding, I like to exercise by hill walking, a
-          passion I have loved since completing the Gold Duke of Edinburgh Award. I have also been
-          heavily involved in the Students' Union, acting as a course representative,
-          running the Nightline Listening Service and fighting for transgender rights.
+          When not coding, I like to exercise by hill walking, a passion
+          I have loved since completing the Gold Duke of Edinburgh
+          Award. I have also been heavily involved in the Students'
+          Union, acting as a course representative, running the
+          Nightline Listening Service and fighting for transgender
+          rights.
         </p>
 
         <p id="print_msg">
-          This is a printout of emilyshepherd.me. For my condensed, 2 page CV, please see
-          <a href="https://emilyshepherd.me/Emily_Shepherd_CV.pdf" class="ignore_link">emilyshepherd.me/Emily_Shepherd_CV.pdf</a>.
+          This is a printout of emilyshepherd.me. For my condensed, 2
+          page CV, please see
+          <a class="ignore_link"
+              href="https://emilyshepherd.me/Emily_Shepherd_CV.pdf"
+              >emilyshepherd.me/Emily_Shepherd_CV.pdf</a>.
         </p>
       </section>
 
       <!-- ///////////////////////////////////////////////////////// -->
 
       <section id="experience_section">
-        <div id="exp_bg" class="parallax2" data-parallax-scale="0.8" data-parallax-staple="experience_section"></div>
+        <div id="exp_bg" class="parallax2"
+            data-parallax-scale="0.8"
+            data-parallax-staple="experience_section"></div>
         <h1 id="experience">Experience &amp; Portfolio</h1>
 
         <div class="items">
@@ -190,35 +220,41 @@ $asc = 'emily-3.asc';
             </div>
             <header>
               <h2>Spa Staff</h2>
-              <span class="position">Web Developer and Web Mistress</span>
+              <span class="position">
+                Web Developer and Web Mistress
+              </span>
               <span class="dates">2011 - Present</span>
             </header>
 
             <p>
               I took over the management of
-              <a href="https://www.spastaff.com/" target="_blank" class="ignore_link">Spa Staff.com</a>
-              from a professional web
-              construction company in 2011, while I was still in Sixth Form. Since
-              then, I have been solely in charge of the technical administration
-              and development of the site. The site is hosted on an EC2 instance
-              in Amazon's Elastic Cloud.
+              <a target="_blank" class="ignore_link"
+                  href="https://www.spastaff.com/">Spa Staff.com</a>
+              from a professional web construction company in 2011,
+              while I was still in Sixth Form. Since then, I have been
+              solely in charge of the technical administration and
+              development of the site. The site is hosted on an EC2
+              instance in Amazon's Elastic Cloud.
             </p>
 
             <p>
-              As web developer, I was responsible for implementing a redesign, from
-              their
-              <a href="http://web.archive.org/web/20110703235306/http://www.spastaff.com/" target="_blank">old look</a>
-              to the version which is live today. The site is now responsive, and
-              flicks into a "stretchy" design on small screens.
+              As web developer, I was responsible for implementing a
+              redesign, from their
+              <a target="_blank"
+                  href="http://web.archive.org/web/20110703235306/http://www.spastaff.com/"
+                  >old look</a>
+              to the version which is live today. The site is now
+              responsive, and flicks into a "stretchy" design on small
+              screens.
             </p>
 
             <p>
-              In 2014, Spa Staff contracted a second freelance developer to
-              perform petty bug fixes and improvements while I worked on a major
-              site redesign. I was put in charge of training this developer in the
-              technologies the site uses and assigning / overseeing jobs. This
-              was my first experience of acting in a managerial role in a
-              commercial group.
+              In 2014, Spa Staff contracted a second freelance developer
+              to perform petty bug fixes and improvements while I worked
+              on a major site redesign. I was put in charge of training
+              this developer in the technologies the site uses and
+              assigning / overseeing jobs. This was my first experience
+              of acting in a managerial role in a commercial group.
             </p>
 
             <footer>
@@ -228,7 +264,10 @@ $asc = 'emily-3.asc';
               </div>
               <div>
                 <h3>Skills</h3>
-                <p>AWS Management, Client Management, Developer Training &amp; Management </p>
+                <p>
+                  AWS Management, Client Management, Developer Training
+                  &amp; Management
+                </p>
               </div>
               <div>
                 <h3>APIs</h3>
@@ -248,38 +287,51 @@ $asc = 'emily-3.asc';
             </header>
 
             <p>
-              Legit is a distributed code review tool, built on top of Git - it uses the concept
-              of pull requests, but stores and tracks these, along with the comments and votes on
-              these requests, in the repository itself.
+              Legit is a distributed code review tool, built on top of
+              Git - it uses the concept of pull requests, but stores and
+              tracks these, along with the comments and votes on these
+              requests, in the repository itself.
             </p>
 
             <p>
-              This was a project completed for the third year of my time at the
-              <a href="#uni">University of
-              Southampton</a> - it was worth three eighths of the year and I achieved a mark of 81%, a
-              high first class grade.
+              This was a project completed for the third year of my time
+              at the <a href="#uni">University of Southampton</a> - it
+              was worth three eighths of the year and I achieved a mark
+              of 81%, a high first class grade.
             </p>
 
             <h3>Report Abstract</h3>
             <p>
-              This paper examines the version control software currently available, and gives a
-              detailed analysis of the technical considerations needed when developing an extension to
-              Git, the most popular of these tools. The report discusses various code peer approval tools,
-              and notes that these all rely on centralised servers or workflows. It introduces the concepts
-              of quantifiable reputation and automated user privilege administration, techniques which are
-              utilised within community sites such as Ebay, Stack Exchange and Wikipedia. With this research,
-              the paper proposes a specification for a decentralised peer approval tool, termed Legit, and
-              explains the design decisions that this involved. Finally, a review of the project management
-              and testing is given, and the specification is evaluated by contrasting it to modern day
-              corporate and open source coding environments. The paper finishes with some suggestions for
-              future work and research, and concludes that, by structuring communication and standardising
-              common tasks, a decentralised peer approval workflow is potentially able to drastically reduce
-              the administrative overhead required in many software engineering projects and may encourage
-              teams to bond more effectively.
+              This paper examines the version control software currently
+              available, and gives a detailed analysis of the technical
+              considerations needed when developing an extension to Git,
+              the most popular of these tools. The report discusses
+              various code peer approval tools, and notes that these all
+              rely on centralised servers or workflows. It introduces
+              the concepts of quantifiable reputation and automated user
+              privilege administration, techniques which are utilised
+              within community sites such as Ebay, Stack Exchange and
+              Wikipedia. With this research, the paper proposes a
+              specification for a decentralised peer approval tool,
+              termed Legit, and explains the design decisions that this
+              involved. Finally, a review of the project management and
+              testing is given, and the specification is evaluated by
+              contrasting it to modern day corporate and open source
+              coding environments. The paper finishes with some
+              suggestions for future work and research, and concludes
+              that, by structuring communication and standardising
+              common tasks, a decentralised peer approval workflow is
+              potentially able to drastically reduce the administrative
+              overhead required in many software engineering projects
+              and may encourage teams to bond more effectively.
             </p>
             <p>
-              <a target="_blank" href="/files/Legit_Report.pdf" class="button">read the full report</a>
-              <a target="_blank" href="https://github.com/legit-sqa/legit" class="button">view the code</a>
+              <a target="_blank" class="button"
+                  href="/files/Legit_Report.pdf"
+                  >read the full report</a>
+              <a target="_blank" class="button"
+                  href="https://github.com/legit-sqa/legit"
+                  >view the code</a>
             </p>
           </section>
 
@@ -294,16 +346,18 @@ $asc = 'emily-3.asc';
             </header>
 
             <p>
-              I have been deeply interested in web development for a long time,
-              and quickly realised that I could earn money from my passion. I act
-              as a freelance web developer under the brand name: <span class="sweeb">SWEEB</span>.
+              I have been deeply interested in web development for a
+              long time, and quickly realised that I could earn money
+              from my passion. I act as a freelance web developer under
+              the brand name: <span class="sweeb">SWEEB</span>.
             </p>
 
             <p>
-              Many of my clients were small charities and individuals without
-              any technical knowledge. This has taught me to be well versed in translating
-              a user's functional requirements into a technical plan, and
-              communicating with clients without resorting to confusing jargon.
+              Many of my clients were small charities and individuals
+              without any technical knowledge. This has taught me to be
+              well versed in translating a user's functional
+              requirements into a technical plan, and communicating with
+              clients without resorting to confusing jargon.
             </p>
           </section>
 
@@ -317,19 +371,21 @@ $asc = 'emily-3.asc';
               <span class="dates">August 2010, July 2011</span>
             </header>
             <p>
-              In the summer of 2010, I became an intern at their London office. My
-              main task was reskinning their web site to look good on iPhones.
+              In the summer of 2010, I became an intern at their London
+              office. My main task was reskinning their web site to look
+              good on iPhones.
             </p>
 
             <p>
-              In 2011 I was invited to their LA office, to continue as a Web
-              Developer. I was tasked with rebuilding their payment systems.
+              In 2011 I was invited to their LA office, to continue as a
+              Web Developer. I was tasked with rebuilding their payment
+              systems.
             </p>
 
             <p>
-              It was during my time at Music Jobs that I got my first taste of
-              building mobile web apps, and running a site off Amazon Web
-              Services' Elastic Cloud.
+              It was during my time at Music Jobs that I got my first
+              taste of building mobile web apps, and running a site off
+              Amazon Web Services' Elastic Cloud.
             </p>
           </section>
         </div>
@@ -475,13 +531,14 @@ $asc = 'emily-3.asc';
             </header>
 
             <p>
-              I have just completed my final year of my four year integrated
-              Master of Engineering in Computer Science at the University
-              of Southampton, with First Class Honours.
+              I have just completed my final year of my four year
+              integrated Master of Engineering in Computer Science at
+              the University of Southampton, with First Class Honours.
             </p>
 
             <p>
-              The following is a small selection of the modules I studied:
+              The following is a small selection of the modules I
+              studied:
             </p>
           </section>
 
@@ -507,9 +564,9 @@ $asc = 'emily-3.asc';
 
               <p>
                 These two modules covered Java from the ground, all the
-                way up to more complex opperations, such as writing basic
-                graphical user interfaces and immplementing simple physics
-                environments.
+                way up to more complex opperations, such as writing
+                basic graphical user interfaces and immplementing simple
+                physics environments.
               </p>
             </section>
 
@@ -521,13 +578,14 @@ $asc = 'emily-3.asc';
 
               <p>
                 Engineering Mathematics for Computer Science covered all
-                the maths required for the course, including trigonometry
-                and matrix arithmetic.
+                the maths required for the course, including
+                trigonometry and matrix arithmetic.
               </p>
 
               <p>
                 Discrete Mathematics for Computer Science went in depth
-                into various formal notations and complex logical proofs.
+                into various formal notations and complex logical
+                proofs.
               </p>
             </section>
 
@@ -539,10 +597,11 @@ $asc = 'emily-3.asc';
 
               <p>
                 This module taught me a range of
-                data structures, such as HashMaps, Linked Lists, Circular
-                Arrays, etc. It focused on teaching us how to implement
-                these ourselves as well as how to assess their pros and
-                cons, to choose the best option for any given task.
+                data structures, such as HashMaps, Linked Lists,
+                Circular Arrays, etc. It focused on teaching us how to
+                implement these ourselves as well as how to assess their
+                pros and cons, to choose the best option for any given
+                task.
               </p>
             </section>
 
@@ -636,42 +695,60 @@ $asc = 'emily-3.asc';
             </header>
 
             <p>
-              The Leys is a secondary school in Cambridge, which I attended from Year 7 all the way
-              up to sixth form. From Year 10 upwards, I participated in the Duke of Edinburugh's
-              Award Scheme, completing all levels: Bronze, Silver and Gold, which I was awarded with
-              at St James's Palace by Prince Philip himself. I was also an active
-              member of the backstage theatre crew, becoming one of the youngest Deputy Stage
-              Managers in Year 11 and the head of Theatre Crew in my final year.
+              The Leys is a secondary school in Cambridge, which I
+              attended from Year 7 all the way up to sixth form. From
+              Year 10 upwards, I participated in the Duke of
+              Edinburugh's Award Scheme, completing all levels: Bronze,
+              Silver and Gold, which I was awarded with at St James's
+              Palace by Prince Philip himself. I was also an active
+              member of the backstage theatre crew, becoming one of the
+              youngest Deputy Stage Managers in Year 11 and the head of
+              Theatre Crew in my final year.
             </p>
 
             <p>
-              In Sixth Form, I joined the editorial team for The Fortnightly, the school's termly
-              student-written magazine, as a content compiler - I became Senior Compiler in Upper
-              Sixth. I also became the Chair of the Russell Group, a small executive of students
-              who arranged academic talks by a variety of speakers, include Simon Baron Cohen.
+              In Sixth Form, I joined the editorial team for The
+              Fortnightly, the school's termly student-written magazine,
+              as a content compiler - I became Senior Compiler in Upper
+              Sixth. I also became the Chair of the Russell Group, a
+              small executive of students who arranged academic talks by
+              a variety of speakers, include Simon Baron Cohen.
             </p>
 
             <p>
-              The Leys also had a section of the Combined Cadet Force - I joined the Naval section
-              of this in Year 10. In Lower Sixth, I was promoted to Petty Officer, a rank which had
-              until that point had only ever been given to Upper Sixth Formers.
+              The Leys also had a section of the Combined Cadet Force -
+              I joined the Naval section of this in Year 10. In Lower
+              Sixth, I was promoted to Petty Officer, a rank which had
+              until that point had only ever been given to Upper Sixth
+              Formers.
             </p>
 
             <p>
-              In Upper Sixth, I was appointed deputy head of my house, School House, a position which
-              put me in charge of managing rotas for duties in house, calling the register, and 
-              oversight of many aspects of pastoral care for the younger years.
+              In Upper Sixth, I was appointed deputy head of my house,
+              School House, a position which put me in charge of
+              managing rotas for duties in house, calling the register,
+              and oversight of many aspects of pastoral care for the
+              younger years.
             </p>
 
             <footer>
               <div>
                 <h3>A Levels</h3>
-                <p>Maths: A*, Further Maths: A*, Physics: A*, Chemistry: A</p>
+                <p>
+                  Maths: A*,
+                  Further Maths: A*,
+                  Physics: A*,
+                  Chemistry: A
+                </p>
               </div>
               <div>
                 <h3>GCSEs</h3>
-                <p>A*s in Maths, Biology, Physics, Chemistry, Divinity, Latin, English Literature<br />
-                As in French, German, English Language, History</p>
+                <p>
+                  A*s in Maths, Biology, Physics, Chemistry, Divinity,
+                  Latin, English Literature
+                  <br />
+                  As in French, German, English Language, History
+                </p>
               </div>
               <div>
                 <h3>FSMQ</h3>
@@ -757,9 +834,10 @@ $asc = 'emily-3.asc';
             <h2>Nightline</h2>
 
             <p>
-              Southampton Nightline is a confidential telephone listening service,
-              run entirely by student volunteers availiable to anyone at
-              the University of Southampton free of charge.
+              Southampton Nightline is a confidential telephone
+              listening service, run entirely by student volunteers
+              availiable to anyone at the University of Southampton free
+              of charge.
             </p>
 
             <p>
@@ -773,23 +851,23 @@ $asc = 'emily-3.asc';
 
             <p>
               After only a year at Nightline, I became its head
-              (the Nightline Officer) by entire-campus election. This put
-              me in charge of all of Nightline's day to day operations,
-              such as ensuring the rota was filled, chairing the Nightline
-              Committee, acting as a point of contact and support for
-              our volunteers, and its longer term plans and strategies,
-              such as managing the budget and refreshing our constitution
-              and confidentiality policies.
+              (the Nightline Officer) by entire-campus election. This
+              put me in charge of all of Nightline's day to day
+              operations, such as ensuring the rota was filled, chairing
+              the Nightline Committee, acting as a point of contact and
+              support for our volunteers, and its longer term plans and
+              strategies, such as managing the budget and refreshing our
+              constitution and confidentiality policies.
             </p>
 
             <p>As
-              call-taking volunteers are anonymous, the Nightline Officer
-              is the only "public face" of the organise, meaning I was
-              responsible for all of Nightline's public relations. This
-              included: representing Nightline at meetings of the Students'
-              Union and University, securing funds,
-              heading up Nightline's social media presence and publicity
-              events on campus, and liaising with the National Nightline
+              call-taking volunteers are anonymous, the Nightline
+              Officer is the only "public face" of the organise, meaning
+              I was responsible for all of Nightline's public relations.
+              This included: representing Nightline at meetings of the
+              Students' Union and University, securing funds, heading up
+              Nightline's social media presence and publicity events on
+              campus, and liaising with the National Nightline
               Organisation.
             </p>
           </section>
@@ -803,49 +881,54 @@ $asc = 'emily-3.asc';
               <p>
                 I became involved in student affairs very soon after
                 settling in at university. Unofficially at first -
-                emailing lecturers to provide feedback and pass on requests on
-                behalf of my cohort. I quickly realised
-                I was doing the job of a "course representative", so ran at the
-                end of my second year, and won by a landslide.
+                emailing lecturers to provide feedback and pass on
+                requests on behalf of my cohort. I quickly realised I
+                was doing the job of a "course representative", so ran
+                at the end of my second year, and won by a landslide.
               </p>
 
               <p>
                 I was not a course rep long before I was promoted via
-                whole campus election to the position of Faculty Officer,
-                the highest student-held position in the representation
-                system. This made me the head of student representation
-                for my faculty, the Faculty of Physical Sciences and
-                Engineering, covering the departments of Physics,
-                Web Science, Optoelectronics and Electronics and Computer
-                Science.
+                whole campus election to the position of Faculty
+                Officer, the highest student-held position in the
+                representation system. This made me the head of student
+                representation for my faculty, the Faculty of Physical
+                Sciences and Engineering, covering the departments of
+                Physics, Web Science, Optoelectronics and Electronics
+                and Computer Science.
               </p>
 
               <p>
-                Within the University, this position saw me attend meetings
-                of senior lecturers and professors, to provide a student
-                point of view on strategic decisions within the faculty.
+                Within the University, this position saw me attend
+                meetings of senior lecturers and professors, to provide
+                a student point of view on strategic decisions within
+                the faculty.
               </p>
             </section>
 
             <section>
               <h2>Students' Union</h2>
               <p>
-                My role in representation introduced me to our Students' Union,
-                <a href="http://www.susu.org/" target="_blank">SUSU</a>. After my
-                time as Faculty Officer, I ran to be a Union Councillor, giving me
-                a seat on the Union's highest decision making body. At these
-                meetings, we oversaw the union's finances, discussed and voted on
-                student-focused policies and decided stances for the entire union
-                on issues such as the Lecturers' Marking Boycott.
+                My role in representation introduced me to our Students'
+                Union,
+                <a href="http://www.susu.org/" target="_blank">SUSU</a>.
+                After my time as Faculty Officer, I ran to be a Union
+                Councillor, giving me a seat on the Union's highest
+                decision making body. At these meetings, we oversaw the
+                union's finances, discussed and voted on student-focused
+                policies and decided stances for the entire union on
+                issues such as the Lecturers' Marking Boycott.
               </p>
 
               <p>
-                Whilst in SUSU, I took a keen interest in its democratic procedures
-                and policies - I sat on the Policy Review Committee, a small group
-                entrusted to review every single policy in the union, and recommend
-                changes, recategorisations and removals to Union Council. One of my
-                proudest achievements was fighting for an amendment to the union's
-                gender quota system, to make it transgender inclusive.
+                Whilst in SUSU, I took a keen interest in its democratic
+                procedures and policies - I sat on the Policy Review
+                Committee, a small group entrusted to review every
+                single policy in the union, and recommend changes,
+                recategorisations and removals to Union Council. One of
+                my proudest achievements was fighting for an amendment
+                to the union's gender quota system, to make it
+                transgender inclusive.
               </p>
             </section>
           </div>
@@ -865,19 +948,19 @@ $asc = 'emily-3.asc';
               <h2>Walking</h2>
               <p>
                 My preferred exercise is walking - at school I completed
-                the Duke of Edinburugh Award at all three stages (Bronze,
-                Silver and Gold). In fact, I enjoyed DofE so much that I
-                volunteered with my school to help out their year eleven
-                students, who were undertaking their Silver Award. This was
-                an interesting and unique experience, as it gave me an
-                insight into dealing with younger students in a position of
-                legal authority.
+                the Duke of Edinburugh Award at all three stages
+                (Bronze, Silver and Gold). In fact, I enjoyed DofE so
+                much that I volunteered with my school to help out their
+                year eleven students, who were undertaking their Silver
+                Award. This was an interesting and unique experience, as
+                it gave me an insight into dealing with younger students
+                in a position of legal authority.
               </p>
 
               <p>
-                Since then, I have carried on with walking in my own time,
-                going on repeated family holidays to places such as
-                Snowdonia and the Lake District.
+                Since then, I have carried on with walking in my own
+                time, going on repeated family holidays to places such
+                as Snowdonia and the Lake District.
               </p>
             </section>
           </div>
@@ -889,26 +972,80 @@ $asc = 'emily-3.asc';
       <h1>Let's Stay In Touch...</h1>
 
       <div id="social_media">
-        <a target="_blank" id="googleplus" href="https://plus.google.com/111629088428160104525/"><span></span>Google<span class="human_name">+EmilyShepherdWebDev</span></a>
-        <a target="_blank" id="fb" href="https://www.facebook.com/EmilyLangdonShepherd"><span></span>Facebook<span class="human_name">@EmilyLangdonShepherd</span></a>
-        <a target="_blank" id="twitter" href="https://twitter.com/EmilyLShepherd"><span></span>Twitter<span class="human_name">@EmilyShepherd</span></a>
-        <a target="_blank" id="linkedIn" href="https://uk.linkedin.com/pub/emily-shepherd/49/21a/57a"><span></span>LinkedIn<span class="human_name">linkedin.com/pub/emily-shepherd/49/21a/57a</span></a>
-        <a target="_blank" id="instagram" href="https://instagram.com/emilylshepherd/"><span></span>Instagram<span class="human_name">emilylshepherd</span></a>
-        <a target="_blank" id="github" href="https://github.com/EmilyShepherd"><span></span>Git Hub<span class="human_name">EmilyShepherd</span></a>
-        <a target="_blank" id="gravatar" href="https://en.gravatar.com/stupidshep"><span></span>Gravatar<span class="human_name">StupidShep</span></a>
-        <a target="_blank" id="keybase" href="https://keybase.io/emilyshepherd"><span></span>Keybase<span class="human_name">emilyshepherd</span></a>
-        <a target="_blank" id="stack" href="https://stackoverflow.com/users/1450080/emily-shepherd?tab=profile"><span></span>Stack Overflow<span class="human_name">stackoverflow.com/users/1450080/emily-shepherd</span></a>
-        <a target="_blank" id="ecs" href="http://www.ecs.soton.ac.uk/people/ams2g11"><span></span>ECS<span class="human_name">http://www.ecs.soton.ac.uk/people/ams2g11</span></a>
-        <a target="_blank" id="email" href="mailto:emily@emilyshepherd.me"><span></span>Email<span class="human_name">emily@emilyshepherd.me</span></a>
-        <a target="_blank" id="pgp" href="<?=$asc?>"><span></span>PGP Key<span class="human_name">4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D - emilyshepherd.me/emily.asc</span></a>
+        <a target="_blank" id="googleplus"
+            href="https://plus.google.com/111629088428160104525/"
+            ><span></span>Google<span class="human_name">
+              +EmilyShepherdWebDev
+            </span></a>
+        <a target="_blank" id="fb"
+            href="https://www.facebook.com/EmilyLangdonShepherd"
+            ><span></span>Facebook<span class="human_name">
+              @EmilyLangdonShepherd
+            </span></a>
+        <a target="_blank" id="twitter"
+            href="https://twitter.com/EmilyLShepherd"
+            ><span></span>Twitter<span class="human_name">
+              @EmilyShepherd
+            </span></a>
+        <a target="_blank" id="linkedIn"
+            href="https://uk.linkedin.com/pub/emily-shepherd/49/21a/57a"
+            ><span></span>LinkedIn<span class="human_name">
+              linkedin.com/pub/emily-shepherd/49/21a/57a
+            </span></a>
+        <a target="_blank" id="instagram"
+            href="https://instagram.com/emilylshepherd/"
+            ><span></span>Instagram<span class="human_name">
+              emilylshepherd
+            </span></a>
+        <a target="_blank" id="github"
+            href="https://github.com/EmilyShepherd"
+            ><span></span>Git Hub<span class="human_name">
+              EmilyShepherd
+            </span></a>
+        <a target="_blank" id="gravatar"
+            href="https://en.gravatar.com/stupidshep"
+            ><span></span>Gravatar<span class="human_name">
+              StupidShep
+            </span></a>
+        <a target="_blank" id="keybase"
+            href="https://keybase.io/emilyshepherd"
+            ><span></span>Keybase<span class="human_name">
+              emilyshepherd
+            </span></a>
+        <a target="_blank" id="stack"
+            href="https://stackoverflow.com/users/1450080/emily-shepherd?tab=profile"
+            ><span></span>Stack Overflow<span class="human_name">
+              stackoverflow.com/users/1450080/emily-shepherd
+            </span></a>
+        <a target="_blank" id="ecs"
+            href="http://www.ecs.soton.ac.uk/people/ams2g11"
+            ><span></span>ECS<span class="human_name">
+              http://www.ecs.soton.ac.uk/people/ams2g11
+            </span></a>
+        <a target="_blank" id="email"
+            href="mailto:emily@emilyshepherd.me"
+            ><span></span>Email<span class="human_name">
+              emily@emilyshepherd.me
+            </span></a>
+        <a target="_blank" id="pgp" href="<?=$asc?>"
+            ><span></span>PGP Key<span class="human_name">
+              4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D -
+              emilyshepherd.me/emily.asc
+            </span></a>
       </div>
 
       <small>
         <!-- Funny joke in 3, 2, 1... -->
         Page Transmitted via
-        <a target="_blank" href="https://tools.ietf.org/html/rfc1149">IPoAC</a><br />
-        Database stack image by <a target="_blank" href="http://barrymieny.deviantart.com/">Barry Mieny</a>,
-        with <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a> license.
+        <a target="_blank"
+            href="https://tools.ietf.org/html/rfc1149">IPoAC</a><br />
+        Database stack image by
+        <a target="_blank"
+            href="http://barrymieny.deviantart.com/">Barry Mieny</a>,
+        with
+        <a target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/3.0/"
+            >CC BY-NC-SA 3.0</a> license.
       </small>
     </footer>
 
@@ -942,7 +1079,12 @@ $asc = 'emily-3.asc';
 
     <script>
       (new Em.Parallax({"wCutOff" : 780 })).registerListener();
-      (new Em.Parallax({"wCutOff" : 780, "className" : "parallax2", "style" : "top" })).registerListener();
+      (new Em.Parallax
+      ({
+          "wCutOff" : 780,
+          "className" : "parallax2",
+          "style" : "top"
+      })).registerListener();
     </script>
 
     <!-- Analytics -->
