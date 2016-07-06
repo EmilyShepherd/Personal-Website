@@ -214,6 +214,132 @@ $asc = 'emily-3.asc';
         <h1 id="experience">Experience &amp; Portfolio</h1>
 
         <div class="items">
+          <section id="arm">
+            <div class="pic_area">
+              <img src="/images/arm.png" alt="ARM" />
+            </div>
+            <header>
+              <h2>ARM</h2>
+              <span class="postion">
+                Forth Year Group Design Project
+              </span> 
+              <span class="dates">2015 - 2016</span>
+            </header>
+
+            <p>
+              As part of my final year, I worked in a team of five
+              undergraduates on a project given to us by ARM: to design
+              and develop a complex proof-of-concept application for
+              their new subthreshold M0+ processor, which is currently
+              in development. We chose to build a device and develop an
+              embedded Machine Learning algorithm, to recognise certain
+              forms of exercise.
+            </p>
+
+            <p>
+              I was responsible for modelling the algorithm in Java, and
+              then programming it in C, optimising its code and any
+              required libraries to fit into the device’s tiny 8kB of
+              memory. I successfully implemented a working system in
+              just 4kB for both program code and runtime data, running
+              at 106kHz. ARM was very happy with the results, with the
+              project earning a first and my individual contribution was
+              graded as joint-highest, awarding me 76%, a good first
+              class grade.
+            </p>
+
+            <h3>Report Abstract</h3>
+            <p>
+              This paper details the process by which the team developed
+              an exercise detection algorithm capable of running on a
+              sub threshold Cortex M0+. The report explains the process
+              by which a user study was carried out to obtain movement
+              data of multiple people performing the exercises, then
+              discusses the methods by which this was processed. It
+              provides a review of the exercise detection systems in use
+              today and compares various Machine Learning algorithms,
+              settling on a Multilayer Perceptron with added
+              case-specific heuristics. The paper explains the choice of
+              emulating the proposed device on a Cortex M0, running on
+              an mBed platform and compares this to an FPGA before
+              describing the process of designing, building and working
+              with the hardware. The work to develop the software for a
+              constrained system is then analysed, focusing on the
+              optimisations to the mBed library to reduce required size
+              and the removal of floating point from the algorithm.
+              Finally, the results of this work are reviewed, proving
+              that the working algorithm requires 3456 bytes and can run
+              on a 861µW system. The report finishes with an overview of
+              the project management and concludes that the project is
+              a successful proof of concept.
+            </p>
+
+              <a target="_blank" class="button"
+                  href="/gdp.pdf"
+                  >read the full report</a>
+              <a target="_blank" class="button"
+                  href="https://github.com/ECS-GDP2-1516/mbed"
+                  >view the code</a>
+          </section>
+
+          <section id="legit">
+            <div class="pic_area">
+              <img src="/images/legit.png" alt="Legit" />
+            </div>
+            <header>
+              <h2>Legit</h2>
+              <span class="position">Third Year Project</span>
+              <span class="dates">2014 - 2015</span>
+            </header>
+
+            <p>
+              Legit is a distributed code review tool, built on top of
+              Git - it uses the concept of pull requests, but stores and
+              tracks these, along with the comments and votes on these
+              requests, in the repository itself.
+            </p>
+
+            <p>
+              This was a project completed for the third year of my time
+              at the <a href="#uni">University of Southampton</a> - it
+              was worth three eighths of the year and I achieved a mark
+              of 81%, a high first class grade.
+            </p>
+
+            <h3>Report Abstract</h3>
+            <p>
+              This paper examines the version control software currently
+              available, and gives a detailed analysis of the technical
+              considerations needed when developing an extension to Git,
+              the most popular of these tools. The report discusses
+              various code peer approval tools, and notes that these all
+              rely on centralised servers or workflows. It introduces
+              the concepts of quantifiable reputation and automated user
+              privilege administration, techniques which are utilised
+              within community sites such as Ebay, Stack Exchange and
+              Wikipedia. With this research, the paper proposes a
+              specification for a decentralised peer approval tool,
+              termed Legit, and explains the design decisions that this
+              involved. Finally, a review of the project management and
+              testing is given, and the specification is evaluated by
+              contrasting it to modern day corporate and open source
+              coding environments. The paper finishes with some
+              suggestions for future work and research, and concludes
+              that, by structuring communication and standardising
+              common tasks, a decentralised peer approval workflow is
+              potentially able to drastically reduce the administrative
+              overhead required in many software engineering projects
+              and may encourage teams to bond more effectively.
+            </p>
+
+            <a target="_blank" class="button"
+                href="/files/Legit_Report.pdf"
+                >read the full report</a>
+            <a target="_blank" class="button"
+                href="https://github.com/legit-sqa/legit"
+                >view the code</a>
+          </section>
+
           <section id="spastaff">
             <div class="pic_area">
               <img src="/images/spastaff.png" alt="Spa Staff.com Ltd" />
@@ -274,65 +400,6 @@ $asc = 'emily-3.asc';
                 <p>AWS PHP API, PayPal, Barclays Epdq</p>
               </div>
             </footer>
-          </section>
-
-          <section id="legit">
-            <div class="pic_area">
-              <img src="/images/legit.png" alt="Legit" />
-            </div>
-            <header>
-              <h2>Legit</h2>
-              <span class="position">Third Year Project</span>
-              <span class="dates">2014 - 2015</span>
-            </header>
-
-            <p>
-              Legit is a distributed code review tool, built on top of
-              Git - it uses the concept of pull requests, but stores and
-              tracks these, along with the comments and votes on these
-              requests, in the repository itself.
-            </p>
-
-            <p>
-              This was a project completed for the third year of my time
-              at the <a href="#uni">University of Southampton</a> - it
-              was worth three eighths of the year and I achieved a mark
-              of 81%, a high first class grade.
-            </p>
-
-            <h3>Report Abstract</h3>
-            <p>
-              This paper examines the version control software currently
-              available, and gives a detailed analysis of the technical
-              considerations needed when developing an extension to Git,
-              the most popular of these tools. The report discusses
-              various code peer approval tools, and notes that these all
-              rely on centralised servers or workflows. It introduces
-              the concepts of quantifiable reputation and automated user
-              privilege administration, techniques which are utilised
-              within community sites such as Ebay, Stack Exchange and
-              Wikipedia. With this research, the paper proposes a
-              specification for a decentralised peer approval tool,
-              termed Legit, and explains the design decisions that this
-              involved. Finally, a review of the project management and
-              testing is given, and the specification is evaluated by
-              contrasting it to modern day corporate and open source
-              coding environments. The paper finishes with some
-              suggestions for future work and research, and concludes
-              that, by structuring communication and standardising
-              common tasks, a decentralised peer approval workflow is
-              potentially able to drastically reduce the administrative
-              overhead required in many software engineering projects
-              and may encourage teams to bond more effectively.
-            </p>
-            <p>
-              <a target="_blank" class="button"
-                  href="/files/Legit_Report.pdf"
-                  >read the full report</a>
-              <a target="_blank" class="button"
-                  href="https://github.com/legit-sqa/legit"
-                  >view the code</a>
-            </p>
           </section>
 
           <section id="sweeb">
