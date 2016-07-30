@@ -1102,11 +1102,6 @@ $asc = 'emily-3.asc';
             ><span></span>Stack Overflow<span class="human_name">
               stackoverflow.com/users/1450080/emily-shepherd
             </span></a>
-        <a target="_blank" id="ecs"
-            href="http://www.ecs.soton.ac.uk/people/ams2g11"
-            ><span></span>ECS<span class="human_name">
-              http://www.ecs.soton.ac.uk/people/ams2g11
-            </span></a>
         <a target="_blank" id="email"
             href="mailto:emily@emilyshepherd.me"
             ><span></span>Email<span class="human_name">

@@ -660,12 +660,6 @@
             background-color: #ff611c;
             background-position: -162px -1296px;
         }
-        
-        #ecs span:not(.human_name)
-        {
-            background-color: #005c84;
-            background-position: -324px -1296px;
-        }
 
         #stack span:not(.human_name)
         {
