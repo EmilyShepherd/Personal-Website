@@ -230,7 +230,7 @@ $asc = 'emily-3.asc';
               As part of my final year, I worked in a team of five
               undergraduates on a project given to us by ARM: to design
               and develop a complex proof-of-concept application for
-              their new subthreshold M0+ processor, which is currently
+              their new sub threshold M0+ processor, which is currently
               in development. We chose to build a device and develop an
               embedded Machine Learning algorithm, to recognise certain
               forms of exercise.
@@ -316,7 +316,7 @@ $asc = 'emily-3.asc';
               rely on centralised servers or workflows. It introduces
               the concepts of quantifiable reputation and automated user
               privilege administration, techniques which are utilised
-              within community sites such as Ebay, Stack Exchange and
+              within community sites such as eBay, Stack Exchange and
               Wikipedia. With this research, the paper proposes a
               specification for a decentralised peer approval tool,
               termed Legit, and explains the design decisions that this
@@ -407,7 +407,7 @@ $asc = 'emily-3.asc';
               <img src="/images/sweeb.png" alt="SWEEB" />
             </div>
             <header>
-              <h2>Sweeb</h2>
+              <h2>SWEEB</h2>
               <span class="position">Owner, Web Developer</span>
               <span class="dates">2005 - Present</span>
             </header>
@@ -439,7 +439,7 @@ $asc = 'emily-3.asc';
             </header>
             <p>
               In the summer of 2010, I became an intern at their London
-              office. My main task was reskinning their web site to look
+              office. My main task was re-skinning their web site to look
               good on iPhones.
             </p>
 
@@ -631,8 +631,8 @@ $asc = 'emily-3.asc';
 
               <p>
                 These two modules covered Java from the ground, all the
-                way up to more complex opperations, such as writing
-                basic graphical user interfaces and immplementing simple
+                way up to more complex operations, such as writing
+                basic graphical user interfaces and implementing simple
                 physics environments.
               </p>
             </section>
@@ -664,7 +664,7 @@ $asc = 'emily-3.asc';
 
               <p>
                 This module taught me a range of
-                data structures, such as HashMaps, Linked Lists,
+                data structures, such as Hash Maps, Linked Lists,
                 Circular Arrays, etc. It focused on teaching us how to
                 implement these ourselves as well as how to assess their
                 pros and cons, to choose the best option for any given
@@ -692,7 +692,7 @@ $asc = 'emily-3.asc';
 
               <p>
                 This course explored common programming paradigms:
-                Object Orientated, Proceedural and Functional. The
+                Object Orientated, Procedural and Functional. The
                 coursework focused on Functional Programming, requiring
                 us to write programs in Scheme.
               </p>
@@ -765,7 +765,7 @@ $asc = 'emily-3.asc';
               The Leys is a secondary school in Cambridge, which I
               attended from Year 7 all the way up to sixth form. From
               Year 10 upwards, I participated in the Duke of
-              Edinburugh's Award Scheme, completing all levels: Bronze,
+              Edinburgh's Award Scheme, completing all levels: Bronze,
               Silver and Gold, which I was awarded with at St James's
               Palace by Prince Philip himself. I was also an active
               member of the backstage theatre crew, becoming one of the
@@ -865,14 +865,14 @@ $asc = 'emily-3.asc';
           </section>
 
           <section>
-            <h2>Duke of Edinburugh</h2>
+            <h2>Duke of Edinburgh</h2>
             <p>
               Completed up to a Gold Level.
             </p>
           </section>
 
           <section>
-            <h2>Barnabus Award</h2>
+            <h2>Barnabas Award</h2>
             <p>
               For 'contributing to the building of community in The Leys
               School'. Nominated by fellow students.
@@ -903,7 +903,7 @@ $asc = 'emily-3.asc';
             <p>
               Southampton Nightline is a confidential telephone
               listening service, run entirely by student volunteers
-              availiable to anyone at the University of Southampton free
+              available to anyone at the University of Southampton free
               of charge.
             </p>
 
@@ -992,7 +992,7 @@ $asc = 'emily-3.asc';
                 procedures and policies - I sat on the Policy Review
                 Committee, a small group entrusted to review every
                 single policy in the union, and recommend changes,
-                recategorisations and removals to Union Council. One of
+                re-categorisations and removals to Union Council. One of
                 my proudest achievements was fighting for an amendment
                 to the union's gender quota system, to make it
                 transgender inclusive.
@@ -1015,7 +1015,7 @@ $asc = 'emily-3.asc';
               <h2>Walking</h2>
               <p>
                 My preferred exercise is walking - at school I completed
-                the Duke of Edinburugh Award at all three stages
+                the Duke of Edinburgh Award at all three stages
                 (Bronze, Silver and Gold). In fact, I enjoyed DofE so
                 much that I volunteered with my school to help out their
                 year eleven students, who were undertaking their Silver
@@ -1043,7 +1043,7 @@ $asc = 'emily-3.asc';
 
               <p>
                 It was at this time that I got into running as a way to
-                keep fit, and I immediately fell in love with it. I know
+                keep fit, and I immediately fell in love with it. I now
                 try to run around 5 times per week for around half an
                 hour, and I am pushing myself to reach 10k.
               </p>
