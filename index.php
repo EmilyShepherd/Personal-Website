@@ -1046,7 +1046,7 @@ $asc = 'emily-3.asc';
                 keep fit, and I immediately fell in love with it. I now
                 try to run around 5 times per week and have successfully
                 made it to running for a least an hour one of two times
-                per week..
+                per week.
               </p>
             </section>
           </div>
