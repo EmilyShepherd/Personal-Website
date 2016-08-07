@@ -1044,8 +1044,9 @@ $asc = 'emily-3.asc';
               <p>
                 It was at this time that I got into running as a way to
                 keep fit, and I immediately fell in love with it. I now
-                try to run around 5 times per week for around half an
-                hour, and I am pushing myself to reach 10k.
+                try to run around 5 times per week and have successfully
+                made it to running for a least an hour one of two times
+                per week..
               </p>
             </section>
           </div>
