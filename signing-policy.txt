@@ -1,0 +1,282 @@
+
+
+
+
+
+
+                                                             E. Shepherd
+                                                          September 2016
+
+
+                         OpenPGP Signing Policy
+
+Abstract
+
+   This document defines the policy used by the 4096/D9AF0B5D OpenPGP
+   [1] key to sign other keys.
+
+
+
+
+Document Signature
+
+   This document has been signed with the PGP key: 4096/D9AF0B5D.  You
+   can see this detached signature here:
+
+   https://emilyshepherd.me/signing-policy.txt.asc
+
+
+
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+     1.1.  Obtaining the Public Key  . . . . . . . . . . . . . . . .   2
+       1.1.1.  Key Servers . . . . . . . . . . . . . . . . . . . . .   2
+       1.1.2.  Other Locations . . . . . . . . . . . . . . . . . . .   2
+   2.  Signing Levels  . . . . . . . . . . . . . . . . . . . . . . .   2
+     2.1.  No Answer (0x10)  . . . . . . . . . . . . . . . . . . . .   2
+     2.2.  I have no checked at all (0x11) . . . . . . . . . . . . .   3
+     2.3.  Casual Checking (0x12)  . . . . . . . . . . . . . . . . .   3
+     2.4.  Careful Checking (0x13) . . . . . . . . . . . . . . . . .   3
+   3.  UIDs & UATs . . . . . . . . . . . . . . . . . . . . . . . . .   3
+     3.1.  Names In UIDs . . . . . . . . . . . . . . . . . . . . . .   3
+     3.2.  Emails  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     3.3.  Images  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     3.4.  Comments  . . . . . . . . . . . . . . . . . . . . . . . .   4
+   4.  Key Transition  . . . . . . . . . . . . . . . . . . . . . . .   4
+   5.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
+     5.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
+     5.2.  Informative References  . . . . . . . . . . . . . . . . .   5
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   5
+
+
+
+
+
+
+Shepherd                      Informational                     [Page 1]
+
+                         OpenPGP Signing Policy           September 2016
+
+
+1.  Introduction
+
+   This policy is valid for all signatures made since 2016-09-29 by the
+   following PGP Key (Figure 1).
+
+   pub rsa4096 2015-09-25 [SC]
+       4C8D 7CBA A377 7A9B B0C3 F6FC A91F 7111 D9AF 0B5D
+
+                                 Figure 1
+
+1.1.  Obtaining the Public Key
+
+1.1.1.  Key Servers
+
+   This key has been confirmed to exist from a variety of well connected
+   keyservers including, but not limited to:
+
+   o  pool.sks-keyservers.net
+
+   o  pgp.mit.edu
+
+   o  keyserver.pgp.com
+
+   o  pgp.surfnet.nl
+
+1.1.2.  Other Locations
+
+   It is also availiable via HTTP [3] and in textual form from:
+
+   o  https://emilyshepherd.me/emily.asc
+
+   o  https://gist.github.com/EmilyShepherd/e5140a353fa9d0e92c9b
+
+   o  http://pgp2.cs.uu.nl/stats/a91f7111d9af0b5d.html
+
+2.  Signing Levels
+
+   I use the following signature levels:
+
+2.1.  No Answer (0x10)
+
+   This level is used when signing organisational PGP certificates such
+   as Facebook Inc (0x2F3898CEDEE958CF) or Tor Browser Developers
+   (0x4E2C6E8793298290).
+
+   In these cases, I will have verfied the key's authenticity by
+   ensuring that the key exists on a well connected key server and its
+   fingerprint is availiable from the organisation's official sources.
+
+
+
+Shepherd                      Informational                     [Page 2]
+
+                         OpenPGP Signing Policy           September 2016
+
+
+2.2.  I have no checked at all (0x11)
+
+   I do not sign at this signature level
+
+2.3.  Casual Checking (0x12)
+
+   This is the default level I will sign at.  This requires that:
+
+   1.  I have met the SIGNEE in person
+
+   2.  The SIGNEE has comfirmed their key fingerprint
+
+   3.  The UIDs which the SIGNEE wishes to be signed meet the criterea
+       listed in the UID section.
+
+   4.  The SIGNEE must provide two forms of ID.
+
+2.4.  Careful Checking (0x13)
+
+   This signature level is used for SIGNEEs whom meet the criterea of a
+   (0x12) level certificate and with whom I have a personal or
+   professional relationship.
+
+3.  UIDs & UATs
+
+3.1.  Names In UIDs
+
+   When signing UIDs containing a name, I will follow CAcert's Policy
+   [2] with the exception that I may refuse to foreign names if the
+   transliteration used is unknown to me and I am not able to confirm
+   their correctness with confidence.
+
+   'Go-By' names / nicknames are acceptable if they are within quotes
+   and these are not obviously misleading.  See the following table
+   (Table 1) for examples.
+
+             +---------------------+-------------------------+
+             | Acceptable Nickname |  Unacceptable Nickname  |
+             +---------------------+-------------------------+
+             |  Mike "Mikey" James | Mike "Bill Gates" James |
+             +---------------------+-------------------------+
+
+                     Table 1: Comparison of Nicknames
+
+
+
+
+
+
+
+
+Shepherd                      Informational                     [Page 3]
+
+                         OpenPGP Signing Policy           September 2016
+
+
+3.2.  Emails
+
+   I will require that control over email addresses be verified.
+
+   In the case that the public key contains a usable encryption key,
+   control of each email address is validated by the signed key being
+   sent to that address, encrypted with the SIGNEE's encryption key.
+
+   Where no encryption key exists, I will send a challenge to each email
+   address.  If I get a signed response, that UID will be signed by me
+   and emailed back.
+
+   In cases where there are no email address UIDs, or multiple email
+   address UIDs, the SIGNEE should arrange with me beforehand where
+   signed non-email UIDs should be sent.
+
+3.3.  Images
+
+   If you would like me to sign a photo of you, please print out and
+   bring that photo when we meet.
+
+   Please Note: This must be *the same* photo; other photos showing your
+   likeness will be ignored.
+
+3.4.  Comments
+
+   Comments are typically ignored unless they make wildly outrageous
+   claims.  See the following table (Table 2) for examples.
+
+   +--------------------------------+----------------------------------+
+   |      Acceptable Comments       |      Unacceptable Comments       |
+   +--------------------------------+----------------------------------+
+   |     Mike (personal email)      |      Mike (I own Microsoft)      |
+   |         mike@gmail.com         |          mike@gmail.com          |
+   |                                |                                  |
+   |                                |                                  |
+   |                                |                                  |
+   |      Mike (Yale Address)       |       Mike (Yale Address)        |
+   |         mike@yale.com          |         mike@harvard.com         |
+   +--------------------------------+----------------------------------+
+
+                      Table 2: Comparison of Comments
+
+4.  Key Transition
+
+   If I have signed a key which you have since decided to retire in
+   favour of another key (for example, if your old key was revoked or
+
+
+
+
+Shepherd                      Informational                     [Page 4]
+
+                         OpenPGP Signing Policy           September 2016
+
+
+   you are transitioning to a higher key length) I will not consider
+   signing the new key without going over this process again.
+
+   In other words, trust cannot be transfered from one key to another;
+   all new keys are treated as new.
+
+5.  References
+
+5.1.  Normative References
+
+   [1]        Callas, J., Donnerhacke, L., Finney, H., Shaw, D., and R.
+              Thayer, "OpenPGP Message Format", RFC 4880,
+              DOI 10.17487/RFC4880, November 2007,
+              <http://www.rfc-editor.org/info/rfc4880>.
+
+   [2]        CAcert, "Practice On Names", February 2015,
+              <https://wiki.cacert.org/PracticeOnNames>.
+
+5.2.  Informative References
+
+   [3]        Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
+              Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
+              Transfer Protocol -- HTTP/1.1", RFC 2616,
+              DOI 10.17487/RFC2616, June 1999,
+              <http://www.rfc-editor.org/info/rfc2616>.
+
+Author's Address
+
+   Emily Shepherd
+
+   Phone: +44 (0)7575 721 231
+   Email: emily@emilyshepherd.me
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shepherd                      Informational                     [Page 5]
