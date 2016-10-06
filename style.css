@@ -114,6 +114,7 @@
         /* Std subsection */
         section:not(.band) section:not(#nightline)
         {
+            color: black;
             border: 4px solid #90CAF9;
             background: white;
             display: inline-block;
@@ -332,26 +333,30 @@
         }
 
     /** NAME SECTION **/
-        #name_section
+        #name_section, #general_top
         {
             background: radial-gradient(circle farthest-corner, #95c9f3, #0d47a1) center fixed;
-            height: 100vh;
             color: white;
             padding-top: 120px;
             box-sizing: border-box;
-            display: flex;
             justify-content: center;
+        }
+
+        #name_section
+        {
+            height: 100vh;
+            display: flex;
             overflow: hidden;
         }
 
-        #name_section .inner
+        .inner
         {
             animation: dropfade 1s;
             position: relative;
             align-self: center;
         }
 
-        #name_section .inner header
+        .inner header
         {
             z-index: 1;
         }
@@ -1155,3 +1160,19 @@
                 float: right;
             }
     }
+
+@media (min-width: 920px)
+{
+    #general_top section
+    {
+        width: 850px !important;
+    }
+}
+
+@media (max-width: 919px)
+{
+    #general_top section
+    {
+        width: auto !important;
+    }
+}
