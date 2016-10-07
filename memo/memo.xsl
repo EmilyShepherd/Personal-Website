@@ -41,11 +41,7 @@
                   <h2><xsl:value-of select="@title" /></h2>
                 </xsl:if>
 
-                <xsl:for-each select="p">
-                  <p>
-                    <xsl:apply-templates select="node()" />
-                  </p>
-                </xsl:for-each>
+                <xsl:apply-templates />
               </section>
             </xsl:for-each>
           </section>
@@ -80,6 +76,10 @@
 
   <xsl:template match="li">
     <li><xsl:apply-templates select="node()" /></li>
+  </xsl:template>
+
+  <xsl:template match="p">
+    <p><xsl:apply-templates select="node()" /></p>
   </xsl:template>
 
   <xsl:template match="reference">
