@@ -12,7 +12,7 @@
         <meta name="description" content="{description}" />
         <meta property="og:description" content="{description}" />
         <meta property="og:title" content="{title}" />
-        <meta property="og:url" content="https://emilyshepherd.me/memo/{@url}.html" />
+        <meta property="og:url" content="https://emilyshepherd.me/memo/{@url}" />
         <meta property="og:image" content="{img}" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@EmilyLShepherd" />
