@@ -65,7 +65,7 @@
   </xsl:template>
 
   <xsl:template match="ref">
-    [<a href="#{@to}"><xsl:value-of select="@to" /></a>]
+    <sup>[<a href="#{@to}"><xsl:value-of select="@to" /></a>]</sup>
   </xsl:template>
 
   <xsl:template match="em">
