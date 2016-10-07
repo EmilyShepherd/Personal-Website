@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <memo url="icann">
   <title>What has the US done with the Internet?</title>
-  <date year="2016" month="October" day="04" />
+  <date year="2016" month="October" day="07" />
   <img>https://emilyshepherd.me/images/icann.png</img>
 
   <description>
@@ -34,12 +34,13 @@
       <p>
         Great question, reader! Well, IANA is responsible for a bunch of 
         useful things, which can be split into three categories:
-        <ul>
-          <li>IP Addresses</li>
-          <li>Domain Names</li>
-          <li>Protocol Assignments</li>
-        </ul>
       </p>
+
+      <ul>
+        <li>IP Addresses</li>
+        <li>Domain Names</li>
+        <li>Protocol Assignments</li>
+      </ul>
 
       <p>
         IP Addresses can be thought of as the post codes, or phone 
@@ -119,11 +120,11 @@
         IAB (Internet Activities Board; an independent body of 
         researchers) however the US seemed to believe it fell under an 
         Internet research contract between the Defense Advanced Research 
-        Projects Agency and the Information Sciences Institute, where 
-        Jon worked.  This contract, however, was formed in 1988, and Jon 
-        had been managing IPs and domain names since 1972. This contract 
-        involved a research grant to the ISI; could such a deal 
-        retroactively assume authority over IANA?
+        Projects Agency and the Information Sciences Institute (the 
+        ISI), where Jon worked.  This contract, however, was formed in 
+        1988, and Jon had been managing IPs and domain names since 1972.  
+        This contract involved a research grant to the ISI; could such a 
+        deal retroactively assume authority over IANA?
       </p>
 
       <p>
@@ -247,33 +248,34 @@
 
       <p>
         Of course, the step back of the US Government would not be 
-        sensible if they weren't happy that alternative oversight was in 
-        place. Therefore, a new body has been created, the Empowered 
+        sensible if they weren't assured that alternative oversight was 
+        in place. Therefore, a new body has been created, the Empowered 
         Community (the EC) which has certain executive powers over ICANN 
         such as rejecting budgets and bylaw changes or recalling one or 
         more members of the board. The EC is made up of representatives 
         from ICANN's pre-existing Supporting Organisations and Advisory 
         Committees, namely:
-        <ul>
-          <li>The Country-Code Names Supporting Organisation</li>
-          <li>The Generic Names Supporting Organisation</li>
-          <li>The Address Supporting Organisation</li>
-          <li>The Root Server System Advisory Committee</li>
-          <li>The Security and Stability Advisory Committee</li>
-          <li>The Governmental Advisory Committee</li>
-          <li>The At-Large Community</li>
-        </ul>
       </p>
+
+      <ul>
+        <li>The Country-Code Names Supporting Organisation</li>
+        <li>The Generic Names Supporting Organisation</li>
+        <li>The Address Supporting Organisation</li>
+        <li>The Root Server System Advisory Committee</li>
+        <li>The Security and Stability Advisory Committee</li>
+        <li>The Governmental Advisory Committee</li>
+        <li>The At-Large Community</li>
+      </ul>
 
       <p>
         When it comes to the nomination of directors, the seats on the 
         Board are split such that the three Supporting Organisations 
-        each have two seats each, the At Large Community has one seat 
-        and the remaining 8 seats are nominated by a special purpose 
-        "Nominating Committee". The EC then has the final approval over 
-        each and every director. (The only slight exception to this is 
-        the President, who occupies seat 16 on the board and is 
-        appointed directly by the board itself).
+        have two seats each, the At Large Community has one seat and the 
+        remaining 8 seats are nominated by a special purpose "Nominating 
+        Committee". The EC then has the final approval over each and 
+        every director. (The only slight exception to this is the 
+        President, who occupies seat 16 on the board and is appointed 
+        directly by the board itself).
       </p>
 
       <p>
@@ -293,8 +295,9 @@
       <p>
         It seems fair to conclude, therefore, that ICANN is now firmly 
         in the hands of the major stake-holders of the Internet; that 
-        is, the people who use it! This transition which has been the 
-        result of a lot of hard work from the Internet over the last two 
+        is, the people who use it! This transition, which was on the 
+        cards ever since the inception of ICANN, has been the result of 
+        a lot of hard work from the Internet Community over the last two 
         years, and has been on the cards since ICANN's formation; onto 
         ICANN's next challenge, I say!
       </p>
@@ -302,6 +305,23 @@
   </content>
 
   <references>
+    <reference id="DNSDRAFT">
+      <title>
+        A PROPOSAL TO IMPROVE TECHNICAL MANAGEMENT OF INTERNET NAMES AND 
+        ADDRESSES
+      </title>
+
+      <date year="1998" month="January" day="1" />
+
+      <author>
+        National Telecommunications and Information Administration
+      </author>
+
+      <url>
+        https://web.archive.org/web/19980207224402/www.ntia.doc.gov/ntiahome/domainname/dnsdrft.htm
+      </url>
+    </reference>
+
     <reference id="HCR127">
       <title>
         Expressing the sense of Congress regarding actions to        
