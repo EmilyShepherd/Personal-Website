@@ -46,12 +46,12 @@
         IP Addresses can be thought of as the post codes, or phone 
         numbers, to the Internet. Every computer on the Internet has one 
         and they can use these to "ring up" each other to send data 
-        between themselves. IANA is the authority in charge of handing 
-        these IP addresses out, like the post office might hand out post 
-        codes. IANA doesn't do this directly, however, instead it hands 
-        out massive blocks of IP Address to the five Regional Internet 
-        Registries (RIRs) who in turn hand out those IP addresses to 
-        companies.
+        between themselves <ref to="RFC791" />. IANA is the authority in 
+        charge of handing these IP addresses out, like the post office 
+        might hand out post codes <ref to="IANA-NUMBERS" />. IANA 
+        doesn't do this directly, however, instead it hands out massive 
+        blocks of IP Address to the five Regional Internet Registries 
+        (RIRs) who in turn hand out those IP addresses to companies.
       </p>
 
       <p>
@@ -60,10 +60,12 @@
         Google's IP address happens to be 216.58.201.14, but I don't 
         type that into my browser, I type "www.google.com" (which is a 
         lot nicer!). That's known as a domain name, and it's powered by 
-        the domain name system; the Internet's "phone book". Again, IANA 
-        manages this by delegating authority out to other organisations.  
-        For example, all ".com" domains are managed by Verisign and all 
-        ".uk" domains are managed by Nominet.
+        the domain name system; the Internet's "phone book" <ref 
+          to="RFC1034" />.  Again, IANA manages this by delegating 
+        authority out to other organisations <ref to="IANA-DNSROOT" />.  
+        For example, all ".com" domains are managed by Verisign <ref 
+          to="DOTCOM" /> and all ".uk" domains are managed by Nominet 
+        <ref to="DOTUK" />.
       </p>
 
       <p>
@@ -71,21 +73,22 @@
         are lots and lots (and lots, and lots, and lots...) of 
         protocols, methods by which computers may communicate. When you 
         access a web page, for example, you use the Hyper Text Transfer 
-        Protocol (HTTP). If that channel were encrypted, that'd be the 
-        Transport Layer Security (TLS) protocol. There are protocols for 
-        everything: email, Skype, printers, gaming, time, file transfer, 
-        instant messaging, system monitoring, etc... IANA keeps a 
-        central database of these protocols and their various settings 
-        and details.
+        Protocol (HTTP) <ref to="RFC2616" />. If that channel were 
+        encrypted, that'd be the Transport Layer Security (TLS) protocol 
+        <ref to="RFC5246" />. There are protocols for everything: email, 
+        Skype, printers, gaming, time, file transfer, instant messaging, 
+        system monitoring, etc... IANA keeps a central database of these 
+        protocols and their various settings and details <ref 
+          to="IANA-ASSIGNMENTS" /> <ref to="RFC5226" />.
       </p>
 
       <p>
-        That's quite the whistle-stop tour I've given there, but it gives 
-        a broad overview of what IANA (and by extension, ICANN) does.  
-        The Internet is a massively distributed network, and everyone 
-        pretty much does their own thing on it for the most part. But, 
-        like all things, some degree of centralisation is required, and 
-        IANA fulfils that requirement.
+        That's quite the whistle-stop tour I've given there, but it 
+        gives a broad overview of what IANA (and by extension, ICANN) 
+        does.  The Internet is a massively distributed network, and 
+        everyone pretty much does their own thing on it for the most 
+        part. But, like all things, some degree of centralisation is 
+        required, and IANA fulfils that requirement.
       </p>
     </section>
     <section title="Where does the US fit into this?">
@@ -99,17 +102,19 @@
         various various bodies linking up their pre-existing computer 
         networks. One such example of this was ARPANET, a network 
         between certain academic bodies and the US Department of 
-        Defence linking up their pre-existing computer networks.
+        Defence linking up their pre-existing computer networks <ref 
+          to="ARPANET" />.
       </p>
 
       <p>
         In its infancy, it didn't have that many computers on it, so 
         didn't really need any complicated system of allocating IP 
         addresses and domain names, so it was all handled by one man, 
-        Jon Postel, who was later jokingly referred to as the 'God of the 
-        Internet'. As the size of the Internet grew, so did this task, 
-        and in 1988 that IANA was officially formed, with Jon as its 
-        chair.
+        Jon Postel, who was later jokingly referred to as the 'God of 
+        the Internet' <ref to="ISOC-JONPOSTEL" /> <ref 
+          to="BBC-JONPOSTEL" />. As the size of the Internet grew, so 
+        did this task, and in 1988 that IANA was officially formed <ref 
+          to="RFC1083" />, with Jon as its chair <ref to="RFC2468" />.
       </p>
 
       <p>
@@ -118,13 +123,14 @@
         the Internet? Who <em>owned</em> the Internet? An early academic 
         document suggested IANA performed its function on behalf of the 
         IAB (Internet Activities Board; an independent body of 
-        researchers) however the US seemed to believe it fell under an 
-        Internet research contract between the Defense Advanced Research 
-        Projects Agency and the Information Sciences Institute (the 
-        ISI), where Jon worked.  This contract, however, was formed in 
-        1988, and Jon had been managing IPs and domain names since 1972.  
-        This contract involved a research grant to the ISI; could such a 
-        deal retroactively assume authority over IANA?
+        researchers) <ref to="RFC1083" /> however the US seemed to 
+        believe it fell under an Internet research contract between the 
+        Defense Advanced Research Projects Agency and the Information 
+        Sciences Institute (the ISI), where Jon worked <ref 
+          to="DNSDRAFT"/>.  This contract, however, was formed in 1988, 
+        and Jon had been managing IPs and domain names since 1972.  This 
+        contract involved a research grant to the ISI; could such a deal 
+        retroactively assume authority over IANA?
       </p>
 
       <p>
@@ -155,16 +161,17 @@
         Such peace never lasts. In 1997, under the Clinton 
         administration, discussions were beginning to start about 
         whether the US' dominant position within the Internet was still 
-        appropriate, given how much it had grown internationally and 
-        within the private sector. It was at this time that Jon did 
-        something crazy; he messaged the administrators of the 8 
-        non-governmental root nameservers and ordered them to stop 
-        treating Network Solution's Server 'A' as the primary, and 
-        switch to IANA's server instead. Amazingly, they complied 
-        without question, accepting Jon's word the ultimate authority 
-        when it came to DNS. This created a split in the root servers, 
-        with 8 treating IANA's server as the primary authority, and 4 
-        treating server A as the primary.
+        appropriate <ref to="DOC-RFC" />, given how much it had grown 
+        internationally and within the private sector. It was at this 
+        time that Jon did something crazy; he messaged the 
+        administrators of the 8 non-governmental root nameservers and 
+        ordered them to stop treating Network Solution's Server 'A' as 
+        the primary, and switch to IANA's server instead. Amazingly, 
+        they complied without question, accepting Jon's word the 
+        ultimate authority when it came to DNS. This created a split in 
+        the root servers, with 8 treating IANA's server as the primary 
+        authority, and 4 treating server A as the primary <ref 
+          to="WASHPO" />.
       </p>
 
       <p>
@@ -177,7 +184,8 @@
         that could deal with trademark concerns.  For this reason, 
         therefore, the National Telecommunications and Information 
         Administration, within the Department of Commerce, moved to set 
-        up ICANN which was contracted to perform IANA's functions.
+        up ICANN which was contracted to perform IANA's functions <ref 
+          to="DNSDRAFT" />.
       </p>
     </section>
     
@@ -190,9 +198,10 @@
         attempt to step back this oversight over time and let ICANN 
         manage itself.  The original plan even went as far as to state 
         that "The US Government would [be]...  phasing out as soon as 
-        possible and in no event later than September 30, 2000".  In 
-        1999, however, this contract was extended for a further four 
-        years, with the option of being extended even further.
+        possible and in no event later than September 30, 2000" <ref 
+          to="DNSDRAFT" />.  In 1999, however, this contract was 
+        extended for a further four years, with the option of being 
+        extended even further <ref to="NTIA-VERISIGN" />.
       </p>
 
       <p>
@@ -203,10 +212,11 @@
         short), relating to ICANN's role in what they called the "DNS 
         Project".  This MoU gave the US Government a large stake in not 
         only the oversight of DNS, but also in active policy making and 
-        consultation with foreign governments. In 2009, this was lapsed 
-        and replaced with a far more wishy washy "Affirmation of 
-        Commitments". This was a big deal and it effectively ended the 
-        US Government's legal claim and involvement in the DNS Project.
+        consultation with foreign governments <ref to="MOU" />. In 2009, 
+        this was lapsed and replaced with a far more wishy washy 
+        "Affirmation of Commitments" <ref to="AOC" />. This was a big 
+        deal and it effectively ended the US Government's legal claim 
+        and involvement in the DNS Project <ref to="ALMOST-FREE" />.
       </p>
 
       <p>
@@ -226,14 +236,14 @@
       <p>
         Finally, in 2014, the NTIA announced that it intended to allow 
         its contract with ICANN to lapse at its expiry at the end of 
-        2015. The NTIA called for ICANN and the community to present an 
-        acceptable plan to ensure the board remain accountable to 
-        Internet Community. And that's what we've been working towards 
-        for the last two years. The contract was extended for a year 
-        last year because work wasn't quite ready, but in March of this 
-        year, the proposals were finally complete. The NTIA felt the 
-        proposals were acceptable and agreed to allow the contract expire 
-        without renewal at the end of the year.
+        2015 <ref to="NTIA-EXP" />. The NTIA called for ICANN and the 
+        community to present an acceptable plan to ensure the board 
+        remain accountable to Internet Community. And that's what we've 
+        been working towards for the last two years. The contract was 
+        extended for a year last year because work wasn't quite ready, 
+        but in March of this year, the proposals were finally complete.  
+        The NTIA felt the proposals were acceptable and agreed to allow 
+        the contract expire without renewal at the end of the year.
       </p>
     </section>
 
@@ -252,9 +262,9 @@
         in place. Therefore, a new body has been created, the Empowered 
         Community (the EC) which has certain executive powers over ICANN 
         such as rejecting budgets and bylaw changes or recalling one or 
-        more members of the board. The EC is made up of representatives 
-        from ICANN's pre-existing Supporting Organisations and Advisory 
-        Committees, namely:
+        more members of the board <ref to="BYLAW" />. The EC is made up 
+        of representatives from ICANN's pre-existing Supporting 
+        Organisations and Advisory Committees, namely:
       </p>
 
       <ul>
@@ -305,6 +315,83 @@
   </content>
 
   <references>
+    <reference id="RFC791">
+      <title>Internet Protocol</title>
+      <date month="September" year="1981" />
+      <author>Information Sciences Institute</author>
+      <url>https://www.ietf.org/rfc/rfc791.txt</url>
+    </reference>
+
+    <reference id="IANA-NUMBERS">
+      <title>Number Resources</title>
+      <author>Internet Assigned Numbers Authority</author>
+      <url>https://www.iana.org/numbers</url>
+    </reference>
+
+    <reference id="RFC1034">
+      <title>DOMAIN NAMES - CONCEPTS AND FACILITIES</title>
+      <author>Mockapetris, P.</author>
+      <date month="November" year="1987" />
+      <url>https://www.ietf.org/rfc/rfc1034.txt</url>
+    </reference>
+
+    <reference id="DOTCOM">
+      <title>.com Registry Agreement</title>
+      <date day="1" month="December" year="2012" />
+      <author>ICANN, Verisign Inc.</author>
+      <url>
+        https://www.icann.org/resources/pages/agreement-2012-12-05-en
+      </url>
+    </reference>
+
+    <reference id="DOTUK">
+      <title>Nominet UK - History</title>
+      <author>Nominet</author>
+      <url>
+        https://web.archive.org/web/20020602051251/www.nominet.org.uk/nominet/about/history.html
+      </url>
+    </reference>
+
+    <reference id="RFC2616">
+      <title>Hypertext Transfer Protocol -- HTTP/1.1</title>
+      <author>
+        Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., 
+        Leach, P., and T. Berners-Lee
+      </author>
+      <date month="June" year="1999" />
+      <url>http://www.rfc-editor.org/info/rfc2616</url>
+    </reference>
+
+    <reference id="RFC5246">
+      <title>
+        The Transport Layer Security (TLS) Protocol Version 1.2
+      </title>
+      <author>Dierks, T. and Rescorla, E.</author>
+      <date month="August" year="2008" />
+      <url>https://tools.ietf.org/html/rfc5246</url>
+    </reference>
+
+    <reference id="IANA-DNSROOT">
+      <title>Domain Name Services</title>
+      <author>Internet Assigned Numbers Authority</author>
+      <url>https://www.iana.org/domains</url>
+    </reference>
+
+    <reference id="IANA-ASSIGNMENTS">
+      <title>Protocol Registries</title>
+      <author>Internet Assigned Numbers Authority</author>
+      <url>https://www.iana.org/numbers</url>
+    </reference>
+
+    <reference id="RFC5226">
+      <title>
+        Guidelines for Writing an IANA Considerations Section in RFCs
+      </title>
+      <author>Narten, T. and Alvestrand, H.</author>
+      <date month="May" year="2008" />
+      <url>https://tools.ietf.org/html/rfc5226</url>
+    </reference>
+
     <reference id="DNSDRAFT">
       <title>
         A PROPOSAL TO IMPROVE TECHNICAL MANAGEMENT OF INTERNET NAMES AND 
@@ -319,6 +406,114 @@
 
       <url>
         https://web.archive.org/web/19980207224402/www.ntia.doc.gov/ntiahome/domainname/dnsdrft.htm
+      </url>
+    </reference>
+
+    <reference id="ARPANET">
+      <title>ARPANET - The First Internet</title>
+      <author>Living Internet</author>
+      <url>http://www.livinginternet.com/i/ii_arpanet.htm</url>
+    </reference>
+
+    <reference id="ISOC-JONPOSTEL">
+      <title>In Memory of Jon Postel</title>
+      <author>Rickard, W.</author>
+      <date month="February" year="2009" />
+      <url>
+        http://www.internetsociety.org/articles/memory-jon-postel
+      </url>
+    </reference>
+
+    <reference id="BBC-JONPOSTEL">
+      <title>Sci/Tech 'God of the Internet' is Dead</title>
+      <author>BBC News</author>
+      <date day="19" month="October" year="1988" />
+      <url>http://news.bbc.co.uk/1/hi/sci/tech/196487.stm</url>
+    </reference>
+
+    <reference id="RFC2468">
+      <title>I Remember IANA</title>
+      <author>Cerf, V.</author>
+      <date month="October" year="1998" />
+      <url>https://tools.ietf.org/html/rfc2468</url>
+    </reference>
+
+    <reference id="RFC1083">
+      <title>IAB Official Protocol Standards</title>
+      <author>Internet Actives Board</author>
+      <date month="December" year="1988" />
+      <url>https://tools.ietf.org/html/rfc1083</url>
+    </reference>
+
+    <reference id="DOC-RFC">
+      <url>
+        https://www.gpo.gov/fdsys/pkg/FR-1997-07-02/pdf/97-17215.pdf
+      </url>
+      <title>
+        Request for Comments on the Registration and Administration of 
+        Internet Domain Names
+      </title>
+      <author>Department of Commerce</author>
+      <date day="2" month="July" year="1997" />
+    </reference>
+
+    <reference id="WASHPO">
+      <url>http://songbird.com/pab/mail/0472.html</url>
+      <title>
+        Internet Reconfiguration Concerns Federal Officials
+      </title>
+      <author>Chandrasekaran, R.</author>
+      <date day="31" month="January" year="1998" />
+    </reference>
+
+    <reference id="NTIA-VERSIGN">
+      <title>Verisign Cooperative Agreement</title>
+      <author>
+        National Telecommunications and Information Administration,
+        Verisign Inc, and ICANN
+      </author>
+      <url>
+        http://www.ntia.doc.gov/page/verisign-cooperative-agreement
+      </url>
+    </reference>
+
+    <reference id="MOU">
+      <title>
+        Memorandum of Understanding Between the U.S. Department of 
+        Commerce and the Internet Corporation for Assigned Names and 
+        Numbers
+      </title>
+      <author>
+        National Telecommunications and Information Administration, 
+        ICANN
+      </author>
+      <date year="1998" month="November" />
+      <url>
+        http://www.ntia.doc.gov/page/1998/memorandum-understanding-between-us-department-commerce-and-internet-corporation-assigned-
+      </url>
+    </reference>
+
+    <reference id="AOC">
+      <title>
+        AFFIRMATION OF COMMITMENTS BY THE UNITED STATES DEPARTMENT OF 
+        COMMERCE AND THE INTERNET CORPORATION FOR ASSIGNED NAMES AND 
+        NUMBERS
+      </title>
+      <author>
+        National Telecommunications and Information Administration, 
+        ICANN
+      </author>
+      <date year="2009" month="September" />
+    </reference>
+
+    <reference id="ALMOST-FREE">
+      <title>
+        Almost Free: An Analysis of ICANN's ‘Affirmation of Commitments’
+      </title>
+      <author>Froomkin, A.</author>
+      <date year="2011" month="January" day="20" />
+      <url>
+        http://papers.ssrn.com/sol3/papers.cfm?abstract_id=1744086
       </url>
     </reference>
 
@@ -347,6 +542,32 @@
       <author>US House of Representatives</author>
 
       <url>https://www.congress.gov/bill/113th-congress/house-bill/1580</url>
+    </reference>
+
+    <reference id="NTIA-EXP">
+      <title>
+        NTIA Announces Intent to Transition Key Internet Domain Name 
+        Functions
+      </title>
+      <author>
+        National Telecommunications and Information Administration
+      </author>
+      <date day="14" month="March" year="2014" />
+      <url>
+        http://www.ntia.doc.gov/press-release/2014/ntia-announces-intent-transition-key-internet-domain-name-functions
+      </url>
+    </reference>
+
+    <reference id="BYLAW">
+      <title>
+        BYLAWS FOR INTERNET CORPORATION FOR ASSIGNED NAMES AND NUMBERS A 
+        California Nonprofit Public-Benefit Corporation
+      </title>
+      <date day="27" month="May" year="2016" />
+      <author>ICANN</author>
+      <url>
+        https://www.icann.org/en/system/files/files/adopted-bylaws-27may16-en.pdf
+      </url>
     </reference>
   </references>
 </memo>
