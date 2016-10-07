@@ -13,12 +13,12 @@
         <meta property="og:description" content="{description}" />
         <meta property="og:title" content="{title}" />
         <meta property="og:url" content="https://emilyshepherd.me/memo/{@url}" />
-        <meta property="og:image" content="{img}" />
+        <meta property="og:image" content="{img[@rel='social']}" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@EmilyLShepherd" />
         <meta name="twitter:title" content="{title}" />
         <meta name="twitter:description" content="{description}" />
-        <meta name="twitter:image" content="{img}" />
+        <meta name="twitter:image" content="{img[@rel='social']}" />
       </head>
 
       <body>
@@ -28,7 +28,7 @@
         <main>
           <section id="general_top">
             <div class="inner">
-              <img src="{img}" height="300" />
+              <img src="{img[@rel='header']}" height="300" />
               <header style="margin-top: 20px;">
                 <h1><xsl:value-of select="title" /></h1>
                 <p><xsl:apply-templates select="date" /></p>
