@@ -50,9 +50,11 @@
         <section>
           <h2>References</h2>
 
-          <xsl:for-each select="references/reference">
-            <xsl:apply-templates select="." />
-          </xsl:for-each>
+          <table width="100%" cellborder="0" cellpadding="5">
+            <xsl:for-each select="references/reference">
+              <xsl:apply-templates select="." />
+            </xsl:for-each>
+          </table>
         </section>
       </body>
     </html>
@@ -83,11 +85,14 @@
   </xsl:template>
 
   <xsl:template match="reference">
-    <div id="{id}">
-      <xsl:value-of select="author" />,
-      "<xsl:value-of select="title" />",
-      <xsl:apply-templates select="date" />,
-      &lt;<a href="{url}"><xsl:value-of select="url" /></a>&gt;
-    </div>
+    <tr id="{@id}">
+      <td>[<xsl:value-of select="@id" />]</td>
+      <td>
+        <xsl:value-of select="author" />,
+        "<xsl:value-of select="title" />",
+        <xsl:apply-templates select="date" />,
+        &lt;<a href="{normalize-space(url)}"><xsl:value-of select="normalize-space(url)" /></a>&gt;
+      </td>
+    </tr>
   </xsl:template>
 </xsl:stylesheet>
