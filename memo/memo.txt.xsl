@@ -32,12 +32,12 @@
 
   <xsl:template name="wrapText">
     <xsl:param name="text" />
-    <xsl:param name="len" select="72" />
+    <xsl:param name="len" select="70" />
 
     <xsl:value-of select="replace(
         concat(normalize-space($text), ' '),
         concat('(.{0,', $len, '}) '),
-        '$1&#xa;')" />
+        '  $1&#xa;')" />
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
@@ -64,12 +64,12 @@
   </xsl:template>
 
   <xsl:template match="li">
-    <xsl:text>  + </xsl:text> 
+    <xsl:text>    + </xsl:text> 
     <xsl:call-template name="wrapText">
       <xsl:with-param name="text">
         <xsl:apply-templates />
       </xsl:with-param>
-      <xsl:with-param name="len" select="64" />
+      <xsl:with-param name="len" select="62" />
     </xsl:call-template>
   </xsl:template>
 
