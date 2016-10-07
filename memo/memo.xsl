@@ -90,7 +90,11 @@
       <td>
         <xsl:value-of select="author" />,
         "<xsl:value-of select="title" />",
-        <xsl:apply-templates select="date" />,
+
+        <xsl:if test="date">
+          <xsl:apply-templates select="date" />,
+        </xsl:if>
+
         &lt;<a href="{normalize-space(url)}"><xsl:value-of select="normalize-space(url)" /></a>&gt;
       </td>
     </tr>
