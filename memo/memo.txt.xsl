@@ -94,6 +94,12 @@
       </xsl:call-template>
       <xsl:text>&#xa;</xsl:text>
     </xsl:for-each>
+
+    <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
+
+    <xsl:text>This memo can be read in HTML form here:&#xa;</xsl:text>
+    <xsl:text>https://emilyshepherd.me/memo/</xsl:text>
+    <xsl:value-of select="@url" />
   </xsl:template>
 
   <xsl:template match="section">

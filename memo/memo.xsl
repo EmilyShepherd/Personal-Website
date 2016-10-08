@@ -56,6 +56,17 @@
             </xsl:for-each>
           </table>
         </section>
+
+        <footer>
+          <small>
+            This memo can be read in text form here: <br />
+            <a href="https://emilyshepherd.me/memo/{@url}.txt">
+              <xsl:text>https://emilyshepherd.me/memo/</xsl:text>
+              <xsl:value-of select="@url" />
+              <xsl:text>.txt</xsl:text>
+            </a>
+          </small>
+        </footer>
       </body>
     </html>
   </xsl:template>
