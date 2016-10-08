@@ -2,7 +2,8 @@
 <memo url="icann">
   <title>What has the US done with the Internet?</title>
   <date year="2016" month="October" day="07" />
-  <img>https://emilyshepherd.me/images/icann.png</img>
+  <img rel="social">https://emilyshepherd.me/images/icann.png</img>
+  <img rel="header">https://emilyshepherd.me/images/icann_logo.png</img>
 
   <description>
     US Government ends its 18 year oversight over ICANN
