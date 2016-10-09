@@ -47,15 +47,13 @@
           </section>
         </main>
 
-        <section>
+        <section class="band" id="references">
           <h2>References</h2>
 
-          <table width="100%" cellborder="0" cellpadding="5">
-            <xsl:for-each select="references/reference">
-              <xsl:sort select="@id" />
-              <xsl:apply-templates select="." />
-            </xsl:for-each>
-          </table>
+          <xsl:for-each select="references/reference">
+            <xsl:sort select="@id" />
+            <xsl:apply-templates select="." />
+          </xsl:for-each>
         </section>
 
         <footer>
@@ -108,9 +106,9 @@
   </xsl:template>
 
   <xsl:template match="reference">
-    <tr id="{@id}">
-      <td>[<xsl:value-of select="@id" />]</td>
-      <td>
+    <div>
+      <h3 id="@id"><xsl:value-of select="@id" /></h3>
+      <span>
         <xsl:value-of select="normalize-space(author)" />,
         "<xsl:value-of select="normalize-space(title)" />",
 
@@ -118,8 +116,10 @@
           <xsl:apply-templates select="date" />,
         </xsl:if>
 
-        &lt;<a href="{normalize-space(url)}"><xsl:value-of select="normalize-space(url)" /></a>&gt;
-      </td>
-    </tr>
+        <xsl:text>&lt;</xsl:text>
+        <a href="{normalize-space(url)}"><xsl:value-of select="normalize-space(url)" /></a>
+        <xsl:text>&gt;</xsl:text>
+      </span>
+    </div>
   </xsl:template>
 </xsl:stylesheet>

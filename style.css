@@ -1176,3 +1176,24 @@
         width: auto !important;
     }
 }
+
+    #references div
+    {
+        text-align: left;
+        font-size: 14px;
+    }
+
+    #references h3:before
+    {
+        content: "[";
+    }
+
+    #references h3:after
+    {
+        content: "] ";
+    }
+
+    #references div
+    {
+        margin-top: 10px;
+    }
