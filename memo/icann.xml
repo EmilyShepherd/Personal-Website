@@ -380,7 +380,7 @@
     <reference id="IANA-ASSIGNMENTS">
       <title>Protocol Registries</title>
       <author>Internet Assigned Numbers Authority</author>
-      <url>https://www.iana.org/numbers</url>
+      <url>https://www.iana.org/protocols</url>
     </reference>
 
     <reference id="RFC5226">
