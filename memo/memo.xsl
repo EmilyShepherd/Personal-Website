@@ -100,8 +100,8 @@
     <tr id="{@id}">
       <td>[<xsl:value-of select="@id" />]</td>
       <td>
-        <xsl:value-of select="author" />,
-        "<xsl:value-of select="title" />",
+        <xsl:value-of select="normalize-space(author)" />,
+        "<xsl:value-of select="normalize-space(title)" />",
 
         <xsl:if test="date">
           <xsl:apply-templates select="date" />,
