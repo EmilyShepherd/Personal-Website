@@ -271,7 +271,7 @@
           <xsl:with-param name="number" select="$number" />
         </xsl:call-template>
       </xsl:when>
-      <xsl:when test="$text[4] = ''">
+      <xsl:when test="$text[4] = '' and not($text[3] = '')">
         <xsl:value-of select="$text[1]" />
         <xsl:text>&#xa;&#xa;</xsl:text>
         <xsl:call-template name="_advancePage">
