@@ -73,7 +73,11 @@
   </xsl:template>
 
   <xsl:template match="date">
-    <xsl:value-of select="@day" />-<xsl:value-of select="@month" />-<xsl:value-of select="@year" />
+    <xsl:value-of select="@day" />
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="@month" />
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="@year" />
   </xsl:template>
 
   <xsl:template match="ref">
