@@ -133,10 +133,11 @@
     <xsl:text>Alternative Formats&#xa;</xsl:text>
     <xsl:text>-------------------&#xa;&#xa;</xsl:text>
 
-    <xsl:text>   HTML     </xsl:text>
+    <xsl:text>   HTML       </xsl:text>
     <xsl:call-template name="wrapText">
       <xsl:with-param name="startIndent" select="''" />
-      <xsl:with-param name="indent" select="'         '" />
+      <xsl:with-param name="len" select="58" />
+      <xsl:with-param name="indent" select="'              '" />
       <xsl:with-param name="text">
         <xsl:text>&lt;https://emilyshepherd.me/memo/</xsl:text>
         <xsl:value-of select="@url" />
@@ -146,10 +147,11 @@
 
     <xsl:text>&#xa;</xsl:text>
 
-    <xsl:text>   XML      </xsl:text>
+    <xsl:text>   XML        </xsl:text>
     <xsl:call-template name="wrapText">
       <xsl:with-param name="startIndent" select="''" />
-      <xsl:with-param name="indent" select="'         '" />
+      <xsl:with-param name="len" select="58" />
+      <xsl:with-param name="indent" select="'              '" />
       <xsl:with-param name="text">
         <xsl:text>&lt;https://emilyshepherd.me/memo/</xsl:text>
         <xsl:value-of select="@url" />
