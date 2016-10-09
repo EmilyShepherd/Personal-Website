@@ -114,12 +114,48 @@
       <xsl:text>&#xa;</xsl:text>
     </xsl:for-each>
 
-    <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
+    <xsl:text>&#xa;</xsl:text>
 
-    <xsl:text>   This memo can be read in HTML format:&#xa;</xsl:text>
-    <xsl:text>   &lt;https://emilyshepherd.me/memo/</xsl:text>
-    <xsl:value-of select="@url" />
-    <xsl:text>&gt;</xsl:text>
+    <xsl:text>Document History&#xa;</xsl:text>
+    <xsl:text>----------------&#xa;&#xa;</xsl:text>
+
+    <xsl:call-template name="wrapText">
+      <xsl:with-param name="text">
+        <xsl:text>&lt;https://github.com/EmilyShepherd/</xsl:text>
+        <xsl:text>Personal-Website/commits/master/memo/</xsl:text>
+        <xsl:value-of select="@url" />
+        <xsl:text>.xml&gt;</xsl:text>
+      </xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:text>&#xa;&#xa;</xsl:text>
+
+    <xsl:text>Alternative Formats&#xa;</xsl:text>
+    <xsl:text>-------------------&#xa;&#xa;</xsl:text>
+
+    <xsl:text>   HTML     </xsl:text>
+    <xsl:call-template name="wrapText">
+      <xsl:with-param name="startIndent" select="''" />
+      <xsl:with-param name="indent" select="'         '" />
+      <xsl:with-param name="text">
+        <xsl:text>&lt;https://emilyshepherd.me/memo/</xsl:text>
+        <xsl:value-of select="@url" />
+        <xsl:text>&gt;</xsl:text>
+      </xsl:with-param>
+    </xsl:call-template>
+
+    <xsl:text>&#xa;</xsl:text>
+
+    <xsl:text>   XML      </xsl:text>
+    <xsl:call-template name="wrapText">
+      <xsl:with-param name="startIndent" select="''" />
+      <xsl:with-param name="indent" select="'         '" />
+      <xsl:with-param name="text">
+        <xsl:text>&lt;https://emilyshepherd.me/memo/</xsl:text>
+        <xsl:value-of select="@url" />
+        <xsl:text>.xml&gt;</xsl:text>
+      </xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
 
   <xsl:template match="section">

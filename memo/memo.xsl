@@ -60,11 +60,18 @@
 
         <footer>
           <small>
-            This memo can be read in text form here: <br />
+            <a href="https://github.com/EmilyShepherd/Personal-Website/commits/master/memo/icann.xml">
+              <xsl:text>Document History</xsl:text>
+            </a>
+            <br /><br />
+            Alternative Formats:
+            <br />
             <a href="https://emilyshepherd.me/memo/{@url}.txt">
-              <xsl:text>https://emilyshepherd.me/memo/</xsl:text>
-              <xsl:value-of select="@url" />
-              <xsl:text>.txt</xsl:text>
+              <xsl:text>TXT</xsl:text>
+            </a>
+            |
+            <a href="https://emilyshepherd.me/memo/{@url}.xml">
+              <xsl:text>XML</xsl:text>
             </a>
           </small>
         </footer>
