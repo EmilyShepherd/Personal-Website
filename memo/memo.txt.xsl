@@ -166,14 +166,19 @@
     </xsl:variable>
 
     <xsl:text>&#xa;</xsl:text>
+    <xsl:value-of select="$newPrefix" />
+    <xsl:text>  </xsl:text>
 
-    <xsl:if test="@title">
-      <xsl:value-of select="$newPrefix" />
-      <xsl:text>  </xsl:text>
-      <xsl:value-of select="@title" />
-      <xsl:text>&#xa;&#xa;</xsl:text>
-    </xsl:if>
+    <xsl:choose>
+      <xsl:when test="@title">
+        <xsl:value-of select="@title" />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>Introduction</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
     
+    <xsl:text>&#xa;&#xa;</xsl:text>
     <xsl:apply-templates>
       <xsl:with-param name="prefix" select="$newPrefix" />
     </xsl:apply-templates>
@@ -272,7 +277,7 @@
     <xsl:param name="number" />
 
     <xsl:choose>
-      <xsl:when test="not(starts-with($text[1], ' ')) and not($text[4] = '')">
+      <xsl:when test="$text[1] and not(starts-with($text[1], ' ')) and not($text[4] = '')">
         <xsl:call-template name="_advancePage">
           <xsl:with-param name="text" select="$text" />
           <xsl:with-param name="number" select="$number" />
