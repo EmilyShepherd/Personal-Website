@@ -15,6 +15,23 @@
     <xsl:value-of select="/memo/title" />
   </xsl:variable>
 
+  <xsl:variable name="header2">
+    <xsl:variable name="date">
+      <xsl:value-of select="/memo/date/@month" />
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="/memo/date/@year" />
+    </xsl:variable>
+
+    <xsl:value-of select="$header" />
+
+    <xsl:for-each
+        select="string-length($header) to (71 - string-length($date))">
+      <xsl:text> </xsl:text>
+    </xsl:for-each>
+
+    <xsl:value-of select="$date" />
+  </xsl:variable>
+
   <xsl:variable name="date">
     <xsl:apply-templates select="/memo/date" />
   </xsl:variable>
@@ -181,7 +198,7 @@
     
     <xsl:if test="not(empty($text))">
       <xsl:text>&#12;&#xa;</xsl:text>
-      <xsl:value-of select="$header" />
+      <xsl:value-of select="$header2" />
       <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
 
       <xsl:call-template name="_paginate">
