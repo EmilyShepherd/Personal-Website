@@ -226,6 +226,14 @@
           <xsl:with-param name="number" select="$number" />
         </xsl:call-template>
       </xsl:when>
+      <xsl:when test="$text[51] = ''">
+        <xsl:value-of select="$text[48]" />
+        <xsl:text>&#xa;&#xa;</xsl:text>
+        <xsl:call-template name="_advancePage">
+          <xsl:with-param name="text" select="subsequence($text, 49)" />
+          <xsl:with-param name="number" select="$number" />
+        </xsl:call-template>
+      </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$text[48]" />
         <xsl:text>&#xa;</xsl:text>
