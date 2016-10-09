@@ -56,13 +56,13 @@
     </xsl:call-template>
 
     <xsl:for-each select="references/reference">
-      <xsl:text>[</xsl:text>
+      <xsl:text>   [</xsl:text>
       <xsl:value-of select="@id" />
       <xsl:text>]</xsl:text>
 
       <xsl:if test="string-length(@id) &gt; 7">
         <xsl:text>&#xa;</xsl:text>
-        <xsl:text>         </xsl:text>
+        <xsl:text>            </xsl:text>
       </xsl:if>
       <xsl:if test="string-length(@id) &lt; 8">
         <xsl:for-each select="string-length(@id) to 6">
@@ -71,8 +71,9 @@
       </xsl:if>
 
       <xsl:call-template name="wrapText">
-        <xsl:with-param name="len" select="61" />
-        <xsl:with-param name="indent" select="'           '" />
+        <xsl:with-param name="len" select="58" />
+        <xsl:with-param name="indent" select="'              '" />
+        <xsl:with-param name="startIndent" select="'  '" />
         <xsl:with-param name="text">
           <xsl:value-of select="normalize-space(author)" />
 
@@ -97,9 +98,10 @@
 
     <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
 
-    <xsl:text>This memo can be read in HTML form here:&#xa;</xsl:text>
-    <xsl:text>https://emilyshepherd.me/memo/</xsl:text>
+    <xsl:text>   This memo can be read in HTML format:&#xa;</xsl:text>
+    <xsl:text>   &lt;https://emilyshepherd.me/memo/</xsl:text>
     <xsl:value-of select="@url" />
+    <xsl:text>&gt;</xsl:text>
   </xsl:template>
 
   <xsl:template match="section">
@@ -222,9 +224,9 @@
 
   <xsl:template name="wrapText">
     <xsl:param name="text" />
-    <xsl:param name="len" select="70" />
-    <xsl:param name="indent" select="'  '" />
-    <xsl:param name="startIndent" select="'  '" />
+    <xsl:param name="len" select="69" />
+    <xsl:param name="indent" select="'   '" />
+    <xsl:param name="startIndent" select="'   '" />
 
     <xsl:variable name="str" select="tokenize(normalize-space($text), ' ')" />
 
@@ -335,20 +337,17 @@
     <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
-  <xsl:template match="ul">
-    <xsl:apply-templates />
-    <xsl:text>&#xa;</xsl:text>
-  </xsl:template>
-
   <xsl:template match="li">
-    <xsl:text>    + </xsl:text> 
+    <xsl:text>   o  </xsl:text> 
     <xsl:call-template name="wrapText">
       <xsl:with-param name="startIndent" />
+      <xsl:with-param name="indent" select="'      '" />
       <xsl:with-param name="text">
         <xsl:apply-templates />
       </xsl:with-param>
-      <xsl:with-param name="len" select="62" />
+      <xsl:with-param name="len" select="66" />
     </xsl:call-template>
+    <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
   <xsl:template match="em">
