@@ -67,10 +67,8 @@
 
     <xsl:text>&#xa;</xsl:text>
 
-    <xsl:call-template name="underline">
-      <xsl:with-param name="str">References</xsl:with-param>
-      <xsl:with-param name="chr" select="'-'" />
-    </xsl:call-template>
+    <xsl:text>References</xsl:text>
+    <xsl:text>&#xa;&#xa;</xsl:text>
 
     <xsl:for-each select="references/reference">
       <xsl:sort select="@id" />
@@ -116,8 +114,7 @@
 
     <xsl:text>&#xa;</xsl:text>
 
-    <xsl:text>Document History&#xa;</xsl:text>
-    <xsl:text>----------------&#xa;&#xa;</xsl:text>
+    <xsl:text>Document History&#xa;&#xa;</xsl:text>
 
     <xsl:call-template name="wrapText">
       <xsl:with-param name="text">
@@ -130,8 +127,7 @@
 
     <xsl:text>&#xa;&#xa;</xsl:text>
 
-    <xsl:text>Alternative Formats&#xa;</xsl:text>
-    <xsl:text>-------------------&#xa;&#xa;</xsl:text>
+    <xsl:text>Alternative Formats&#xa;&#xa;</xsl:text>
 
     <xsl:text>   HTML       </xsl:text>
     <xsl:call-template name="wrapText">
@@ -161,15 +157,26 @@
   </xsl:template>
 
   <xsl:template match="section">
+    <xsl:param name="prefix" />
+
+    <xsl:variable name="newPrefix">
+      <xsl:value-of select="$prefix" />
+      <xsl:value-of select="index-of(../section, .)" />
+      <xsl:text>.</xsl:text>
+    </xsl:variable>
+
     <xsl:text>&#xa;</xsl:text>
+
     <xsl:if test="@title">
-      <xsl:call-template name="underline">
-        <xsl:with-param name="str" select="@title" />
-        <xsl:with-param name="chr" select="'-'" />
-      </xsl:call-template>
+      <xsl:value-of select="$newPrefix" />
+      <xsl:text>  </xsl:text>
+      <xsl:value-of select="@title" />
+      <xsl:text>&#xa;&#xa;</xsl:text>
     </xsl:if>
     
-    <xsl:apply-templates />
+    <xsl:apply-templates>
+      <xsl:with-param name="prefix" select="$newPrefix" />
+    </xsl:apply-templates>
   </xsl:template>
 
   <xsl:template name="paginate">
@@ -204,7 +211,7 @@
 
   <xsl:template name="_outputLines">
     <xsl:param name="lines" />
-    <xsl:param name="left" select="45" />
+    <xsl:param name="left" select="46" />
     <xsl:param name="number" />
 
     <xsl:value-of select="$lines[1]" />
@@ -265,7 +272,7 @@
     <xsl:param name="number" />
 
     <xsl:choose>
-      <xsl:when test="starts-with($text[2], '-') and not($text[5] = '')">
+      <xsl:when test="not(starts-with($text[1], ' ')) and not($text[4] = '')">
         <xsl:call-template name="_advancePage">
           <xsl:with-param name="text" select="$text" />
           <xsl:with-param name="number" select="$number" />
@@ -274,44 +281,42 @@
       <xsl:otherwise>
         <xsl:value-of select="$text[1]" />
         <xsl:text>&#xa;</xsl:text>
-        <xsl:value-of select="$text[2]" />
-        <xsl:text>&#xa;</xsl:text>
 
         <xsl:choose>
-          <xsl:when test="$text[3] = '' and $text[5] = ''">
+          <xsl:when test="$text[2] = '' and $text[4] = ''">
             <xsl:text>&#xa;</xsl:text>
             <xsl:value-of select="$text[4]" />
             <xsl:text>&#xa;</xsl:text>
 
-            <xsl:call-template name="_advancePage">
-              <xsl:with-param name="text" select="subsequence($text, 5)" />
-              <xsl:with-param name="number" select="$number" />
-            </xsl:call-template>
-          </xsl:when>
-          <xsl:when test="$text[3] = ''">
-            <xsl:text>&#xa;&#xa;</xsl:text>
-
-            <xsl:call-template name="_advancePage">
-              <xsl:with-param name="text" select="subsequence($text, 3)" />
-              <xsl:with-param name="number" select="$number" />
-            </xsl:call-template>
-          </xsl:when>
-          <xsl:when test="$text[6] = '' and not($text[5] = '')">
-            <xsl:value-of select="$text[1]" />
-            <xsl:text>&#xa;&#xa;</xsl:text>
             <xsl:call-template name="_advancePage">
               <xsl:with-param name="text" select="subsequence($text, 4)" />
               <xsl:with-param name="number" select="$number" />
             </xsl:call-template>
           </xsl:when>
+          <xsl:when test="$text[2] = ''">
+            <xsl:text>&#xa;&#xa;</xsl:text>
+
+            <xsl:call-template name="_advancePage">
+              <xsl:with-param name="text" select="subsequence($text, 2)" />
+              <xsl:with-param name="number" select="$number" />
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:when test="$text[5] = '' and not($text[4] = '')">
+            <xsl:value-of select="$text[1]" />
+            <xsl:text>&#xa;&#xa;</xsl:text>
+            <xsl:call-template name="_advancePage">
+              <xsl:with-param name="text" select="subsequence($text, 3)" />
+              <xsl:with-param name="number" select="$number" />
+            </xsl:call-template>
+          </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="$text[3]" />
+            <xsl:value-of select="$text[2]" />
             <xsl:text>&#xa;</xsl:text>
-            <xsl:value-of select="$text[4]" />
+            <xsl:value-of select="$text[3]" />
             <xsl:text>&#xa;</xsl:text>
 
             <xsl:call-template name="_advancePage">
-              <xsl:with-param name="text" select="subsequence($text, 5)" />
+              <xsl:with-param name="text" select="subsequence($text, 4)" />
               <xsl:with-param name="number" select="$number" />
             </xsl:call-template>
           </xsl:otherwise>
@@ -399,20 +404,6 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:if>
-  </xsl:template>
-
-  <xsl:template name="underline">
-    <xsl:param name="str" />
-    <xsl:param name="chr" />
-
-    <xsl:value-of select="$str" />
-    <xsl:text>&#xa;</xsl:text>
-
-    <xsl:for-each select="1 to string-length($str)">
-      <xsl:value-of select="$chr"/>
-    </xsl:for-each>
-
-    <xsl:text>&#xa;&#xa;</xsl:text>
   </xsl:template>
 
   <xsl:template name="pad">
