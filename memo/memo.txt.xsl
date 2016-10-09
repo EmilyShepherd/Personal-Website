@@ -290,7 +290,7 @@
         <xsl:choose>
           <xsl:when test="$text[2] = '' and $text[4] = ''">
             <xsl:text>&#xa;</xsl:text>
-            <xsl:value-of select="$text[4]" />
+            <xsl:value-of select="$text[3]" />
             <xsl:text>&#xa;</xsl:text>
 
             <xsl:call-template name="_advancePage">
@@ -307,7 +307,7 @@
             </xsl:call-template>
           </xsl:when>
           <xsl:when test="$text[5] = '' and not($text[4] = '')">
-            <xsl:value-of select="$text[1]" />
+            <xsl:value-of select="$text[2]" />
             <xsl:text>&#xa;&#xa;</xsl:text>
             <xsl:call-template name="_advancePage">
               <xsl:with-param name="text" select="subsequence($text, 3)" />
