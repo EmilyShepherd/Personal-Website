@@ -52,6 +52,7 @@
 
           <table width="100%" cellborder="0" cellpadding="5">
             <xsl:for-each select="references/reference">
+              <xsl:sort select="@id" />
               <xsl:apply-templates select="." />
             </xsl:for-each>
           </table>

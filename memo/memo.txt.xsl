@@ -73,6 +73,7 @@
     </xsl:call-template>
 
     <xsl:for-each select="references/reference">
+      <xsl:sort select="@id" />
       <xsl:text>   [</xsl:text>
       <xsl:value-of select="@id" />
       <xsl:text>]</xsl:text>
