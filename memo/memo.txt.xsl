@@ -254,8 +254,8 @@
 
     <xsl:value-of select="$page" />
     <xsl:text>&#xa;</xsl:text>
-    
-    <xsl:if test="not(empty($text))">
+
+    <xsl:if test="count($text) &gt; 1">
       <xsl:text>&#12;&#xa;</xsl:text>
       <xsl:value-of select="$header2" />
       <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
