@@ -61,8 +61,16 @@
 
     <xsl:value-of select="$header" />
 
-    <xsl:text>&#xa;&#xa;</xsl:text>
+    <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
 
+    <xsl:text>Table of Contents</xsl:text>
+    <xsl:text>&#xa;</xsl:text>
+
+    <xsl:for-each select="1 to count(//section) + 3">
+      <xsl:text>&#xa; ,</xsl:text>
+    </xsl:for-each>
+
+    <xsl:text>&#xa;&#xa;</xsl:text>
     <xsl:apply-templates select="content/*" />
 
     <xsl:text>&#xa;</xsl:text>
@@ -197,18 +205,21 @@
   <xsl:template name="outputLines">
     <xsl:param name="lines" />
     <xsl:param name="number" />
+    <xsl:param name="output" />
 
     <xsl:choose>
       <xsl:when test="$lines[1] = ''">
         <xsl:call-template name="outputLines">
           <xsl:with-param name="lines" select="subsequence($lines, 2)" />
           <xsl:with-param name="number" select="$number" />
+          <xsl:with-param name="output" select="$output" />
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
         <xsl:call-template name="_outputLines">
           <xsl:with-param name="lines" select="$lines" />
           <xsl:with-param name="number" select="$number" />
+          <xsl:with-param name="output" select="$output" />
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
@@ -218,9 +229,15 @@
     <xsl:param name="lines" />
     <xsl:param name="left" select="46" />
     <xsl:param name="number" />
+    <xsl:param name="output" />
 
-    <xsl:value-of select="$lines[1]" />
-    <xsl:text>&#xa;</xsl:text>
+    <xsl:variable name="outputTop">
+      <xsl:call-template name="addLine">
+        <xsl:with-param name="output" select="$output" />
+        <xsl:with-param name="line" select="$lines[1]" />
+        <xsl:with-param name="number" select="$number" />
+      </xsl:call-template>
+    </xsl:variable>
 
     <xsl:choose>
       <xsl:when test="$left &gt; 1">
@@ -228,12 +245,14 @@
           <xsl:with-param name="lines" select="subsequence($lines, 2)" />
           <xsl:with-param name="left" select="$left - 1" />
           <xsl:with-param name="number" select="$number" />
+          <xsl:with-param name="output" select="$outputTop" />
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
         <xsl:call-template name="_paginate">
           <xsl:with-param name="text" select="subsequence($lines, 2)" />
           <xsl:with-param name="number" select="$number" />
+          <xsl:with-param name="output" select="$outputTop" />
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
@@ -242,8 +261,7 @@
   <xsl:template name="_advancePage">
     <xsl:param name="text" />
     <xsl:param name="number" />
-
-    <xsl:text>&#xa;&#xa;</xsl:text>
+    <xsl:param name="output" />
     
     <xsl:variable name="page">
       <xsl:text>[Page </xsl:text>
@@ -251,72 +269,114 @@
       <xsl:text>]</xsl:text>
     </xsl:variable>
 
-    <xsl:text>Shepherd                          Memo</xsl:text>
+    <xsl:variable name="outputTop">
+      <xsl:value-of select="$output" />
+      <xsl:text>&#xa;&#xa;</xsl:text>
+      <xsl:text>Shepherd                          Memo</xsl:text>
 
-    <xsl:call-template name="pad">
-      <xsl:with-param name="number" select="34 - string-length($page)"/>
-    </xsl:call-template>
-
-    <xsl:value-of select="$page" />
-    <xsl:text>&#xa;</xsl:text>
-
-    <xsl:if test="count($text) &gt; 1">
-      <xsl:text>&#12;&#xa;</xsl:text>
-      <xsl:value-of select="$header2" />
-      <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
-
-      <xsl:call-template name="outputLines">
-        <xsl:with-param name="lines" select="$text" />
-        <xsl:with-param name="number" select="$number + 1" />
+      <xsl:call-template name="pad">
+        <xsl:with-param name="number" select="34 - string-length($page)"/>
       </xsl:call-template>
-    </xsl:if>
+
+      <xsl:value-of select="$page" />
+      <xsl:text>&#xa;</xsl:text>
+    </xsl:variable>
+
+    <xsl:choose>
+      <xsl:when test="count($text) &lt;= 1">
+        <xsl:value-of select="$outputTop" />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="outputLines">
+          <xsl:with-param name="lines" select="$text" />
+          <xsl:with-param name="number" select="$number + 1" />
+          <xsl:with-param name="output">
+            <xsl:value-of select="$outputTop" />
+            <xsl:text>&#12;&#xa;</xsl:text>
+            <xsl:value-of select="$header2" />
+            <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template name="_paginate">
     <xsl:param name="text" />
     <xsl:param name="number" />
+    <xsl:param name="output" />
 
     <xsl:choose>
-      <xsl:when test="(matches($text[1], '^[^ ]') and $text[4]) or (matches($text[2], '^[^ ]') and $text[5])">
+      <xsl:when test="(matches($text[1], '^[^ ]') and $text[4]) or matches($text[2], '^[^ ]') or matches($text[3], '^[^ ]')">
         <xsl:call-template name="_advancePage">
           <xsl:with-param name="text" select="$text" />
           <xsl:with-param name="number" select="$number" />
+          <xsl:with-param name="output" select="$output" />
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="$text[1]" />
-        <xsl:text>&#xa;</xsl:text>
-        <xsl:value-of select="$text[2]" />
-        <xsl:text>&#xa;</xsl:text>
+        <xsl:variable name="outputTop">
+          <xsl:call-template name="addLine">
+            <xsl:with-param name="number" select="$number" />
+            <xsl:with-param name="output" select="$output" />
+            <xsl:with-param name="line" select="$text[1]" />
+          </xsl:call-template>
+          <xsl:value-of select="$text[2]" />
+          <xsl:text>&#xa;</xsl:text>
+        </xsl:variable>
 
         <xsl:choose>
           <xsl:when test="not($text[4]) or ($text[2] and $text[5])">
-            <xsl:value-of select="$text[3]" />
-            <xsl:text>&#xa;</xsl:text>
-
             <xsl:call-template name="_advancePage">
               <xsl:with-param name="text" select="subsequence($text, 4)" />
               <xsl:with-param name="number" select="$number" />
+              <xsl:with-param name="output">
+                <xsl:value-of select="$outputTop" />
+                <xsl:value-of select="$text[3]" />
+                <xsl:text>&#xa;</xsl:text>
+              </xsl:with-param>
             </xsl:call-template>
           </xsl:when>
-          <xsl:when test="not($text[2])">
-            <xsl:text>&#xa;</xsl:text>
-
-            <xsl:call-template name="_advancePage">
-              <xsl:with-param name="text" select="subsequence($text, 2)" />
-              <xsl:with-param name="number" select="$number" />
-            </xsl:call-template>
-          </xsl:when>
-          <xsl:when test="not($text[5])">
-            <xsl:text>&#xa;</xsl:text>
+          <xsl:otherwise>
             <xsl:call-template name="_advancePage">
               <xsl:with-param name="text" select="subsequence($text, 3)" />
               <xsl:with-param name="number" select="$number" />
+              <xsl:with-param name="output">
+                <xsl:value-of select="$outputTop" />
+                <xsl:text>&#xa;</xsl:text>
+              </xsl:with-param>
             </xsl:call-template>
-          </xsl:when>
+          </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="addLine">
+    <xsl:param name="line" />
+    <xsl:param name="output" />
+    <xsl:param name="number" />
+
+    <xsl:choose>
+      <xsl:when test="not(starts-with($line, 'Table')) and matches($line, '^[^ ]')">
+        <xsl:value-of select="substring-before($output, ' ,')" />
+        <xsl:text>   </xsl:text>
+        <xsl:value-of select="$line" />
+        <xsl:text> </xsl:text>
+        <xsl:for-each select="1 to 66 - string-length($line) - string-length(string($number))">
+          <xsl:text>.</xsl:text>
+        </xsl:for-each>
+        <xsl:text>  </xsl:text>
+        <xsl:value-of select="$number" />
+        <xsl:value-of select="substring-after($output, ' ,')" />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$output" />
+      </xsl:otherwise>
+    </xsl:choose>
+
+    <xsl:value-of select="$line" />
+    <xsl:text>&#xa;</xsl:text>
   </xsl:template>
 
   <xsl:template name="wrapText">
@@ -411,7 +471,7 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="p">
+  <xsl:template match="section/*[not(self::ul or self::section)]">
     <xsl:call-template name="wrapText">
       <xsl:with-param name="text">
         <xsl:apply-templates />
