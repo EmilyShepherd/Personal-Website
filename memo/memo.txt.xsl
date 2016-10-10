@@ -1,16 +1,16 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
   <xsl:output method="text" />
   <xsl:strip-space elements="*" />
 
   <xsl:variable name="header">
-    <xsl:call-template name="pad">
-      <xsl:with-param
-          name="number"
-          select="floor((72 - string-length(/memo/title)) div 2)" />
-    </xsl:call-template>
+    <xsl:for-each
+          select="1 to xs:integer(floor((72 - string-length(/memo/title)) div 2))">
+        <xsl:text> </xsl:text>
+      </xsl:for-each>
 
     <xsl:value-of select="/memo/title" />
   </xsl:variable>
@@ -45,15 +45,15 @@
   </xsl:template>
 
   <xsl:template match="memo">
-    <xsl:call-template name="pad">
-      <xsl:with-param name="number">61</xsl:with-param>
-    </xsl:call-template>
+    <xsl:for-each select="1 to 61">
+      <xsl:text> </xsl:text>
+    </xsl:for-each>
 
     <xsl:text>E. Shepherd&#xa;</xsl:text>
 
-    <xsl:call-template name="pad">
-      <xsl:with-param name="number" select="72 - string-length($date)" />
-    </xsl:call-template>
+    <xsl:for-each select="1 to 72 - xs:integer(string-length($date))">
+      <xsl:text> </xsl:text>
+    </xsl:for-each>
 
     <xsl:value-of select="$date" />
 
@@ -274,9 +274,9 @@
       <xsl:text>&#xa;&#xa;</xsl:text>
       <xsl:text>Shepherd                          Memo</xsl:text>
 
-      <xsl:call-template name="pad">
-        <xsl:with-param name="number" select="34 - string-length($page)"/>
-      </xsl:call-template>
+      <xsl:for-each select="1 to 34 - xs:integer(string-length($page))">
+        <xsl:text> </xsl:text>
+      </xsl:for-each>
 
       <xsl:value-of select="$page" />
       <xsl:text>&#xa;</xsl:text>
@@ -359,11 +359,27 @@
 
     <xsl:choose>
       <xsl:when test="not(starts-with($line, 'Table')) and matches($line, '^[^ ]')">
+        <xsl:variable name="level" select="
+          count(tokenize(substring-before($line,' '),'\.'))" />
+        <xsl:variable name="padding" as="xs:integer">
+          <xsl:choose>
+            <xsl:when test="$level &lt;= 2">
+              <xsl:value-of select="3" />
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$level + $level - 1" />
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
         <xsl:value-of select="substring-before($output, ' ,')" />
-        <xsl:text>   </xsl:text>
+        <xsl:for-each select="1 to $padding">
+          <xsl:text> </xsl:text>
+        </xsl:for-each>
+
         <xsl:value-of select="$line" />
         <xsl:text> </xsl:text>
-        <xsl:for-each select="1 to 66 - string-length($line) - string-length(string($number))">
+        <xsl:for-each select="1 to 69 - $padding - string-length($line) - string-length(string($number))">
           <xsl:text>.</xsl:text>
         </xsl:for-each>
         <xsl:text>  </xsl:text>
@@ -457,17 +473,6 @@
           </xsl:call-template>
         </xsl:otherwise>
       </xsl:choose>
-    </xsl:if>
-  </xsl:template>
-
-  <xsl:template name="pad">
-    <xsl:param name="number" />
-
-    <xsl:if test="$number &gt; 0">
-      <xsl:text> </xsl:text>
-      <xsl:call-template name="pad">
-        <xsl:with-param name="number" select="$number - 1" />
-      </xsl:call-template>
     </xsl:if>
   </xsl:template>
 
