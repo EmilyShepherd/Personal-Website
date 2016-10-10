@@ -1,4 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE stylesheet [
+<!ENTITY sp "<xsl:text> </xsl:text>">
+<!ENTITY nl "<xsl:text>&#xa;</xsl:text>">
+]>
 <xsl:stylesheet version="2.0" 
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -9,7 +13,7 @@
   <xsl:variable name="header">
     <xsl:for-each
           select="1 to xs:integer(floor((72 - string-length(/memo/title)) div 2))">
-        <xsl:text> </xsl:text>
+        &sp;
       </xsl:for-each>
 
     <xsl:value-of select="/memo/title" />
@@ -18,7 +22,7 @@
   <xsl:variable name="header2">
     <xsl:variable name="date">
       <xsl:value-of select="/memo/date/@month" />
-      <xsl:text> </xsl:text>
+      &sp;
       <xsl:value-of select="/memo/date/@year" />
     </xsl:variable>
 
@@ -26,7 +30,7 @@
 
     <xsl:for-each
         select="string-length($header) to (71 - string-length($date))">
-      <xsl:text> </xsl:text>
+      &sp;
     </xsl:for-each>
 
     <xsl:value-of select="$date" />
@@ -37,46 +41,42 @@
   </xsl:variable>
 
   <xsl:template match="/">
-    <xsl:call-template name="paginate">
-      <xsl:with-param name="text">
-        <xsl:apply-templates />
-      </xsl:with-param>
+    <xsl:variable name="text"><xsl:apply-templates /></xsl:variable>
+
+    &nl;&nl;&nl;&nl;&nl;&nl;
+
+    <xsl:call-template name="_outputLines">
+      <xsl:with-param name="lines" select="tokenize($text, '&#xa;')" />
+      <xsl:with-param name="number" select="1" />
     </xsl:call-template>
   </xsl:template>
 
   <xsl:template match="memo">
-    <xsl:for-each select="1 to 61">
-      <xsl:text> </xsl:text>
-    </xsl:for-each>
+    <xsl:for-each select="1 to 61">&sp;</xsl:for-each>
 
-    <xsl:text>E. Shepherd&#xa;</xsl:text>
+    <xsl:text>E. Shepherd</xsl:text>&nl;
 
     <xsl:for-each select="1 to 72 - xs:integer(string-length($date))">
-      <xsl:text> </xsl:text>
+      &sp;
     </xsl:for-each>
 
-    <xsl:value-of select="$date" />
-
-    <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
-
-    <xsl:value-of select="$header" />
-
-    <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
-
-    <xsl:text>Table of Contents</xsl:text>
-    <xsl:text>&#xa;</xsl:text>
+    <xsl:value-of select="$date" />&nl;
+    &nl;
+    &nl;
+    <xsl:value-of select="$header" />&nl;
+    &nl;
+    &nl;
+    <xsl:text>Table of Contents</xsl:text>&nl;
 
     <xsl:for-each select="1 to count(//section) + 3">
       <xsl:text>&#xa; ,</xsl:text>
     </xsl:for-each>
 
-    <xsl:text>&#xa;&#xa;</xsl:text>
-    <xsl:apply-templates select="content/*" />
+    &nl;&nl;
+    <xsl:apply-templates select="content/*" />&nl;
 
-    <xsl:text>&#xa;</xsl:text>
-
-    <xsl:text>References</xsl:text>
-    <xsl:text>&#xa;&#xa;</xsl:text>
+    <xsl:text>References</xsl:text>&nl;
+    &nl;
 
     <xsl:for-each select="references/reference">
       <xsl:sort select="@id" />
@@ -85,12 +85,12 @@
       <xsl:text>]</xsl:text>
 
       <xsl:if test="string-length(@id) &gt; 7">
-        <xsl:text>&#xa;</xsl:text>
+        &nl;
         <xsl:text>            </xsl:text>
       </xsl:if>
       <xsl:if test="string-length(@id) &lt; 8">
         <xsl:for-each select="string-length(@id) to 6">
-          <xsl:text> </xsl:text>
+          &sp;
         </xsl:for-each>
       </xsl:if>
 
@@ -117,13 +117,13 @@
           <xsl:text>&gt;</xsl:text>
         </xsl:with-param>
       </xsl:call-template>
-      <xsl:text>&#xa;</xsl:text>
+      &nl;
     </xsl:for-each>
 
-    <xsl:text>&#xa;</xsl:text>
+    &nl;
 
-    <xsl:text>Document History&#xa;&#xa;</xsl:text>
-
+    <xsl:text>Document History</xsl:text>&nl;
+    &nl;
     <xsl:call-template name="wrapText">
       <xsl:with-param name="text">
         <xsl:text>&lt;https://github.com/EmilyShepherd/</xsl:text>
@@ -133,10 +133,10 @@
       </xsl:with-param>
     </xsl:call-template>
 
-    <xsl:text>&#xa;&#xa;</xsl:text>
+    &nl;&nl;
 
-    <xsl:text>Alternative Formats&#xa;&#xa;</xsl:text>
-
+    <xsl:text>Alternative Formats</xsl:text>&nl;
+    &nl;
     <xsl:text>   HTML       </xsl:text>
     <xsl:call-template name="wrapText">
       <xsl:with-param name="startIndent" select="''" />
@@ -149,7 +149,7 @@
       </xsl:with-param>
     </xsl:call-template>
 
-    <xsl:text>&#xa;</xsl:text>
+    &nl;
 
     <xsl:text>   XML        </xsl:text>
     <xsl:call-template name="wrapText">
@@ -173,7 +173,7 @@
       <xsl:text>.</xsl:text>
     </xsl:variable>
 
-    <xsl:text>&#xa;</xsl:text>
+    &nl;
     <xsl:value-of select="$newPrefix" />
     <xsl:text>  </xsl:text>
 
@@ -186,20 +186,10 @@
       </xsl:otherwise>
     </xsl:choose>
     
-    <xsl:text>&#xa;&#xa;</xsl:text>
+    &nl;&nl;
     <xsl:apply-templates>
       <xsl:with-param name="prefix" select="$newPrefix" />
     </xsl:apply-templates>
-  </xsl:template>
-
-  <xsl:template name="paginate">
-    <xsl:param name="text" />
-
-    <xsl:text>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;</xsl:text>
-    <xsl:call-template name="outputLines">
-      <xsl:with-param name="lines" select="tokenize($text, '&#xa;')" />
-      <xsl:with-param name="number" select="1" />
-    </xsl:call-template>
   </xsl:template>
 
   <xsl:template name="outputLines">
@@ -271,15 +261,15 @@
 
     <xsl:variable name="outputTop">
       <xsl:value-of select="$output" />
-      <xsl:text>&#xa;&#xa;</xsl:text>
+
+      &nl;&nl;
       <xsl:text>Shepherd                          Memo</xsl:text>
 
       <xsl:for-each select="1 to 34 - xs:integer(string-length($page))">
-        <xsl:text> </xsl:text>
+        &sp;
       </xsl:for-each>
 
-      <xsl:value-of select="$page" />
-      <xsl:text>&#xa;</xsl:text>
+      <xsl:value-of select="$page" />&nl;
     </xsl:variable>
 
     <xsl:choose>
@@ -292,9 +282,9 @@
           <xsl:with-param name="number" select="$number + 1" />
           <xsl:with-param name="output">
             <xsl:value-of select="$outputTop" />
-            <xsl:text>&#12;&#xa;</xsl:text>
-            <xsl:value-of select="$header2" />
-            <xsl:text>&#xa;&#xa;&#xa;</xsl:text>
+            <xsl:text>&#12;</xsl:text>&nl;
+            <xsl:value-of select="$header2" />&nl;
+            &nl;&nl;
           </xsl:with-param>
         </xsl:call-template>
       </xsl:otherwise>
@@ -322,7 +312,7 @@
             <xsl:with-param name="line" select="$text[1]" />
           </xsl:call-template>
           <xsl:value-of select="$text[2]" />
-          <xsl:text>&#xa;</xsl:text>
+          &nl;
         </xsl:variable>
 
         <xsl:choose>
@@ -333,7 +323,7 @@
               <xsl:with-param name="output">
                 <xsl:value-of select="$outputTop" />
                 <xsl:value-of select="$text[3]" />
-                <xsl:text>&#xa;</xsl:text>
+                &nl;
               </xsl:with-param>
             </xsl:call-template>
           </xsl:when>
@@ -343,7 +333,7 @@
               <xsl:with-param name="number" select="$number" />
               <xsl:with-param name="output">
                 <xsl:value-of select="$outputTop" />
-                <xsl:text>&#xa;</xsl:text>
+                &nl;
               </xsl:with-param>
             </xsl:call-template>
           </xsl:otherwise>
@@ -374,11 +364,11 @@
 
         <xsl:value-of select="substring-before($output, ' ,')" />
         <xsl:for-each select="1 to $padding">
-          <xsl:text> </xsl:text>
+          &sp;
         </xsl:for-each>
 
         <xsl:value-of select="$line" />
-        <xsl:text> </xsl:text>
+        &sp;
         <xsl:for-each select="1 to 69 - $padding - string-length($line) - string-length(string($number))">
           <xsl:text>.</xsl:text>
         </xsl:for-each>
@@ -392,7 +382,7 @@
     </xsl:choose>
 
     <xsl:value-of select="$line" />
-    <xsl:text>&#xa;</xsl:text>
+    &nl;
   </xsl:template>
 
   <xsl:template name="wrapText">
@@ -413,7 +403,7 @@
       <xsl:with-param name="indent" select="$indent" />
     </xsl:call-template>
 
-    <xsl:text>&#xa;</xsl:text>
+    &nl;
   </xsl:template>
 
   <xsl:template name="_wrapText">
@@ -429,7 +419,7 @@
     <xsl:if test="string-length($word) != 0">
       <xsl:if test="$start = false()">
         <xsl:if test="$left = $len">
-          <xsl:text>&#xa;</xsl:text>
+          &nl;
           <xsl:value-of select="$indent" />
         </xsl:if>
       </xsl:if>
@@ -446,7 +436,7 @@
         </xsl:when>
         <xsl:when test="$strlen &lt; $left">
           <xsl:value-of select="$word" />
-          <xsl:text> </xsl:text>
+          &sp;
           <xsl:call-template name="_wrapText">
             <xsl:with-param name="word" select="$rest[1]" />
             <xsl:with-param name="rest" select="subsequence($rest, 2)" />
@@ -482,7 +472,7 @@
         <xsl:apply-templates />
       </xsl:with-param>
     </xsl:call-template>
-    <xsl:text>&#xa;</xsl:text>
+    &nl;
   </xsl:template>
 
   <xsl:template match="li">
@@ -495,20 +485,14 @@
       </xsl:with-param>
       <xsl:with-param name="len" select="66" />
     </xsl:call-template>
-    <xsl:text>&#xa;</xsl:text>
+    &nl;
   </xsl:template>
 
-  <xsl:template match="em">
-    _<xsl:apply-templates />_
-  </xsl:template>
+  <xsl:template match="em">_<xsl:apply-templates />_</xsl:template>
 
   <xsl:template match="date">
     <xsl:value-of select="concat(@day, ' ', @month, ' ', @year)" />
   </xsl:template>
 
-  <xsl:template match="ref">
-    <xsl:text>[</xsl:text>
-    <xsl:value-of select="@to" />
-    <xsl:text>]</xsl:text>
-  </xsl:template>
+  <xsl:template match="ref">[<xsl:value-of select="@to" />]</xsl:template>
 </xsl:stylesheet>
