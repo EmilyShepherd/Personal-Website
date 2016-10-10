@@ -2,6 +2,8 @@
 <!DOCTYPE stylesheet [
 <!ENTITY sp "<xsl:text> </xsl:text>">
 <!ENTITY nl "<xsl:text>&#xa;</xsl:text>">
+<!ENTITY ob "<xsl:text>[</xsl:text>">
+<!ENTITY cb "<xsl:text>]</xsl:text>">
 ]>
 <xsl:stylesheet version="2.0" 
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -78,11 +80,9 @@
     <xsl:text>References</xsl:text>&nl;
     &nl;
 
-    <xsl:for-each select="references/reference">
-      <xsl:sort select="@id" />
-      <xsl:text>   [</xsl:text>
-      <xsl:value-of select="@id" />
-      <xsl:text>]</xsl:text>
+    <xsl:for-each select="references/*"><xsl:sort select="@id"/>
+      &sp;&sp;&sp;
+      &ob;<xsl:value-of select="@id" />&cb;
 
       <xsl:if test="string-length(@id) &gt; 7">
         &nl;
@@ -174,8 +174,7 @@
     </xsl:variable>
 
     &nl;
-    <xsl:value-of select="$newPrefix" />
-    <xsl:text>  </xsl:text>
+    <xsl:value-of select="$newPrefix" />&sp;&sp;
 
     <xsl:choose>
       <xsl:when test="@title">
@@ -367,12 +366,13 @@
           &sp;
         </xsl:for-each>
 
-        <xsl:value-of select="$line" />
-        &sp;
+        <xsl:value-of select="$line" />&sp;
+
         <xsl:for-each select="1 to 69 - $padding - string-length($line) - string-length(string($number))">
           <xsl:text>.</xsl:text>
         </xsl:for-each>
-        <xsl:text>  </xsl:text>
+
+        &sp;&sp;
         <xsl:value-of select="$number" />
         <xsl:value-of select="substring-after($output, ' ,')" />
       </xsl:when>
@@ -488,11 +488,10 @@
     &nl;
   </xsl:template>
 
-  <xsl:template match="em">_<xsl:apply-templates />_</xsl:template>
-
   <xsl:template match="date">
     <xsl:value-of select="concat(@day, ' ', @month, ' ', @year)" />
   </xsl:template>
 
+  <xsl:template match="em">_<xsl:apply-templates />_</xsl:template>
   <xsl:template match="ref">[<xsl:value-of select="@to" />]</xsl:template>
 </xsl:stylesheet>
