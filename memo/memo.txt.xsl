@@ -4,13 +4,18 @@
 <!ENTITY nl "<xsl:text>&#xa;</xsl:text>">
 <!ENTITY ob "<xsl:text>[</xsl:text>">
 <!ENTITY cb "<xsl:text>]</xsl:text>">
+<!ENTITY comma "<xsl:text>, </xsl:text>">
+<!ENTITY qut '<xsl:text>"</xsl:text>'>
 ]>
 <xsl:stylesheet version="2.0" 
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:memo="https://emilyshepherd.me/memo"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   
   <xsl:output method="text" />
   <xsl:strip-space elements="*" />
+
+  <!-- VARIABLES -->
 
   <xsl:variable name="header">
     <xsl:for-each
@@ -42,16 +47,22 @@
     <xsl:apply-templates select="/memo/date" />
   </xsl:variable>
 
+  <!-- / VARIABLES -->
+
+  <!-- MAIN -->
+
   <xsl:template match="/">
     <xsl:variable name="text"><xsl:apply-templates /></xsl:variable>
 
     &nl;&nl;&nl;&nl;&nl;&nl;
 
-    <xsl:call-template name="_outputLines">
-      <xsl:with-param name="lines" select="tokenize($text, '&#xa;')" />
-      <xsl:with-param name="number" select="1" />
-    </xsl:call-template>
+    <xsl:value-of
+      select="memo:page(tokenize($text, '&#xa;'), 46, 1, '')" />
   </xsl:template>
+
+  <!-- / MAIN -->
+
+  <!-- MEMO -->
 
   <xsl:template match="memo">
     <xsl:for-each select="1 to 61">&sp;</xsl:for-each>
@@ -78,38 +89,21 @@
     <xsl:apply-templates select="content/*" />&nl;
 
     <xsl:text>References</xsl:text>&nl;
-    &nl;
 
     <xsl:for-each select="references/*"><xsl:sort select="@id"/>
-      &sp;&sp;&sp;
-      &ob;<xsl:value-of select="@id" />&cb;
-
-      <xsl:if test="string-length(@id) &gt; 7">
-        &nl;
-        <xsl:text>            </xsl:text>
-      </xsl:if>
-      <xsl:if test="string-length(@id) &lt; 8">
-        <xsl:for-each select="string-length(@id) to 6">
-          &sp;
-        </xsl:for-each>
-      </xsl:if>
-
-      <xsl:call-template name="wrapText">
-        <xsl:with-param name="len" select="58" />
-        <xsl:with-param name="indent" select="'              '" />
-        <xsl:with-param name="startIndent" select="'  '" />
+      &nl;
+      <xsl:call-template name="hangingItem">
+        <xsl:with-param name="label">
+          &ob;<xsl:value-of select="@id" />&cb;
+        </xsl:with-param>
         <xsl:with-param name="text">
-          <xsl:value-of select="normalize-space(author)" />
+          <xsl:value-of select="normalize-space(author)" />&comma;
 
-          <xsl:text>, "</xsl:text>
-
-          <xsl:value-of select="normalize-space(title)" />
-
-          <xsl:text>", </xsl:text>
+          &qut;<xsl:value-of select="normalize-space(title)" />&qut;
+          &comma;
 
           <xsl:if test="date">
-            <xsl:apply-templates select="date" />
-            <xsl:text>, </xsl:text>
+            <xsl:apply-templates select="date" />&comma;
           </xsl:if>
 
           <xsl:text>&lt;</xsl:text>
@@ -117,10 +111,9 @@
           <xsl:text>&gt;</xsl:text>
         </xsl:with-param>
       </xsl:call-template>
-      &nl;
     </xsl:for-each>
 
-    &nl;
+    &nl;&nl;
 
     <xsl:text>Document History</xsl:text>&nl;
     &nl;
@@ -136,32 +129,34 @@
     &nl;&nl;
 
     <xsl:text>Alternative Formats</xsl:text>&nl;
-    &nl;
-    <xsl:text>   HTML       </xsl:text>
+    <xsl:value-of select="memo:format('HTML', @url, '')" />
+    <xsl:value-of select="memo:format('XML', @url, '.xml')" />
+  </xsl:template>
+
+  <!-- / MEMO -->
+  
+  <!-- NODES -->
+
+  <xsl:template match="section/*[not(self::ul or self::section)]">
     <xsl:call-template name="wrapText">
-      <xsl:with-param name="startIndent" select="''" />
-      <xsl:with-param name="len" select="58" />
-      <xsl:with-param name="indent" select="'              '" />
       <xsl:with-param name="text">
-        <xsl:text>&lt;https://emilyshepherd.me/memo/</xsl:text>
-        <xsl:value-of select="@url" />
-        <xsl:text>&gt;</xsl:text>
+        <xsl:apply-templates />
       </xsl:with-param>
     </xsl:call-template>
-
     &nl;
+  </xsl:template>
 
-    <xsl:text>   XML        </xsl:text>
+  <xsl:template match="li">
+    <xsl:text>   o  </xsl:text> 
     <xsl:call-template name="wrapText">
-      <xsl:with-param name="startIndent" select="''" />
-      <xsl:with-param name="len" select="58" />
-      <xsl:with-param name="indent" select="'              '" />
+      <xsl:with-param name="startIndent" />
+      <xsl:with-param name="indent" select="'      '" />
       <xsl:with-param name="text">
-        <xsl:text>&lt;https://emilyshepherd.me/memo/</xsl:text>
-        <xsl:value-of select="@url" />
-        <xsl:text>.xml&gt;</xsl:text>
+        <xsl:apply-templates />
       </xsl:with-param>
+      <xsl:with-param name="len" select="66" />
     </xsl:call-template>
+    &nl;
   </xsl:template>
 
   <xsl:template match="section">
@@ -193,6 +188,146 @@
     </xsl:apply-templates>
   </xsl:template>
 
+  <xsl:template match="date">
+    <xsl:value-of select="concat(@day, ' ', @month, ' ', @year)" />
+  </xsl:template>
+
+  <xsl:template match="em">_<xsl:apply-templates />_</xsl:template>
+  <xsl:template match="ref">[<xsl:value-of select="@to" />]</xsl:template>
+
+  <!-- / NODES -->
+
+  <!-- TEXT PROCESSING -->
+
+  <xsl:function name="memo:format">
+    <xsl:param name="label" />
+    <xsl:param name="url" />
+    <xsl:param name="ext" />
+
+    &nl;
+    <xsl:call-template name="hangingItem">
+      <xsl:with-param name="label" select="$label" />
+      <xsl:with-param name="text">
+        <xsl:text>&lt;https://emilyshepherd.me/memo/</xsl:text>
+        <xsl:value-of select="$url" />
+        <xsl:value-of select="$ext" />
+        <xsl:text>&gt;</xsl:text>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:function>
+
+  <xsl:template name="hangingItem">
+    <xsl:param name="label" />
+    <xsl:param name="text" />
+    
+    &sp;&sp;&sp;
+    <xsl:value-of select="$label" />
+
+    <xsl:choose>
+      <xsl:when test="string-length($label) &gt; 9">
+        &nl;
+        &sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:for-each select="string-length($label) to 8">
+          &sp;
+        </xsl:for-each>
+      </xsl:otherwise>
+    </xsl:choose>
+
+    <xsl:call-template name="wrapText">
+      <xsl:with-param name="len" select="58" />
+      <xsl:with-param name="indent" select="'              '" />
+      <xsl:with-param name="startIndent" select="'  '" />
+      <xsl:with-param name="text" select="$text" />
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template name="wrapText">
+    <xsl:param name="text" />
+    <xsl:param name="len" select="69" />
+    <xsl:param name="indent" select="'   '" />
+    <xsl:param name="startIndent" select="'   '" />
+
+    <xsl:variable name="str" select="tokenize(normalize-space($text), ' ')" />
+
+    <xsl:value-of select="$startIndent" />
+
+    <xsl:call-template name="_wrapText">
+      <xsl:with-param name="word" select="$str[1]" />
+      <xsl:with-param name="rest" select="subsequence($str, 2)" />
+      <xsl:with-param name="len" select="$len" />
+      <xsl:with-param name="start" select="true()" />
+      <xsl:with-param name="indent" select="$indent" />
+    </xsl:call-template>
+
+    &nl;
+  </xsl:template>
+
+  <xsl:template name="_wrapText">
+    <xsl:param name="word" />
+    <xsl:param name="rest" />
+    <xsl:param name="len" />
+    <xsl:param name="left" select="$len" />
+    <xsl:param name="start" select="false()" />
+    <xsl:param name="indent" />
+
+    <xsl:variable name="strlen" select="string-length($word)" />
+
+    <xsl:if test="string-length($word) != 0">
+      <xsl:if test="$start = false()">
+        <xsl:if test="$left = $len">
+          &nl;
+          <xsl:value-of select="$indent" />
+        </xsl:if>
+      </xsl:if>
+
+      <xsl:choose>
+        <xsl:when test="$strlen = $left">
+          <xsl:value-of select="$word" />
+          <xsl:call-template name="_wrapText">
+            <xsl:with-param name="word" select="$rest[1]" />
+            <xsl:with-param name="rest" select="subsequence($rest, 2)" />
+            <xsl:with-param name="len" select="$len" />
+            <xsl:with-param name="indent" select="$indent" />
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:when test="$strlen &lt; $left">
+          <xsl:value-of select="$word" />
+          &sp;
+          <xsl:call-template name="_wrapText">
+            <xsl:with-param name="word" select="$rest[1]" />
+            <xsl:with-param name="rest" select="subsequence($rest, 2)" />
+            <xsl:with-param name="len" select="$len" />
+            <xsl:with-param name="left" select="$left - $strlen - 1" />
+            <xsl:with-param name="indent" select="$indent" />
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:when test="$strlen &gt; $len">
+          <xsl:value-of select="substring($word, 1, $left)" />
+          <xsl:call-template name="_wrapText">
+            <xsl:with-param name="word" select="substring($word, $left + 1)" />
+            <xsl:with-param name="rest" select="$rest" />
+            <xsl:with-param name="len" select="$len" />
+            <xsl:with-param name="indent" select="$indent" />
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="_wrapText">
+            <xsl:with-param name="word" select="$word" />
+            <xsl:with-param name="rest" select="$rest" />
+            <xsl:with-param name="len" select="$len" />
+            <xsl:with-param name="indent" select="$indent" />
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
+  <!-- / TEXT PROCESSING -->
+
+  <!-- PAGINATION -->
+
   <xsl:template name="outputLines">
     <xsl:param name="lines" />
     <xsl:param name="number" />
@@ -207,18 +342,15 @@
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:call-template name="_outputLines">
-          <xsl:with-param name="lines" select="$lines" />
-          <xsl:with-param name="number" select="$number" />
-          <xsl:with-param name="output" select="$output" />
-        </xsl:call-template>
+        <xsl:value-of select="memo:page(
+          $lines, 46, $number, $output)" />
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template name="_outputLines">
+  <xsl:function name="memo:page">
     <xsl:param name="lines" />
-    <xsl:param name="left" select="46" />
+    <xsl:param name="left" />
     <xsl:param name="number" />
     <xsl:param name="output" />
 
@@ -232,12 +364,8 @@
 
     <xsl:choose>
       <xsl:when test="$left &gt; 1">
-        <xsl:call-template name="_outputLines">
-          <xsl:with-param name="lines" select="subsequence($lines, 2)" />
-          <xsl:with-param name="left" select="$left - 1" />
-          <xsl:with-param name="number" select="$number" />
-          <xsl:with-param name="output" select="$outputTop" />
-        </xsl:call-template>
+        <xsl:value-of select="memo:page(
+          subsequence($lines, 2), $left - 1, $number, $outputTop)" />
       </xsl:when>
       <xsl:otherwise>
         <xsl:call-template name="_paginate">
@@ -247,7 +375,7 @@
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
+  </xsl:function>
 
   <xsl:template name="_advancePage">
     <xsl:param name="text" />
@@ -387,113 +515,6 @@
     &nl;
   </xsl:template>
 
-  <xsl:template name="wrapText">
-    <xsl:param name="text" />
-    <xsl:param name="len" select="69" />
-    <xsl:param name="indent" select="'   '" />
-    <xsl:param name="startIndent" select="'   '" />
+  <!-- / PAGINATION -->
 
-    <xsl:variable name="str" select="tokenize(normalize-space($text), ' ')" />
-
-    <xsl:value-of select="$startIndent" />
-
-    <xsl:call-template name="_wrapText">
-      <xsl:with-param name="word" select="$str[1]" />
-      <xsl:with-param name="rest" select="subsequence($str, 2)" />
-      <xsl:with-param name="len" select="$len" />
-      <xsl:with-param name="start" select="true()" />
-      <xsl:with-param name="indent" select="$indent" />
-    </xsl:call-template>
-
-    &nl;
-  </xsl:template>
-
-  <xsl:template name="_wrapText">
-    <xsl:param name="word" />
-    <xsl:param name="rest" />
-    <xsl:param name="len" />
-    <xsl:param name="left" select="$len" />
-    <xsl:param name="start" select="false()" />
-    <xsl:param name="indent" />
-
-    <xsl:variable name="strlen" select="string-length($word)" />
-
-    <xsl:if test="string-length($word) != 0">
-      <xsl:if test="$start = false()">
-        <xsl:if test="$left = $len">
-          &nl;
-          <xsl:value-of select="$indent" />
-        </xsl:if>
-      </xsl:if>
-
-      <xsl:choose>
-        <xsl:when test="$strlen = $left">
-          <xsl:value-of select="$word" />
-          <xsl:call-template name="_wrapText">
-            <xsl:with-param name="word" select="$rest[1]" />
-            <xsl:with-param name="rest" select="subsequence($rest, 2)" />
-            <xsl:with-param name="len" select="$len" />
-            <xsl:with-param name="indent" select="$indent" />
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:when test="$strlen &lt; $left">
-          <xsl:value-of select="$word" />
-          &sp;
-          <xsl:call-template name="_wrapText">
-            <xsl:with-param name="word" select="$rest[1]" />
-            <xsl:with-param name="rest" select="subsequence($rest, 2)" />
-            <xsl:with-param name="len" select="$len" />
-            <xsl:with-param name="left" select="$left - $strlen - 1" />
-            <xsl:with-param name="indent" select="$indent" />
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:when test="$strlen &gt; $len">
-          <xsl:value-of select="substring($word, 1, $left)" />
-          <xsl:call-template name="_wrapText">
-            <xsl:with-param name="word" select="substring($word, $left + 1)" />
-            <xsl:with-param name="rest" select="$rest" />
-            <xsl:with-param name="len" select="$len" />
-            <xsl:with-param name="indent" select="$indent" />
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:call-template name="_wrapText">
-            <xsl:with-param name="word" select="$word" />
-            <xsl:with-param name="rest" select="$rest" />
-            <xsl:with-param name="len" select="$len" />
-            <xsl:with-param name="indent" select="$indent" />
-          </xsl:call-template>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:if>
-  </xsl:template>
-
-  <xsl:template match="section/*[not(self::ul or self::section)]">
-    <xsl:call-template name="wrapText">
-      <xsl:with-param name="text">
-        <xsl:apply-templates />
-      </xsl:with-param>
-    </xsl:call-template>
-    &nl;
-  </xsl:template>
-
-  <xsl:template match="li">
-    <xsl:text>   o  </xsl:text> 
-    <xsl:call-template name="wrapText">
-      <xsl:with-param name="startIndent" />
-      <xsl:with-param name="indent" select="'      '" />
-      <xsl:with-param name="text">
-        <xsl:apply-templates />
-      </xsl:with-param>
-      <xsl:with-param name="len" select="66" />
-    </xsl:call-template>
-    &nl;
-  </xsl:template>
-
-  <xsl:template match="date">
-    <xsl:value-of select="concat(@day, ' ', @month, ' ', @year)" />
-  </xsl:template>
-
-  <xsl:template match="em">_<xsl:apply-templates />_</xsl:template>
-  <xsl:template match="ref">[<xsl:value-of select="@to" />]</xsl:template>
 </xsl:stylesheet>
