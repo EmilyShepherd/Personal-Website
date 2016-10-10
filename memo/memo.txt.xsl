@@ -185,7 +185,9 @@
       </xsl:otherwise>
     </xsl:choose>
     
-    &nl;&nl;
+    <xsl:if test="not(*[1] = section)">&nl;</xsl:if>
+
+    &nl;
     <xsl:apply-templates>
       <xsl:with-param name="prefix" select="$newPrefix" />
     </xsl:apply-templates>
