@@ -18,29 +18,20 @@
   <!-- VARIABLES -->
 
   <xsl:variable name="header">
-    <xsl:for-each
-          select="1 to xs:integer(floor((72 - string-length(/memo/title)) div 2))">
-        &sp;
-      </xsl:for-each>
-
-    <xsl:value-of select="/memo/title" />
+    <xsl:value-of select="memo:padToCenter(/memo/title)" />
   </xsl:variable>
 
   <xsl:variable name="header2">
-    <xsl:variable name="date">
-      <xsl:value-of select="/memo/date/@month" />
-      &sp;
-      <xsl:value-of select="/memo/date/@year" />
-    </xsl:variable>
-
-    <xsl:value-of select="$header" />
-
-    <xsl:for-each
-        select="string-length($header) to (71 - string-length($date))">
-      &sp;
-    </xsl:for-each>
-
-    <xsl:value-of select="$date" />
+    <xsl:text>&#12;</xsl:text>&nl;
+    <xsl:call-template name="padToRight">
+      <xsl:with-param name="str">
+        <xsl:value-of select="/memo/date/@month" />
+        &sp;
+        <xsl:value-of select="/memo/date/@year" />
+      </xsl:with-param>
+      <xsl:with-param name="left" select="$header" />
+    </xsl:call-template>
+    &nl;&nl;
   </xsl:variable>
 
   <xsl:variable name="date">
@@ -65,15 +56,8 @@
   <!-- MEMO -->
 
   <xsl:template match="memo">
-    <xsl:for-each select="1 to 61">&sp;</xsl:for-each>
-
-    <xsl:text>E. Shepherd</xsl:text>&nl;
-
-    <xsl:for-each select="1 to 72 - xs:integer(string-length($date))">
-      &sp;
-    </xsl:for-each>
-
-    <xsl:value-of select="$date" />&nl;
+    <xsl:value-of select="memo:padToRight('E. Shepherd')" />
+    <xsl:value-of select="memo:padToRight($date)" />
     &nl;
     &nl;
     <xsl:value-of select="$header" />&nl;
@@ -199,6 +183,48 @@
 
   <!-- TEXT PROCESSING -->
 
+  <xsl:function name="memo:pad">
+    <xsl:param name="count" />
+    <xsl:value-of select="memo:pad($count, ' ')" />
+  </xsl:function>
+  <xsl:function name="memo:pad">
+    <xsl:param name="count" />
+    <xsl:param name="chr" />
+    <xsl:for-each select="1 to $count">
+      <xsl:value-of select="$chr" />
+    </xsl:for-each>
+  </xsl:function>
+
+  <xsl:function name="memo:padToCenter">
+    <xsl:param name="str" />
+    <xsl:value-of select="memo:padToCenter($str, 0)" />
+  </xsl:function>
+  <xsl:function name="memo:padToCenter">
+    <xsl:param name="str" />
+    <xsl:param name="left" />
+    <xsl:variable name="pad" select="36 - string-length($str) div 2" />
+    <xsl:value-of select="memo:pad(xs:integer(floor($pad) - $left))" />
+    <xsl:value-of select="$str" />
+  </xsl:function>
+
+  <xsl:template name="padToRight">
+    <xsl:param name="str" />
+    <xsl:param name="left" />
+    <xsl:value-of select="$left" />
+    <xsl:value-of select="memo:padToRight($str, string-length($left))" />
+  </xsl:template>
+  <xsl:function name="memo:padToRight">
+    <xsl:param name="str" />
+    <xsl:value-of select="memo:padToRight($str, 0)" />
+  </xsl:function>
+  <xsl:function name="memo:padToRight">
+    <xsl:param name="str" />
+    <xsl:param name="left" />
+    <xsl:value-of select="memo:pad(72 - string-length($str) - $left)" />
+    <xsl:value-of select="$str" />
+    &nl;
+  </xsl:function>
+
   <xsl:function name="memo:format">
     <xsl:param name="label" />
     <xsl:param name="url" />
@@ -229,9 +255,7 @@
         &sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;&sp;
       </xsl:when>
       <xsl:otherwise>
-        <xsl:for-each select="string-length($label) to 8">
-          &sp;
-        </xsl:for-each>
+        <xsl:value-of select="memo:pad(9 - string-length($label))" />
       </xsl:otherwise>
     </xsl:choose>
 
@@ -342,8 +366,8 @@
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="memo:page(
-          $lines, 46, $number, $output)" />
+        <xsl:value-of
+          select="memo:page($lines, 46, $number, $output)" />
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -382,23 +406,20 @@
     <xsl:param name="number" />
     <xsl:param name="output" />
     
-    <xsl:variable name="page">
-      <xsl:text>[Page </xsl:text>
-      <xsl:value-of select="$number" />
-      <xsl:text>]</xsl:text>
-    </xsl:variable>
-
     <xsl:variable name="outputTop">
       <xsl:value-of select="$output" />
-
       &nl;&nl;
-      <xsl:text>Shepherd                          Memo</xsl:text>
-
-      <xsl:for-each select="1 to 34 - xs:integer(string-length($page))">
-        &sp;
-      </xsl:for-each>
-
-      <xsl:value-of select="$page" />&nl;
+      <xsl:call-template name="padToRight">
+        <xsl:with-param name="str">
+          <xsl:text>[Page </xsl:text>
+          <xsl:value-of select="$number" />
+          <xsl:text>]</xsl:text>
+        </xsl:with-param>
+        <xsl:with-param name="left">
+          <xsl:text>Shepherd</xsl:text>
+          <xsl:value-of select="memo:padToCenter('Memo', 8)" />
+        </xsl:with-param>
+      </xsl:call-template>
     </xsl:variable>
 
     <xsl:choose>
@@ -411,9 +432,7 @@
           <xsl:with-param name="number" select="$number + 1" />
           <xsl:with-param name="output">
             <xsl:value-of select="$outputTop" />
-            <xsl:text>&#12;</xsl:text>&nl;
-            <xsl:value-of select="$header2" />&nl;
-            &nl;&nl;
+            <xsl:value-of select="$header2" />
           </xsl:with-param>
         </xsl:call-template>
       </xsl:otherwise>
@@ -492,15 +511,11 @@
         </xsl:variable>
 
         <xsl:value-of select="substring-before($output, ' ,')" />
-        <xsl:for-each select="1 to $padding">
-          &sp;
-        </xsl:for-each>
+        <xsl:value-of select="memo:pad($padding)" />
 
         <xsl:value-of select="$line" />&sp;
 
-        <xsl:for-each select="1 to 69 - $padding - string-length($line) - string-length(string($number))">
-          <xsl:text>.</xsl:text>
-        </xsl:for-each>
+        <xsl:value-of select="memo:pad(69 - $padding - string-length($line) - string-length(string($number)), '.')" />
 
         &sp;&sp;
         <xsl:value-of select="$number" />
