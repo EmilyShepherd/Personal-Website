@@ -123,7 +123,7 @@
 
   <xsl:template match="reference">
     <div>
-      <h3 id="@id"><xsl:value-of select="@id" /></h3>
+      <h3 id="{@id}"><xsl:value-of select="@id" /></h3>
       <span>
         <xsl:value-of select="normalize-space(author)" />,
         "<xsl:value-of select="normalize-space(title)" />",
