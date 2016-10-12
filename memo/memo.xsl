@@ -117,6 +117,10 @@
     <p><xsl:apply-templates select="node()" /></p>
   </xsl:template>
 
+  <xsl:template match="fig">
+    <pre><xsl:value-of select="replace(., '(^|\n) +', '&#xa;')" /></pre>
+  </xsl:template>
+
   <xsl:template match="reference">
     <div>
       <h3 id="@id"><xsl:value-of select="@id" /></h3>

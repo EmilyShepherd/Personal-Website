@@ -127,7 +127,7 @@
   
   <!-- NODES -->
 
-  <xsl:template match="section/*[not(self::ul or self::section)]">
+  <xsl:template match="section/*[not(self::fig or self::ul or self::section)]">
     <xsl:call-template name="wrapText">
       <xsl:with-param name="text">
         <xsl:apply-templates />
@@ -146,6 +146,20 @@
       </xsl:with-param>
       <xsl:with-param name="len" select="66" />
     </xsl:call-template>
+    &nl;
+  </xsl:template>
+
+  <xsl:template match="fig">
+    <xsl:for-each select="tokenize(replace(., '^ *\n',''), '&#xa;')">
+      <xsl:choose>
+        <xsl:when test=".">
+          <xsl:call-template name="wrapText">
+            <xsl:with-param name="text" select="." />
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>&nl;</xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
     &nl;
   </xsl:template>
 
