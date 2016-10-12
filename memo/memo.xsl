@@ -26,7 +26,7 @@
         <span id="sectionTitle"><xsl:value-of select="title" /></span>
         
         <main>
-          <section id="general_top">
+          <section class="general_top">
             <div class="inner">
               <img src="{img[@rel='header']}" height="300" />
               <header style="margin-top: 20px;">
@@ -55,6 +55,18 @@
             <xsl:apply-templates select="." />
           </xsl:for-each>
         </section>
+
+        <xsl:if test="foot">
+          <section class="general_top">
+            <h1>Appendices</h1>
+            <xsl:for-each select="foot/*">
+              <section>
+                <h2><xsl:value-of select="@title" /></h2>
+                <xsl:apply-templates />
+              </section>
+            </xsl:for-each>
+          </section>
+        </xsl:if>
 
         <footer>
           <small>

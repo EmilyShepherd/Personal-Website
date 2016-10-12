@@ -99,6 +99,12 @@
 
     &nl;&nl;
 
+    <xsl:if test="foot">
+      <xsl:apply-templates select="foot/*">
+        <xsl:with-param name="prefix">Appendix&sp;</xsl:with-param>
+      </xsl:apply-templates>
+    </xsl:if>
+
     <xsl:text>Document History</xsl:text>&nl;
     &nl;
     <xsl:call-template name="wrapText">

@@ -333,13 +333,17 @@
         }
 
     /** NAME SECTION **/
-        #name_section, #general_top
+        #name_section, .general_top
         {
             background: radial-gradient(circle farthest-corner, #95c9f3, #0d47a1) center fixed;
             color: white;
-            padding-top: 120px;
             box-sizing: border-box;
             justify-content: center;
+        }
+
+        main > .general_top, #name_section
+        {
+            padding-top: 120px;
         }
 
         #name_section
@@ -1163,7 +1167,7 @@
 
 @media (min-width: 920px)
 {
-    #general_top section
+    .general_top section
     {
         width: 850px !important;
     }
@@ -1171,7 +1175,7 @@
 
 @media (max-width: 919px)
 {
-    #general_top section
+    .general_top section
     {
         width: auto !important;
     }
