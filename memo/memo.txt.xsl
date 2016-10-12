@@ -449,7 +449,10 @@
         <xsl:call-template name="_advancePage">
           <xsl:with-param name="text" select="$text" />
           <xsl:with-param name="number" select="$number" />
-          <xsl:with-param name="output" select="$output" />
+          <xsl:with-param name="output">
+            <xsl:value-of select="$output" />
+            &nl;&nl;&nl;
+          </xsl:with-param>
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
