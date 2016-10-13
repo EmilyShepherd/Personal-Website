@@ -8,9 +8,8 @@
       <p>
         ICANN, which has been in the news recently as its contract with 
         the NTIA expired at the beginning of this month, is now up to 
-        something new and, in my opinion at least, far more interesting: 
-        regenerating the Root Key Signing Key which it uses to secure 
-        the Domain Name System.
+        something far more mystifying: regenerating the Root Key Signing 
+        Key.
       </p>
 
       <p>
@@ -20,86 +19,91 @@
         links nice names like "google.com" to the underlying computer 
         readable IP Address. This system is massively distributed, with 
         lots of servers and entries being added and removed every day by 
-        various different entities; at the top we've got ICANN/IANA 
-        making changes to the root zone, this then delegates authority 
-        for ".com" to Verisign, which is known as a "Registrar".  
-        Verisign runs its own servers for all the ".com" records and it 
-        allows "Registries" to make changes to this. Once such registry, 
-        MarkMonitor, has delegated authority over "google.com" to 
-        Google's servers. Google themselves are then free to add their 
-        own things like, "mail.google.com".
+        various different entities. Let's look at the "google.com" to 
+        see what players are involved:
+      </p>
+
+      <p>
+        At the top we've got the DNS Root, managed by ICANN/IANA, from 
+        here authority for ".com" is delegated to Verisign, which is 
+        known as a DNS "Registry".  Verisign runs its own servers for 
+        all the ".com" records and it allows "Registrars" to make 
+        changes to this.  Google has paid one such Registrar, 
+        MarkMonitor, to delegate authority over "google.com" to Google's 
+        servers.  Google themselves are then free to manage their own 
+        DNS records, adding things like "mail.google.com" and 
+        "calendar.google.com".
       </p>
 
       <p>
         This is a brilliant system and very resilient to the massive 
-        amount of usage it gets but it does have one problem; with all 
+        amount of usage it gets, but it does have one problem: with all 
         these people running their own servers and records, how do you 
-        know that the information you get is truthful? If you query a 
-        server for "google.com" and you get a response pointing you to a 
-        particular place, you want to know that that really <em>is</em> 
-        Google, and not someone pretending to be Google to steal your 
-        information. This is where signatures come in.
+        know that the information you get is correct? If you query a 
+        server for "google.com" and you get a response pointing you say 
+        216.58.201.14, how do you know that really is Google and not a 
+        malicious party <em>pretending</em> to be Google in order to 
+        steal your password?  This is where digital signatures come in.
       </p>
     </section>
 
     <section title="What on Earth are Digital Signatures?">
       <p>
-        In Computer Science there's two kinds of encryption: symmetric 
-        and asymmetric. Symmetric encryption is the most commonly known: 
-        anything you encrypt with a password can be decrypted by that 
-        password. Asymmetric encryption, however, uses two passwords: 
-        one public and one private. The interesting thing here is that 
-        anything encrypted by the public key can only be decrypted by 
-        the private key, and similarly anything encrypted by the private 
-        key can only be decrypted by the public key. What's the point in 
-        that? It can be used to create digital signatures.
+        There are two kinds of encryption: symmetric and asymmetric.  
+        When using symmetric encryption, anything you encrypt with a 
+        password can be decrypted by that same password.  Asymmetric 
+        encryption, however, uses two passwords: one public and one 
+        private. The interesting thing here is that anything encrypted 
+        by the public key can only be decrypted by the private key, and 
+        similarly anything encrypted by the private key can only be 
+        decrypted by the public key. Let's use an example to show how 
+        this can be used to create a Digital Signature:
       </p>
       
       <p>
-        Let's use an example: if I want to send Bob the message "Hi, I'm 
-        Emily." and I want to sign it, all I have to do is encrypt the 
-        message with my private key.  Let's say this gives me the result 
-        "Blah, moo neigh" (in real encryption this would just be a long 
-        stream of letters, numbers and symbols but this is easier to 
-        understand and, more importantly, more fun).  I'm now going to 
-        send bob the following things:
+        I want to send Bob the signed message "Hi, I'm Emily.". I take 
+        this message and encrypt it with my private key; let's say this 
+        gives me the result "Blah, moo neigh" (in real encryption this 
+        would just be a long stream of letters, numbers and symbols but 
+        this is easier to understand and, more importantly, more fun).  
+        I'm now going to send Bob the following three things:
       </p>
 
       <ul>
-        <li>Message: "Hi, I'm Emily"</li>
-        <li>Signature: "Blah, moo neigh"</li>
+        <li>The Actual Message: "Hi, I'm Emily"</li>
+        <li>The Message's Signature: "Blah, moo neigh"</li>
         <li>My Public Key</li>
       </ul>
 
       <p>
-        Bob can now <em>decrypts</em> "Blah, moo neigh" with my Public 
-        Key which gives him "Hi, I'm Emily". If this is the same as the 
-        message I sent he knows for a fact that that message was 
-        encrypted by my Private Key because only a message encrypted by 
-        my Private Key could be decrypted by my Public Key. And as I'm 
-        the only person who has access to my Private Key, the message 
+        When Bob receives this, he <em>decrypts</em> the signature 
+        "Blah, moo neigh" with my Public Key. This gives him "Hi, I'm 
+        Emily"; as this matches my message he knows for a fact that 
+        signature was generated from my private key.  And as I'm the 
+        only person who has access to my Private Key, the message 
         therefore must have come from me!
       </p>
     </section>
 
     <section title="Who signs the Domain Name System?">
       <p>
-        That's a good question. Looking back on our example, we saw that 
-        Google runs its own servers and manages its own records for 
-        "google.com", so it makes sense for Google to generate a 
-        public/private key pair, publish their Public Key and then use 
-        their Private Key to sign all their DNS records. That way 
-        everyone can confirm they are correct. Brilliant, job done.
+        Looking back on our original example, we saw that Google runs 
+        its own servers and manages its own records for "google.com", so 
+        it makes sense for Google to generate a public/private key pair, 
+        publish their Public Key and then use their Private Key to sign 
+        all their DNS records. That way everyone can confirm they are 
+        correct. Brilliant, job done.
       </p>
 
       <p>
-        Not quite. This just shifts the problem. Before we wanted to 
-        know if we could trust if the DNS records for "google.com" had 
-        really come from Google. Now, with a digital signature, we can 
-        tell that they've come from whoever controls the Public Key, but 
-        how do we know that that Public Key is actually owned by Google?  
-        What's to stop anyone use generating a public/private key pair 
-        and using it to pretend to be Google?
+        Not quite. This just shifts the problem. We added a signature 
+        because we wanted to know if we could trust the DNS records for 
+        "google.com". Now, with a digital signature, we can tell that 
+        they've come from whoever controls the Private Key which matches 
+        the published Public Key, but how do we know that that published 
+        Public Key is actually owned by Google?  What's to stop our 
+        malicious party from generating their own public/private key 
+        pair and using it to pretend to be Google?
       </p>
 
       <p>
@@ -125,21 +129,15 @@
       
       <p>
         That point is known as the "trust anchor" and, in the case of 
-        the Domain Name System, that's ICANN's Root Zone Key Signing 
-        Key. Trust Anchors earn their trust in other ways, such as being 
-        published in a variety of trustworthy places, including ICANN's 
-        site, IANA's site and the Internet Engineering Task Force (I'll 
-        even pop it in the footer of this article, because I like to 
-        think of myself as a trustworthy gal!).  It also comes hard 
-        coded into Operating Systems and the Software used by Domain 
-        Name Servers in other words, it's literally part of the code 
-        that comes packaged in our software.
-      </p>
-      
-      <p>
-        This is the source of all trust in DNS, all keys in the Domain 
-        Name System have chains of trust going back to this one key. It 
-        is, quite literally, the Key to the Internet.
+        the Domain Name System, that's ICANN's Root Zone Key Signing Key 
+        (Root KSK for short). Trust Anchors earn their trust in other 
+        ways, such as being published in a variety of trustworthy 
+        places, including ICANN's site, IANA's site and the Internet 
+        Engineering Task Force (I'll even pop it in the footer of this 
+        article, because I like to think of myself as a trustworthy 
+        gal!).  It also comes hard coded into Operating Systems and the 
+        Software used by Domain Name Servers; it's literally part of the 
+        code that comes packaged in our software.
       </p>
     </section>
 
@@ -153,40 +151,33 @@
 
       <p>
         ICANN manages two secure facilities, one on the East Coast of 
-        America and one on the West Coast; copies of the Root Zone KSK 
-        are kept at these. But it's important to understand what I mean 
-        by 'secure'. I'm talking armoured buildings, armed guards, 
-        finger print readers, iris scanners, the lot. It's secure.
+        America and one on the West Coast; copies of the Root KSK are 
+        kept at these; these are armoured buildings with armed guards.  
+        Gaining access to the building requires multiple forms of ID.  
+        It's secure.  But wait, there's more...
       </p>
 
       <p>
-        Each of these facilities has an identical "Ceremony Room", which 
-        contains a table at which two people may sit and a set of chairs 
-        facing this. There are two cameras setup, one behind the desk 
-        and one to the side of it. The effect of this is that it would 
-        be difficult to do anything at this desk without it being caught 
-        on Camera. To one side of the room, there's a cage containing 
-        two safes which have been rather creatively named "Safe 1" and 
-        "Safe 2". There are two people who know the combination to each 
-        safe.
+        Each of these facilities has an identical "Ceremony Room"; to 
+        get in here, there's a finger print reader and even an iris 
+        scanner. There is only one person, the Ceremony Officer, with 
+        the authority to open this room and allow people to enter. To 
+        one side of the room, there's a cage containing two safes; these 
+        are rather creatively named "Safe 1" and "Safe 2". There are two 
+        people who know the combination to each safe, the Safe Security 
+        Officers.
       </p>
 
       <p>
-        Safe 1 is the simplest to explain so we'll start there; Safe 1 
-        contains a laptop, a DVD and two or more devices known as 
-        Hardware Security Modules (HSMs). Each of these is wrapped in a 
+        Safe 1 is the simplest to explain so we'll start there; it 
+        contains a laptop and two or more devices known as Hardware 
+        Security Modules (HSMs). Each of these items is wrapped in a 
         tamper evident bag so it would be immediately obvious if they'd 
-        been used since they were last put away. The DVD contains an 
-        Operating System for the Computer; without that the Computer 
-        can't do anything. The Operating System is kept on a separate 
-        DVD rather than on the laptop itself as this makes it easier to 
-        validate that it hasn't been messed with. The laptop is used to 
-        perform all the tasks relating to the generation and management 
-        of the KSK.
+        been used since they were last put away.
       </p>
 
       <p>
-        The KSK itself is stored within the HSMs; these are special 
+        The Root KSK itself is stored within the HSMs; these are special 
         devices designed to store and use a Private Key without any risk 
         of it falling into the wrong hands. They have tamper detection 
         systems on them which will result in the key automatically being 
@@ -199,109 +190,98 @@
       </p>
 
       <p>
-        That's where Safe 2 comes in! This contains seven safe deposit 
-        boxes where the security cards are stored, again within tamper 
-        evident bags. The safe deposit boxes require 2 keys to open, one 
-        "common key" held by an ICANN employee and one held by a Crypto 
-        Officer.
+        Here's where Safe 2 comes in; it contains seven safe deposit 
+        boxes where the Crypto Officers' security cards are stored, 
+        again within tamper evident bags. The safe deposit boxes require 
+        2 keys to open, one "common key" held by the Ceremony Officer 
+        and one held by the Crypto Officer.
       </p>
 
       <p>
-        So, to recap, we've got a secure facility. Inside that we've got 
-        a secure room, inside that there's a cage. Inside that there's 
-        two safes, one containing the HSMs which will only activate with 
-        three security cards. The security cards are each within their 
-        own safe deposit box within the <em>other safe</em>. As a 
-        result, to do anything with the KSK, you need the ICANN employee 
-        with the common key, the two ICANN employees who know the codes 
-        to the safes <em>and</em> at least three Crypto Officers with 
-        their safe deposit keys.
+        So, to sum up, in order to do anything with the KSK, you need 
+        the Ceremony to open the Ceremony Room, the two Safe Security 
+        Officers to open the safes and at least three Crypto Officers 
+        with their safe deposit keys. ICANN has also added the extra 
+        requirement that the Ceremony Officer is not allowed to do 
+        anything (including even entering the Ceremony Room!) without 
+        another person, the Internal Witness, being present. Every 
+        single action which occurs within the Ceremony Room is logged; 
+        when people enter the room, when a safe is opened, when 
+        something is taken out of the safe, when a safe deposit box is 
+        opened, etc...
       </p>
 
       <p>
-        Because of all this security, the Root Zone KSK is actually only 
-        used four times per year. There are two Key Signing Ceremony per 
-        facility per year. These are streamed live on the Internet and 
-        each piece of equipment and tamper proof bag is carefully shown 
-        to the cameras. This way it is possible for anyone in the world 
-        to act as an auditor for the process. At these ceremonies, 
-        another keypair, known as the Zone Signing Key (ZSK) is signed 
-        by the master KSK. This Zone Signing Key is used for four months 
-        for ICANN's day to day operations. After the four months is up, 
-        the ZSK is discarded, a new one is generated and a new ceremony 
-        is held to sign the new copy.
+        Because of all this security, the Root KSK is actually only used 
+        four times per year; there are two Key Signing Ceremonies per 
+        facility per year. These are streamed live on the Internet so 
+        that absolutely anyone is able to act as an auditor for the 
+        process.  At these ceremonies, another keypair, known as the 
+        Zone Signing Key (ZSK) is signed by the Root KSK. This Zone 
+        Signing Key is used for four months for ICANN's day to day 
+        operations.  After the four months is up, the ZSK is discarded, 
+        a new one is generated and a new ceremony is held to sign the 
+        new copy.
       </p>
 
       <p>
-        This process allows there to be a single trust anchor within the 
-        Domain Name System, one which we can all audit and trust. It 
-        seems unbelievable but there are 14 people (7 Crypto Officers 
-        per facility who can access their respective safe deposit boxes 
-        within Safe 2); these are the people who possess, quite 
-        literally, the physical keys to the Internet.
+        The Crypto Officers, with their safe deposit keys, can be 
+        thought of being in possession of, quite literally, the physical 
+        keys to the Internet.
       </p>
     </section>
 
-    <section title="Backups &amp; Recovery">
+    <section title="Key Generation, Backups &amp; Recovery">
       <p>
-        Those of you readers who are particularly on the ball might be 
-        wondering something right now: if there are two facilities, each 
-        of which contains the same Private KSK, how did they get there?
-        How did they safely put the same Key in two places, without 
-        compromising all of the security that I outlined in the previous 
-        section?
+        The Root KSK was generated back in June 2010 in ICANN's East 
+        Coast facility, using the laptop and HSMs in Safe 2 of that 
+        facility. At that ceremony, a symmetric key was also generated 
+        (recall that this is where the same key is used for encryption 
+        and decryption). This key, known as the Storage Master Key 
+        (SMK), was then used to encrypt the Private KSK to be exported 
+        and saved onto two USB sticks.
       </p>
 
       <p>
-        This is where the seven Recovery Key Shareholders come in. If 
-        you've read any news reports about this, you may have heard that 
-        these people have the ability to "reboot the Internet". Sadly, 
-        the truth is not really as exotic as that, but they <em>do</em> 
-        play an important role.
+        The SMK was then split between seven security cards, such that 
+        any five would be needed to form the whole SMK. These cards are 
+        entrusted to another set of people, the Recovery Key 
+        Shareholders, each of whom keep them in yet another tamper 
+        evident bag.
       </p>
 
       <p>
-        Back in June 2010, the Root Zone KSK was first generated in 
-        ICANN's East Coast facility. This was generated using the laptop 
-        and HSMs in Safe 2 of that facility. At that time, all seven 
-        Crypto Officers were present, their security cards were 
-        generated and they locked them in their safe deposit boxes in 
-        Safe 1. Then a symmetric key was generated (recall that this is 
-        where the same key is used for encryption and decryption). This 
-        key, known as the Storage Master Key (SMK), was then used to 
-        encrypt the Private KSK to be exported and saved onto a USB 
-        stick. The SMK was then split between seven new security cards, 
-        such that any five would be needed to form the whole SMK. These 
-        cards are entrusted to the Recovery Key Shareholders, each of 
-        whom keep them in yet another tamper evident bag.
+        The USB sticks with the encrypted Private Key was then placed in 
+        their own tamper evident bags; one was kept in Safe 1 as a 
+        backup and the other was sent via courier to the West Coast 
+        facility.
       </p>
 
       <p>
-        The USB stick with the encrypted Private Key was then placed in 
-        its own tamper evident bag, and then sent via courier to the 
-        West Coast facility. The following month, five of the Recovery 
-        Key Shareholders met in that facility to decrypt the key. After 
-        ensuring that noone had tampered with their bag, and the bag 
-        containing the USB stick hadn't been tampered with, the cards 
-        were placed together in the HSM to recreate the SMK. This then 
-        allowed the USB Stick to be imported into the HSM and decrypted.  
-        Then the security cards for the seven East Coast Crypto Officers 
-        were generated and locked in the East Coast's Safe 2. The USB 
-        Stick is also placed in a new tamper evident bag in Safe 1 as a 
-        backup.
-      </p>
-
-      <p>
-        From that point, the Recovery Key Shareholders are not required 
-        to take an active part in any Key Ceremonies; their role is to 
-        meet to recover the Private KSK from the USB stick in the 
-        extremely rare situation that all the HSMs fail at both 
-        facilities.
+        The following month, five of the Recovery Key Shareholders met 
+        in the West Coast facility which had received the encrypted USB 
+        stick. They placed their cards together in the HSM to recreate 
+        the SMK; this then allowed the USB stick to be imported into the 
+        HSM and decrypted. From that point, the Recovery Key 
+        Shareholders are not required to take an active part in any Key 
+        Ceremonies; their role is to meet to recover the Private KSK 
+        from the USB sticks in the extremely rare situation that all the 
+        HSMs fail at both facilities.
       </p>
     </section>
   </content>
 
 	<foot>
+    <section title="Note about the Root Zone">
+      <p>
+        Above I said that IANA/ICANN manages the Root Zone. This isn't 
+        100% true. While ICANN does have authority over the content of 
+        the Root Zone, the actual management of it is actually done by 
+        Verisign. Verisign manages the Root Nameserver 'A' which is the 
+        authority used by the other 12 Root Servers.
+      </p>
+    </section>
+
     <section title="ICANN Root Zone KSK">
       <p>
         DS RR: . IN 19036 8 2
