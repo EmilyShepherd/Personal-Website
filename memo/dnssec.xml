@@ -264,9 +264,33 @@
         the SMK; this then allowed the USB stick to be imported into the 
         HSM and decrypted. From that point, the Recovery Key 
         Shareholders are not required to take an active part in any Key 
-        Ceremonies; their role is to meet to recover the Private KSK 
-        from the USB sticks in the extremely rare situation that all the 
-        HSMs fail at both facilities.
+        Ceremonies; their role is that of a backup. Some media outlets 
+        reported that these people have the ability to "reboot the 
+        Internet" in the event of an emergency; while that's somewhat of 
+        an over dramatisation, it is true that they are the only people 
+        who are able to recover the Private KSK from the USB sticks in 
+        the extremely rare situation that all the HSMs fail at both 
+        facilities.
+      </p>
+    </section>
+
+    <section title="End of an Era">
+      <p>
+        The KSK Generation Ceremony will be repeated at the end of this 
+        month.  A new Root KSK will be generated as a replacement to the 
+        current one, which will be phased out over the next couple of 
+        years.  This event is known as the "KSK Rollover" and is an 
+        important part of maintaining Internet security. Although the 
+        Private Key of the Root KSK is kept under such extreme security, 
+        it is still good practice to replace it every few years, as one 
+        final measure to ensure it can never fall into the wrong hands.
+      </p>
+
+      <p>
+        If you'd like to review the Key Ceremony scripts or watch the 
+        Live Stream of the event as it happens from 17:15 to midnight 
+        (UK Time) on the 27th of October, head on over to:
+        https://www.iana.org/dnssec/ceremonies/27
       </p>
     </section>
   </content>
