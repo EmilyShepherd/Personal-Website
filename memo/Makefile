@@ -8,3 +8,8 @@
 $(basename $(wildcard *.xml)):
 	make $@.txt
 	make $@.html
+
+clean:
+	rm *.txt *.html
+
+.PHONY: clean $(basename $(wildcard *.xml))
