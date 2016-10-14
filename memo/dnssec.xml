@@ -238,12 +238,13 @@
     <section title="Key Generation, Backups &amp; Recovery">
       <p>
         The Root KSK was generated back in June 2010 in ICANN's East 
-        Coast facility, using the laptop and HSMs in Safe 1 of that 
-        facility. At that ceremony, a symmetric key was also generated 
-        (recall that this is where the same key is used for encryption 
-        and decryption). This key, known as the Storage Master Key 
-        (SMK), was then used to encrypt the Private KSK to be exported 
-        and saved onto two USB sticks <ref to="ICANN-CERM" />.
+        Coast facility <ref to="ICANN-CERM1" /> <ref to="KSKCERM1" />, 
+        using the laptop and HSMs in Safe 1 of that facility. At that 
+        ceremony, a symmetric key was also generated (recall that this 
+        is where the same key is used for encryption and decryption).  
+        This key, known as the Storage Master Key (SMK), was then used 
+        to encrypt the Private KSK to be exported and saved onto two USB 
+        sticks <ref to="ICANN-CERM" />.
       </p>
 
       <p>
@@ -263,31 +264,33 @@
 
       <p>
         The following month, five of the Recovery Key Shareholders met 
-        in the West Coast facility which had received the encrypted USB 
-        stick. They placed their cards together in the HSM to recreate 
-        the SMK; this then allowed the USB stick to be imported into the 
-        HSM and decrypted. From that point, the Recovery Key 
-        Shareholders are not required to take an active part in any Key 
-        Ceremonies; their role is that of a backup. Some media outlets 
-        reported that these people have the ability to "reboot the 
-        Internet" in the event of an emergency; while that's somewhat of 
-        an over dramatisation, it is true that they are the only people 
-        who are able to recover the Private KSK from the USB sticks in 
-        the extremely rare situation that all the HSMs fail at both 
-        facilities.
+        in the West Coast facility <ref to="KSKCERM2" /> which had 
+        received the encrypted USB stick. They placed their cards 
+        together in the HSM to recreate the SMK; this then allowed the 
+        USB stick to be imported into the HSM and decrypted. From that 
+        point, the Recovery Key Shareholders are not required to take an 
+        active part in any Key Ceremonies; their role is that of a 
+        backup.  Some media outlets reported that these people have the 
+        ability to "reboot the Internet" in the event of an emergency 
+        <ref to="TIME-REBOOT" /><ref to="GUARD-REBOOT" />; while that's 
+        somewhat of an over dramatisation, it is true that they are the 
+        only people who are able to recover the Private KSK from the USB 
+        sticks in the extremely rare situation that all the HSMs fail at 
+        both facilities <ref to="ICANN-DPS" />.
       </p>
     </section>
 
     <section title="End of an Era">
       <p>
         The KSK Generation Ceremony will be repeated at the end of this 
-        month.  A new Root KSK will be generated as a replacement to the 
-        current one, which will be phased out over the next couple of 
-        years.  This event is known as the "KSK Rollover" and is an 
-        important part of maintaining Internet security. Although the 
-        Private Key of the Root KSK is kept under such extreme security, 
-        it is still good practice to replace it every few years, as one 
-        final measure to ensure it can never fall into the wrong hands.
+        month <ref to="KSK-ROLLOVER" />.  A new Root KSK will be 
+        generated as a replacement to the current one, which will be 
+        phased out over the next couple of years.  This event is known 
+        as the "KSK Rollover" and is an important part of maintaining 
+        Internet security <ref to="RFC7583" />.  Although the Private 
+        Key of the Root KSK is kept under such extreme security, it is 
+        still good practice to replace it every few years, as one final 
+        measure to ensure it can never fall into the wrong hands.
       </p>
 
       <p>
@@ -440,7 +443,66 @@
         http://www.root-dnssec.org/wp-content/uploads/2010/05/draft-icann-dnssec-ceremonies-01.txt
       </url>
     </reference>
+
+    <reference id="ICANN-CERM1">
+      <title>
+        ICANN's First DNSSEC Key Ceremony for the Root Zone
+      </title>
+      <author>ICANN</author>
+      <date month="June" year="2010" day="7" />
+      <url>
+        https://www.icann.org/news/announcement-2-2010-06-07-en
+      </url>
+    </reference>
+
+    <reference id="KSKCERM1">
+      <title>Index of /ksk-ceremony/1</title>
+      <author>Internet Assigned Numbers Authority</author>
+      <date month="June" year="2010" day="16" />
+      <url>https://data.iana.org/ksk-ceremony/1/</url>
+    </reference>
+
+    <reference id="KSKCERM2">
+      <title>Index of /ksk-ceremony/2</title>
+      <author>Internet Assigned Numbers Authority</author>
+      <date month="July" year="2010" day="12" />
+      <url>https://data.iana.org/ksk-ceremony/2/</url>
+    </reference>
+
+    <reference id="GUARD-REBOOT">
+      <title>Is there really a key to reboot the internet?</title>
+      <author>Kiss, J.</author>
+      <date month="July" year="2010" day="27" />
+      <url>
+        https://www.theguardian.com/technology/2010/jul/27/internet-key
+      </url>
+    </reference>
+
+    <reference id="KSK-ROLLOVER">
+      <title>Root Zone KSK Rollover</title>
+      <author>ICANN</author>
+      <url>https://www.icann.org/resources/pages/ksk-rollover</url>
+    </reference>
+
+    <reference id="TIME-REBOOT">
+      <title>
+        This Man Has a Key That Can Shut Down the Entire Internet
+      </title>
+      <author>Stampler, L.</author>
+      <date month="March" year="2014" day="17" />
+      <url>
+        http://time.com/27682/key-to-internet-pail-klane-british/
+      </url>
+    </reference>
+
+    <reference id="RFC7583">
+      <title>DNSSEC Key Rollover Timing Considerations</title>
+      <author>
+        Morris, S., Ihren, J., Dickinson, J., and Mekking, W.
+      </author>
+      <date month="October" year="2015" />
+      <url>https://www.ietf.org/rfc/rfc7583.txt</url>
+    </reference>
   </references>
 </memo>
-
 
