@@ -17,6 +17,8 @@
 
   <!-- VARIABLES -->
 
+  <xsl:variable name="PAGE_SIZE">54</xsl:variable>
+
   <xsl:variable name="header">
     <xsl:value-of select="memo:padToCenter(/memo/title)" />
   </xsl:variable>
@@ -45,10 +47,10 @@
   <xsl:template match="/">
     <xsl:variable name="text"><xsl:apply-templates /></xsl:variable>
 
-    &nl;&nl;&nl;&nl;&nl;&nl;
+    &nl;&nl;&nl;
 
     <xsl:value-of
-      select="memo:page(tokenize($text, '&#xa;'), 46, 1, '')" />
+      select="memo:page(tokenize($text, '&#xa;'), $PAGE_SIZE, 1, '')" />
   </xsl:template>
 
   <!-- / MAIN -->
@@ -387,7 +389,7 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of
-          select="memo:page($lines, 46, $number, $output)" />
+          select="memo:page($lines, $PAGE_SIZE, $number, $output)" />
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
