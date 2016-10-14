@@ -145,6 +145,11 @@
         Domain Name Servers; it's literally part of the code that comes 
         packaged in our software.
       </p>
+
+      <p>
+        This process of "securing" the Domain Name System with layers of 
+        digital signatures is known as DNSSEC <ref to="RFC4033" />.
+      </p>
     </section>
 
     <section title="Who Controls the Root Key Signing Key?">
@@ -379,6 +384,15 @@
       <title>DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION</title>
       <date month="November" year="1987" />
       <url>https://www.ietf.org/rfc/rfc1035.txt</url>
+    </reference>
+
+    <reference id="RFC4033">
+      <author>
+        Arends, R., Austein, R., Larson, M., Massey, D., and Rose, S.
+      </author>
+      <title>DNS Security Introduction and Requirements</title>
+      <date month="March" year="2005" />
+      <url>https://www.ietf.org/rfc/rfc4033.txt</url>
     </reference>
 
     <reference id="RFC3757">
