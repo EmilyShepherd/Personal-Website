@@ -14,13 +14,14 @@
 
       <p>
         Let's take a quick step back from something so we can really 
-        understand what that is. As I explained in my last article, the 
-        Domain Name System (DNS) is the Internet's phone book, it's what 
-        links nice names like "google.com" to the underlying computer 
-        readable IP Address. This system is massively distributed, with 
-        lots of servers and entries being added and removed every day by 
-        various different entities. Let's look at the "google.com" to 
-        see what players are involved:
+        understand what that is. As I explained in my last article <ref 
+          to="EM-ICANN" />, the Domain Name System (DNS) is the 
+        Internet's phone book, it's what links nice names like 
+        "google.com" to the underlying computer readable IP Address <ref 
+          to="RFC1034" /><ref to="RFC1035" />.  This system is massively 
+        distributed, with lots of servers and entries being added and 
+        removed every day by various different entities.  Let's look at 
+        the "google.com" to see what players are involved:
       </p>
 
       <p>
@@ -30,9 +31,9 @@
         all the ".com" records and it allows "Registrars" to make 
         changes to this.  Google has paid one such Registrar, 
         MarkMonitor, to delegate authority over "google.com" to Google's 
-        servers.  Google themselves are then free to manage their own 
-        DNS records, adding things like "mail.google.com" and 
-        "calendar.google.com".
+        servers <ref to="WHOIS-GOOGLE" />.  Google themselves are then 
+        free to manage their own DNS records, adding things like 
+        "mail.google.com" and "calendar.google.com".
       </p>
 
       <p>
@@ -122,22 +123,24 @@
         Hopefully you can see where this is going: ICANN signs 
         Verisign's public key and publishes its own Public Key. This 
         process of signing each other creates what's known as a "chain 
-        of trust", but this can't go on for ever. At some point we just 
-        have to say "this is a Public Key which isn't signed by anyone 
-        else but I trust it anyway".
+        of trust" <ref to="RFC5011" /><ref to="RFC6781" />, but this 
+        can't go on for ever.  At some point we just have to say "this 
+        is a Public Key which isn't signed by anyone else but I trust it 
+        anyway".
       </p>
       
       <p>
         That point is known as the "trust anchor" and, in the case of 
         the Domain Name System, that's ICANN's Root Zone Key Signing Key 
-        (Root KSK for short). Trust Anchors earn their trust in other 
-        ways, such as being published in a variety of trustworthy 
-        places, including ICANN's site, IANA's site and the Internet 
-        Engineering Task Force (I'll even pop it in the footer of this 
-        article, because I like to think of myself as a trustworthy 
-        gal!).  It also comes hard coded into Operating Systems and the 
-        Software used by Domain Name Servers; it's literally part of the 
-        code that comes packaged in our software.
+        (Root KSK for short) <ref to="RFC3757" />. Trust Anchors earn 
+        their trust in other ways, such as being published in a variety 
+        of trustworthy places, including IANA's site <ref to="IANA-KSK" 
+          /> and the Internet Engineering Task Force <ref to="RFC7958" 
+          /> (I'll even pop it in the footer of this article, because I 
+        like to think of myself as a trustworthy gal!).  It also comes 
+        hard coded into Operating Systems and the Software used by 
+        Domain Name Servers; it's literally part of the code that comes 
+        packaged in our software.
       </p>
     </section>
 
@@ -343,6 +346,77 @@
   </foot>
 
   <references>
+    <reference id="EM-ICANN">
+      <author>Shepherd, E.</author>
+      <title>What has the US done with the Internet?</title>
+      <date day="7" month="October" year="2016" />
+      <url>https://emilyshepherd.me/memo/icann</url>
+    </reference>
+
+    <reference id="IANA-KSK">
+      <author>Internet Assigned Numbers Authority</author>
+      <title>Trust Anchors and Keys</title>
+      <date month="August" year="2010" />
+      <url>https://www.iana.org/dnssec/files</url>
+    </reference>
+
+    <reference id="RFC1034">
+      <author>Mockapetris, P.</author>
+      <title>DOMAIN NAMES - CONCEPTS AND FACILITIES</title>
+      <date month="November" year="1987" />
+      <url>https://www.ietf.org/rfc/rfc1034.txt</url>
+    </reference>
+
+    <reference id="RFC1035">
+      <author>Mockapetris, P.</author>
+      <title>DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION</title>
+      <date month="November" year="1987" />
+      <url>https://www.ietf.org/rfc/rfc1035.txt</url>
+    </reference>
+
+    <reference id="RFC3757">
+      <author>Kolkman, O., Schlyter, J., and Lewis, E.</author>
+      <title>
+        Domain Name System KEY (DNSKEY) Resource Record (RR) Secure 
+        Entry Point (SEP) Flag
+      </title>
+      <date month="April" year="2004" /> 
+      <url>https://www.ietf.org/rfc/rfc3757.txt</url>
+    </reference>
+
+    <reference id="RFC5011">
+      <author>StJohns, M.</author>
+      <title>
+        Automated Updates of DNS Security (DNSSEC) Trust Anchors
+      </title>
+      <date month="September" day="2007" /> 
+      <url>https://www.ietf.org/rfc/rfc5011.txt</url>
+    </reference>
+
+    <reference id="RFC6781">
+      <author>Kolkman, O., Mekking, W., and Gieben, R.</author>
+      <title>DNSSEC Operational Practices, Version 2</title>
+      <date month="December" year="2012" /> 
+      <url>https://www.ietf.org/rfc/rfc6781.txt</url>
+    </reference>
+
+    <reference id="RFC7958">
+      <author>
+        Abley, J., Schlyter, J., Bailey, G., and Hoffman, P.
+      </author>
+      <title>
+        DNSSEC Trust Anchor Publication for the Root Zone
+      </title>
+      <date month="August" year="2016" />
+      <url>https://www.ietf.org/rfc/rfc3757.txt</url>
+    </reference>
+
+    <reference id="WHOIS-GOOGLE">
+      <author>MarkMonitor</author>
+      <title>Whois google.com</title>
+      <date day="15" month="September" year="1997" />
+      <url>http://www.whois.com/whois/google.com</url>
+    </reference>
   </references>
 </memo>
 
