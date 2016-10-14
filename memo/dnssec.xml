@@ -75,7 +75,7 @@
 
       <ul>
         <li>The Actual Message: "Hi, I'm Emily"</li>
-        <li>The Message's Signature: "Blah, moo neigh"</li>
+        <li>The Encrypted Message: "Blah, moo neigh"</li>
         <li>My Public Key</li>
       </ul>
 
@@ -85,7 +85,9 @@
         Emily"; as this matches my message he knows for a fact that 
         signature was generated from my private key.  And as I'm the 
         only person who has access to my Private Key, the message 
-        therefore must have come from me!
+        therefore must have come from me! The encrypted part of the 
+        message can therefore be thought of as a 'signature' because 
+        only I could ever produce it.
       </p>
     </section>
 
