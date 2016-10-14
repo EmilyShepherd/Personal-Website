@@ -3,21 +3,22 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <xsl:template match="/memo">
+    <xsl:variable name="desc" select="normalize-space(description)" />
     <html>
       <head>
         <title><xsl:value-of select="title" /></title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla"/>
         <link rel="stylesheet" href="/style.css" />
 
-        <meta name="description" content="{description}" />
-        <meta property="og:description" content="{description}" />
+        <meta name="description" content="{$desc}" />
+        <meta property="og:description" content="{$desc}" />
         <meta property="og:title" content="{title}" />
         <meta property="og:url" content="https://emilyshepherd.me/memo/{@url}" />
         <meta property="og:image" content="{img[@rel='social']}" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@EmilyLShepherd" />
         <meta name="twitter:title" content="{title}" />
-        <meta name="twitter:description" content="{description}" />
+        <meta name="twitter:description" content="{$desc}" />
         <meta name="twitter:image" content="{img[@rel='social']}" />
       </head>
 
