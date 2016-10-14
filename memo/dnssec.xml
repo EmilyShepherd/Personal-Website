@@ -149,7 +149,8 @@
         As I'm sure you can imagine, this key is incredibly important; 
         if the Private Key were to fall into the wrong person's hands, 
         they can add their own authoritative records to the Root Zone.  
-        Not Good. As such, it is kept under quite incredible conditions.
+        Not Good. As such, it is kept under quite incredible conditions
+        <ref to="ICANN-DPS" />.
       </p>
 
       <p>
@@ -242,7 +243,7 @@
         (recall that this is where the same key is used for encryption 
         and decryption). This key, known as the Storage Master Key 
         (SMK), was then used to encrypt the Private KSK to be exported 
-        and saved onto two USB sticks.
+        and saved onto two USB sticks <ref to="ICANN-CERM" />.
       </p>
 
       <p>
@@ -416,6 +417,28 @@
       <title>Whois google.com</title>
       <date day="15" month="September" year="1997" />
       <url>http://www.whois.com/whois/google.com</url>
+    </reference>
+
+    <reference id="ICANN-DPS">
+      <title>
+        DNSSEC Practice Statement for the Root Zone KSK Operator
+      </title>
+      <author>
+        Ljunggren, F., Okubo, T., Lamb, R., and Schlyter, J.
+      </author>
+      <date month="May" year="2010" />
+      <url>
+        http://www.root-dnssec.org/wp-content/uploads/2010/06/icann-dps-00.txt
+      </url>
+    </reference>
+
+    <reference id="ICANN-CERM">
+      <title>Root Zone DNSSEC KSK Ceremonies Guide</title>
+      <author>Schlyter, J., Ljunggren, F., and Lamb, R.</author>
+      <date month="May" year="2010" />
+      <url>
+        http://www.root-dnssec.org/wp-content/uploads/2010/05/draft-icann-dnssec-ceremonies-01.txt
+      </url>
     </reference>
   </references>
 </memo>
