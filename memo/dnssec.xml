@@ -48,9 +48,9 @@
         amount of usage it gets, but it does have one problem: with all 
         these people running their own servers and records, how do you 
         know that the information you get is correct? If you query a 
-        server for "google.com" and you get a response pointing you say 
-        216.58.201.14, how do you know that really is Google and not a 
-        malicious party <em>pretending</em> to be Google in order to 
+        server for "google.com" and you get a response pointing you to 
+        say 216.58.201.14, how do you know that really is Google and not 
+        a malicious party <em>pretending</em> to be Google in order to 
         steal your password?  This is where digital signatures come in.
       </p>
     </section>
