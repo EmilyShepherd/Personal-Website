@@ -238,7 +238,7 @@
     <section title="Key Generation, Backups &amp; Recovery">
       <p>
         The Root KSK was generated back in June 2010 in ICANN's East 
-        Coast facility, using the laptop and HSMs in Safe 2 of that 
+        Coast facility, using the laptop and HSMs in Safe 1 of that 
         facility. At that ceremony, a symmetric key was also generated 
         (recall that this is where the same key is used for encryption 
         and decryption). This key, known as the Storage Master Key 
