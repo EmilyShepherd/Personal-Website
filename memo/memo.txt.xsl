@@ -17,7 +17,7 @@
 
   <!-- VARIABLES -->
 
-  <xsl:variable name="PAGE_SIZE">54</xsl:variable>
+  <xsl:param name="PAGE_SIZE">54</xsl:param>
 
   <xsl:variable name="header">
     <xsl:value-of select="memo:padToCenter(/memo/title)" />
