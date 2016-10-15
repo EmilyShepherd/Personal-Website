@@ -53,7 +53,24 @@
 
           <xsl:for-each select="references/reference">
             <xsl:sort select="@id" />
-            <xsl:apply-templates select="." />
+            <span id="{@id}" />
+            <div>
+              <h3><xsl:value-of select="@id" /></h3>
+              <span>
+                <xsl:value-of select="normalize-space(author)" />,
+                "<xsl:value-of select="normalize-space(title)" />",
+
+                <xsl:if test="date">
+                  <xsl:apply-templates select="date" />,
+                </xsl:if>
+
+                <xsl:text>&lt;</xsl:text>
+                <a href="{normalize-space(url)}">
+                  <xsl:value-of select="normalize-space(url)" />
+                </a>
+                <xsl:text>&gt;</xsl:text>
+              </span>
+            </div>
           </xsl:for-each>
         </section>
 
@@ -120,24 +137,5 @@
 
   <xsl:template match="fig">
     <pre><xsl:value-of select="replace(., '(^|\n) +', '&#xa;')" /></pre>
-  </xsl:template>
-
-  <xsl:template match="reference">
-    <span id="{@id}" />
-    <div>
-      <h3><xsl:value-of select="@id" /></h3>
-      <span>
-        <xsl:value-of select="normalize-space(author)" />,
-        "<xsl:value-of select="normalize-space(title)" />",
-
-        <xsl:if test="date">
-          <xsl:apply-templates select="date" />,
-        </xsl:if>
-
-        <xsl:text>&lt;</xsl:text>
-        <a href="{normalize-space(url)}"><xsl:value-of select="normalize-space(url)" /></a>
-        <xsl:text>&gt;</xsl:text>
-      </span>
-    </div>
   </xsl:template>
 </xsl:stylesheet>
