@@ -1,6 +1,8 @@
 
 MEMOS := $(basename $(wildcard *.xml))
 
+all: $(MEMOS)
+
 %.txt: %.xml memo.txt.xsl
 	saxon-xslt $^ > $@
 
@@ -12,4 +14,4 @@ $(MEMOS): %: %.txt %.html
 clean:
 	rm -f *.txt *.html
 
-.PHONY: clean $(MEMOS)
+.PHONY: all clean $(MEMOS)
