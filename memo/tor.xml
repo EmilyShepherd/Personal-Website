@@ -210,7 +210,7 @@
         So far we've looked at Tor from a user's perspective; we've seen 
         how you can use Tor to access blocked web sites, and to do so in 
         a truly anonymous fashion. But what about the other side: the 
-        service providers?
+        web sites themselves?
       </p>
 
       <p>
@@ -220,46 +220,47 @@
         their servers are based. What if Google wanted to remain 
         anonymous? An example of such a service would be a forum 
         dedicated to members speaking out against an oppressive regime, 
-        or for survivors of abuse, etc... Clearly there may be an appeal 
-        for the location and administrators of such sites to be public 
-        knowledge.
+        or for survivors of abuse, etc... Clearly some people may see 
+        the appeal in keeping the location and administrators of such 
+        sites out of public knowledge.
       </p>
 
       <p>
-        Tor allows for anonymous services, called "hidden services", but 
-        it's a bit more of a technical challenge to achieve this. Think 
-        back to our post office example; it's easy to post an unsigned 
-        letter to hide your identity, but it's a bit harder to send a 
-        letter to an unknown identity. What address do you put on the 
-        envelope?
+        Unfortunately, it's a bit more of a technical challenge to 
+        achieve this.  Think back to our post office example; it's easy 
+        to post an unsigned letter to hide your identity, but it's a bit 
+        harder to send a letter to an unknown identity. What address do 
+        you put on the envelope?
       </p>
 
       <p>
-        If you thought the process I described above was a faff, wait 
-        till you hear this! As "faff" isn't a very technical term, we'll 
-        refer to the above process of picking an entry, middle and exit 
-        and connecting to them as "building a circuit". First off, a 
-        hidden service picks a handful of tor relays and builds a 
-        separate circuit to each of them; once connected, it asks them 
-        to act as a "Introduction Point" for the service. When these are 
-        set up, the hidden service is able to advertise itself, and the 
-        Introduction Points its connected to, in tor's distributed list 
-        of hidden services. It's important to note at this point that, 
-        although the Introduction Points do know the name of the hidden 
-        service, they have no idea where in the world the hidden service 
-        actually is, as they are connected via a tor circuit.
+        Luckily our good ol' Onion Router has found a way to make       
+        anonymous sites, which it calls "hidden services", work. If you 
+        thought the process I described above was a faff, wait till you 
+        hear this!  As "faff" isn't a very technical term, we'll refer 
+        to the above process of picking an entry, middle and exit and 
+        connecting to them as "building a circuit".  First off, a hidden 
+        service picks a handful of tor relays and builds a separate 
+        circuit to each of them; once connected, it asks each one to act 
+        as an "Introduction Point" for the service. Although the 
+        Introduction Points do know the name of the hidden service, they 
+        have no idea where in the world the hidden service actually is, 
+        as they where connected via a tor circuit. When these are set 
+        up, the hidden service is able to advertise itself, and the 
+        Introduction Points its connected to, in Tor's distributed list 
+        of hidden services.
       </p>
 
       <p>
         Now, if any client wants to access a hidden service, it picks 
         <em>another</em> completely random tor relay and builds a 
         circuit to that; it then asks that relay if it would act as a 
-        "Rendezvous Point". Next, the client build a separate circuit to 
-        one of the Introduction points, and asks it to forward a message 
-        back down the circuit leading back to the hidden service. This 
-        message is, of course, encrypted so the Introduction Point can't 
-        read it, but the hidden service can. The message asks the hidden 
-        service to connect with the client at the client's chosen 
+        "Rendezvous Point". Next, the client builds a separate circuit 
+        to one of the Introduction points, and asks it to forward a 
+        message down the circuit leading back to the hidden service. 
+        This message is, of course, encrypted so the Introduction Point 
+        can't read it, but the hidden service can.  The message asks the 
+        hidden service to connect with the client at the client's chosen 
         Rendezvous point; the hidden service builds a circuit to that 
         relay and uses that to contact the client.
       </p>
@@ -269,8 +270,10 @@
         are able to talk to each other; there's a circuit (three relays) 
         between the client and the Rendezvous point and then another 
         circuit (so another three relays) between the Rendezvous point 
-        and the hidden service. This system is utterly anonymous for all 
-        involved:
+        and the hidden service. These hidden services make up part of 
+        what I called the Dark Web above. As you can see, these things 
+        absolutely won't be showing up on Google searches as this system 
+        is utterly anonymous for all involved:
       </p>
 
       <ul>
@@ -289,7 +292,7 @@
         <li>
           The original Introduction Point doesn't know who the client 
           was, or where the hidden service was located, and doesn't know 
-          where the two decided to Rendezvous.
+          where the two decided to rendezvous.
         </li>
       </ul>
     </section>
