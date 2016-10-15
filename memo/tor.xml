@@ -204,6 +204,95 @@
         assuming the exit is running in a different country.
       </p>
     </section>
+
+    <section title="Tor: Not just for users">
+      <p>
+        So far we've looked at Tor from a user's perspective; we've seen 
+        how you can use Tor to access blocked web sites, and to do so in 
+        a truly anonymous fashion. But what about the other side: the 
+        service providers?
+      </p>
+
+      <p>
+        The web site I used as an example in the previous section, 
+        Google, exists in the normal surface web; it can easily be 
+        accessed by everyone and everyone knows who runs it and where 
+        their servers are based. What if Google wanted to remain 
+        anonymous? An example of such a service would be a forum 
+        dedicated to members speaking out against an oppressive regime, 
+        or for survivors of abuse, etc... Clearly there may be an appeal 
+        for the location and administrators of such sites to be public 
+        knowledge.
+      </p>
+
+      <p>
+        Tor allows for anonymous services, called "hidden services", but 
+        it's a bit more of a technical challenge to achieve this. Think 
+        back to our post office example; it's easy to post an unsigned 
+        letter to hide your identity, but it's a bit harder to send a 
+        letter to an unknown identity. What address do you put on the 
+        envelope?
+      </p>
+
+      <p>
+        If you thought the process I described above was a faff, wait 
+        till you hear this! As "faff" isn't a very technical term, we'll 
+        refer to the above process of picking an entry, middle and exit 
+        and connecting to them as "building a circuit". First off, a 
+        hidden service picks a handful of tor relays and builds a 
+        separate circuit to each of them; once connected, it asks them 
+        to act as a "Introduction Point" for the service. When these are 
+        set up, the hidden service is able to advertise itself, and the 
+        Introduction Points its connected to, in tor's distributed list 
+        of hidden services. It's important to note at this point that, 
+        although the Introduction Points do know the name of the hidden 
+        service, they have no idea where in the world the hidden service 
+        actually is, as they are connected via a tor circuit.
+      </p>
+
+      <p>
+        Now, if any client wants to access a hidden service, it picks 
+        <em>another</em> completely random tor relay and builds a 
+        circuit to that; it then asks that relay if it would act as a 
+        "Rendezvous Point". Next, the client build a separate circuit to 
+        one of the Introduction points, and asks it to forward a message 
+        back down the circuit leading back to the hidden service. This 
+        message is, of course, encrypted so the Introduction Point can't 
+        read it, but the hidden service can. The message asks the hidden 
+        service to connect with the client at the client's chosen 
+        Rendezvous point; the hidden service builds a circuit to that 
+        relay and uses that to contact the client.
+      </p>
+
+      <p>
+        We now have a situation in which the client and hidden service 
+        are able to talk to each other; there's a circuit (three relays) 
+        between the client and the Rendezvous point and then another 
+        circuit (so another three relays) between the Rendezvous point 
+        and the hidden service. This system is utterly anonymous for all 
+        involved:
+      </p>
+
+      <ul>
+        <li>
+          The Rendezvous point doesn't know the identity of the client 
+          or hidden service (it doesn't even know which hidden service 
+          it is!)
+        </li>
+        <li>
+          The client knows it's talking to the hidden service it wanted, 
+          but doesn't know anything about where that service is hosted
+        </li>
+        <li>
+          The hidden service doesn't know anything about the client
+        </li>
+        <li>
+          The original Introduction Point doesn't know who the client 
+          was, or where the hidden service was located, and doesn't know 
+          where the two decided to Rendezvous.
+        </li>
+      </ul>
+    </section>
   </content>
 
   <references>
