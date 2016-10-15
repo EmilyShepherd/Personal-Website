@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memo>
+  <title>Shining a light on the Dark Web</title>
+  <description>
+    The Dark Web can't be reached with a normal web browser, but what is 
+    it?
+  </description>
+  <date day="21" month="October" year="2016" />
+
+  <content>
+    <section>
+      <p>
+        We all know what the web is, we use it every day, but did you 
+        know that the web is actually split into three broad "sections" 
+        based on how easy they are to reach?
+      </p>
+
+      <p>
+        The top layer is known as the Surface web, and this includes 
+        everything that you can reach from search engines like Google or 
+        Bing. So lots of the sites you use will fall into this category: 
+        YouTube, iPlayer, many news outlets and articles, Wikipedia, all 
+        of the Government information pages on gov.uk.
+      </p>
+
+      <p>
+        The surface layer is great. But it's also boring, so we're not 
+        going to talk about it anymore... let's delve further. The next 
+        layer down is known as the "Deep Web"; this is the bit of the 
+        web that <em>can't</em> be found via Google. As it's harder to 
+        find all the pages in this bit of the web, its exact size is 
+        largely anyone's guess, however the general guess is that the 
+        deep web is quite probably over 550 times larger than the 
+        Surface Web. The common analogy for the Web is that of an 
+        iceberg <ref to="ICEBERG" />. On the surface it looks 
+        impressive, sure, but icebergs are much, <em>much</em> larger 
+        under the surface of the water.
+      </p>
+
+      <p>
+        Now, I'm aware that these terms make the deep web sound really 
+        scary. The fact that it's "not on Google" and "difficult to 
+        access" leads a lot of people to believe that this area is where 
+        a lot of nefarious actives go on. But don't worry, it's not like 
+        that at all! You yourself almost certainly use the Deep Web 
+        every day too, even though you might not be aware of it. If you 
+        use Google Mail, Hotmail, or some other web mail provider, you 
+        are accessing the Deep Web. Why? Well, your emails <em>can't be 
+          reached</em> from a Google search, right? And nobody is able 
+        to access your emails other than you, yes? Those are the two 
+        criteria right there; your emails are in the Deep Web. Sites 
+        like Facebook, too, exist almost entirely on the Deep Web.
+      </p>
+
+      <p>
+        As you can see, the Deep Web is quite boring too, so we're not 
+        going to talk about that either. We are going to talk about the 
+        Dark Web, which I will admit you are much less likely to have 
+        ever used. The Dark Web is a section of the Deep Web which 
+        requires special software in order to access; we're going to 
+        focus on one of the most popular ones: Tor, The Onion Router 
+        <ref to="TOR" />.
+      </p>
+    </section>
+
+    <section title="What have Onions got to do with the Web?">
+      <p>
+        Since its inception in the 1990s <ref to="HTTP-SPEC" />, the 
+        World Wide Web has connected the masses with each other, and has 
+        opened the door to huge collections of information. With this 
+        rise, we came to expect and even depend on this connectivity, 
+        with the UN even linking Internet access with the Human Right to 
+        Freedom of Expression <ref to="HRC-17-27" />.
+      </p>
+
+      <p>
+        This raises a couple of concerns: how can we ensure it is 
+        possible to use the Internet anonymously and free from 
+        censorship?
+      </p>
+
+      <p>
+        The answer, unfortunately, is: with difficulty. Governments have 
+        proven themselves able to censor the Internet within the regions 
+        they control. A large example of this is China's "Great Fire 
+        Wall" which blocks a huge number of sites which the party have 
+        deemed inappropriate, including Facebook and Twitter. The UK has 
+        also successfully "censored" the web, with the high courts 
+        ordering large ISPs to block a variety of websites which host 
+        copyrighted content. The legitimacy of such court orders is a 
+        debate for another article, however the example shows that 
+        censorship is indeed technologically possible.
+      </p>
+
+      <p>
+        The other concern, anonymity, is also one that has proven itself 
+        hard to achieve. If you've ever used public wifi, the connection 
+        between your laptop and the wifi provider was almost certainly 
+        unencrypted. In business and home settings, even when the wifi 
+        is password protected, it is often trivially easy for other wifi 
+        uses to "listen in" on your connection.
+      </p>
+
+      <p>
+        Nowadays, a lot of websites use a protocol called Transport 
+        Layer Security (TLS) <ref to="RFC5246" /> to encrypt traffic to 
+        combat this, which adds a layer of encryption even when the 
+        connection itself is insecure. However, many sites still don't 
+        use TLS and even if they do this still allows a snooper to see 
+        the which sites you're visiting. The NHS website, for example, 
+        doesn't use TLS, so if you go searching for your symptoms, you 
+        are effectively advertising your medical aliments to whoever 
+        cares to listen.
+      </p>
+
+      <p>
+        The obvious answer to this is to never use public wifi, or even 
+        wifi that you share with <em>anyone else</em>, and you should 
+        also never use a site which doesn't use TLS. Unfortunately, 
+        that largely throws away your ability to function in the modern 
+        world; while you're at it, why not seal your house in plastic to 
+        protect yourself from airborne viruses?
+      </p>
+
+      <p>
+        Clearly another solution is required: Onions! Well, The Onion 
+        Router, at least. Tor is a network of over 7000 servers <ref 
+          to="TOR-METRICS" /> all of which are managed by independent 
+        volunteers in countries all around the world. These servers are 
+        used as "middle men" for your messages, making them much harder 
+        to trace and censor.
+      </p>
+    </section>
+
+    <section title="You still haven't explained where Onions come in">
+      <p>
+        I know! I know! I'm getting to it, I swear!
+      </p>
+
+      <p>
+        Let's look at this in more detail. Normally, when you want to 
+        connect to, say, Google, your laptop sends a message to one of 
+        Google's servers with the computer equivalent of "Hi, how are 
+        you? Give me google.com please" and Google's servers will then 
+        respond to you with "No problem! Here's the Google Homepage! Our 
+        logo is looking particularly zany today!". This isn't anonymous 
+        at all! Google can see who you are because it's communicating 
+        directly with you, and a snooper can easily see that it's Google 
+        that you're talking to.
+      </p>
+
+      <p>
+        If we were to repeat this via Tor, there'd be a few more steps.  
+        Firstly, your computer picks <em>three</em> servers in the Tor 
+        network (We'll call these the "entry", "middle", and "exit" 
+        nodes). Your computer connects to the entry node and sets up an 
+        encrypted channel to it (a snooper can see that you are talking 
+        to the entry node, but it can't see what you're sending to it).  
+        Here's the cool bit: this Tor node will send messages from 
+        itself <em>on your behalf</em>; you are able to send messages to 
+        other Tor servers, via this entry node. Think of it like sending 
+        a letter to your friend via the post office. From your friend's 
+        perspective, the letter came "from" the postman; if you don't 
+        sign the letter, they wouldn't even know it was originally from 
+        you.
+      </p>
+
+      <p>
+        This is the same for the Tor network; you can now connect to, 
+        and setup <em>another</em> encrypted channel with, the middle 
+        node via that entry node. As far as the middle node can see, its 
+        talking to the entry node; it can't see you at all!
+      </p>
+
+      <p>
+        Your laptop is then able to repeat this process, creating an 
+        encrypted channel to the exit node, via the encrypted channel to 
+        the middle node which is itself via the encrypted channel to the 
+        entry node.  The whole setup creates multiple "layers" of 
+        encryption, which get "unwrapped" at each step of the journey.
+      </p>
+
+      <p>
+        Guess what else has layers? Onions! Bet you're glad you waited 
+        for that explanation, huh?
+      </p>
+
+      <p>
+        The lovely thing about this setup is that the entry node 
+        <em>only</em> knows about you and the middle node; it has no 
+        idea about the exit node. The middle node <em>only</em> knows 
+        about the entry and the exit nodes; it has no idea who you are.  
+        And the exit node <em>only</em> knows about the middle node; it 
+        doesn't know about either the entry node or you! Finally, you're 
+        able to use your connection to the exit node to connect to any 
+        website you like and that website won't be able to see you at 
+        all, it just sees the exit. Total anonymity!
+      </p>
+
+      <p>
+        The other plus side of this is that, as I said, Tor relays are 
+        run in a variety of different countries, so even if a site is 
+        blocked in your country, you can use Tor to access that site 
+        assuming the exit is running in a different country.
+      </p>
+    </section>
+  </content>
+
+  <references>
+    <reference id="TOR">
+      <author>Electronic Frontier Foundation</author>
+      <title>Tor Project: Anonymity Online</title>
+      <url>https://www.torproject.org/</url>
+    </reference>
+
+    <reference id="ICEBURG">
+      <author>Shestakov, D.</author>
+      <title>On Building a Search Interface Discovery System</title>
+      <date month="June" year="2010" />
+      <url>
+        https://www.researchgate.net/publication/225102663_On_Building_a_Search_Interface_Discovery_System
+      </url>
+    </reference>
+
+    <reference id="HRC-17-27">
+      <title>
+        Report of the Special Rapporteur on the promotion and protection 
+        of the right to freedom of opinion and expression, Frank La Rue
+      </title>
+      <author>Human Rights Council, United Nations</author>
+      <date day="16" month="May" year="2011" />
+      <url>
+        http://www2.ohchr.org/english/bodies/hrcouncil/docs/17session/A.HRC.17.27_en.pdf
+      </url>
+    </reference>
+
+    <reference id="HTTP-SPEC">
+      <title>
+        Hypertext Transfer Protocol (HTTP) - A Stateless Search, 
+        Retrieve and Manipulation Protocol
+      </title>
+      <author>Berners-Lee, T.</author>
+      <date month="November" year="1993" day="5" />
+      <url>ftp://ftp.uni-potsdam.de/pub/WWW/CERN/doc/http-spec.txt</url>
+    </reference>
+
+    <reference id="TOR-METRICS">
+      <title>Tor Metrics - Number of relays and bridges</title>
+      <author>Tor Project, Inc</author>
+      <date day="13" month="October" year="2016" />
+      <url>https://metrics.torproject.org/servers-data.html</url>
+    </reference>
+
+    <reference id="RFC5246">                                             
+      <title>                                                            
+        The Transport Layer Security (TLS) Protocol Version 1.2          
+      </title>                                                           
+      <author>Dierks, T. and Rescorla, E.</author>                       
+      <date month="August" year="2008" />                                
+      <url>https://tools.ietf.org/html/rfc5246</url>                     
+    </reference>
+  </references>
+</memo>
