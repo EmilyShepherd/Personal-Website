@@ -10,6 +10,6 @@ $(basename $(wildcard *.xml)):
 	make $@.html
 
 clean:
-	rm *.txt *.html
+	rm -f *.txt *.html
 
 .PHONY: clean $(basename $(wildcard *.xml))
