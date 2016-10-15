@@ -31,7 +31,7 @@
         <main>
           <section class="general_top">
             <div class="inner">
-              <img src="https://emilyshepherd.me/images/{$FILE_NAME}_logo.png" height="300" />
+              <img src="/images/{$FILE_NAME}_logo.png" height="300" />
               <header style="margin-top: 20px;">
                 <h1><xsl:value-of select="title" /></h1>
                 <p><xsl:apply-templates select="date" /></p>
