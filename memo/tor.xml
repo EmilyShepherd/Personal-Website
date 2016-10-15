@@ -158,7 +158,7 @@
         to the entry node, but it can't see what you're sending to it).  
         Here's the cool bit: this Tor node will send messages from 
         itself <em>on your behalf</em>; you are able to send messages to 
-        other Tor servers, via this entry node. Think of it like sending 
+        other Tor servers via this entry node. Think of it like sending 
         a letter to your friend via the post office. From your friend's 
         perspective, the letter came "from" the postman; if you don't 
         sign the letter, they wouldn't even know it was originally from 
