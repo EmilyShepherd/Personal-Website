@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <memo>
-  <title>Shining a light on the Dark Web</title>
+  <title>What have onions got to do with the web?</title>
   <description>
     The Dark Web can't be reached with a normal web browser, but what is 
     it?
@@ -63,7 +63,7 @@
       </p>
     </section>
 
-    <section title="What have Onions got to do with the Web?">
+    <section title="Why do we need TOR?">
       <p>
         Since its inception in the 1990s <ref to="HTTP-SPEC" />, the 
         World Wide Web has connected the masses with each other, and has 
