@@ -18,6 +18,7 @@
   <!-- VARIABLES -->
 
   <xsl:param name="PAGE_SIZE">54</xsl:param>
+  <xsl:param name="FILE_NAME" />
 
   <xsl:variable name="header">
     <xsl:value-of select="memo:padToCenter(/memo/title)" />
@@ -113,7 +114,7 @@
       <xsl:with-param name="text">
         <xsl:text>&lt;https://github.com/EmilyShepherd/</xsl:text>
         <xsl:text>Personal-Website/commits/master/memo/</xsl:text>
-        <xsl:value-of select="@url" />
+        <xsl:value-of select="$FILE_NAME" />
         <xsl:text>.xml&gt;</xsl:text>
       </xsl:with-param>
     </xsl:call-template>
@@ -121,8 +122,8 @@
     &nl;&nl;
 
     <xsl:text>Alternative Formats</xsl:text>&nl;
-    <xsl:value-of select="memo:format('HTML', @url, '')" />
-    <xsl:value-of select="memo:format('XML', @url, '.xml')" />
+    <xsl:value-of select="memo:format('HTML', $FILE_NAME, '')" />
+    <xsl:value-of select="memo:format('XML', $FILE_NAME, '.xml')" />
   </xsl:template>
 
   <!-- / MEMO -->

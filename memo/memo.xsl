@@ -2,6 +2,8 @@
 <xsl:stylesheet version="2.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+  <xsl:param name="FILE_NAME" />
+
   <xsl:template match="/memo">
     <xsl:variable name="desc" select="normalize-space(description)" />
     <html>
@@ -13,7 +15,7 @@
         <meta name="description" content="{$desc}" />
         <meta property="og:description" content="{$desc}" />
         <meta property="og:title" content="{title}" />
-        <meta property="og:url" content="https://emilyshepherd.me/memo/{@url}" />
+        <meta property="og:url" content="https://emilyshepherd.me/memo/{$FILE_NAME}" />
         <meta property="og:image" content="{img[@rel='social']}" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@EmilyLShepherd" />
@@ -94,11 +96,11 @@
             <br /><br />
             Alternative Formats:
             <br />
-            <a href="https://emilyshepherd.me/memo/{@url}.txt">
+            <a href="https://emilyshepherd.me/memo/{$FILE_NAME}.txt">
               <xsl:text>TXT</xsl:text>
             </a>
             |
-            <a href="https://emilyshepherd.me/memo/{@url}.xml">
+            <a href="https://emilyshepherd.me/memo/{$FILE_NAME}.xml">
               <xsl:text>XML</xsl:text>
             </a>
           </small>

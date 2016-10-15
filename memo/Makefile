@@ -4,10 +4,10 @@ MEMOS := $(basename $(wildcard *.xml))
 all: $(MEMOS)
 
 %.txt: %.xml memo.txt.xsl
-	saxon-xslt $^ > $@
+	saxon-xslt $^ FILE_NAME=$(basename $@) > $@
 
 %.html: %.xml memo.xsl
-	saxon-xslt $^ > $@
+	saxon-xslt $^ FILE_NAME=$(basename $@) > $@
 
 $(MEMOS): %: %.txt %.html
 
