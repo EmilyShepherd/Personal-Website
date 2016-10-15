@@ -296,6 +296,34 @@
         </li>
       </ul>
     </section>
+
+    <section title="Is Tor Crackable?">
+      <p>
+        In principle, the general consensus is that it is not crackable, 
+        no, although it is very difficult to be 100% sure of these 
+        things. While it is true that many hidden services <em>have</em> 
+        been shut down after police intervention, in all known cases it 
+        thought that weaknesses in Tor itself weren't to blame.
+      </p>
+
+      <p>
+        In the case of the Silk Road, for example, an illegal 
+        marketplace hosted as a hidden service which was shut down by 
+        the FBI in 2013 and again in 2014, it is believed this was 
+        achieved by under cover agents gaining the trust of the site's 
+        administrator. In other cases, the administrators and members of 
+        certain sites have been found by law enforcement agencies by 
+        following the trail of money.
+      </p>
+
+      <p>
+        In short, Tor doesn't give you a free pass; you still have to be 
+        careful if you want to remain anonymous. If you send an email 
+        through tor, for example, make sure your email client doesn't 
+        automatically put your standard email signature at the bottom, 
+        as that might be a bit of a give away of who you are!
+      </p>
+    </section>
   </content>
 
   <references>
