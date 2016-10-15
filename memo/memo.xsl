@@ -96,13 +96,9 @@
             <br /><br />
             Alternative Formats:
             <br />
-            <a href="https://emilyshepherd.me/memo/{$FILE_NAME}.txt">
-              <xsl:text>TXT</xsl:text>
-            </a>
+            <a href="/memo/{$FILE_NAME}.txt">TXT</a>
             |
-            <a href="https://emilyshepherd.me/memo/{$FILE_NAME}.xml">
-              <xsl:text>XML</xsl:text>
-            </a>
+            <a href="/memo/{$FILE_NAME}.xml">XML</a>
           </small>
         </footer>
       </body>
