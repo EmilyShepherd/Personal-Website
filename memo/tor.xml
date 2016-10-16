@@ -132,7 +132,7 @@
       </p>
     </section>
 
-    <section title="You still haven't explained where Onions come in">
+    <section title="You still haven't explained where onions come in">
       <p>
         I know! I know! I'm getting to it, I swear!
       </p>
@@ -208,7 +208,7 @@
       </p>
     </section>
 
-    <section title="Tor: Not just for users">
+    <section title="Tor: not just for users">
       <p>
         So far we've looked at Tor from a user's perspective; we've seen 
         how you can use Tor to access blocked web sites, and to do so in 
@@ -301,7 +301,7 @@
       </ul>
     </section>
 
-    <section title="Is Tor Crackable?">
+    <section title="Is Tor crackable?">
       <p>
         In principle, the general consensus is that it is not crackable,
         although it is very difficult to be 100% sure of these things.  
@@ -333,7 +333,7 @@
         network, which I'll briefly go over:
       </p>
 
-      <section title="Exit Vulnerabilities">
+      <section title="Exit vulnerabilities">
         <p>
           The weakest point in a circuit is arguably the exit node; 
           unlike the entry and middle nodes, the exit node is able to 
@@ -349,7 +349,7 @@
         </p>
       </section>
 
-      <section title="How secure is a Circuit?">
+      <section title="How secure is a circuit?">
         <p>
           Speaking of the weakness of circuits, the security which is 
           provided by using three nodes can only be relied upon if those 
