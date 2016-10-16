@@ -175,9 +175,10 @@
       <p>
         Your laptop is then able to repeat this process, creating an 
         encrypted channel to the exit node, via the encrypted channel to 
-        the middle node which is itself via the encrypted channel to the 
-        entry node.  The whole setup creates multiple "layers" of 
-        encryption, which get "unwrapped" at each step of the journey.
+        the middle node which is itself connected via the encrypted 
+        channel to the entry node.  The whole setup creates multiple 
+        "layers" of encryption, which get "unwrapped" at each step of 
+        the journey.
       </p>
 
       <p>
@@ -235,34 +236,35 @@
 
       <p>
         Luckily our good ol' Onion Router has found a way to make       
-        anonymous sites, which it calls "hidden services", work. If you 
-        thought the process I described above was a faff, wait till you 
-        hear this!  As "faff" isn't a very technical term, we'll refer 
-        to the above process of picking an entry, middle and exit and 
-        connecting to them as "building a circuit".  First off, a hidden 
-        service picks a handful of tor relays and builds a separate 
-        circuit to each of them; once connected, it asks each one to act 
-        as an "Introduction Point" for the service. Although the 
-        Introduction Points do know the name of the hidden service, they 
-        have no idea where in the world the hidden service actually is, 
-        as they where connected via a tor circuit. When these are set 
-        up, the hidden service is able to advertise itself, and the 
-        Introduction Points its connected to, in Tor's distributed list 
-        of hidden services.
+        anonymous sites work; it calls these "hidden services" <ref 
+          to="TOR-HSP" />. If you thought the process I described above 
+        was a faff, wait till you hear this!  As "faff" isn't a very 
+        technical term, we'll refer to the above process of picking an 
+        entry, middle and exit and connecting to them as "building a 
+        circuit".  First off, a hidden service picks a handful of tor 
+        relays and builds a separate circuit to each of them; once 
+        connected, it asks each one to act as an "Introduction Point" 
+        for the service <ref to="TOR-SPEC" />. Although the Introduction 
+        Points do know the name of the hidden service, they have no idea 
+        where in the world the hidden service actually is, as they where 
+        connected via a tor circuit. When these are set up, the hidden 
+        service is able to advertise itself, and the Introduction Points 
+        its connected to, in Tor's distributed list of hidden services.
       </p>
 
       <p>
         Now, if any client wants to access a hidden service, it picks 
         <em>another</em> completely random tor relay and builds a 
         circuit to that; it then asks that relay if it would act as a 
-        "Rendezvous Point". Next, the client builds a separate circuit 
-        to one of the Introduction points, and asks it to forward a 
-        message down the circuit leading back to the hidden service. 
-        This message is, of course, encrypted so the Introduction Point 
-        can't read it, but the hidden service can.  The message asks the 
-        hidden service to connect with the client at the client's chosen 
-        Rendezvous point; the hidden service builds a circuit to that 
-        relay and uses that to contact the client.
+        "Rendezvous Point" <ref to="REND-SPEC" />. Next, the client 
+        builds a separate circuit to one of the Introduction points, and 
+        asks it to forward a message down the circuit leading back to 
+        the hidden service.  This message is, of course, encrypted so 
+        the Introduction Point can't read it, but the hidden service 
+        can.  The message asks the hidden service to connect with the 
+        client at the client's chosen Rendezvous point; the hidden 
+        service builds a circuit to that relay and uses that to contact 
+        the client.
       </p>
 
       <p>
@@ -299,10 +301,10 @@
 
     <section title="Is Tor Crackable?">
       <p>
-        In principle, the general consensus is that it is not crackable, 
-        no, although it is very difficult to be 100% sure of these 
-        things. While it is true that many hidden services <em>have</em> 
-        been shut down after police intervention, in all known cases it 
+        In principle, the general consensus is that it is not crackable,
+        although it is very difficult to be 100% sure of these things.  
+        While it is true that many hidden services <em>have</em> been 
+        shut down after police intervention, in all known cases it 
         thought that weaknesses in Tor itself weren't to blame.
       </p>
 
@@ -322,6 +324,51 @@
         through tor, for example, make sure your email client doesn't 
         automatically put your standard email signature at the bottom, 
         as that might be a bit of a give away of who you are!
+      </p>
+
+      <p>
+        There are, however, a few known theoretical attacks to the Tor 
+        network, which I'll briefly go over. The weakest point in a 
+        circuit is arguably the exit node; unlike the entry and entry 
+        nodes, the exit node is able to see whatever you're actually 
+        sending out to the Internet (because it's the one sending it 
+        out!). If you send unencrypted identifying information, the exit 
+        node would be able to use this to identify you if it were run by 
+        a malicious party.  For this reason, it is still recommended 
+        that Tor users use TLS or another form of encryption where 
+        possible. Also, when it is believed that an exit is monitoring 
+        or interfering with its traffic, it will also be prompted listed 
+        as a "BadExit" so everyone knows to avoid it!
+      </p>
+
+      <p>
+        Speaking of the weakness of circuits, the security which is 
+        provided by using three nodes can only be relied upon if those 
+        three nodes are run by three <em>independent</em> entities. If 
+        you happened to connect to three nodes, all of which were run by 
+        the same person or government, it would be trivially easy for 
+        them to piece together your connection from end to end. In a 
+        way, that might actually make it <em>easier</em> for the 
+        government to snoop on you, because you'd be sending all of your 
+        connection to their servers for them!
+      </p>
+
+      <p>
+        Luckily, this risk is mitigated; the list of all the nodes is 
+        public, including the IP address, network and location. If a 
+        bunch of nodes were running from the same network, this would be 
+        easy to spot. On top of this, relays aren't trusted straight 
+        away; it takes a few days for traffic to build up on a new node.  
+        Although this doesn't guarantee safety in itself, it prevents 
+        the risk of an evil party suddenly starting a bunch of relays 
+        and effectively taking over the network before anyone has a 
+        chance to react and shut them out of the network (this is known 
+        as a Sybil attack). It should be noted that this doesn't prevent 
+        legitimate people from donating more than one relay if they so 
+        choose (like I do!); however, when donating more than one, you 
+        must self identify that your nodes are part of a commonly 
+        controlled "family". Users will only ever choose a maximum of 
+        one relay per family when building their circuits.
       </p>
     </section>
   </content>
@@ -378,6 +425,28 @@
       <author>Dierks, T. and Rescorla, E.</author>                       
       <date month="August" year="2008" />                                
       <url>https://tools.ietf.org/html/rfc5246</url>                     
+    </reference>
+
+    <reference id="TOR-HSP">
+      <title>Tor: Hidden Service Protocol</title>
+      <author>Tor Project, Inc</author>
+      <url>https://www.torproject.org/docs/hidden-services.html.en</url>
+    </reference>
+
+    <reference id="TOR-SPEC">
+      <title>Tor: The Second-Generation Onion Router</title>
+      <author>Dingledine, R., Mathewson, N., and Syverson, P.</author>
+      <url>
+        https://svn.torproject.org/svn/projects/design-paper/tor-design.html
+      </url>
+    </reference>
+
+    <reference id="REND-SPEC">
+      <title>Tor Rendezvous Specification</title>
+      <author>Tor Project, Inc</author>
+      <url>
+        https://gitweb.torproject.org/torspec.git/tree/rend-spec.txt
+      </url>
     </reference>
   </references>
 </memo>
