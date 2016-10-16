@@ -195,7 +195,9 @@
         doesn't know about either the entry node or you! Finally, you're 
         able to use your connection to the exit node to connect to any 
         website you like and that website won't be able to see you at 
-        all, it just sees the exit. Total anonymity!
+        all, it just sees the exit. Total anonymity! Oh, and just to 
+        make it even more secure, the client selects a new three nodes 
+        every ten minutes.
       </p>
 
       <p>
@@ -328,48 +330,149 @@
 
       <p>
         There are, however, a few known theoretical attacks to the Tor 
-        network, which I'll briefly go over. The weakest point in a 
-        circuit is arguably the exit node; unlike the entry and entry 
-        nodes, the exit node is able to see whatever you're actually 
-        sending out to the Internet (because it's the one sending it 
-        out!). If you send unencrypted identifying information, the exit 
-        node would be able to use this to identify you if it were run by 
-        a malicious party.  For this reason, it is still recommended 
-        that Tor users use TLS or another form of encryption where 
-        possible. Also, when it is believed that an exit is monitoring 
-        or interfering with its traffic, it will also be prompted listed 
-        as a "BadExit" so everyone knows to avoid it!
+        network, which I'll briefly go over:
       </p>
 
-      <p>
-        Speaking of the weakness of circuits, the security which is 
-        provided by using three nodes can only be relied upon if those 
-        three nodes are run by three <em>independent</em> entities. If 
-        you happened to connect to three nodes, all of which were run by 
-        the same person or government, it would be trivially easy for 
-        them to piece together your connection from end to end. In a 
-        way, that might actually make it <em>easier</em> for the 
-        government to snoop on you, because you'd be sending all of your 
-        connection to their servers for them!
-      </p>
+      <section title="Exit Vulnerabilities">
+        <p>
+          The weakest point in a circuit is arguably the exit node; 
+          unlike the entry and middle nodes, the exit node is able to 
+          see whatever you're actually sending out to the Internet 
+          (because it's the one sending it out!). If you send 
+          unencrypted identifying information, the exit node would be 
+          able to use this to identify you if it were run by a malicious 
+          party.  For this reason, it is still recommended that Tor 
+          users use TLS or another form of encryption where possible.  
+          Also, when it is believed that an exit is monitoring or 
+          interfering with its traffic, it will also be prompted listed 
+          as a "BadExit" so everyone knows to avoid it!
+        </p>
+      </section>
 
-      <p>
-        Luckily, this risk is mitigated; the list of all the nodes is 
-        public, including the IP address, network and location. If a 
-        bunch of nodes were running from the same network, this would be 
-        easy to spot. On top of this, relays aren't trusted straight 
-        away; it takes a few days for traffic to build up on a new node.  
-        Although this doesn't guarantee safety in itself, it prevents 
-        the risk of an evil party suddenly starting a bunch of relays 
-        and effectively taking over the network before anyone has a 
-        chance to react and shut them out of the network (this is known 
-        as a Sybil attack). It should be noted that this doesn't prevent 
-        legitimate people from donating more than one relay if they so 
-        choose (like I do!); however, when donating more than one, you 
-        must self identify that your nodes are part of a commonly 
-        controlled "family". Users will only ever choose a maximum of 
-        one relay per family when building their circuits.
-      </p>
+      <section title="How secure is a Circuit?">
+        <p>
+          Speaking of the weakness of circuits, the security which is 
+          provided by using three nodes can only be relied upon if those 
+          three nodes are run by three <em>independent</em> entities. If 
+          you happened to connect to three nodes, all of which were run 
+          by the same person or government, it would be trivially easy 
+          for them to piece together your connection from end to end. In 
+          a way, that might actually make it <em>easier</em> for the 
+          government to snoop on you, because you'd be sending all of 
+          your connection to their servers for them!
+        </p>
+
+        <p>
+          Luckily, this risk is mitigated; the list of all the nodes is 
+          public, including the IP address, network and location. If a 
+          bunch of nodes were running from the same network, this would 
+          be easy to spot. On top of this, relays aren't trusted 
+          straight away; it takes a few days for traffic to build up on 
+          a new node.  Although this doesn't guarantee safety in itself, 
+          it prevents the risk of an evil party suddenly starting a 
+          bunch of relays and effectively taking over the network before 
+          anyone has a chance to react and shut them out of the network 
+          (this is known as a Sybil attack).
+        </p>
+
+        <p>
+          It should be noted that this doesn't prevent legitimate people 
+          from donating more than one relay if they so choose (like I 
+          do!); however, when donating more than one, you must self 
+          identify that your nodes are part of a commonly controlled 
+          "family". Users will only ever choose a maximum of one relay 
+          per family when building their circuits.
+        </p>
+      </section>
+
+      <section title="Guards to the Rescue!">
+        <p>
+          So it wouldn't be very easy to overpower the tor network with 
+          a majority of servers, but isn't it still possible to 
+          stealthily run a handful of relays in different networks &amp; 
+          locations and use these to observe those that are unlucky 
+          enough to build a circuit completely controlled by you?  It 
+          is, but remember that clients rebuild their circuits every ten 
+          minutes, so you only get tiny fractions of the network who are 
+          susceptible to this at any one time.
+        </p>
+
+        <p>
+          Unless... unless you could somehow trick clients into picking 
+          a circuit controlled by you. Imagine a client builds a circuit 
+          but only includes a single one of your nodes; this doesn't 
+          give you enough information to snoop on them, but it does give 
+          you control...
+        </p>
+
+        <p>
+          You could set your node to automatically "fail" whenever this 
+          situation occurs by simply refusing to accept the connection.  
+          This would force the client to generate a new circuit; forcing 
+          the client to generate lots and lots of circuits increases the 
+          chance that it'll eventually pick one that you control 
+          completely. This is known as a denial of service as denial of 
+          anonymity attack.
+        </p>
+
+        <p>
+          This is where "Guard" nodes come in; guards are relays that 
+          have been running for a while and have proven themselves 
+          reliable (in other words they haven't been observed to 
+          continuously refuse to form connections).  When a client forms 
+          a circuit for the first time, it will always pick its entry 
+          node from the set of guards.  Once this is done, it will stick 
+          with this entry node for a long time (around 2 months).  
+          Whenever a new circuit is required, the middle and exit nodes 
+          are changed, but the guard node is kept intact. As a result, 
+          badly behaving middles and exits are free to force you to 
+          regenerate as much as they like, but your guards will remain 
+          fixed, effectively capping the chance that you'll be 
+          compromised.
+        </p>
+      </section>
+
+      <section title="Can we analyse what we've got?">
+        <p>
+          Great! So it is very hard to control an entire tor circuit, 
+          but what information <em>can</em> you get if you just control 
+          one or two nodes in a circuit? Remember that network within 
+          the tor network is always encrypted so nothing can be gleaned 
+          from the content of messages there are a couple of things you 
+          could attempt to analyse: the size and timing of messages.  
+          For example, say you were attempting track down a dissident 
+          who was planning on leaking a 187MB page document to the press 
+          at 13:00.  Now let's say that you run a node, and at 13:00 a 
+          user connects to your node as an entry and sends 187MB of 
+          encrypted traffic.  You might have a hunch that that's your 
+          guy there...
+        </p>
+
+        <p>
+          As with all things Tor, there are mitigation tactics in place, 
+          fear not!  In computer networking, it is common for messages 
+          to be split up into multiple units called packets.  This makes 
+          it easier for the Internet to manage and keep track of the 
+          enormous amount of data that gets sent across it every day.  
+          Think of it like a shipping company: if you order a 12 million 
+          "I love Emily" posters from a factory in China, it's more than 
+          likely that that'll be split between a bunch of shipping 
+          containers.  It's even possible that those containers might be 
+          loaded onto different freight ships / trains / trucks, etc.
+        </p>
+
+        <p>
+          In an attempt to reduce an attacker's ability to analyse 
+          message sizes, Tor uses identically sized packets, so when 
+          messages are split up and thrown into the tor network, they 
+          immediately become indistinguishable from the rest of the 
+          traffic on the tor network. It's a bit like the classic game 
+          where you have to follow which identical upturned cup has a 
+          ball within it.  But there are literally thousands of cups.  
+          And multiple balls. And there are portions of the table which 
+          are covered up, preventing you from seeing when swaps occur.
+        </p>
+      </section>
     </section>
   </content>
 
