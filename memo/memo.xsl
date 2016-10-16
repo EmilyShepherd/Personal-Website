@@ -136,4 +136,10 @@
   <xsl:template match="fig">
     <pre><xsl:value-of select="replace(., '(^|\n) +', '&#xa;')" /></pre>
   </xsl:template>
+
+  <xsl:template match="section">
+    <h3><xsl:value-of select="@title" /></h3>
+
+    <xsl:apply-templates />
+  </xsl:template>
 </xsl:stylesheet>
