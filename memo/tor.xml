@@ -416,19 +416,32 @@
         </p>
 
         <p>
+          Attackers can also use this technique to find the location of 
+          Hidden Services. By pretending to be a bunch of users, the 
+          attacker could repeatedly ask to connect to the hidden 
+          service. Each and every time, the service will generate a new 
+          circuit to the chosen Rendezvous Point. At some point or 
+          another, it might choose a node the attacker controls to act 
+          as the entry; if a computer connects to your entry node 
+          moments after you've requested it to meet at a Rendezvous 
+          Point, you can guess that that might be the actual computer of 
+          the hidden service.
+        </p>
+
+        <p>
           This is where "Guard" nodes come in; guards are relays that 
           have been running for a while and have proven themselves 
           reliable (in other words they haven't been observed to 
-          continuously refuse to form connections).  When a client forms 
-          a circuit for the first time, it will always pick its entry 
-          node from the set of guards.  Once this is done, it will stick 
-          with this entry node for a long time (around 2 months).  
-          Whenever a new circuit is required, the middle and exit nodes 
-          are changed, but the guard node is kept intact. As a result, 
-          badly behaving middles and exits are free to force you to 
-          regenerate as much as they like, but your guards will remain 
-          fixed, effectively capping the chance that you'll be 
-          compromised.
+          continuously refuse to form connections).  When a client or 
+          hidden service forms a circuit for the first time, it will 
+          always pick its entry node from the set of guards.  Once this 
+          is done, it will stick with this entry node for a long time 
+          (around 2 months).  Whenever a new circuit is required, the 
+          middle and exit nodes are changed, but the guard node is kept 
+          intact. As a result, badly behaving middles and exits are free 
+          to force you to regenerate as much as they like, but your 
+          guards will remain fixed, effectively capping the chance that 
+          you'll be compromised.
         </p>
       </section>
 
@@ -471,6 +484,25 @@
           ball within it.  But there are literally thousands of cups.  
           And multiple balls. And there are portions of the table which 
           are covered up, preventing you from seeing when swaps occur.
+        </p>
+
+        <p>
+          On top of all of this, the Tor network employs a technique 
+          known as multiplexing. In all of our examples that we've seen 
+          so far, we've dealt with circuits on there own, but we have to 
+          remember that there are thousands of people using tor all the 
+          time, so there are thousands of circuits and some of these may 
+          overlap. Tor takes advantage of this to "join" streams of 
+          information together, making them even harder to trace. Say we 
+          have two users, Alice and Bob, using tor. Alice is using a 
+          circuit between node A, B &amp; C, whereas Bob is using a 
+          circuit between D, B &amp; C. The connections between A &amp; 
+          B and D &amp; B are completely independent, but the connection 
+          between B &amp; C is common to both circuits. So B rather 
+          cleverly only opens <em>one</em> connection to C and uses it 
+          to send both sets of information. This just makes it even 
+          harder for a snooper to be able to figure out who's packets 
+          belong to who.
         </p>
       </section>
     </section>
