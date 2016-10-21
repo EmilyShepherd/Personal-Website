@@ -16,7 +16,7 @@
       </p>
 
       <p>
-        The top layer is known as the Surface web, and this includes 
+        The top layer is known as the Surface web; this includes 
         everything that you can reach from search engines like Google or 
         Bing. So lots of the sites you use will fall into this category: 
         YouTube, iPlayer, many news outlets and articles, Wikipedia, all 
@@ -28,28 +28,27 @@
         going to talk about it anymore... let's delve further. The next 
         layer down is known as the "Deep Web"; this is the bit of the 
         web that <em>can't</em> be found via Google. As it's harder to 
-        find all the pages in this bit of the web, its exact size is 
-        largely anyone's guess, however the general guess is that the 
-        deep web is quite probably over 550 times larger than the 
-        Surface Web. The common analogy for the Web is that of an 
-        iceberg <ref to="ICEBERG" />. On the surface it looks 
-        impressive, sure, but icebergs are much, <em>much</em> larger 
-        under the surface of the water.
+        find all the pages in the Deep Web, its exact size is not really 
+        known, however the general guess is that the it is probably over 
+        550 times larger than the Surface Web.  The common analogy is 
+        that of an iceberg <ref to="ICEBERG" />.  On the surface it 
+        looks impressive, sure, but icebergs are much, <em>much</em> 
+        larger under the surface of the water.
       </p>
 
       <p>
-        Now, I'm aware that these terms make the deep web sound really 
+        Now, I'm aware that these terms make the Deep Web sound really 
         scary. The fact that it's "not on Google" and "difficult to 
         access" leads a lot of people to believe that this area is where 
         a lot of nefarious actives go on. But don't worry, it's not like 
-        that at all! You yourself almost certainly use the Deep Web 
-        every day too, even though you might not be aware of it. If you 
-        use Google Mail, Hotmail, or some other web mail provider, you 
-        are accessing the Deep Web. Why? Well, your emails <em>can't be 
-          reached</em> from a Google search, right? And nobody is able 
-        to access your emails other than you, yes? Those are the two 
-        criteria right there; your emails are in the Deep Web. Sites 
-        like Facebook, too, exist almost entirely on the Deep Web.
+        that at all! You, dear reader, almost certainly use the Deep Web 
+        every day, even though you might not be aware of it. If you use 
+        Google Mail, Hotmail, or some other web mail provider, you are 
+        accessing the Deep Web. Why? Well, your personal emails 
+        <em>can't be reached</em> from a Google search, right? Nobody is 
+        able to access your emails other than you, and that's all the 
+        Deep Web really means: not publicly accessible. Sites like 
+        Facebook, too, exist almost entirely on the Deep Web.
       </p>
 
       <p>
@@ -66,7 +65,7 @@
     <section title="Why do we need TOR?">
       <p>
         Since its inception in the 1990s <ref to="HTTP-SPEC" />, the 
-        World Wide Web has connected the masses with each other, and has 
+        World Wide Web has connected the masses to each other, and has 
         opened the door to huge collections of information. With this 
         rise, we came to expect and even depend on this connectivity, 
         with the UN even linking Internet access with the Human Right to 
@@ -96,9 +95,10 @@
         The other concern, anonymity, is also one that has proven itself 
         hard to achieve. If you've ever used public wifi, the connection 
         between your laptop and the wifi provider was almost certainly 
-        unencrypted. In business and home settings, even when the wifi 
-        is password protected, it is often trivially easy for other wifi 
-        uses to "listen in" on your connection.
+        unencrypted, meaning anyone in your vicinity can "listen in" on 
+        your Internet connection.  In business and home settings, even 
+        when the wifi is password protected, it is still often trivially 
+        easy for other wifi uses to snoop on you.
       </p>
 
       <p>
@@ -114,28 +114,27 @@
       </p>
 
       <p>
-        The obvious answer to this is to never use public wifi, or even 
-        wifi that you share with <em>anyone else</em>, and you should 
-        also never use a site which doesn't use TLS. Unfortunately, 
-        that largely throws away your ability to function in the modern 
+        The solution to this is clear: never use public wifi, or even 
+        wifi that you share with <em>anyone else</em>, you should also 
+        never use a site which doesn't use TLS, and you should simply 
+        accept that censored websites are no-go.  Unfortunately, that 
+        largely throws away your ability to function in the modern 
         world; while you're at it, why not seal your house in plastic to 
         protect yourself from airborne viruses?
       </p>
 
       <p>
-        Clearly another solution is required: Onions! Well, The Onion 
-        Router, at least. Tor is a network of over 7000 servers <ref 
-          to="TOR-METRICS" /> all of which are managed by independent 
-        volunteers in countries all around the world. These servers are 
-        used as "middle men" for your messages, making them much harder 
-        to trace and censor.
+        Clearly another solution is required: Onions!  Well, The Onion 
+        Router (Tor), at least. Tor is a network of over 7000 servers 
+        <ref to="TOR-METRICS" /> managed by independent volunteers in 
+        countries all around the world. These servers are used as 
+        "middle men" for your messages, making them much harder to trace 
+        and censor.
       </p>
     </section>
 
-    <section title="You still haven't explained where onions come in">
-      <p>
-        I know! I know! I'm getting to it, I swear!
-      </p>
+    <section title="How do onions make this work?">
+      <p>I'm getting to it, I swear!</p>
 
       <p>
         Let's look at this in more detail. Normally, when you want to 
@@ -146,7 +145,9 @@
         logo is looking particularly zany today!". This isn't anonymous 
         at all! Google can see who you are because it's communicating 
         directly with you, and a snooper can easily see that it's Google 
-        that you're talking to.
+        that you're talking to. If that snooper were an authoritarian 
+        government, they could easily get in the way and prevent you 
+        communicating with Google at all.
       </p>
 
       <p>
@@ -338,94 +339,87 @@
           The weakest point in a circuit is arguably the exit node; 
           unlike the entry and middle nodes, the exit node is able to 
           see whatever you're actually sending out to the Internet 
-          (because it's the one sending it out!). If you send 
-          unencrypted identifying information, the exit node would be 
-          able to use this to identify you if it were run by a malicious 
-          party.  For this reason, it is still recommended that Tor 
-          users use TLS or another form of encryption where possible.  
-          Also, when it is believed that an exit is monitoring or 
-          interfering with its traffic, it will also be prompted listed 
+          (because it's the one sending it!). If you send unencrypted 
+          identifying information, for example, a malicious exit node 
+          could record this.  For this reason, it is still recommended 
+          that Tor users use TLS or another form of encryption where 
+          possible, as this effectively acts as a fourth layer of 
+          encryption spanning all the way between the client and the end 
+          web site. When it is believed that an exit is monitoring or 
+          interfering with its traffic, it will also be promptly listed 
           as a "BadExit" so everyone knows to avoid it!
         </p>
       </section>
 
       <section title="How secure is a circuit?">
         <p>
-          Speaking of the weakness of circuits, the security which is 
-          provided by using three nodes can only be relied upon if those 
-          three nodes are run by three <em>independent</em> entities. If 
-          you happened to connect to three nodes, all of which were run 
-          by the same person or government, it would be trivially easy 
-          for them to piece together your connection from end to end. In 
-          a way, that might actually make it <em>easier</em> for the 
-          government to snoop on you, because you'd be sending all of 
-          your connection to their servers for them!
+          Using three nodes for a circuit is great for security, but 
+          only if those three nodes are run by three 
+          <em>independent</em> entities. If you happened to connect to 
+          three nodes, all of which were run by the same person or 
+          government, it would be trivially easy for them to piece 
+          together your connection from end to end. In a way, that might 
+          actually make it <em>easier</em> for the government to snoop 
+          on you, because you'd be actively handing over all of your 
+          connection details to them!
         </p>
 
         <p>
           Luckily, this risk is mitigated; the list of all the nodes is 
-          public, including the IP address, network and location. If a 
+          public, including their IP address, network and location. If a 
           bunch of nodes were running from the same network, this would 
           be easy to spot. On top of this, relays aren't trusted 
           straight away; it takes a few days for traffic to build up on 
           a new node.  Although this doesn't guarantee safety in itself, 
-          it prevents the risk of an evil party suddenly starting a 
-          bunch of relays and effectively taking over the network before 
-          anyone has a chance to react and shut them out of the network 
-          (this is known as a Sybil attack).
-        </p>
-
-        <p>
-          It should be noted that this doesn't prevent legitimate people 
-          from donating more than one relay if they so choose (like I 
-          do!); however, when donating more than one, you must self 
-          identify that your nodes are part of a commonly controlled 
-          "family". Users will only ever choose a maximum of one relay 
-          per family when building their circuits.
+          it prevents an evil party from suddenly starting a large 
+          enough number of relays to snoop on lots of tor users. If such 
+          an action were to take place, this would be spotted and they 
+          would be shut out of the network before they received any 
+          traffic (this is known as a Sybil attack).
         </p>
       </section>
 
       <section title="Guards to the Rescue!">
         <p>
-          So it wouldn't be very easy to overpower the tor network with 
-          a majority of servers, but isn't it still possible to 
-          stealthily run a handful of relays in different networks &amp; 
-          locations and use these to observe those that are unlucky 
-          enough to build a circuit completely controlled by you?  It 
-          is, but remember that clients rebuild their circuits every ten 
-          minutes, so you only get tiny fractions of the network who are 
-          susceptible to this at any one time.
+          In the previous section, we saw how the tor network excludes 
+          malicious groups of servers when they are obviously running 
+          from the same location or network. But what happens if our 
+          attacker hosts a collection of nodes in different places, thus 
+          making it impossible to see that they are under common 
+          control? In this case, it is still possible for a client to 
+          unwittingly pick three nodes which are controlled by the same 
+          person. Remember, however, that clients rebuild their circuits 
+          every ten minutes, so you only get tiny fractions of the 
+          network who are susceptible to this at any one time.
         </p>
 
         <p>
           Unless... unless you could somehow trick clients into picking 
           a circuit controlled by you. Imagine a client builds a circuit 
-          but only includes a single one of your nodes; this doesn't 
-          give you enough information to snoop on them, but it does give 
-          you control...
-        </p>
-
-        <p>
-          You could set your node to automatically "fail" whenever this 
-          situation occurs by simply refusing to accept the connection.  
-          This would force the client to generate a new circuit; forcing 
-          the client to generate lots and lots of circuits increases the 
-          chance that it'll eventually pick one that you control 
-          completely. This is known as a denial of service as denial of 
-          anonymity attack.
+          which includes one malicious node; this doesn't put them in 
+          control over the entire circuit, so they don't have enough 
+          information to snoop on you, instead they can break the 
+          circuit by refusing to relay traffic. When this happens, the 
+          client can tell that the circuit isn't working, but it isn't 
+          easy for it to see which node is behaving. In response, 
+          therefore, it is forced to generated an entirely new circuit, 
+          picking new nodes at random. This effectively gives the 
+          attacker another "roll of the die"; it's another chance that 
+          the client might pick a circuit controlled entirely by them.  
+          This is known as a denial of service as denial of anonymity 
+          attack.
         </p>
 
         <p>
           Attackers can also use this technique to find the location of 
-          Hidden Services. By pretending to be a bunch of users, the 
-          attacker could repeatedly ask to connect to the hidden 
-          service. Each and every time, the service will generate a new 
-          circuit to the chosen Rendezvous Point. At some point or 
-          another, it might choose a node the attacker controls to act 
-          as the entry; if a computer connects to your entry node 
-          moments after you've requested it to meet at a Rendezvous 
-          Point, you can guess that that might be the actual computer of 
-          the hidden service.
+          Hidden Services. If the attacker repeatedly asks to connect to 
+          the hidden service, the service will generate a new circuit to 
+          the chosen Rendezvous Point each and every time; at some point 
+          or another, it might choose a node the attacker controls to 
+          act as the entry. From the perspective of the attacker, if a 
+          computer connects to your entry node moments after you've 
+          requested it to meet at a Rendezvous Point, you can guess that 
+          that might be the actual computer of the hidden service.
         </p>
 
         <p>
@@ -435,13 +429,13 @@
           continuously refuse to form connections).  When a client or 
           hidden service forms a circuit for the first time, it will 
           always pick its entry node from the set of guards.  Once this 
-          is done, it will stick with this entry node for a long time 
-          (around 2 months).  Whenever a new circuit is required, the 
+          is done, it will stick with this entry node for a long time:
+          around 2 months.  Whenever a new circuit is required, the 
           middle and exit nodes are changed, but the guard node is kept 
-          intact. As a result, badly behaving middles and exits are free 
-          to force you to regenerate as much as they like, but your 
-          guards will remain fixed, effectively capping the chance that 
-          you'll be compromised.
+          as the entry. As a result, badly behaving middles and exits 
+          are free to force you to regenerate as much as they like, but 
+          your guards will remain fixed, effectively capping the chance 
+          that you'll be compromised.
         </p>
       </section>
 
@@ -471,7 +465,7 @@
           "I love Emily" posters from a factory in China, it's more than 
           likely that that'll be split between a bunch of shipping 
           containers.  It's even possible that those containers might be 
-          loaded onto different freight ships / trains / trucks, etc.
+          loaded onto different freight ships, trains, trucks, etc.
         </p>
 
         <p>
@@ -489,7 +483,7 @@
         <p>
           On top of all of this, the Tor network employs a technique 
           known as multiplexing. In all of our examples that we've seen 
-          so far, we've dealt with circuits on there own, but we have to 
+          so far, we've dealt with circuits on their own, but we have to 
           remember that there are thousands of people using tor all the 
           time, so there are thousands of circuits and some of these may 
           overlap. Tor takes advantage of this to "join" streams of 
